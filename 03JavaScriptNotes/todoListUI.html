@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="http://aasis.esy.es/img/favicon.png" type="image/x-icon">
+    <title>ToDo List</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Font Family -->
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Fugaz+One|Patua+One|Poiret+One|Racing+Sans+One|Special+Elite"
+        rel="stylesheet">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <style>
+        :root {
+            --main-vertical-displacement: calc(100vh/2 - 186px);
+        }
+
+        html {
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-image: url('https://pre00.deviantart.net/a61e/th/pre/f/2015/341/f/a/abstract_4k_wallpaper_by_kanttii-d9jco4y.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Patua One', cursive;
+            /* font-family: 'Fugaz One', cursive; */
+            /* font-family: 'Racing Sans One', cursive; */
+        }
+
+        /* .jumbotron {
+            background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+            background-size: 400% 400%;
+            -webkit-animation: Gradient 60s ease infinite;
+            -moz-animation: Gradient 60s ease infinite;
+            animation: Gradient 60s ease infinite;
+        } */
+
+        .jumbotron {
+            margin-bottom: 0;
+        }
+
+        /*
+        @-webkit-keyframes Gradient {
+            0% {
+                background-position: 0% 50%
+            }
+            50% {
+                background-position: 100% 50%
+            }
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        @-moz-keyframes Gradient {
+            0% {
+                background-position: 0% 50%
+            }
+            50% {
+                background-position: 100% 50%
+            }
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        @keyframes Gradient {
+            0% {
+                background-position: 0% 50%
+            }
+            50% {
+                background-position: 100% 50%
+            }
+            100% {
+                background-position: 0% 50%
+            }
+        }
+        */
+        ::-webkit-scrollbar {
+            width: 0px;
+            /* remove scrollbar space */
+            background: transparent;
+            /* optional: just make scrollbar invisible */
+        }
+
+        .timestamp {
+            color: grey;
+            font-weight: bold;
+            font-size: 0.7em;
+        }
+
+        ::placeholder {
+            color: white !important;
+        }
+
+        .myalert {
+            background: rgba(255, 0, 198, 0.25);
+        }
+
+        .myalert i {
+            color: white;
+        }
+
+        .fontSelector {
+            position: fixed;
+            right: 0;
+            top: 0;
+            transform: translateY(45vh);
+        }
+
+        .logo {
+            height: 2em;
+            text-align: center;
+        }
+
+        .logo img {
+            height: 100%;
+        }
+
+        /* If screen size is more than 600px wide, set the font-size of <div> to 80px */
+        @media screen and (min-width: 576px) {
+            div.todoTask {
+                height: calc(100vh - 214px);
+            }
+        }
+
+        /* If screen size is 600px wide, or less, set the font-size of <div> to 30px */
+        @media screen and (max-width: 576px) {
+            div.todoTask {
+                height: calc(100vh - 150px);
+            }
+        }
+
+        div.login {
+            height: 100vh;
+        }
+
+        div.verticalMiddle {
+            position: relative;
+            transform: translateY(var(--main-vertical-displacement));
+        }
+    </style>
+</head>
+
+<body>
+    <div class="enclose">
+        <div class="jumbotron jumbotron-fluid" style="background:none;">
+            <div class="container">
+                <!-- <h1 class="display-3 text-light">TODO List</h1> -->
+                <div class="input-group mb-3">
+                    <input id="input" type="text" class="form-control" placeholder="Enter Your Task!" style="background:rgba(122, 122, 122, 0.555); color:white; box-shadow: none; border: none;">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-outline-light text-light" id="add" style="background:rgba(185, 185, 185, 0.712); box-shadow: none; border: none;"><i
+                                class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="logo">
+                    <img src="http://aasis.esy.es/vr/img/svr.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div style="background:rgba(0, 0, 0, 0.329);">
+            <div class="container todoTask" style="overflow: scroll; min-height: 200px;">
+                <div style="height:20px;"></div>
+                <div id="list">
+                    <div id="listitem">
+                    </div>
+                    <div class="alert alert-success" id="taskComplete">
+                        <strong>Chill!</strong> No Task Available!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fontSelector">
+            <i class="fa fa-font" style="background-color:rgba(31, 18, 44, 0.5); color: rgba(185, 185, 185, 0.712); padding: 2px; width:20px; border-radius: 15%;"
+                id="font1"></i>
+            <br>
+            <i class="fa fa-font" style="background-color:rgba(111, 102, 185, 0.5); color: rgba(185, 185, 185, 0.712); padding: 2px; width:20px; border-radius: 15%;"
+                id="font2"></i>
+            <br>
+            <i class="fa fa-font" style="background-color:rgba(180, 138, 222, 0.5); color: rgba(185, 185, 185, 0.712); padding: 2px; width:20px; border-radius: 15%;"
+                id="font3"></i>
+        </div>
+    </div>
+    <div class="login">
+        <div class="container verticalMiddle">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Sign In</h5>
+                            <form class="form-signin">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-user"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" id="username" required>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-lock"></i>
+                                        </span>
+                                    </div>
+                                    <input type="password" class="form-control" id="password" required>
+                                </div>
+                                <hr>
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                            </form>
+                            <hr>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" id="register">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // If set to true the logs are enabled, set to false to disable the console logs
+    var enableLogs = false;
+
+    $(document).ready(function () {
+
+        //Array to store the Tasks
+        var todoList = [];
+        var todoTimeList = [];
+        var usernameAndPasswords = {};
+        var username = 'frostfire';
+        var password = 'frostfire';
+
+        //Check if Local Storage is Accessible
+        if (localStorage) {
+            logEvent('Local Storage is Accessible!');
+        }
+        else {
+            logEvent('Local Storage not Accessible!');
+        }
+
+        //Retrieve the task-list from localStorage
+        if (localStorage.getItem('usernameAndPasswords') != null) {
+            logEvent('Retrieveing previously stored tasks!');
+            usernameAndPasswords = JSON.parse(localStorage.getItem('usernameAndPasswords'));
+            console.log(usernameAndPasswords);
+        }
+
+
+        // Disable Main View on start
+        $('div.enclose').toggle(1);
+
+        $('button#register').on('click', function (param) {
+            var username = $('input#username').val();
+            var password = $('input#password').val();
+            if(username.length == 0 || password.length == 0)
+            alert('Please Enter Username and Password!');
+            // console.log(username + password);
+            usernameAndPasswords[username] = password;
+            localStorage.setItem('usernameAndPasswords', JSON.stringify(usernameAndPasswords));
+            console.log('User Registered!');
+            alert('User Registered!');
+        });
+
+        //login function
+        $("form.form-signin").submit(function (e) {
+            //prevent the form to refresh on submit
+            e.preventDefault();
+
+            //Take Username and password
+            var uname = $('input#username').val();
+            var pwd = $('input#password').val();
+            if (usernameAndPasswords[uname] == pwd) {
+                $('div.login').toggle(1);
+                $('div.enclose').toggle(1);
+            }else{
+                alert('Wrong Password!');
+            }
+            console.log(uname + ':' + pwd);
+
+        });
+
+        //Retrieve the task-list from localStorage
+        if (localStorage.getItem('todoTaskList') != null && localStorage.getItem('todoTimeTaskList') != null) {
+            logEvent('Retrieveing previously stored tasks!');
+            var retrievedList = localStorage.getItem('todoTaskList');
+            var retrievedTimeList = localStorage.getItem('todoTimeTaskList');
+            // console.log(retrievedList);
+            // console.log(retrievedTimeList);
+            //Adding back the Task to UI, if any task present
+            if (retrievedList.length > 0) {
+                todoList = retrievedList.split(',');
+                todoTimeList = retrievedTimeList.split(',');
+                for (let index = 0; index < todoList.length; index++) {
+                    const input = todoList[index];
+                    const timeStamp = todoTimeList[index];
+                    $('div#listitem').append('<div class="alert clearfix text-white myalert"><button type="button" class="close"><i class="fa fa-times"></i></button><div class="taskDetails">' + input + ' <span class="badge badge-pill badge-primary">Old</span></div><span class = "timestamp"><i class="fa fa-calendar-plus-o"></i> ' + timeStamp + '</span></div>');
+                    $('div#taskComplete').css('display', 'none');
+                }
+            }
+        }
+
+        //Add the task to Array on Click of Add Button
+        $('#add').click(function () {
+            var input = $('#input').val();
+            if (input.length == 0)
+                logEvent('Please Enter something!');
+            else {
+                var logDate = new Date();
+                var timeStamp = logDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }) + ' ' + logDate.toDateString();
+                $('div#listitem').append('<div class="alert clearfix text-white myalert"><button type="button" class="close"><i class="fa fa-times"></i></button><div class="taskDetails">' + input + ' <span class="badge badge-pill badge-primary">New</span></div><span class = "timestamp"><i class="fa fa-calendar-plus-o"></i> ' + timeStamp + '</span></div>');
+                todoList[todoList.length] = input;
+                todoTimeList[todoTimeList.length] = timeStamp;
+                $('#input').val('');
+                logEvent('Task Added : ' + input);
+                localStorage.setItem('todoTaskList', todoList);
+                localStorage.setItem('todoTimeTaskList', todoTimeList);
+                //Restoring the Results
+                $("div#listitem div").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf('') > -1)
+                });
+            }
+            if (todoList.length != 0)
+                $('div#taskComplete').css('display', 'none');
+        });
+
+        //Remove task on double click
+        $(document).on('click', 'button.close', function () {
+            var idRemove = $('button.close').index(this);
+            logEvent('ID remove : ' + idRemove);
+            $(this).parent().remove();
+            todoList.splice(idRemove, 1);
+            todoTimeList.splice(idRemove, 1);
+            localStorage.setItem('todoTaskList', todoList);
+            localStorage.setItem('todoTimeTaskList', todoTimeList);
+            if (todoList.length == 0)
+                $('div#taskComplete').css('display', 'block');
+        });
+
+        //Searching Task
+        $("#input").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("div#listitem div div.taskDetails").filter(function () {
+                $(this).parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+
+        $("#font1").on("click", function () {
+            $('body').css("font-family", "'Patua One', cursive");
+        });
+        $("#font2").on("click", function () {
+            $('body').css("font-family", "'Fugaz One', cursive");
+        });
+        $("#font3").on("click", function () {
+            $('body').css("font-family", "'Racing Sans One', cursive");
+        });
+    });
+
+    //This helps to log the events if enableLogs is set to true
+    function logEvent(params) {
+        if (enableLogs) {
+            var sysTime = new Date();
+            var locale = "en-us";
+            var month = sysTime.toLocaleString(locale, { month: "short" });
+            var timeStamp = sysTime.getDate() + '-' + month + '-' + sysTime.getFullYear() + ' ' + sysTime.toLocaleTimeString();
+            console.log(timeStamp + ' > ' + params);
+        }
+    }
+</script>
+
+</html>

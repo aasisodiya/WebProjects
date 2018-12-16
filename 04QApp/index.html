@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/script.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row"><br><br>
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="loader">
+                    <div class="col-xs-3 col-xs-offset-5">
+                        <div id="loadbar" style="display: none;">
+                            <img src="https://cdn-images-1.medium.com/max/1600/1*LruTBJfGS0SDPrR9icfrMw.gif" alt="Loading"
+                                class="center-block loanParamsLoader">
+                        </div>
+                    </div>
+
+                    <div id="quiz">
+
+                        <div class="question row">
+                            <h3><span class="col-xs-2 label label-warning" id="qid">1</span>
+                                <span class="col-xs-9" id="question"> How can you add a single line comment in a JavaScript?</span>
+                            </h3>
+                        </div>
+                        <ul>
+                            <li>
+                                <input type="radio" id="f-option" name="selector" value="1">
+                                <label for="f-option" class="element-animation">/*-- comment --*/</label>
+                                <div class="check"></div>
+                            </li>
+
+                            <li>
+                                <input type="radio" id="s-option" name="selector" value="2">
+                                <label for="s-option" class="element-animation">comment //</label>
+                                <div class="check">
+                                    <div class="inside"></div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <input type="radio" id="t-option" name="selector" value="3">
+                                <label for="t-option" class="element-animation">comment [ ]</label>
+                                <div class="check">
+                                    <div class="inside"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-muted">
+                    <span id="answer"></span>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div id="result-of-question" class="pulse animated" style="display: none;">
+                    <span id="totalCorrect" class="pull-right"></span>
+                    <table class="table table-hover table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Question No.</th>
+                                <th>Correct Answer</th>
+                                <th>Your Answer</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody id="quizResult"></tbody>
+                    </table>
+                    <div id="chartdiv" style="width: 640px; height: 400px;"></div>
+                    <div style="height:50px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

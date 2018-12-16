@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Secret Santa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="Play Secret Santa!">
+    <link rel="icon" href="http://icons.iconarchive.com/icons/flyinghearts/christmas/512/santa-icon.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div id="message">Not Enough Players!</div>
+    <div id="message2">Please Enter All Details Correctly!</div>
+    <div class="center">
+        <div class="holder">
+            <input type="text" id="pname" placeholder="Name">
+            <input type="number" id="cost" placeholder="Prefered Gift Amount">
+            <input type="password" id="secret" placeholder="Your Secret Santa Name">
+            <br>
+            <button onclick="add()">Add</button>
+            <button id="start" onclick="play()">Play</button>
+        </div>
+    </div>
+    <!-- Laughing Santa code taken from https://codemyui.com/laughing-santa-claus-in-pure-css/ -->
+    <div class="window">
+		<div class="santa">
+			<div class="head">
+				<div class="face">
+					<div class="redhat">
+						<div class="whitepart"></div>
+						<div class="redpart"></div>
+						<div class="hatball"></div>
+					</div>
+					<div class="eyes"></div>
+					<div class="beard">
+						<div class="nouse"></div>
+						<div class="mouth"></div>
+					</div>
+				</div>
+				<div class="ears"></div>
+			</div>
+			<div class="body"></div>
+		</div>
+	</div>
+	<div class="message">
+		<h1>Secret Santa!</h1>
+    </div>
+    <div id="result">
+        <div id="result-body"></div>
+        <br>
+        <div style="text-align: center;">
+                <div>Prefered Gift Amount</div><div id="prize">100</div>
+                <button id="close" onclick="closeIt()">Close</button></div>
+    </div>
+</body>
+
+</html>

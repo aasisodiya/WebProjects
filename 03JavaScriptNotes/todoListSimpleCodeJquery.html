@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <input id="input" type="text" placeholder="Enter your task!">
+    <button id="add">Add</button>
+    <div id="list">
+        <ul id="listitem">
+        </ul>
+    </div>
+</body>
+<script>
+    if (localStorage) {
+        console.log('Local Storage is Accessible!');
+    }
+    else {
+        console.log('Local Storage not Accessible!');
+    }
+    ////// In below code, I tried using key-value pairs
+    // var todoList = {};
+    // $(document).ready(function () {
+    //     $('div#list').css("color", "red");
+    //     $('#add').click(function () {
+    //         var input = $('#input').val();
+    //         if (input.length == 0)
+    //             console.log('Please Enter something!');
+    //         else {
+    //             $('ul#listitem').append('<li id = "item' + Object.keys(todoList).length + '">' + input + '</li>');
+    //             var key = "item" + Object.keys(todoList).length;
+    //             todoList[key] = input;
+    //             $('#input').val('');
+    //             console.log(todoList);
+    //         }
+    //     });
+    //     $(document).on('dblclick', 'li', function () {
+    //         var idRemove2 = $('li').index(this);
+    //         console.log('ideRem2' + idRemove2)
+    //         var idRemove = $(this).attr('id');
+    //         console.log('Removing : ' + idRemove);
+    //         $(this).fadeOut('fast');
+    //         $(this).remove();
+    //         delete todoList[idRemove];
+    //         console.log(todoList);
+    //     });
+    // });
+
+    var todoList = [];
+    $(document).ready(function () {
+        // $('div#list').css("color", "red");
+        $('#add').click(function () {
+            var input = $('#input').val();
+            if (input.length == 0)
+                console.log('Please Enter something!');
+            else {
+                $('ul#listitem').append('<li id = "item' + todoList.length + '">' + input + '</li>');
+                todoList[todoList.length] = input;
+                $('#input').val('');
+                // console.log(todoList);
+            }
+        });
+        $(document).on('dblclick', 'li', function () {
+            var idRemove = $('li').index(this);
+            todoList.splice(idRemove, 1);
+            $(this).fadeOut('slow');
+            setTimeout(() => {
+                remove(this);
+            }, 1000);
+            // console.log(todoList);
+        });
+
+        function remove(elem) {
+            console.log('ok');
+            $(elem).remove();
+        }
+    });
+</script>
+
+</html>
