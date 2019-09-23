@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVR | Burj Khalifa</title>
+    <meta name="description" content="SVR is Virtual Reality Education System">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../img/favicon.png" type="image" sizes="16x16">
+    <script src="../js/aframe-master.js"></script>
+    <script src="../js/skyGradient.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+    <a-scene>
+      <!-- Import all the assets files needed -->
+        <a-assets>
+          <a-asset-item id="burjkhalifa-obj" src="model.obj"></a-asset-item>
+          <a-asset-item id="burjkhalifa-mtl" src="https://cdn.aframe.io/wikipedia/model.mtl"></a-asset-item>
+          <a-asset-item id="floor" src="../img/green.png"></a-asset-item>
+        </a-assets>
+      <!-- /Import all the assets files needed -->
+      <!-- 3d Burj Khalifa -->
+        <a-entity obj-model="obj: #burjkhalifa-obj; mtl: #burjkhalifa-mtl" position="5 0.86" scale="0.005 0.005 0.005"></a-entity>
+        <!-- <a-plane color="green" height="500" width="500" rotation="-90 0 0" roughness="1"></a-plane> -->
+        <a-entity geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #floor; repeat: 10000 10000; transparent: true;metalness:0; roughness: 1;side:double;"></a-entity>
+      <!-- /3d Burj Khalifa -->
+    <!-- Sky, Camera and Crosshair Code -->
+      <a-entity id="sky"
+                  geometry="primitive: sphere; radius: 200;"
+                  material="shader: skyGradient; colorTop: #87ceeb; colorBottom: #2e86c1; side: back"></a-entity>
+      <a-entity position="30 0 10" rotation="0 60 0">
+        <a-camera wasd-controls-enabled="true"  wasd-controls="fly:true;">
+          <a-cursor cursor="fuse: true; fuseTimeout: 500"
+          position="0 0 -1"
+          geometry="primitive: ring;"
+          material="shader: flat" color="#ffa500"></a-cursor>
+        </a-camera>
+      </a-entity>
+    <!-- Sky, Camera and Crosshair Code --> 
+    </a-scene>
+    <!-- SECDesigns Logo Overlay -->
+    <div class="secdlogo"><img src="../img/svr.png"></div>
+    <!-- /SECDesigns Logo Overlay -->
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Project are meant purely for learning purpose">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="favicon.png" type="image/x-icon"/>
+    <title>Akash Design</title>
+</head>
+
+<body>
+        <div id="sky1" style="height: 100vh;">
+                <h1>SCROLL DOWN</h1>
+        </div>
+
+        <div class="shake static" style="height: 100vh;">
+            <object style="vertical-align: middle;">
+                <embed id="jet" src="jet.svg"></embed>
+            </object>
+        </div>
+    <div id="sky2">
+        <div class="shake" style="height: 100vh;">
+            
+        </div>
+        <div style="height: 50vh;">
+        </div>
+    </div>
+    <div id="sky3">
+        <div class="shake" style="height: 100vh;">
+            
+        </div>
+        <div style="height: 50vh;">
+        </div>
+    </div>
+    <div id="skylast">
+        <div class="shake" style="height: 100vh;">
+            
+        </div>
+    </div>
+    <style type="text/css">
+    div {
+        margin: 0;
+        text-align: center;
+        line-height: 100vh;
+    }
+    .static{
+        height: 100vh;
+        display: block;
+        position: fixed;
+        top: 10%;
+        left: 0;
+        right: 0;
+    }
+    
+    #sky1 {
+        background: url(bg2.jpg);
+        background-color: #000000;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    #sky2 {
+        background: url(bg4.jpg);
+        background-color: #000000;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    #sky3 {
+        background: url(bg3.jpg);
+        background-color: #000000;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    #skylast {
+        background: url(bg100.jpg);
+        background-color: #000000;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    body, h1 {
+        margin: 0;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 800;
+        font-size: 50px;
+        color: #29E8ED;
+    }
+    
+    #car {
+        height: 20%;
+    }
+    #jet {
+        height: 18%;
+        animation-fill-mode: both;
+        animation: shake 10s infinite;
+    }
+    .shake{
+      animation-name: shake;
+      animation-duration: 10s;
+    }
+    @keyframes shake {
+   0%, 100% {transform: translateX(0);} 
+   10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);} 
+   20%, 40%, 60%, 80% {transform: translateX(10px);} 
+} 
+    </style>
+</body>
+
+</html>

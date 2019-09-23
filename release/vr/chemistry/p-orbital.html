@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVR | P Orbitals</title>
+    <meta name="description" content="SVR is Virtual Reality Education System">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../img/favicon.png" type="image" sizes="16x16">
+    <script src="../js/aframe-master.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+    <a-scene>
+    <!-- Import all the assets files needed -->
+      <a-assets>
+        <img id="shadow" src="../img/shadow.png">
+        <img id="label1" src="img/px.png">
+        <img id="label2" src="img/py.png">
+        <img id="label3" src="img/pz.png">
+      </a-assets>
+    <!-- /Import all the assets files needed -->
+    <a-entity>
+    <!-- 3D Axis -->
+	    <!-- x Axis -->
+	    	<a-cylinder color="black" height="2" radius="0.005" position="0 1.4 0" rotation="0 0 90"></a-cylinder>
+	    <!-- x Axis -->
+	    <!-- y Axis -->
+	    	<a-cylinder color="black" height="2" radius="0.005" position="0 1.4 0"></a-cylinder>
+	    <!-- y Axis -->
+	    <!-- z Axis -->
+	    	<a-cylinder color="black" height="2" radius="0.005" position="0 1.4 0" rotation="90 0 0"></a-cylinder>
+	    <!-- z Axis -->
+    <!-- /3D Axis -->
+    <!-- Px Orbital -->
+	    <!-- Dumbell Code -->
+		    <a-entity position="0.3 1.4 0" rotation="0 0 90">
+			    <a-entity position="0 0.1 0">
+				    <a-cone color="blue" radius-bottom="0.0866025" radius-top="0" height="0.15" position="0 0.125 0"></a-cone><!-- Visualized Sphere Radius is R, Cone Height is 3R/2 and cone radius is R*sqrt3/2 -->
+				    <a-sphere color="blue" radius="0.1" position="0 0 0"></a-sphere>
+			    </a-entity>
+			    <a-entity position="0 0.5 0" rotation="180 0 0">
+				    <a-cone color="blue" radius-bottom="0.0866025" radius-top="0" height="0.15" position="0 0.125 0"></a-cone><!-- Visualized Sphere Radius is R, Cone Height is 3R/2 and cone radius is R*sqrt3/2 -->
+				    <a-sphere color="blue" radius="0.1" position="0 0 0"></a-sphere>
+			    </a-entity>
+	    <!-- Label Code -->
+	        <a-image src="#label1" position="0 -1 0" rotation="0 0 -90" scale="1 0.25 0"></a-image>
+	    <!-- /Label Code -->
+			</a-entity>
+	    <!-- /Dumbell Code -->
+    <!-- /Px Orbital -->
+    <!-- Py Orbital -->
+	    <!-- Dumbell Code -->
+		    <a-entity position="0 1.1 0">
+			    <a-entity position="0 0.1 0">
+				    <a-cone color="red" radius-bottom="0.0866025" radius-top="0" height="0.15" position="0 0.125 0"></a-cone><!-- Visualized Sphere Radius is R, Cone Height is 3R/2 and cone radius is R*sqrt3/2 -->
+				    <a-sphere color="red" radius="0.1" position="0 0 0"></a-sphere>
+			    </a-entity>
+			    <a-entity position="0 0.5 0" rotation="180 0 0">
+				    <a-cone color="red" radius-bottom="0.0866025" radius-top="0" height="0.15" position="0 0.125 0"></a-cone><!-- Visualized Sphere Radius is R, Cone Height is 3R/2 and cone radius is R*sqrt3/2 -->
+				    <a-sphere color="red" radius="0.1" position="0 0 0"></a-sphere>
+			    </a-entity>
+	    <!-- Label Code -->
+	        <a-image src="#label2" position="0 -1 0" rotation="0 0 -90" scale="1 0.25 0"></a-image>
+	    <!-- /Label Code -->
+			</a-entity>
+	    <!-- /Dumbell Code -->
+    <!-- /Py Orbital -->
+    <!-- Pz Orbital -->
+	    <!-- Dumbell Code -->
+		    <a-entity position="0 1.4 -0.3" rotation="0 90 90">
+			    <a-entity position="0 0.1 0">
+				    <a-cone color="green" radius-bottom="0.0866025" radius-top="0" height="0.15" position="0 0.125 0"></a-cone><!-- Visualized Sphere Radius is R, Cone Height is 3R/2 and cone radius is R*sqrt3/2 -->
+				    <a-sphere color="green" radius="0.1" position="0 0 0"></a-sphere>
+			    </a-entity>
+			    <a-entity position="0 0.5 0" rotation="180 0 0">
+				    <a-cone color="green" radius-bottom="0.0866025" radius-top="0" height="0.15" position="0 0.125 0"></a-cone><!-- Visualized Sphere Radius is R, Cone Height is 3R/2 and cone radius is R*sqrt3/2 -->
+				    <a-sphere color="green" radius="0.1" position="0 0 0"></a-sphere>
+			    </a-entity>
+	    <!-- Label Code -->
+	        <a-image src="#label3" position="0 -1 0" rotation="0 0 -90" scale="1 0.25 0"></a-image>
+	    <!-- /Label Code -->
+			</a-entity>
+	    <!-- /Dumbell Code -->
+    <!-- /Pz Orbital -->
+    <a-animation attribute="rotation" from="0 -360 0" to="0 0 0"  dur="5000" easing="linear"></a-animation>
+    </a-entity>
+    <!-- Hexagon Floor Below Code -->
+      <a-image position="0 -3 2" src="#shadow" rotation="-90 0 0" scale="6 6 6"></a-image>
+    <!-- /Hexagon Floor Below Code -->
+    <!-- Sky, Camera and Crosshair Code -->
+      <a-sky color="#fff"></a-sky>
+      <a-entity position="0 0 1.5">
+        <a-camera wasd-controls-enabled="true">
+          <a-cursor cursor="fuse: true; fuseTimeout: 500"
+          position="0 0 -1"
+          geometry="primitive: ring;"
+          material="shader: flat" color="#ffa500"></a-cursor>
+        </a-camera>
+      </a-entity>
+    <!-- Sky, Camera and Crosshair Code --> 
+    </a-scene>
+    <!-- SECDesigns Logo Overlay -->
+    <div class="secdlogo"><img src="../img/svr.png"></div>
+    <!-- /SECDesigns Logo Overlay -->
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVR | Chemistry</title>
+    <meta name="description" content="SVR is Virtual Reality System">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../img/favicon.png" type="image" sizes="16x16">
+    <script src="../js/aframe-master.js"></script>
+    <script type="text/javascript" src="../js/link.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+    <a-scene><!--stats-->
+      <a-assets>
+        <img id="svr" src="../img/svr.png">
+        <img id="space" src="../img/env/env-space.jpg">
+        <img id="sun" src="../img/env/sun.jpg">
+        <img id="shadow" src="../img/shadow.png">
+        <img id="erlang-germany" src="img/logo-erlang-germany.png">
+        <img id="palace-square-russia" src="img/logo-palace-square-russia.png">
+        <img id="rheingauer-dom-germany" src="img/logo-rheingauer-dom-germany.png">
+        <img id="st-lawrence-river" src="img/logo-st-lawrence-river.png">
+        <img id="wroclaw" src="img/logo-wroclaw.png">
+      </a-assets>
+      <!-- Menu Items -->
+        <a-entity position="0 0 5" rotation="0 0 0">
+          <a-box src="#erlang-germany" position="" height="0.8" width="0.8" depth="0.8" side="double"></a-box>
+              <a-box src="#erlang-germany" position="" height="0.75" width="0.75" depth="0.75" href="erlangen-germany.html" side="double"></a-box>
+          <a-box src="#palace-square-russia" position="1 0 0" height="0.8" width="0.8" depth="0.8" side="double"></a-box>
+              <a-box src="#palace-square-russia" position="1 0 0" height="0.75" width="0.75" depth="0.75" href="palace-square.html" side="double"></a-box>
+          <a-box src="#rheingauer-dom-germany" position="-1 0 0" height="0.8" width="0.8" depth="0.8" side="double"></a-box>
+              <a-box src="#rheingauer-dom-germany" position="-1 0 0" height="0.75" width="0.75" depth="0.75" href="rheingauer-dom.html" side="double"></a-box>
+          <a-box src="#st-lawrence-river" position="2 0 0" height="0.8" width="0.8" depth="0.8" side="double"></a-box>
+              <a-box src="#st-lawrence-river" position="2 0 0" height="0.75" width="0.75" depth="0.75" href="st-lawrence-river.html" side="double"></a-box>
+          <a-box src="#wroclaw" position="-2 0 0" height="0.8" width="0.8" depth="0.8" side="double"></a-box>
+              <a-box src="#wroclaw" position="-2 0 0" height="0.75" width="0.75" depth="0.75" href="wroclaw-city.html" side="double"></a-box>
+        </a-entity>
+      <!-- /Menu Items -->
+      <!-- Help Desk -->
+        <a-entity position="0 1 -1">
+          <a-text value="Instructions" color="#ffa500" align="center" position="0 0.5 0"></a-text>
+          <a-text value="1. Enter the box to view experiences \n 2. Walk with WASD buttons \n 3. Look around by holding left mouse button \n 4. Enter VR by pressing F button" color="#ffffff" align="left" position="-1 0 0" scale="0.5 0.5 0.5"></a-text>
+          <a-box color="#000000" height="1.5" width="2.5" depth="0.1" opacity="0.1" side="double"></a-box>
+        </a-entity>
+      <!-- /Help Desk -->
+      <!-- Walls -->
+        <a-entity position="0 0 1.5">
+          <!-- Right Wall -->
+          <a-box color="#414141" position="10 0 0" height="5" width="0.5" depth="20"></a-box>
+          <!-- /Right Wall -->
+          <!-- Left Wall -->
+          <a-box color="#414141" position="-10 0 0" height="5" width="0.5" depth="20"></a-box>
+          <!-- /Left Wall -->
+          <!-- Behind Wall -->
+          <a-box color="#212121" position="0 0 10" height="5" width="20" depth="0.5"></a-box>
+          <!-- /Behind Wall -->
+          <!-- Front Wall -->
+          <a-box color="#313131" position="0 0 -9.5" height="0.2" width="20" depth="0.5"></a-box>
+          <a-box color="#313131" position="0 0 -9.5" height="5" width="0.2" depth="0.5"></a-box>
+          <a-box color="#313131" position="0 0 -10" height="5" width="20" depth="0.5" opacity="0.2"></a-box>
+          <!-- /Front Wall -->
+          <!-- Roof -->
+          <a-box color="#313131" position="0 2.5 0" height="0.1" width="20" depth="20"></a-box>
+          <!-- /Roof -->
+          <!-- Floor -->
+          <a-box color="#313131" position="0 -2.5 0" height="0.1" width="20" depth="20" roughness="1"></a-box>
+          <!-- /Floor -->
+        </a-entity>
+      <!-- /Walls -->
+      <!-- Sun -->
+        <a-sphere src="#sun" position="0 0 -100" radius="20">
+          <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="200000" repeat="indefenite" easing="linear"></a-animation>
+        </a-sphere>
+      <!-- /Sun -->
+      <!-- Camera, Floor, Sky, Shadow, Light -->
+        <a-image position="0 -2 1" src="#shadow" rotation="-90 0 0" scale="6 6 6"></a-image>
+        <a-light color="white" type="ambient" position="0 0 0"></a-light>
+        <a-sky src="#space"></a-sky>
+        <a-entity position="0 -1.6 1.5">
+          <a-camera wasd-controls-enabled="true">
+            <a-cursor cursor="fuse: true; fuseTimeout: 500" position="0 0 0" geometry="primitive: ring;" color="#ffa500"></a-cursor>
+          </a-camera>
+        </a-entity>
+      <!-- /Camera, Floor, Sky, Shadow -->
+    </a-scene>
+    <!-- SECDesigns Logo Overlay -->
+    <div class="secdlogo"><img src="../img/svr.png"></div>
+    <!-- /SECDesigns Logo Overlay -->
+  </body>
+</html>

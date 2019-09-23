@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVR | Wrocław City in Poland</title>
+    <meta name="description" content="SVR is Virtual Reality Education System">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../img/favicon.png" type="image" sizes="16x16">
+    <script src="../js/aframe-master.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+    <a-scene>
+      <!-- Import all the assets files needed -->
+        <a-assets>
+          <img id="shadow" src="../img/shadow.png">
+          <img id="world" src="img/wroclaw-city.jpg">
+        </a-assets>
+      <!-- /Import all the assets files needed -->
+    <!-- Hexagon Floor Below Code -->
+      <a-image position="0 -3 0" src="#shadow" rotation="-90 0 0" scale="6 6 6"></a-image>
+    <!-- /Hexagon Floor Below Code -->
+    <!-- Sky, Camera and Crosshair Code -->
+      <a-sky src="#world"></a-sky>
+      <!-- Fact -->
+      <!-- Wrocław is a city on the Oder River in western Poland. It’s known for its Market Square, lined with elegant townhouses and featuring a modern fountain. Also on the square is the Gothic Old Town Hall, with its large astronomical clock. Nearby is the Panorama of Racławice, a painting depicting the 1794 battle for independence. The Centennial Hall auditorium, with its giant dome and tall spire, lies across the river. -->
+      <!-- /Fact -->
+      <a-entity>
+        <a-camera wasd-controls-enabled="false" rotation="0 150 0">
+          <a-cursor cursor="fuse: true; fuseTimeout: 500"
+          position="0 0 -1"
+          geometry="primitive: ring;"
+          material="shader: flat" color="#ffa500"></a-cursor>
+        </a-camera>
+      </a-entity>
+    <!-- Sky, Camera and Crosshair Code -->
+    </a-scene>
+    <!-- SECDesigns Logo Overlay -->
+    <div class="secdlogo"><img src="../img/svr.png"></div>
+    <!-- /SECDesigns Logo Overlay -->
+  </body>
+</html>

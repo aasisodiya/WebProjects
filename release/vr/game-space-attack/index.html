@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVR | Space Attack</title>
+    <meta name="description" content="SVR is Virtual Reality Education System">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../img/favicon.png" type="image" sizes="16x16">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="js/aframe-core.js"></script>
+    <script src="js/components/spawner.js"></script>
+    <script src="js/components/laser-behavior.js"></script>
+    <script src="js/components/collider.js"></script>
+    <script src="js/components/explode.js"></script>
+  </head>
+  <body>
+    <div class="score">Score: 0</div>
+    <div class="screen title-screen">
+      <div class="title">SPACE ATTACK</div>
+      <div class="start blink">Click to Start</div>
+      <div class="instructions">WASD keys to move and click to shoot</div>
+    </div>
+    <div class="screen end-screen">
+      <div class="end">Congratulations you saved the world!</div>
+    </div>
+    <a-scene stats="false">
+      <a-assets>
+        <a-mixin id="cube"
+                 geometry="primitive: box; height: 2; width: 2; depth: 2;"
+                 material="color: #ffa500; roughness: 1.0; metalness: 0.2;"></a-mixin>
+        <a-mixin id="laser"
+                 geometry="primitive: box; height: 2; width: 0.1; depth: 0.1"
+                 material="color: red;"
+                 laser-behavior collider></a-mixin>
+        <a-mixin id="enemy" explode="on: hit"></a-mixin>
+      </a-assets>
+      <!-- Targets First Row -->
+      <a-camera position="0 0 20"></a-camera>
+      <a-entity mixin="cube enemy" material="color: green" position="-17.5 5 -10"></a-entity>
+      <a-entity mixin="cube enemy" material="color: green" position="-14 5 -10"></a-entity>
+      <a-entity mixin="cube enemy" material="color: green" position="-10.5 5 -10"></a-entity>
+      <a-entity mixin="cube enemy" material="color: green" position="-7 5 -10"></a-entity>
+      <a-entity mixin="cube enemy" material="color: green" position="-3.5 5 -10"></a-entity>
+      <a-entity mixin="cube enemy" material="color: green" position="0 5 -10"></a-entity>
+      <a-entity mixin="cube enemy" material="color: green" position="3.5 5 -10"></a-entity>
+      <a-entity mixin="cube enemy" material="color: green" position="7 5 -10"></a-entity>
+      <a-entity mixin="cube enemy" material="color: green" position="10.5 5 -10"></a-entity>
+      <a-entity mixin="cube enemy" material="color: green" position="14 5 -10"></a-entity>
+      <a-entity mixin="cube enemy" material="color: green" position="17.5 5 -10"></a-entity>
+      <!-- /Targets First Row -->
+      <!-- Targets Second Row -->
+      <a-camera position="0 0 20"></a-camera>
+      <a-entity mixin="cube enemy" material="color: yellow" position="-17.5 5 -20"></a-entity>
+      <a-entity mixin="cube enemy" material="color: yellow" position="-14 5 -20"></a-entity>
+      <a-entity mixin="cube enemy" material="color: yellow" position="-10.5 5 -20"></a-entity>
+      <a-entity mixin="cube enemy" material="color: yellow" position="-7 5 -20"></a-entity>
+      <a-entity mixin="cube enemy" material="color: yellow" position="-3.5 5 -20"></a-entity>
+      <a-entity mixin="cube enemy" material="color: yellow" position="0 5 -20"></a-entity>
+      <a-entity mixin="cube enemy" material="color: yellow" position="3.5 5 -20"></a-entity>
+      <a-entity mixin="cube enemy" material="color: yellow" position="7 5 -20"></a-entity>
+      <a-entity mixin="cube enemy" material="color: yellow" position="10.5 5 -20"></a-entity>
+      <a-entity mixin="cube enemy" material="color: yellow" position="14 5 -20"></a-entity>
+      <a-entity mixin="cube enemy" material="color: yellow" position="17.5 5 -20"></a-entity>
+      <!-- /Targets Second Row -->
+      <!-- Targets Third Row -->
+      <a-camera position="0 0 20"></a-camera>
+      <a-entity mixin="cube enemy" material="color: blue" position="-17.5 5 -30"></a-entity>
+      <a-entity mixin="cube enemy" material="color: blue" position="-14 5 -30"></a-entity>
+      <a-entity mixin="cube enemy" material="color: blue" position="-10.5 5 -30"></a-entity>
+      <a-entity mixin="cube enemy" material="color: blue" position="-7 5 -30"></a-entity>
+      <a-entity mixin="cube enemy" material="color: blue" position="-3.5 5 -30"></a-entity>
+      <a-entity mixin="cube enemy" material="color: blue" position="0 5 -30"></a-entity>
+      <a-entity mixin="cube enemy" material="color: blue" position="3.5 5 -30"></a-entity>
+      <a-entity mixin="cube enemy" material="color: blue" position="7 5 -30"></a-entity>
+      <a-entity mixin="cube enemy" material="color: blue" position="10.5 5 -30"></a-entity>
+      <a-entity mixin="cube enemy" material="color: blue" position="14 5 -30"></a-entity>
+      <a-entity mixin="cube enemy" material="color: blue" position="17.5 5 -30"></a-entity>
+      <!-- /Targets Third Row -->
+      <!-- Shooter -->
+      <a-entity mixin="cube"
+                wasd-controls="acceleration: 400; wsEnabled: true"
+                position="0 -10 -10"
+                spawner="mixin: laser; on: mousedown"
+                cursor></a-entity>
+      <!-- /Shooter -->
+    </a-scene>
+    <script>
+      var titleEl = document.querySelector('.title-screen');
+      var endEl = document.querySelector('.end-screen');
+      var enemies = document.querySelectorAll('[mixin="cube enemy"]');
+      var deadEnemies = [];
+      var scoreEl = document.querySelector('.score');
+      var score = 0;
+      var increaseCounter = function(e) {
+        var enemy = e.currentTarget;
+        if (deadEnemies.indexOf(enemy) != -1) { return; }
+        deadEnemies.push(enemy);
+        score+=1;
+        scoreEl.innerHTML = 'Score: ' + score;
+        if (enemies.length === deadEnemies.length) {
+          endEl.style.display = 'block';
+        }
+      }
+      titleEl.addEventListener('click', function() { titleEl.style.display = 'none'; });
+      enemies = Array.prototype.slice.call(enemies);
+      enemies.forEach(function(enemyEl) {
+        enemyEl.addEventListener('hit', increaseCounter);
+      });
+    </script>
+    <!-- SECDesigns Logo Overlay -->
+    <div class="secdlogo"><img src="../img/svr.png"></div>
+    <!-- /SECDesigns Logo Overlay -->
+  </body>
+</html>

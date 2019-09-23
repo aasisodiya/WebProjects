@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVR | Trip to Planet Mars</title>
+    <meta name="description" content="SVR is Virtual Reality Education System">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../img/favicon.png" type="image" sizes="16x16">
+    <script src="../js/aframe-master.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+    <a-scene>
+      <!-- Import all the assets files needed -->
+        <a-assets>
+          <a-asset-item id="spaceship-obj" src="ship.obj"></a-asset-item>
+          <a-asset-item id="spaceship-mtl" src="ship.mtl"></a-asset-item>
+          <a-asset-item id="mars" src="mars.jpg"></a-asset-item>
+          <a-asset-item id="space" src="stars.jpg"></a-asset-item>
+        </a-assets>
+      <!-- /Import all the assets files needed -->
+      <!-- 3d spaceship -->
+        <a-obj-model src="#spaceship-obj" mtl="#spaceship-mtl" position="48 0 -106"></a-obj-model>
+      <!-- /3d spaceship -->
+      <!-- 3d planet mars -->
+      <a-sphere src="#mars" radius="20">
+      	<a-animation attribute="position" from="0 0 100" to="40 0 -20" dur="60000" easing="ease-in"></a-animation>
+      	<a-animation attribute="rotation" from="0 0 0" to="360 360 360" dur="500000" repeat="indefenite" easing="linear"></a-animation>
+      </a-sphere>
+      <!-- /3d planet mars -->
+      <!-- Text -->
+      <a-text value="Trip To Mars" color="#ffa500" position="-2 0 2" scale="1.5 1.5 1.5" side="double" rotation="0 180 0"></a-text>
+      <a-text value="Duration: 1 minute" color="#ffffff" position="-2 -0.3 2" scale="1 1 1" side="double" rotation="0 180 0"></a-text>
+      <a-text value="Tilt Your Device/Use Mouse to Control" color="#ffa500" position="1.8 -2 0" scale="1 1 1" side="double" rotation="0 180 0"></a-text>
+      <!-- /Text -->
+    <!-- Sky, Camera and Crosshair Code -->
+      <a-sky src="#space"><a-animation attribute="rotation" from="0 0 0" to="360 360 360" dur="1000000" easing="linear" repeat="indefenite"></a-animation></a-sky>
+      <a-entity position="0 0 0" rotation="0 180 0">
+        <a-camera wasd-controls-enabled="false" position="0 -1.6 6">
+          <a-cursor cursor="fuse: true; fuseTimeout: 500"
+          position="0 0 0"
+          geometry="primitive: ring;"
+          material="shader: flat" color="#ffa500"></a-cursor>
+        </a-camera>
+      </a-entity>
+    <!-- Sky, Camera and Crosshair Code --> 
+    </a-scene>
+    <!-- SECDesigns Logo Overlay -->
+    <div class="secdlogo"><img src="../img/svr.png"></div>
+    <!-- /SECDesigns Logo Overlay -->
+  </body>
+</html>

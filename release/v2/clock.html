@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Akash Design | Clock</title>
+
+        
+        <!-- Custom Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="icon" href="favicon.png" type="image/x-icon"/>
+        
+
+    </head>
+
+    <body onload="startTime()">
+        <div id="clock">
+
+        </div>
+    </body>
+        <script type="text/javascript">
+            function startTime() {
+                var today = new Date();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                var s = today.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                document.getElementById('clock').innerHTML =
+                h + ":" + m + ":" + s;
+                var t = setTimeout(startTime, 500);
+            }
+            function checkTime(i) {
+                if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+                return i;
+            }
+        </script>
+        <style type="text/css">
+            body {
+                font-family: 'Orbitron', sans-serif;
+                margin: 0;
+                background: #000;
+                background-image: url(clock.png);
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            #clock {
+                height: 100vh;
+                text-align: center;
+                line-height: 100vh;
+                background: rgba(0, 0, 0, 0.14);
+                font-size: 600%;
+                color: white;
+                text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #228DFF, 0 0 70px #228DFF, 0 0 8px #228DFF, 0 0 10px #228DFF, 0 0 15px #228DFF;
+            }
+        </style>
+</html>

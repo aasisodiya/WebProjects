@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVR | Earth at Night &amp; Moon</title>
+    <meta name="description" content="SVR is Virtual Reality Education System">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../img/favicon.png" type="image" sizes="16x16">
+    <script src="../js/aframe-master.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+    <a-scene>
+      <!-- Import all the assets files needed -->
+        <a-assets>
+          <img id="shadow" src="../img/shadow.png">
+          <img id="earth" src="earth3d.jpg">
+          <img id="moon" src="moon.jpg">
+        </a-assets>
+      <!-- /Import all the assets files needed -->
+      <!-- <a-light intensity="2" color="#ffffff" position="-5 1 1"></a-light> -->
+      <!-- Earth -->
+      <a-sphere src="#earth" radius="2" position="0 1 -3" side="double" roughness="1">
+        <a-animation dur="100000" from="0 0 0" to="0 360 0" attribute="rotation" easing="linear" repeat="indefinite"></a-animation>
+      </a-sphere>
+      <!-- /Earth -->
+      <!-- moon -->
+      <a-entity rotation="90 90 0">
+      <a-sphere src="#moon" radius="0.125" position="3 3 -4" side="double">
+        <a-animation dur="10000" from="0 360 0" to="0 0 0" attribute="rotation" easing="linear" repeat="indefinite"></a-animation>
+      </a-sphere>
+      </a-entity>
+      <!-- /moon -->
+    <!-- Hexagon Floor Below Code -->
+      <a-image position="0 -3 2" src="#shadow" rotation="-90 0 0" scale="6 6 6"></a-image>
+    <!-- /Hexagon Floor Below Code -->
+    <!-- Sky, Camera and Crosshair Code -->
+      <a-sky color="#000"></a-sky>
+      <a-entity position="0 0 1.5">
+        <a-camera wasd-controls-enabled="true">
+          <a-cursor cursor="fuse: true; fuseTimeout: 500"
+          position="0 0 -1"
+          geometry="primitive: ring;"
+          material="shader: flat" color="#ffa500"></a-cursor>
+        </a-camera>
+      </a-entity>
+    <!-- Sky, Camera and Crosshair Code -->
+    </a-scene>
+    <!-- SECDesigns Logo Overlay -->
+    <div class="secdlogo"><img src="../img/svr.png"></div>
+    <!-- /SECDesigns Logo Overlay -->
+  </body>
+</html>

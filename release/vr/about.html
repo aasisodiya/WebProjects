@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVR | Facts About SVR</title>
+    <meta name="description" content="SVR is Virtual Reality System">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="img/favicon.png" type="image" sizes="16x16">
+    <script src="js/aframe-master.js"></script>
+    <script type="text/javascript" src="js/link.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <a-scene><!--stats-->
+      <a-assets>
+        <img id="svr" src="img/svr.png">
+        <img id="space" src="img/env/env-space.jpg">
+        <img id="shadow" src="img/shadow.png">
+        <img id="digital-assets" src="img/logo/logo-digital-assets.png">
+        <img id="html-css" src="img/logo/logo-html-css.png">
+        <img id="js" src="img/logo/logo-js.png">
+        <img id="release" src="img/logo/logo-release.png">
+        <img id="time" src="img/logo/logo-time.png">
+      </a-assets>
+      <!-- World -->
+      <a-box src="#digital-assets" position="0 0 0" height="0.8" width="0.8" depth="0.8" side="double"></a-box>
+      <a-box src="#html-css" position="1 0 0" height="0.8" width="0.8" depth="0.8" side="double"></a-box>
+      <a-box src="#js" position="2 0 1" height="0.8" width="0.8" depth="0.8" side="double"></a-box>
+      <a-box src="#release" position="-1 0 0" height="0.8" width="0.8" depth="0.8" side="double"></a-box>
+      <a-box src="#time" position="-2 0 1" height="0.8" width="0.8" depth="0.8" side="double"></a-box>
+      <!-- Camera, Floor, Sky, Shadow, Light -->
+        <a-image position="0 -2 1" src="#shadow" rotation="-90 0 0" scale="6 6 6"></a-image>
+        <a-sky src="#space"></a-sky>
+        <a-entity position="0 -1.6 1.5">
+          <a-camera wasd-controls-enabled="true">
+            <a-cursor cursor="fuse: true; fuseTimeout: 500" position="0 0 0" geometry="primitive: ring;" color="#ffa500"></a-cursor>
+          </a-camera>
+        </a-entity>
+      <!-- /Camera, Floor, Sky, Shadow -->
+    </a-scene>
+    <!-- SECDesigns Logo Overlay -->
+    <div class="secdlogo"><img src="img/svr.png"></div>
+    <!-- /SECDesigns Logo Overlay -->
+  </body>
+</html>

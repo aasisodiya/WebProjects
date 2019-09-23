@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVR | sp3 Hybridization Tetrahedral</title>
+    <meta name="description" content="SVR is Virtual Reality Education System">
+    <meta name="author" content="Akshay, Parag, Mangesh">
+    <link rel="icon" href="../img/favicon.png" type="image" sizes="16x16">
+    <script src="../js/aframe-master.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+	<a-scene>
+      <!-- Import all the assets files needed -->
+        <a-assets>
+          <img id="shadow" src="../img/shadow.png">
+        </a-assets>
+      <!-- /Import all the assets files needed -->
+      <!-- Hybridization Structure -->
+	    <a-entity position="0 1.5 0" rotation="0 45 0" scale="0.1 0.1 0.1">
+	     <a-cylinder height="4" radius="0.5" color ="blue" position="4 2 0" rotation="0 0 45"></a-cylinder>
+		 <a-sphere radius="1" color="red" position="6 0 0"></a-sphere>
+		 
+		 <a-sphere radius="1" color="red" position="-2 0 0"></a-sphere>
+		 <a-cylinder height="4" radius="0.5" color ="blue" position="0 2 0" rotation="0 0 -45"></a-cylinder>
+		 <a-sphere radius="1" color="red" position="2 4 0"></a-sphere>
+
+	     <a-sphere radius="1" color="red" position="2 8 4"></a-sphere>
+	     <a-cylinder height="4" radius="0.5" color ="blue" position="2 6 2" rotation="45 0 0"></a-cylinder>
+
+	     <a-sphere radius="1" color="red" position="2 8 -4"></a-sphere>
+	     <a-cylinder height="4" radius="0.5" color ="blue" position="2 6 -2" rotation="-45 0 0"></a-cylinder><a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="10000" repeat="idefenite" easing="linear"></a-animation>
+		</a-entity>
+	  <!-- Hybridization Structure -->
+    <!-- Hexagon Floor Below Code -->
+      <a-image position="0 -3 2" src="#shadow" rotation="-90 0 0" scale="6 6 6"></a-image>
+    <!-- /Hexagon Floor Below Code -->
+    <!-- Sky, Camera and Crosshair Code -->
+      <a-sky color="#fff"></a-sky>
+      <a-entity position="0 0 1.5">
+        <a-camera wasd-controls-enabled="true">
+          <a-cursor cursor="fuse: true; fuseTimeout: 500"
+          position="0 0 -1"
+          geometry="primitive: ring;"
+          material="shader: flat" color="#ffa500"></a-cursor>
+        </a-camera>
+      </a-entity>
+    <!-- Sky, Camera and Crosshair Code --> 
+    </a-scene>
+    <!-- SECDesigns Logo Overlay -->
+    <div class="secdlogo"><img src="../img/svr.png"></div>
+    <!-- /SECDesigns Logo Overlay -->
+  </body>
+</html>

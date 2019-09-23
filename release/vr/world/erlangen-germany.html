@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVR | Erlangen City in Germany</title>
+    <meta name="description" content="SVR is Virtual Reality Education System">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../img/favicon.png" type="image" sizes="16x16">
+    <script src="../js/aframe-master.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+    <a-scene>
+      <!-- Import all the assets files needed -->
+        <a-assets>
+          <img id="shadow" src="../img/shadow.png">
+          <img id="world" src="img/erlangen-germany.jpg">
+        </a-assets>
+      <!-- /Import all the assets files needed -->
+    <!-- Hexagon Floor Below Code -->
+      <a-image position="0 -3 0" src="#shadow" rotation="-90 0 0" scale="6 6 6"></a-image>
+    <!-- /Hexagon Floor Below Code -->
+    <!-- Sky, Camera and Crosshair Code -->
+      <a-sky src="#world"></a-sky>
+      <!-- Fact -->
+      <!-- Erlangen is a Middle Franconian city in Bavaria, Germany. It is located north-west of Nuremberg at the confluence of the river Regnitz and its large tributary, the Schwabach. Erlangen has more than 100,000 inhabitants. -->
+      <!-- /Fact -->
+      <a-entity>
+        <a-camera wasd-controls-enabled="false" rotation="0 150 0">
+          <a-cursor cursor="fuse: true; fuseTimeout: 500"
+          position="0 0 -1"
+          geometry="primitive: ring;"
+          material="shader: flat" color="#ffa500"></a-cursor>
+        </a-camera>
+      </a-entity>
+    <!-- Sky, Camera and Crosshair Code -->
+    </a-scene>
+    <!-- SECDesigns Logo Overlay -->
+    <div class="secdlogo"><img src="../img/svr.png"></div>
+    <!-- /SECDesigns Logo Overlay -->
+  </body>
+</html>

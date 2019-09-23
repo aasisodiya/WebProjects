@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVR | Space Ride</title>
+    <meta name="description" content="SVR is Virtual Reality Education System">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../img/favicon.png" type="image" sizes="16x16">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.5.0/aframe.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+    <a-scene>
+      <!-- Import all the assets files needed -->
+        <a-assets>
+        	<a-asset-item id="ship-obj" src="SpaceShip.obj"></a-asset-item>
+        	<a-asset-item id="ship-mtl" src="SpaceShip.mtl"></a-asset-item>
+        	<a-asset-item id="stars" src="stars.jpg"></a-asset-item>
+        </a-assets>
+      <!-- /Import all the assets files needed -->
+      <a-entity static-body geometry="primitive: plane; height: 5000; width: 5000" position="0 -0.5 -5" rotation="-90 0 0" material="shader: flat; side:double; opacity:0.5; src: url(shadow.png); repeat: 2001 2001"></a-entity>
+      <!-- Sky, Camera and Crosshair Code -->
+          <a-sky src="#stars"></a-sky>
+          <a-entity position="0 0 4">
+          <a-camera wasd-controls-enabled="true" wasd-controls="fly:true;">
+          	<a-obj-model src="#ship-obj" mtl="#ship-mtl" position="0 -0.5 -1.5" scale="0.1 0.1 0.1" rotation="0 -180 0"></a-obj-model>
+            <a-cursor cursor="fuse: true; fuseTimeout: 500" position="0 0 -1" geometry="primitive: ring;" material="shader: flat" color="#ffa500"></a-cursor>
+          </a-camera>
+          </a-entity>
+      <!-- Sky, Camera and Crosshair Code --> 
+    </a-scene>
+      <!-- SECDesigns Logo Overlay -->
+        <div class="secdlogo"><img src="../img/svr.png"></div>
+      <!-- /SECDesigns Logo Overlay -->
+  </body>
+</html>

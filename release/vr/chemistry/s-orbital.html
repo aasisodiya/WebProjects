@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVR | S Orbitals</title>
+    <meta name="description" content="SVR is Virtual Reality Education System">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../img/favicon.png" type="image" sizes="16x16">
+    <script src="../js/aframe-master.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+    <a-scene>
+      <!-- Import all the assets files needed -->
+        <a-assets>
+          <img id="shadow" src="../img/shadow.png">
+          <img id="label1" src="img/1s.png">
+          <img id="label2" src="img/2s.png">
+          <img id="label3" src="img/3s.png">
+        </a-assets>
+      <!-- /Import all the assets files needed -->
+      <!-- 1s orbital -->
+      <a-entity rotation="0 0 0" position="0 1 -2">
+        <a-sphere radius="0.5" color="#ffff00" opacity="1"></a-sphere>
+        <a-image src="#label1" position="0 1.5 0" rotation="0 0 0" scale="1 0.25 0"></a-image>
+      </a-entity>
+      <!-- 2s orbital -->
+      <a-entity rotation="0 0 0" position="3 1 1">
+        <a-sphere radius="0.8" color="#ff0000" opacity="0.5" side="double" theta-start="0" rotation="0 90 0">
+          <a-animation attribute="phi-length" fill="forwards" from="0" to="360" dur="8000" repeat="indefinite"></a-animation>
+        </a-sphere>
+        <a-sphere radius="0.5" color="#ffff00" opacity="1"></a-sphere>
+        <a-image src="#label2" position="0 1.5 0" rotation="0 270 0" scale="1 0.25 0"></a-image>
+      </a-entity>
+      <!-- 3s orbital -->
+      <a-entity rotation="0 90 0" position="-4 1 1">
+        <a-sphere radius="1" color="#ffa500" opacity="1" theta-start="0" side="double" phi-length="-180" rotation="0 150 0">
+          <a-animation attribute="phi-length" fill="forwards" from="0" to="360" dur="8000" repeat="indefinite"></a-animation>
+        </a-sphere>
+        <a-sphere radius="0.8" color="#ff0000" opacity="0.5" side="double" theta-start="0"></a-sphere>
+        <a-sphere radius="0.5" color="#ffffff" opacity="1"></a-sphere>
+        <a-image src="#label3" position="0 1.5 0" rotation="0 0 0" scale="1 0.25 0"></a-image>
+      </a-entity>
+    <!-- Hexagon Floor Below Code -->
+      <a-image position="0 -3 2" src="#shadow" rotation="-90 0 0" scale="6 6 6"></a-image>
+    <!-- /Hexagon Floor Below Code -->
+    <!-- Sky, Camera and Crosshair Code -->
+      <a-sky color="#fff"></a-sky>
+      <a-entity position="0 0 1.5">
+        <a-camera wasd-controls-enabled="true">
+          <a-cursor cursor="fuse: true; fuseTimeout: 500"
+          position="0 0 -1"
+          geometry="primitive: ring;"
+          material="shader: flat" color="#ffa500"></a-cursor>
+        </a-camera>
+      </a-entity>
+    <!-- Sky, Camera and Crosshair Code -->
+    </a-scene>
+    <!-- SECDesigns Logo Overlay -->
+    <div class="secdlogo"><img src="../img/svr.png"></div>
+    <!-- /SECDesigns Logo Overlay -->
+  </body>
+</html>

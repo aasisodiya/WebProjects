@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVR | Saint Lawrence River</title>
+    <meta name="description" content="SVR is Virtual Reality Education System">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../img/favicon.png" type="image" sizes="16x16">
+    <script src="../js/aframe-master.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+    <a-scene>
+      <!-- Import all the assets files needed -->
+        <a-assets>
+          <img id="shadow" src="../img/shadow.png">
+          <img id="world" src="img/st-lawrence-river.png">
+        </a-assets>
+      <!-- /Import all the assets files needed -->
+    <!-- Hexagon Floor Below Code -->
+      <a-image position="0 -3 0" src="#shadow" rotation="-90 0 0" scale="6 6 6"></a-image>
+    <!-- /Hexagon Floor Below Code -->
+    <!-- Sky, Camera and Crosshair Code -->
+      <a-sky src="#world"></a-sky>
+      <!-- Fact -->
+      <!-- The Saint Lawrence River is a large river in the middle latitudes of North America. The Saint Lawrence River flows in a roughly north-easterly direction, connecting the Great Lakes with the Atlantic Ocean and forming the primary drainage outflow of the Great Lakes Basin. It traverses the Canadian provinces of Quebec and Ontario, and is part of the international boundary between Ontario, Canada, and the U.S. state of New York. This river also provides the basis of the commercial Saint Lawrence Seaway. -->
+      <!-- /Fact -->
+      <a-entity>
+        <a-camera wasd-controls-enabled="false" rotation="0 150 0">
+          <a-cursor cursor="fuse: true; fuseTimeout: 500"
+          position="0 0 -1"
+          geometry="primitive: ring;"
+          material="shader: flat" color="#ffa500"></a-cursor>
+        </a-camera>
+      </a-entity>
+    <!-- Sky, Camera and Crosshair Code -->
+    </a-scene>
+    <!-- SECDesigns Logo Overlay -->
+    <div class="secdlogo"><img src="../img/svr.png"></div>
+    <!-- /SECDesigns Logo Overlay -->
+  </body>
+</html>

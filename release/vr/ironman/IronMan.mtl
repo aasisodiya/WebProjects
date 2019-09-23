@@ -1,0 +1,44 @@
+newmtl blinn1SG
+illum 4
+Kd 0.66 0.14 0.06
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl blinn2SG
+illum 4
+Kd 0.76 0.71 0.30
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl blinn3SG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl face1SG
+illum 4
+Kd 0.48 0.15 0.19
+Ka 0.30 0.30 0.30
+Tf 1.00 1.00 1.00
+bump -s 0.125 0.125 rusty.jpg -bm 0.005
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 8.00
+newmtl faceSG
+illum 4
+Kd 0.76 0.71 0.30
+Ka 0.30 0.30 0.30
+Tf 1.00 1.00 1.00
+bump -s 0.333333 0.333333 rusty.jpg -bm 0.02
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00

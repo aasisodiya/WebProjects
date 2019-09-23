@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVR | Recon Flyer</title>
+    <meta name="description" content="SVR is Virtual Reality Education System">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../img/favicon.png" type="image" sizes="16x16">
+    <script src="../js/aframe-master.js"></script>
+    <script src="../js/skyGradient.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+  </head>
+  <body>
+    <a-scene>
+      <!-- Import all the assets files needed -->
+        <a-assets>
+          <a-asset-item id="reconflyer-obj" src="Recon_Flyer.obj"></a-asset-item>
+          <a-asset-item id="reconflyer-mtl" src="Recon_Flyer.mtl"></a-asset-item>
+          <img id="shadow" src="../img/shadow.png">
+        </a-assets>
+      <!-- /Import all the assets files needed -->
+      <!-- 3d Recon Flyer Created by Herminio Nieves @2013 -->
+        <a-entity obj-model="obj: #reconflyer-obj; mtl: #reconflyer-mtl" position="0 0 -5" scale="0.03 0.03 0.03" rotation="24 -26 -18">
+          <a-animation attribute="position" from="0 100 -200" to="0 0 -5" dur="15000" easing="ease-out"></a-animation>
+          <a-animation attribute="rotation" from="90 0 0" to="0 0 0" dur="15000" easing="ease-out"></a-animation>
+        </a-entity>
+      <!-- /3d Recon Flyer Created by Herminio Nieves @2013 -->
+    <!-- Sky, Floor, Camera and Crosshair Code -->
+    <a-image position="0 -3 1" src="#shadow" rotation="-90 0 0" scale="6 6 6"></a-image>
+    <a-sky color="#eee"></a-sky>
+        <a-camera wasd-controls-enabled="true">
+          <a-cursor cursor="fuse: true; fuseTimeout: 500"
+          position="0 0 -1"
+          geometry="primitive: ring;"
+          material="shader: flat" color="#ffa500"></a-cursor>
+        </a-camera>
+      </a-entity>
+    <!-- Sky, Camera and Crosshair Code -->
+    </a-scene>
+    <!-- SECDesigns Logo Overlay -->
+    <div class="secdlogo"><img src="../img/svr.png"></div>
+    <!-- /SECDesigns Logo Overlay -->
+  </body>
+</html>
