@@ -1,0 +1,54 @@
+body {
+    font-family: 'Exo 2', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#holder {
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 50%);
+    color: white;
+    margin: 0;
+    padding: 50px;
+}
+
+#playground {
+    height: calc(100vh - 182px);
+    width: 100%;
+    background-color: rgba(238, 238, 238, 0.486);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative; /*If this is not used then the ripple falls in wrong location and overflow also doesn't work*/
+}
+
+span {
+    background: rgba(0, 0, 0, 0.397);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: ripple 1s linear infinite;
+}
+
+@keyframes ripple {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 0.5;
+    }
+    25% {
+        width: 200px;
+        height: 200px;
+        opacity: 0.5;
+    }
+    50% {
+        width: 250px;
+        height: 250px;
+        opacity: 0.5;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
