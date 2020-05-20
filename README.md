@@ -13,3 +13,4 @@
 - https://aasisodiya.github.io/WebProjects/08FancyScrollBar/
 - https://aasisodiya.github.io/WebProjects/09LightsaberScrollBar/
 - https://aasisodiya.github.io/WebProjects/10RippleEffect/
+- https://aasisodiya.github.io/WebProjects/11Calculator/
