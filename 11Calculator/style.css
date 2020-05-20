@@ -45,9 +45,8 @@ body {
     color: #111111;
 }
 
-.calculator span.clear {
-    grid-column: span 2;
-    width: 120px;
+.calculator span.clear, span.del {
+    grid-column: span 1;
     background: #ff3052;
 }
 

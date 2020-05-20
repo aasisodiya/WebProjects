@@ -14,6 +14,7 @@
     <form class = "calculator" name="calc">
         <input type="text" class="value" name="txt" readonly>
         <span class="num clear" onclick="document.calc.txt.value = ''">C</span>
+        <span class="num del" onclick="deleteLast()">&larr;</span>
         <span class="num" onclick="document.calc.txt.value += '/'">/</span>
         <span class="num" onclick="document.calc.txt.value += '*'">*</span>
         <span class="num" onclick="document.calc.txt.value += '7'">7</span>
