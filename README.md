@@ -14,3 +14,6 @@
 - https://aasisodiya.github.io/WebProjects/09LightsaberScrollBar/
 - https://aasisodiya.github.io/WebProjects/10RippleEffect/
 - https://aasisodiya.github.io/WebProjects/11Calculator/
+- https://aasisodiya.github.io/WebProjects/12VehicleScrollBar/
+- https://aasisodiya.github.io/WebProjects/13IsometricPage/
+- https://aasisodiya.github.io/WebProjects/14NeumorphicButtons/

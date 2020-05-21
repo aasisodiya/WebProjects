@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to top left, #121212, #535353);
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container p {
+    color: rgb(255, 123, 0);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.container label {
+    position: relative;
+}
+
+.container label input {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.container label .fa {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: #091921;
+    line-height: 40px;
+    text-align: center;
+    margin:  0 4px;
+    color: #313131;
+    font-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+    2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.container label .fa:hover {
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+    2px 2px 6px rgba(0, 0, 0, 0.8),
+    inset -1px -1px 10px rgba(255, 255, 255, 0.05),
+    inset 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container label input:checked ~ .fa#redpill {
+    color: #ff3300;
+    box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 0 5px #ff1e00,
+    0 0 20px #ff0037;
+}
+
+.container label input:checked ~ .fa#bluepill {
+    color: #0084ff;
+    box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 0 5px #00fff1,
+    0 0 20px #00fff1;
+}
+
+#redpill {
+    color: red;
+}
+
+#bluepill {
+    color: #0084ff;
+}
