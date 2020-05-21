@@ -1,5 +1,5 @@
 let debug = document.getElementById("debug");
-let debugging = true;
+let debugging = false;
 
 let directionHelper = 0;
 let truckicon = document.getElementById("itruck");

@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top, purple, indigo);
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul li {
+    list-style: none;
+    margin: 0 40px;
+}
+
+ul li a .fa {
+    font-size: 40px;
+    color: #00eeff;
+    line-height: 80px;
+    transition: .5s;
+}
+
+ul li a {
+    position: relative;
+    text-align: center;
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: #121212;
+    transform:  perspective(1000px) rotate(-30deg) skew(25deg) translate(0,0);
+    transition: .5s;
+    box-shadow: -20px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+ul li a::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    height: 100%;
+    width: 20px;
+    background: #252525;
+    transition: .5s;
+    transform: rotate(0deg) skewY(-45deg);
+}
+
+ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: -10px;
+    height: 20px;
+    width: 100%;
+    background: #3f3f3f;
+    transition: .5s;
+    transform: rotate(0deg) skewX(-45deg);
+}
+
+ul li a:hover {
+    transform:  perspective(1000px) rotate(-30deg) skew(25deg) translate(20px,-20px);
+}
+
+ul li:nth-child(1) a:hover {
+    box-shadow: -50px 50px 40px rgba(255, 0, 0, 0.541);
+}
+ul li:nth-child(2) a:hover {
+    box-shadow: -50px 50px 40px rgba(255, 166, 0, 0.425);
+}
+ul li:nth-child(3) a:hover {
+    box-shadow: -50px 50px 40px rgba(255, 255, 0, 0.562);
+}
+ul li:nth-child(4) a:hover {
+    box-shadow: -50px 50px 40px rgba(172, 255, 47, 0.541);
+}
+ul li:nth-child(5) a:hover {
+    box-shadow: -50px 50px 40px rgba(47, 255, 57, 0.582);
+}
+
+ul li:nth-child(1):hover .fa {
+    color: red;
+}
+ul li:nth-child(2):hover .fa {
+    color: orange;
+}
+ul li:nth-child(3):hover .fa {
+    color: yellow;
+}
+ul li:nth-child(4):hover .fa {
+    color: greenyellow;
+}
+ul li:nth-child(5):hover .fa {
+    color: rgb(47, 255, 57);
+}
