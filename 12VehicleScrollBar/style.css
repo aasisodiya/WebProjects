@@ -1,0 +1,58 @@
+* {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    text-align: justify;
+}
+
+div.container {
+    background: linear-gradient(to bottom, lightblue, orange);
+    padding: 25px;
+}
+
+p {
+    padding: 20px 0;
+}
+
+/* Hide default scroll bar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+div#debug {
+    background-color: black;
+    height: 20px;
+    position: fixed;
+    color: white;
+}
+
+div#road {
+    position: fixed;
+    bottom: 0;
+    height: 10px;
+    width: 100%;
+    background: linear-gradient(to top, #000000, #333333);
+}
+
+div#truck {
+    position: fixed;
+    bottom: 0;
+    height: 35px;
+    animation: travel 1s;
+    transition: .1s; /*For Smooth Transition*/
+}
+
+i#itruck {
+    transform: rotateY(180deg);
+    color: #2e2e2e;
+    font-size: 30px;
+}
+
+/* Animation for vehicle coming into frame */
+@keyframes travel {
+    0% {
+        left: -30px;
+    }
+    100% {
+        left: 0px;
+    }
+}
