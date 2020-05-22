@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+}
+
+.container:nth-child(1) { /*First Div with class container*/
+    background: linear-gradient(to top left, #dadada, #b9faff);
+}
+
+.container:nth-child(2) { /*Second Div with class container*/
+    background: linear-gradient(to top right, indigo, purple);
+}
+
+.left, .right {
+    position: absolute;
+    height: 100vh;
+    width: 50vw;
+    overflow: scroll;
+}
+
+#debug {
+    position: fixed;
+    height: 6px;
+    bottom: 0;
+    background: black;
+    color: white;
+    font-size: 5px;
+}
+
+.right {
+    background: #212121;
+    right: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.textHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Using Just, Above 4 Properties Text/Content got right in the middle */
+}
+
+i {
+    font-size: 100px !important;
+    position: fixed;
+    transition: 1s;
+}
+
+.fa-sun-o {
+    color: yellow;
+}
+.fa-moon-o {
+    color: grey;
+}
