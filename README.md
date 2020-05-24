@@ -19,3 +19,4 @@
 - https://aasisodiya.github.io/WebProjects/14NeumorphicButtons/
 - https://aasisodiya.github.io/WebProjects/15SunAndMoon/
 - https://aasisodiya.github.io/WebProjects/16Menu/
+- https://aasisodiya.github.io/WebProjects/17MasonryGrid/
