@@ -21,3 +21,4 @@
 - https://aasisodiya.github.io/WebProjects/16Menu/
 - https://aasisodiya.github.io/WebProjects/17MasonryGrid/
 - https://aasisodiya.github.io/WebProjects/18SVGLineAnimation/
+- https://aasisodiya.github.io/WebProjects/19TextAnimation/
