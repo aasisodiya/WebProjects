@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="Projectile Motion Calculator">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectile Motion Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h1>Inputs</h1>
+                <hr>
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon">Angle</span>
+                    <input type="number" class="form-control" placeholder="Degree" id="angle" value="30">
+                    <div class="input-group-addon">Degrees</div>
+                </div>
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon">Velocity</span>
+                    <input type="number" class="form-control" placeholder="meter/seconds" id="velocity" value="10">
+                    <div class="input-group-addon">meters/second</div>
+                </div>
+                <hr>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button id="calculate" class="btn btn-success" type="button">Calc!</button>
+                    </span>
+                    <div class="input-group-addon">@</div>
+                    <input id="time" type="number" class="form-control" placeholder="0" value="0">
+                    <div class="input-group-addon">second</div>
+                </div>
+                <hr>
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon">Precision</span>
+                    <input type="number" class="form-control" placeholder="0-20" value="2" id="precision">
+                </div>
+                <div class="input-group input-group-sm">
+                    <span class="input-group-addon">Gravity</span>
+                    <input type="number" class="form-control" placeholder="m/sec^2" value="10" id="gravity" min="1">
+                    <div class="input-group-addon">meters/second<sup>2</sup></sup></div>
+                </div>
+                <hr>
+                <p>Note: Angle > 90 degrees won't show up properly on Graph & refresh the page to clear the Graph</p>
+                <hr>
+                <h5>Enjoy!</h5>
+            </div>
+            <div class="col-sm-8">
+                <h1>Outputs</h1>
+                <hr>
+                <div class="row" id="diagram">
+                    <canvas id="myCanvas" width = 400 height=300 style="border:1px solid #d3d3d3;">
+                        Your browser does not support the HTML5 canvas tag.</canvas>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">V<sub>x-initial</sub></span>
+                            <input type="number" class="form-control" placeholder="meter/seconds" disabled id="vx"
+                                value="0">
+                            <div class="input-group-addon">meters/second</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">V<sub>y-initial</sub></span>
+                            <input type="number" class="form-control" placeholder="meter/seconds" disabled id="vy"
+                                value="0">
+                            <div class="input-group-addon">meters/second</div>
+                        </div>
+                    </div>
+                </div>
+                Components of velocity at time <span class="timec">0</span> sec/s
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">V<sub>xt</sub></span>
+                            <input type="number" class="form-control" placeholder="meter/seconds" disabled id="vxt"
+                                value="0">
+                            <div class="input-group-addon">meters/second</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">V<sub>yt</sub></span>
+                            <input type="number" class="form-control" placeholder="meter/seconds" disabled id="vyt"
+                                value="0">
+                            <div class="input-group-addon">meters/second</div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">V<sub>t</sub></sub></span>
+                            <input type="number" class="form-control" placeholder="h" disabled id="vt" value="0">
+                            <div class="input-group-addon">meters/sec<sup>2</sup></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">Time of Flight</span>
+                            <input type="number" class="form-control" placeholder="0" disabled id="timeofflight">
+                            <div class="input-group-addon">seconds</div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">Range</span>
+                            <input type="number" class="form-control" placeholder="0" disabled id="range">
+                            <div class="input-group-addon">meters</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">Max Height Reached</span>
+                            <input type="number" class="form-control" placeholder="h" disabled id="maxheight" value="0">
+                            <div class="input-group-addon">meters</div>
+                        </div>
+                    </div>
+                </div>
+                Position at time <span class="timec">0</span> sec/s
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">X<sub>t</sub></span>
+                            <input type="number" class="form-control" placeholder="0" disabled id="xt">
+                            <div class="input-group-addon">meters</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">Y<sub>t</sub></sub></span>
+                            <input type="number" class="form-control" placeholder="h" disabled id="yt" value="0">
+                            <div class="input-group-addon">meters</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
