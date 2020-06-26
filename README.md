@@ -22,3 +22,4 @@
 - https://aasisodiya.github.io/WebProjects/17MasonryGrid/
 - https://aasisodiya.github.io/WebProjects/18SVGLineAnimation/
 - https://aasisodiya.github.io/WebProjects/19TextAnimation/
+- https://aasisodiya.github.io/WebProjects/20ProjectileMotion/
