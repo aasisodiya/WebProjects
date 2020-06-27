@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -19,29 +20,54 @@
             <div class="col-sm-4">
                 <h1>Inputs</h1>
                 <hr>
+                Angle From Ground
                 <div class="input-group input-group-sm">
+                    <span class="input-group-btn">
+                        <button onclick="increaseAngle()" class="btn btn-warning" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    </span>
                     <span class="input-group-addon">Angle</span>
                     <input type="number" class="form-control" placeholder="Degree" id="angle" value="30">
-                    <div class="input-group-addon">Degrees</div>
+                    <div class="input-group-addon">degree/s</div>
+                    <span class="input-group-btn">
+                        <button onclick="decreaseAngle()" class="btn btn-warning" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                    </span>
                 </div>
                 <div class="input-group input-group-sm">
+                    <span class="input-group-btn">
+                        <button onclick="increaseVelocity()" class="btn btn-warning" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    </span>
                     <span class="input-group-addon">Velocity</span>
                     <input type="number" class="form-control" placeholder="meter/seconds" id="velocity" value="10">
                     <div class="input-group-addon">meters/second</div>
+                    <span class="input-group-btn">
+                        <button onclick="decreaseVelocity()" class="btn btn-warning" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                    </span>
                 </div>
-                <hr>
+                Perform Calculation @ Given Time
                 <div class="input-group">
                     <span class="input-group-btn">
-                        <button id="calculate" class="btn btn-success" type="button">Calc!</button>
+                        <button id="calculate" class="btn btn-warning" type="button"><i class="fa fa-calculator" aria-hidden="true"></i> & <i class="fa fa-pencil"></i></button>
                     </span>
                     <div class="input-group-addon">@</div>
+                    <span class="input-group-btn">
+                        <button onclick="increaseTime()" class="btn btn-warning" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    </span>
                     <input id="time" type="number" class="form-control" placeholder="0" value="0">
-                    <div class="input-group-addon">second</div>
+                    <div class="input-group-addon">second/s</div>
+                    <span class="input-group-btn">
+                        <button onclick="decreaseTime()" class="btn btn-warning" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                    </span>
                 </div>
                 <hr>
                 <div class="input-group input-group-sm">
+                    <span class="input-group-btn">
+                        <button onclick="increasePrecision()" class="btn btn-warning" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                    </span>
                     <span class="input-group-addon">Precision</span>
                     <input type="number" class="form-control" placeholder="0-20" value="2" id="precision">
+                    <span class="input-group-btn">
+                        <button onclick="decreasePrecision()" class="btn btn-warning" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                    </span>
                 </div>
                 <div class="input-group input-group-sm">
                     <span class="input-group-addon">Gravity</span>
@@ -49,8 +75,14 @@
                     <div class="input-group-addon">meters/second<sup>2</sup></sup></div>
                 </div>
                 <hr>
-                <p>Note: Angle > 90 degrees won't show up properly on Graph & refresh the page to clear the Graph</p>
-                <hr>
+                <p><h5><b>Note</b></h5>
+                    <ul>
+                        <li>Angle > 90 degrees won't show up on Graph</li>
+                        <li>Refresh the page to clear the Graph</li>
+                        <li>Color of the calculated graph will be same as the color of the button before you click</li>
+                        <li>Below graph is just for visualiztion and is not to scale</li>
+                        <li>Below graph is drawn for complete projectile motion on ground level</li>
+                    </ul>
                 <h5>Enjoy!</h5>
             </div>
             <div class="col-sm-8">
@@ -79,26 +111,6 @@
                         </div>
                     </div>
                 </div>
-                Components of velocity at time <span class="timec">0</span> sec/s
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="input-group input-group-sm">
-                            <span class="input-group-addon">V<sub>xt</sub></span>
-                            <input type="number" class="form-control" placeholder="meter/seconds" disabled id="vxt"
-                                value="0">
-                            <div class="input-group-addon">meters/second</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="input-group input-group-sm">
-                            <span class="input-group-addon">V<sub>yt</sub></span>
-                            <input type="number" class="form-control" placeholder="meter/seconds" disabled id="vyt"
-                                value="0">
-                            <div class="input-group-addon">meters/second</div>
-                        </div>
-                    </div>
-                </div>
-                <br>
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="input-group input-group-sm">
@@ -115,7 +127,6 @@
                         </div>
                     </div>
                 </div>
-                <br>
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="input-group input-group-sm">
@@ -132,7 +143,7 @@
                         </div>
                     </div>
                 </div>
-                Position at time <span class="timec">0</span> sec/s
+                Position at time <span class="timec">0</span> sec/s (considering uninterrupted motion)
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="input-group input-group-sm">
@@ -146,6 +157,25 @@
                             <span class="input-group-addon">Y<sub>t</sub></sub></span>
                             <input type="number" class="form-control" placeholder="h" disabled id="yt" value="0">
                             <div class="input-group-addon">meters</div>
+                        </div>
+                    </div>
+                </div>
+                Components of velocity at time <span class="timec">0</span> sec/s (considering uninterrupted motion)
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">V<sub>xt</sub></span>
+                            <input type="number" class="form-control" placeholder="meter/seconds" disabled id="vxt"
+                                value="0">
+                            <div class="input-group-addon">meters/second</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group input-group-sm">
+                            <span class="input-group-addon">V<sub>yt</sub></span>
+                            <input type="number" class="form-control" placeholder="meter/seconds" disabled id="vyt"
+                                value="0">
+                            <div class="input-group-addon">meters/second</div>
                         </div>
                     </div>
                 </div>
