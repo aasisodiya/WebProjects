@@ -23,3 +23,4 @@
 - https://aasisodiya.github.io/WebProjects/18SVGLineAnimation/
 - https://aasisodiya.github.io/WebProjects/19TextAnimation/
 - https://aasisodiya.github.io/WebProjects/20ProjectileMotion/
+- https://aasisodiya.github.io/WebProjects/21DigitalClock/
