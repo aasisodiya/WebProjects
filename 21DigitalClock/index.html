@@ -21,7 +21,7 @@
 
 </head>
 
-<body onload="startTime()">
+<body onload="startTime()" id="holder">
     <div class="bg"></div>
     <div id="clock">
 
@@ -43,6 +43,35 @@
         if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
         return i;
     }
+    // Set to fullscreen
+    var elem = document.getElementById("holder");
+    let inFullScreen = false;
+    function openFullscreen() {
+        if (!inFullScreen) {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) { /* Firefox */
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE/Edge */
+                elem.msRequestFullscreen();
+            }
+            inFullScreen = true;
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) { /* Firefox */
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { /* IE/Edge */
+                document.msExitFullscreen();
+            }
+            inFullScreen = false;
+        }
+    }
+    elem.addEventListener("click", openFullscreen);
 </script>
 <style type="text/css">
     body {
@@ -61,6 +90,7 @@
         background-position: center;
         z-index: -1;
         animation: blurAnimation 20s infinite;
+        background-size: cover;
     }
 
     @keyframes blurAnimation {
@@ -68,14 +98,17 @@
             filter: blur(0px);
             transform: rotateZ(0deg);
         }
+
         50% {
             filter: blur(5px);
             transform: rotateZ(180deg) scale(1.2);
         }
+
         75% {
             filter: blur(3px);
             transform: rotateZ(-300deg) scale(0.8);
         }
+
         100% {
             filter: blur(0px);
         }
@@ -86,7 +119,7 @@
         text-align: center;
         line-height: 100vh;
         background: rgba(0, 0, 0, 0.14);
-        font-size: 600%;
+        font-size: 3rem;
         color: white;
         text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #ff2222, 0 0 70px #ff2222, 0 0 8px #ff2222, 0 0 10px #ff2222, 0 0 15px #ff2222;
     }
