@@ -1,0 +1,144 @@
+/* Tags */
+
+a {
+    text-decoration: none !important;
+    color: #f8f9fa !important;
+}
+
+a:hover {
+    color: orange !important;
+}
+
+body {
+    background: #212121;
+    font-family: 'Patua One', sans-serif;
+    cursor: default;
+}
+
+button:hover {
+    color: orange !important;
+}
+
+i:hover {
+    color: orange !important;
+}
+
+/* Class */
+
+.card {
+    border-color: #343a40 !important;
+}
+
+.card-body:hover {
+    background: #2c3137 !important;
+}
+
+.deletelink {
+    color: #dc3545 !important;
+}
+
+.editmode {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    z-index: 1;
+}
+
+.holder {
+    min-height: calc(100vh - 110px);
+}
+
+.hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 2;
+    display: none;
+    backdrop-filter: blur(6px);
+}
+
+.link-holder:hover {
+    background: #23272b !important;
+}
+
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .375) !important;
+}
+
+.bottomButton {
+    position: relative;
+    bottom: 15px;
+}
+
+.height-70 {
+    height: 70px;
+}
+
+.height-120 {
+    height: 120px;
+}
+
+.height-150 {
+    height: 150px;
+}
+
+/* Ids */
+
+#category-edit, #category, #exportjson, #help, #importjson, #link-delete, #link, #menu {
+    display: none;
+    position: fixed;
+    max-width: 500px;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 3;
+}
+
+#category-edit {
+    height: 150px;
+}
+
+#category, #link-delete {
+    height: 70px;
+}
+
+#jsonOp, #exportjson, #importjson {
+    height: 60vh;
+}
+
+#link {
+    height: 120px;
+}
+
+#help {
+    font-size: 12px;
+    height: 360px;
+}
+
+#menu {
+    height: 190px;
+    text-align: center;
+}
+
+#menu-button {
+    position: fixed !important;
+    top: 10px;
+    right: 10px;
+    width: 110px;
+    z-index: 1;
+}
+
+#toggle:hover {
+    color: orange;
+}
+
+/* Conditional */
+
+@media only screen and (min-width: 720px) {
+    .card-columns {
+        column-count: 4;
+    }
+}
