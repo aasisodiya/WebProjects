@@ -25,6 +25,11 @@ i:hover {
 
 /* Class */
 
+.bottomButton {
+    position: relative;
+    bottom: 15px;
+}
+
 .card {
     border-color: #343a40 !important;
 }
@@ -33,8 +38,24 @@ i:hover {
     background: #2c3137 !important;
 }
 
+.cursor-icon {
+    cursor: pointer;
+}
+
 .deletelink {
     color: #dc3545 !important;
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
+    display: inline;
+    border-radius: 10px;
+    height: 24px;
+    width: 24px;
+    text-align: center;
+}
+
+.deletelink:hover {
+    background: wheat;
 }
 
 .editmode {
@@ -44,31 +65,9 @@ i:hover {
     z-index: 1;
 }
 
-.holder {
-    min-height: calc(100vh - 110px);
-}
-
-.hover {
-    background-color: rgba(0, 0, 0, 0.9);
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    z-index: 2;
-    display: none;
-    backdrop-filter: blur(6px);
-}
-
-.link-holder:hover {
-    background: #23272b !important;
-}
-
-.shadow-sm {
-    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .375) !important;
-}
-
-.bottomButton {
-    position: relative;
-    bottom: 15px;
+.font-shadow-sm {
+    text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .4) !important;
+    letter-spacing: 2px;
 }
 
 .height-70 {
@@ -81,6 +80,48 @@ i:hover {
 
 .height-150 {
     height: 150px;
+}
+
+.holder {
+    min-height: calc(100vh - 110px);
+}
+
+.hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 2;
+    display: none;
+    backdrop-filter: blur(6px);
+}
+
+.link-holder:hover {
+    background: #23272b !important;
+}
+
+.scroll-text {
+    height: 360px;
+    overflow: auto;
+}
+
+.scroll-bar::-webkit-scrollbar {
+    width: 5px;
+    /* width of the entire scrollbar */
+}
+
+.scroll-bar::-webkit-scrollbar-track {
+    background: #212529;
+    /* color of the tracking area */
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+    background-color: #dc3545;
+    border-radius: 20px;
+}
+
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .375) !important;
 }
 
 /* Ids */
@@ -105,12 +146,8 @@ i:hover {
     height: 70px;
 }
 
-#jsonOp, #exportjson, #importjson {
-    height: 60vh;
-}
-
-#link {
-    height: 120px;
+#colMsg {
+    display: none;
 }
 
 #help {
@@ -118,8 +155,16 @@ i:hover {
     height: 360px;
 }
 
+#jsonOp, #jsonIn, #exportjson, #importjson {
+    height: 60vh;
+}
+
+#link {
+    height: 120px;
+}
+
 #menu {
-    height: 190px;
+    height: 200px;
     text-align: center;
 }
 
