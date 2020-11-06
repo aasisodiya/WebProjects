@@ -14,10 +14,10 @@ let categoryHolderHTML = '\
                     <div class="m-1 text-center font-weight-bold rounded">\
                         <div class="row options">\
                             <div class="col-6 text-success">\
-                                <i class="fa fa-plus" onclick="addLink()"></i>\
+                                <i class="fa fa-plus cursor-icon" onclick="addLink()"></i>\
                             </div>\
                             <div class="col-6 text-warning">\
-                                <i class="fa fa-pencil" onclick="editCategoryOpen()"></i>\
+                                <i class="fa fa-pencil cursor-icon" onclick="editCategoryOpen()"></i>\
                             </div>\
                         </div>\
                     </div>\
@@ -30,7 +30,7 @@ let linkHolder = '\
             <div class="bg-danger p-1 m-1 rounded shadow-sm text-light link-holder">\
                 <div class="row">\
                     <div class="col"><a href="Link" target="_blank" rel="noopener noreferrer">Name</a></div>\
-                    <div class="col text-right"><i class="fa fa-trash deletelink" onclick="openDeleteLink()" id="link-id"></i></div>\
+                    <div class="deletelink"><i class="fa fa-trash" onclick="openDeleteLink()" id="link-id"></i></div>\
                 </div>\
             </div>\
         ';
@@ -46,17 +46,22 @@ if (bookmarks == null || bookmarks.bookmarks == null) {
             "category": "Regulars",
             "bookmarks": [{
                 "name": "Createxion",
-                "url": "https://www.createxion.com/"
+                "url": "https://www.createxion.com/",
+                "created": ""
             },
             {
                 "name": "Youtube",
-                "url": "https://www.youtube.com/channel/UCJVZT03z5fLJF5eO4PEbEUA"
+                "url": "https://www.youtube.com/channel/UCJVZT03z5fLJF5eO4PEbEUA",
+                "created": ""
             },
             {
                 "name": "Github",
-                "url": "http://github.com/aasisodiya"
+                "url": "http://github.com/aasisodiya",
+                "created": ""
             }
-            ]
+            ],
+            "created": "",
+            "updated": ""
         }
         ]
     };
@@ -81,6 +86,43 @@ function processBookmarks() {
     });
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
 }
+
+// Function to Validate Bookmarks - it returns true and empty message if everything is ok else returns false with given message
+function validateBookmarks(bookmarks) {
+    if (bookmarks == null || bookmarks.bookmarks == null || bookmarks.bookmarks.length == 0) {
+        return { valid: false, message: "Bookmarks are empty" };
+    }
+    try {
+        bookmarks.bookmarks.forEach((bookmarks, cindex) => {
+            if (bookmarks.category == undefined) {
+                bookmarks.category = "";
+            }
+            bookmarks.bookmarks.forEach((bookmark, bindex) => {
+                if (bookmark.name == undefined || bookmark.name.trim() == "") {
+                    throw ("Bookmark Name is undefined/missing in Category index [" + cindex + "] " + bookmarks.category);
+                }
+                if (bookmark.url == undefined || bookmark.url.trim() == "") {
+                    throw ("URL is undefined/missing in Category index [" + cindex + "] for Bookmark Name [" + bookmark.name + "]");
+                }
+                if (bookmark.created == undefined || bookmark.created.trim() == "") {
+                    bookmark.created = new Date();
+                }
+            });
+            if (bookmarks.created == undefined || bookmarks.created.trim() == "") {
+                bookmarks.created = new Date();
+            }
+            if (bookmarks.updated == undefined || bookmarks.updated.trim() == "") {
+                bookmarks.updated = new Date();
+            }
+        });
+    } catch (error) {
+        return { valid: false, message: error };
+    }
+    return { valid: true, message: "" };
+}
+
+// Initially Validating Bookmarks
+validateBookmarks(bookmarks);
 
 // Calling it for first time to load UI
 processBookmarks();
@@ -116,8 +158,10 @@ function saveLink() {
     let bookmarklist = bookmarks.bookmarks[catID].bookmarks;
     bookmarklist[bookmarklist.length] = {
         name: linkName,
-        url: linkURL
+        url: linkURL,
+        created: new Date()
     };
+    bookmarks.bookmarks[catID].updated = new Date();
     processBookmarks();
     $('#link').hide();
     $('.hover').hide();
@@ -144,7 +188,9 @@ function saveCategory() {
         "c" + bookmarks.bookmarks.length).replace("Category", categoryName).replace('"Bookmarks"', "");
     bookmarks.bookmarks[bookmarks.bookmarks.length] = {
         category: categoryName,
-        bookmarks: []
+        bookmarks: [],
+        created: new Date(),
+        updated: new Date()
     }
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
     $('#category').hide();
@@ -180,6 +226,7 @@ function editCategoryOpen() {
 function editCategory() {
     let catID = $('#category-id')[0].value.split("c")[1];
     bookmarks.bookmarks[catID].category = $('#category-name-edit').val();
+    bookmarks.bookmarks[catID].updated = new Date();
     processBookmarks();
     $('#category-edit').hide();
     $('.hover').hide();
@@ -222,21 +269,22 @@ function toggleEdit() {
 }
 
 // Function to display Menu
-function openMenu(params) {
+function openMenu() {
     $('.hover').show();
     $('#menu').show();
 }
 
 // Function to close Menu
-function closeMenu(params) {
+function closeMenu() {
     $('#menu').hide();
     $('.hover').hide();
+    $('#colMsg').hide();
 }
 
 // Function to load Exported JSON Form
 function exportJSON() {
     $('#menu').hide();
-    $('#jsonOp')[0].value = JSON.stringify(bookmarks);
+    $('#jsonOp')[0].value = JSON.stringify(bookmarks, undefined, 4);
     $('#exportjson').show();
 }
 
@@ -250,6 +298,8 @@ function closeExportJSON() {
 function openImportJSON() {
     $('#menu').hide();
     $('#jsonIn').val("");
+    // Re/Setting placeholder
+    $('#jsonIn')[0].placeholder = "Insert Bookmarks Compatible JSON";
     $('#importjson').show();
 }
 
@@ -258,10 +308,14 @@ function importJSON() {
     $('#menu').hide();
     try {
         bookmarks = JSON.parse($('#jsonIn').val());
-        console.log(bookmarks);
+        let validation = validateBookmarks(bookmarks);
+        if (!validation.valid) {
+            throw validation.message;
+        }
         processBookmarks();
     } catch (error) {
-        $('#jsonIn').val("Invalid JSON Data");
+        $('#jsonIn').val("");
+        $('#jsonIn')[0].placeholder = "Enter Valid Bookmarks Compatible JSON : " + error;
         return;
     }
     $('.options').css('display', $('.options').css('display'));
@@ -281,9 +335,7 @@ function closeImportJSON() {
 }
 
 // Function to open delete confirmation for link
-function openDeleteLink(params) {
-    console.log(event.srcElement.id);
-    console.log(event.srcElement.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id);
+function openDeleteLink() {
     $('#cat-delete-id').val(event.srcElement.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id);
     $('#link-delete-id').val(event.srcElement.id);
     $('.hover').show();
@@ -291,7 +343,7 @@ function openDeleteLink(params) {
 }
 
 // Function to delete link
-function deleteLink(params) {
+function deleteLink() {
     let catId = $('#cat-delete-id').val().split("c")[1];
     let linkId = $('#link-delete-id').val().split("l")[1];
     bookmarks.bookmarks[catId].bookmarks.splice(linkId, 1);
@@ -301,7 +353,7 @@ function deleteLink(params) {
 }
 
 // Function to close delete confirmation for link
-function closeDeleteLink(params) {
+function closeDeleteLink() {
     $('#link-delete').hide();
     $('.hover').hide();
 }
@@ -309,13 +361,49 @@ function closeDeleteLink(params) {
 // Function to show Help
 function showHelp() {
     $('#menu').hide();
-    console.log("Help Show");
     $('#help').show();
 }
 
 // Function to hide Help
 function hideHelp() {
-    console.log("Help Hide");
     $('#help').hide();
     $('.hover').hide();
 }
+
+// Function to copy JSON
+function copyJSON() {
+    $('#jsonOp').select();
+    document.execCommand("copy");
+}
+
+// Function to decrease number of columns
+function decreaseColumn() {
+    $('#colDec').prop('disabled', false)
+    if ($('#col').val() <= 1) {
+        $('#colDec').prop('disabled', true)
+        return
+    }
+    $('.card-columns').css('column-count', (parseInt($('#col').val()) - 1));
+    $('#col').val((parseInt($('#col').val()) - 1));
+    if ($('#col').val() <= 6) {
+        $('#colMsg').hide();
+    } else {
+        $('#colMsg').show();
+    }
+}
+
+// Function to increase number of columns
+function increaseColumn() {
+    $('#colDec').prop('disabled', false)
+    $('.card-columns').css('column-count', (parseInt($('#col').val()) + 1));
+    $('#col').val((parseInt($('#col').val()) + 1));
+    if ($('#col').val() > 6) {
+        $('#colMsg').show();
+    } else {
+        $('#colMsg').hide();
+    }
+}
+
+// Just for Fun!
+console.log('%c Stop Right There! ', 'background: #222; color: orange;font-size:20px');
+console.log('%c You Shall Not Pass! ', 'background: #222; color: red; font-size:40px');
