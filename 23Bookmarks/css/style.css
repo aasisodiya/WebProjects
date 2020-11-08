@@ -38,15 +38,24 @@ i:hover {
     background: #2c3137 !important;
 }
 
+.closeUpCat {
+    position: absolute;
+    right: 10px;
+    top: -20px;
+    font-size: 25px;
+    border-radius: 10px;
+    text-align: center;
+    width: 20px;
+    cursor: pointer;
+}
+
 .cursor-icon {
     cursor: pointer;
 }
 
-.deletelink {
-    color: #dc3545 !important;
+.deletelink, .options {
     position: absolute;
     right: 30px;
-    cursor: pointer;
     display: inline;
     border-radius: 10px;
     height: 24px;
@@ -54,7 +63,11 @@ i:hover {
     text-align: center;
 }
 
-.deletelink:hover {
+.deletelink > i, .options > i {
+    cursor: pointer;
+}
+
+.deletelink:hover, .options:hover {
     background: wheat;
 }
 
@@ -169,10 +182,15 @@ i:hover {
 }
 
 #menu-button {
-    position: fixed !important;
+    /* position: fixed !important;
     top: 10px;
     right: 10px;
     width: 110px;
+    z-index: 1; */
+    position: absolute;
+    display: inline;
+    width: 100px;
+    right: 1rem;
     z-index: 1;
 }
 
@@ -185,5 +203,15 @@ i:hover {
 @media only screen and (min-width: 720px) {
     .card-columns {
         column-count: 4;
+    }
+}
+
+/* Below code hides option to change columns from mobile users / small screen users */
+@media screen and (max-width: 575px) {
+    .mobilehide {
+        display: none !important;
+    }
+    .card-columns {
+        column-count: 1 !important;
     }
 }

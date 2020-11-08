@@ -1,24 +1,19 @@
 "use strict"
 
-// Edit Mode is set to false by default
-let editMode = false;
+// Edit Mode is set to true by default
+let editMode = true;
 
 // categoryHolderHTML is template for housing category
 let categoryHolderHTML = '\
             <div class="card shadow-sm" id="card-id">\
                 <div class="card-body bg-dark">\
-                    <h5 class="card-title text-light">Category</h5>\
+                    <h5 class="card-title text-light">Category<div class="options"><i class="fa fa-pencil cursor-icon text-warning" onclick="editCategoryOpen()"></i></div></h5>\
                     <div class="bookmarks">\
                         "Bookmarks"\
                     </div>\
-                    <div class="m-1 text-center font-weight-bold rounded">\
-                        <div class="row options">\
-                            <div class="col-6 text-success">\
-                                <i class="fa fa-plus cursor-icon" onclick="addLink()"></i>\
-                            </div>\
-                            <div class="col-6 text-warning">\
-                                <i class="fa fa-pencil cursor-icon" onclick="editCategoryOpen()"></i>\
-                            </div>\
+                    <div class="bg-secondary p-1 m-1 rounded shadow-sm text-light link-holder addbookmark">\
+                        <div class="row">\
+                            <div class="col text-center" onclick="addLink()"><i class="fa fa-plus cursor-icon"></i></div>\
                         </div>\
                     </div>\
                 </div>\
@@ -30,7 +25,7 @@ let linkHolder = '\
             <div class="bg-danger p-1 m-1 rounded shadow-sm text-light link-holder">\
                 <div class="row">\
                     <div class="col"><a href="Link" target="_blank" rel="noopener noreferrer">Name</a></div>\
-                    <div class="deletelink"><i class="fa fa-trash" onclick="openDeleteLink()" id="link-id"></i></div>\
+                    <div class="deletelink"><i class="fa fa-trash text-danger" onclick="openDeleteLink()" id="link-id"></i></div>\
                 </div>\
             </div>\
         ';
@@ -127,15 +122,16 @@ validateBookmarks(bookmarks);
 // Calling it for first time to load UI
 processBookmarks();
 
-// Hiding Options and Delete Link Option initially
-$('.options').css('display', 'none');
-$('.deletelink').css('display', 'none');
+// // Hiding Options, AddBookmark and Delete Link Option initially
+// $('.options').css('display', 'none');
+// $('.deletelink').css('display', 'none');
+// $('.addbookmark').css('display', 'none');
 
 // Function to Display Add Link Form
 function addLink() {
     $('.hover').show();
     $('#link').show();
-    $('#cat-id')[0].value = event.srcElement.parentNode.parentNode.parentNode.parentNode.parentNode.id;
+    $('#cat-id')[0].value = event.srcElement.parentNode.parentNode.parentNode.parentNode.id || event.srcElement.parentNode.parentNode.parentNode.parentNode.parentNode.id;
     $('#link-name')[0].value = "";
     $('#link-url')[0].value = "";
 }
@@ -194,7 +190,13 @@ function saveCategory() {
     }
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
     $('#category').hide();
-    $('.options').css('display', $('.options').css('display'));
+    if ($('.options').css('display') == "none") {
+        $('.options').css('display', 'none');
+        $('.addbookmark').css('display', 'none');
+    } else {
+        $('.options').css('display', 'inline');
+        $('.addbookmark').css('display', 'block');
+    }
     $('.hover').hide();
 }
 
@@ -214,7 +216,7 @@ function closeCategory() {
 
 // Function to Open Edit Category Menu
 function editCategoryOpen() {
-    $('#category-id')[0].value = event.srcElement.parentNode.parentNode.parentNode.parentNode.parentNode.id;
+    $('#category-id')[0].value = event.srcElement.parentNode.parentNode.parentNode.parentNode.id;
     let catID = $('#category-id')[0].value.split("c")[1];
     $('.hover').show();
     $('#category-edit').show();
@@ -228,8 +230,14 @@ function editCategory() {
     bookmarks.bookmarks[catID].category = $('#category-name-edit').val();
     bookmarks.bookmarks[catID].updated = new Date();
     processBookmarks();
+    closeEditCategory();
+}
+
+function closeEditCategory() {
     $('#category-edit').hide();
     $('.hover').hide();
+    $('#labelcheck').removeClass('text-warning');
+    $('#labelcheck').addClass('text-light');
 }
 
 // Function to delete a category
@@ -252,8 +260,9 @@ function deleteCategory() {
 // Function to toggle Edit option
 function toggleEdit() {
     if (!editMode) {
-        $('.options').css('display', 'flex');
+        $('.options').css('display', 'inline');
         $('.deletelink').css('display', 'inline');
+        $('.addbookmark').css('display', 'block');
         $('#toggle')[0].innerHTML = "Edit Mode On";
         $('#toggle').toggleClass('btn-danger');
         $('#toggle').toggleClass('btn-success');
@@ -261,6 +270,7 @@ function toggleEdit() {
     } else {
         $('.options').css('display', 'none');
         $('.deletelink').css('display', 'none');
+        $('.addbookmark').css('display', 'none');
         $('#toggle')[0].innerHTML = "Edit Mode Off";
         $('#toggle').toggleClass('btn-danger');
         $('#toggle').toggleClass('btn-success');
@@ -270,6 +280,11 @@ function toggleEdit() {
 
 // Function to display Menu
 function openMenu() {
+    if ($('.card-columns').css('column-count') == "auto") {
+        $('#col').val(1);
+    } else {
+        $('#col').val($('.card-columns').css('column-count'));
+    }
     $('.hover').show();
     $('#menu').show();
 }
@@ -318,7 +333,13 @@ function importJSON() {
         $('#jsonIn')[0].placeholder = "Enter Valid Bookmarks Compatible JSON : " + error;
         return;
     }
-    $('.options').css('display', $('.options').css('display'));
+    if ($('.options').css('display') == "none") {
+        $('.options').css('display', 'none');
+        $('.addbookmark').css('display', 'none');
+    } else {
+        $('.options').css('display', 'inline');
+        $('.addbookmark').css('display', 'block');
+    }
     $('#importjson').hide();
     $('.hover').hide();
     if (!editMode) {
@@ -385,7 +406,7 @@ function decreaseColumn() {
     }
     $('.card-columns').css('column-count', (parseInt($('#col').val()) - 1));
     $('#col').val((parseInt($('#col').val()) - 1));
-    if ($('#col').val() <= 6) {
+    if ($('#col').val() <= 4) {
         $('#colMsg').hide();
     } else {
         $('#colMsg').show();
@@ -397,7 +418,7 @@ function increaseColumn() {
     $('#colDec').prop('disabled', false)
     $('.card-columns').css('column-count', (parseInt($('#col').val()) + 1));
     $('#col').val((parseInt($('#col').val()) + 1));
-    if ($('#col').val() > 6) {
+    if ($('#col').val() > 4) {
         $('#colMsg').show();
     } else {
         $('#colMsg').hide();

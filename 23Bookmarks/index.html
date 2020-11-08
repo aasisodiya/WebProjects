@@ -22,11 +22,6 @@
 </head>
 
 <body>
-    <!-- Below code is for Menu Button -->
-    <button type="button" class="btn btn-dark btn-sm btn-block font-weight-bold shadow-sm" id="menu-button"
-        onclick="openMenu()">
-        <i class="fa fa-bars"></i> Menu
-    </button>
     <!-- Below code is for Menu containing various options -->
     <div id="menu">
         <div class="row">
@@ -40,7 +35,7 @@
                     onclick="exportJSON()"><i class="fa fa-arrow-circle-up"></i> Export JSON</button>
                 <button type="button" class="btn btn-dark btn-sm btn-block font-weight-bold shadow-sm"
                     onclick="openImportJSON()"><i class="fa fa-arrow-circle-down"></i> Import JSON</button>
-                <div class="input-group input-group-sm my-2">
+                <div class="input-group input-group-sm my-2 mobilehide">
                     <div class="input-group-prepend">
                         <span class="input-group-text bg-dark border-dark text-white">Number of Columns</span>
                         <button class="btn btn-outline-secondary border-dark bg-danger" type="button" onclick="decreaseColumn()" id="colDec"><i class="fa fa-minus text-white"></i></button>
@@ -57,7 +52,7 @@
         </div>
     </div>
     <!-- Below code is for Edit Mode On/Off Button -->
-    <button id="toggle" class="editmode shadow-sm btn btn-sm btn-danger" onclick="toggleEdit()">Edit Mode Off</button>
+    <button id="toggle" class="editmode shadow-sm btn btn-sm btn-success" onclick="toggleEdit()">Edit Mode On</button>
     <!-- Below code is for blurred overlay background -->
     <div class="hover"></div>
     <!-- Below code is for Help Section -->
@@ -97,11 +92,16 @@
         </div>
     </div>
     <!-- Below code is for Title Bar -->
-    <div class="row m-0 p-2 text-warning">
-        <h2 class="font-shadow-sm"><i class="fa fa-book"></i>Bookmarks</h2>
+    <div class="row m-0 p-3 text-warning align-items-center">
+        <h2 class="font-shadow-sm m-0"><i class="fa fa-book"></i>Bookmarks</h2>
+        <!-- Below code is for Menu Button -->
+        <button type="button" class="btn btn-dark btn-sm btn-block font-weight-bold shadow-sm" id="menu-button"
+            onclick="openMenu()">
+            <i class="fa fa-bars"></i> Menu
+        </button>
     </div>
     <!-- Below code houses all your bookmarks using JS -->
-    <div class="m-0 p-2 holder">
+    <div class="m-0 p-3 holder">
         <div class="card-columns">
         </div>
     </div>
@@ -178,6 +178,7 @@
     </div>
     <!-- Below code is for form to update Category Name or Delete Category -->
     <div id="category-edit" class="px-4">
+        <div class="closeUpCat" onclick="closeEditCategory()"><i class="fa fa-times text-danger"></i></div>
         <div class="bg-dark p-2 text-center rounded height-150 shadow-sm">
             <input type="text" id="category-id" class="d-none" value="">
             <div class="input-group input-group-sm mb-3 shadow-sm">
@@ -198,13 +199,13 @@
             <div class="form-check pb-2">
                 <input class="form-check-input" type="checkbox" id="catCheck">
                 <label class="form-check-label text-light" for="catCheck" id="labelcheck">
-                    Tick to confirm delete the category and all links inside
+                    Delete the category and all links inside
                 </label>
             </div>
             <div class="row">
                 <div class="col-6">
                     <button type="button" class="btn btn-success btn-sm btn-block font-weight-bold shadow-sm"
-                        onclick="editCategory()"><i class="fa fa-pencil"></i> Edit Category</button>
+                        onclick="editCategory()"><i class="fa fa-pencil"></i> Edit Name</button>
                 </div>
                 <div class="col-6">
                     <button type="button" class="btn btn-danger btn-sm btn-block font-weight-bold shadow-sm"
