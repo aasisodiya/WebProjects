@@ -6,14 +6,14 @@ let editMode = true;
 // categoryHolderHTML is template for housing category
 let categoryHolderHTML = '\
             <div class="card shadow-sm" id="card-id">\
-                <div class="card-body bg-dark">\
-                    <h5 class="card-title text-light">Category<div class="options"><i class="fa fa-pencil cursor-icon text-warning" onclick="editCategoryOpen()"></i></div></h5>\
+                <div class="card-body rounded">\
+                    <h5 class="card-title">Category<div class="options"><i class="fa fa-pencil cursor-icon text-warning" onclick="editCategoryOpen()"></i></div></h5>\
                     <div class="bookmarks">\
                         "Bookmarks"\
                     </div>\
                     <div class="bg-secondary p-1 m-1 rounded shadow-sm text-light link-holder addbookmark">\
                         <div class="row">\
-                            <div class="col text-center" onclick="addLink()"><i class="fa fa-plus cursor-icon"></i></div>\
+                            <div class="col text-center addlink" onclick="addLink()"><i class="fa fa-plus cursor-icon"></i></div>\
                         </div>\
                     </div>\
                 </div>\
@@ -22,9 +22,9 @@ let categoryHolderHTML = '\
 
 // linkHolder is template for housing the link
 let linkHolder = '\
-            <div class="bg-danger p-1 m-1 rounded shadow-sm text-light link-holder">\
+            <div class="p-1 m-1 rounded shadow-sm link-holder bclass">\
                 <div class="row">\
-                    <div class="col"><a href="Link" target="_blank" rel="noopener noreferrer">Name</a></div>\
+                    <div class="col"><a class="aclass" href="Link" target="_blank" rel="noopener noreferrer">Name</a></div>\
                     <div class="deletelink"><i class="fa fa-trash text-danger" onclick="openDeleteLink()" id="link-id"></i></div>\
                 </div>\
             </div>\
@@ -56,9 +56,15 @@ if (bookmarks == null || bookmarks.bookmarks == null) {
             }
             ],
             "created": "",
-            "updated": ""
+            "updated": "",
+            "categoryColor": "#343a40",
+            "categoryTextColor": "#f8f9fa",
+            "bookmarkColor": "#dc3545",
+            "bookmarkTextColor": "#f8f9fa"
         }
-        ]
+        ],
+        "backgroundUrl": "",
+        "backgroundColor": "#212121"
     };
 }
 
@@ -73,12 +79,31 @@ function processBookmarks() {
     // Processing Data if Available
     bookmarks.bookmarks.forEach((bookmarks, index) => {
         let bookmarkHolder = '';
+        let categoryId = "c" + index;
+        let bookmarkLinkClass = "b" + index;
+        let bookmarkClass = "d" + index;
         bookmarks.bookmarks.forEach((bookmark, bid) => {
-            bookmarkHolder += linkHolder.replace('"Link"', bookmark.url).replace('Name', bookmark.name).replace('link-id', "l" + bid)
+            let linkId = "l" + bid
+            bookmarkHolder += linkHolder
+                .replace('aclass', bookmarkLinkClass)
+                .replace('bclass', bookmarkClass)
+                .replace('"Link"', bookmark.url)
+                .replace('Name', bookmark.name)
+                .replace('link-id', linkId)
         });
         $('.card-columns')[0].innerHTML += categoryHolderHTML.replace("card-id",
-            "c" + index).replace("Category", bookmarks.category).replace('"Bookmarks"', bookmarkHolder);
+            categoryId).replace("Category", bookmarks.category).replace('"Bookmarks"', bookmarkHolder);
+        $('#' + categoryId).css('background', bookmarks.categoryColor);
+        $('#' + categoryId).css('color', bookmarks.categoryTextColor);
+        $('.' + bookmarkClass).css('background', bookmarks.bookmarkColor);
+        $('.' + bookmarkLinkClass).css('color', bookmarks.bookmarkTextColor);
     });
+    if (bookmarks.backgroundUrl != "") {
+        $('body').css('background-image', 'url(' + bookmarks.backgroundUrl + ')');
+    } else {
+        $('body').css('background-image', 'none');
+        $('body').css('background-color', bookmarks.backgroundColor);
+    }
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
 }
 
@@ -186,10 +211,15 @@ function saveCategory() {
         category: categoryName,
         bookmarks: [],
         created: new Date(),
-        updated: new Date()
+        updated: new Date(),
+        categoryColor: $('#category-bg-color').val(),
+        categoryTextColor: $('#category-text-color').val(),
+        bookmarkColor: $('#bookmark-bg-color').val(),
+        bookmarkTextColor: $('#bookmark-text-color').val()
     }
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
     $('#category').hide();
+    processBookmarks();
     if ($('.options').css('display') == "none") {
         $('.options').css('display', 'none');
         $('.addbookmark').css('display', 'none');
@@ -218,6 +248,11 @@ function closeCategory() {
 function editCategoryOpen() {
     $('#category-id')[0].value = event.srcElement.parentNode.parentNode.parentNode.parentNode.id;
     let catID = $('#category-id')[0].value.split("c")[1];
+    // Loading and setting the existing colors in color selectors
+    $('#category-edit-bg-color').val(bookmarks.bookmarks[catID].categoryColor);
+    $('#category-edit-text-color').val(bookmarks.bookmarks[catID].categoryTextColor);
+    $('#bookmark-edit-bg-color').val(bookmarks.bookmarks[catID].bookmarkColor);
+    $('#bookmark-edit-text-color').val(bookmarks.bookmarks[catID].bookmarkTextColor);
     $('.hover').show();
     $('#category-edit').show();
     $('#category-name-edit').val(bookmarks.bookmarks[catID].category);
@@ -229,6 +264,10 @@ function editCategory() {
     let catID = $('#category-id')[0].value.split("c")[1];
     bookmarks.bookmarks[catID].category = $('#category-name-edit').val();
     bookmarks.bookmarks[catID].updated = new Date();
+    bookmarks.bookmarks[catID].categoryColor = $('#category-edit-bg-color').val();
+    bookmarks.bookmarks[catID].categoryTextColor = $('#category-edit-text-color').val();
+    bookmarks.bookmarks[catID].bookmarkColor = $('#bookmark-edit-bg-color').val();
+    bookmarks.bookmarks[catID].bookmarkTextColor = $('#bookmark-edit-text-color').val();
     processBookmarks();
     closeEditCategory();
 }
@@ -423,6 +462,37 @@ function increaseColumn() {
     } else {
         $('#colMsg').hide();
     }
+}
+
+// Function to open edit background menu
+function openEditBackground() {
+    $('#menu').hide();
+    $('#bgimage').val("");
+    $('#background').show();
+}
+
+// Function to update background
+function updateBackground() {
+    let bgUrl = $('#bgimage').val();
+    let bgColor = $('#bgcolor').val();
+    if (bgUrl != "") {
+        $('body').css('background-image', 'url(' + bgUrl + ')');
+        bookmarks.backgroundUrl = bgUrl;
+    } else {
+        $('body').css('background-image', 'none');
+        $('body').css('background-color', bgColor);
+        bookmarks.backgroundColor = bgColor;
+        bookmarks.backgroundUrl = "";
+    }
+    processBookmarks();
+    $('#background').hide();
+    $('.hover').hide();
+}
+
+// Function to close edit background menu
+function closeEditBackground() {
+    $('#background').hide();
+    $('.hover').hide();
 }
 
 // Just for Fun!
