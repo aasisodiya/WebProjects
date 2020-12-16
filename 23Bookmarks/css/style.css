@@ -2,7 +2,6 @@
 
 a {
     text-decoration: none !important;
-    color: #f8f9fa !important;
 }
 
 a:hover {
@@ -13,6 +12,7 @@ body {
     background: #212121;
     font-family: 'Patua One', sans-serif;
     cursor: default;
+    background-size: cover;
 }
 
 button:hover {
@@ -25,17 +25,29 @@ i:hover {
 
 /* Class */
 
+.addlink {
+    cursor: pointer;
+}
+
 .bottomButton {
     position: relative;
     bottom: 15px;
 }
 
-.card {
-    border-color: #343a40 !important;
+.card:hover {
+    background: #2c3137 !important;
 }
 
-.card-body:hover {
-    background: #2c3137 !important;
+.card:hover>div>h5 {
+    color: #f8f9fa !important;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    margin-left: 4px;
 }
 
 .closeUpCat {
@@ -63,7 +75,7 @@ i:hover {
     text-align: center;
 }
 
-.deletelink > i, .options > i {
+.deletelink>i, .options>i {
     cursor: pointer;
 }
 
@@ -83,6 +95,10 @@ i:hover {
     letter-spacing: 2px;
 }
 
+.github {
+    color: white;
+}
+
 .height-70 {
     height: 70px;
 }
@@ -91,8 +107,16 @@ i:hover {
     height: 120px;
 }
 
-.height-150 {
-    height: 150px;
+.height-180 {
+    height: 180px;
+}
+
+.height-255 {
+    height: 255px;
+}
+
+.height-340 {
+    height: 340px;
 }
 
 .holder {
@@ -111,6 +135,14 @@ i:hover {
 
 .link-holder:hover {
     background: #23272b !important;
+}
+
+.link-holder:hover>.row>.col>a {
+    color: #f8f9fa !important;
+}
+
+.link-holder:hover>.row>.col>a:hover {
+    color: orange !important;
 }
 
 .scroll-text {
@@ -139,7 +171,11 @@ i:hover {
 
 /* Ids */
 
-#category-edit, #category, #exportjson, #help, #importjson, #link-delete, #link, #menu {
+#background {
+    height: 180px;
+}
+
+#category-edit, #category, #exportjson, #help, #importjson, #link-delete, #link, #menu, #background {
     display: none;
     position: fixed;
     max-width: 500px;
@@ -152,10 +188,14 @@ i:hover {
 }
 
 #category-edit {
-    height: 150px;
+    height: 350px;
 }
 
-#category, #link-delete {
+#category {
+    height: 255px;
+}
+
+#link-delete {
     height: 70px;
 }
 
@@ -177,7 +217,7 @@ i:hover {
 }
 
 #menu {
-    height: 200px;
+    height: 250px;
     text-align: center;
 }
 
@@ -207,6 +247,7 @@ i:hover {
 }
 
 /* Below code hides option to change columns from mobile users / small screen users */
+
 @media screen and (max-width: 575px) {
     .mobilehide {
         display: none !important;
