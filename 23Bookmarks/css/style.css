@@ -67,7 +67,7 @@ i:hover {
 
 .deletelink, .options {
     position: absolute;
-    right: 30px;
+    right: 16px;
     display: inline;
     border-radius: 10px;
     height: 24px;
@@ -119,6 +119,10 @@ i:hover {
     height: 340px;
 }
 
+.hexlink {
+    white-space: nowrap;
+}
+
 .holder {
     min-height: calc(100vh - 110px);
 }
@@ -133,12 +137,18 @@ i:hover {
     backdrop-filter: blur(6px);
 }
 
+.link-holder {
+    overflow: hidden;
+}
+
 .link-holder:hover {
     background: #23272b !important;
+    overflow: visible;
 }
 
 .link-holder:hover>.row>.col>a {
     color: #f8f9fa !important;
+    white-space: normal;
 }
 
 .link-holder:hover>.row>.col>a:hover {
