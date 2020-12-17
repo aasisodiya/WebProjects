@@ -24,7 +24,7 @@ let categoryHolderHTML = '\
 let linkHolder = '\
             <div class="p-1 m-1 rounded shadow-sm link-holder bclass">\
                 <div class="row">\
-                    <div class="col"><a class="aclass" href="Link" target="_blank" rel="noopener noreferrer">Name</a></div>\
+                    <div class="col"><a class="aclass hexlink" href="Link" target="_blank" rel="noopener noreferrer">Name</a></div>\
                     <div class="deletelink"><i class="fa fa-trash text-danger" onclick="openDeleteLink()" id="link-id"></i></div>\
                 </div>\
             </div>\
@@ -133,6 +133,18 @@ function validateBookmarks(bookmarks) {
             }
             if (bookmarks.updated == undefined || bookmarks.updated.trim() == "") {
                 bookmarks.updated = new Date();
+            }
+            if (bookmarks.categoryColor == undefined || bookmarks.categoryColor.trim() == "") {
+                bookmarks.categoryColor = "#343a40";
+            }
+            if (bookmarks.categoryTextColor == undefined || bookmarks.categoryTextColor.trim() == "") {
+                bookmarks.categoryTextColor = "#f8f9fa";
+            }
+            if (bookmarks.bookmarkColor == undefined || bookmarks.bookmarkColor.trim() == "") {
+                bookmarks.bookmarkColor = "#dc3545";
+            }
+            if (bookmarks.bookmarkTextColor == undefined || bookmarks.bookmarkTextColor.trim() == "") {
+                bookmarks.bookmarkTextColor = "#f8f9fa";
             }
         });
     } catch (error) {
@@ -315,6 +327,7 @@ function toggleEdit() {
         $('#toggle').toggleClass('btn-success');
         editMode = false;
     }
+    localStorage.setItem("isEditModeEnabled", JSON.stringify(editMode));
 }
 
 // Function to display Menu
@@ -443,6 +456,9 @@ function decreaseColumn() {
         $('#colDec').prop('disabled', true)
         return
     }
+    if ($('#col').val() <= 2) {
+        $('#colDec').prop('disabled', true)
+    }
     $('.card-columns').css('column-count', (parseInt($('#col').val()) - 1));
     $('#col').val((parseInt($('#col').val()) - 1));
     if ($('#col').val() <= 4) {
@@ -493,6 +509,13 @@ function updateBackground() {
 function closeEditBackground() {
     $('#background').hide();
     $('.hover').hide();
+}
+
+// Reading isEditModeEnabled from LocalStorage
+let isEditModeEnabled = JSON.parse(localStorage.getItem("isEditModeEnabled"));
+// Setting editMode based on isEditModeEnabled Flag
+if (isEditModeEnabled != null && isEditModeEnabled == false) {
+    toggleEdit();
 }
 
 // Just for Fun!
