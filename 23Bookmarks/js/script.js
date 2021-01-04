@@ -3,12 +3,16 @@
 // Edit Mode is set to true by default
 let editMode = true;
 
+// Timeout for resetting edit mode
+let resetEditModeTime = 60000; // reset period set to one minute
+let resetEditMode; // function to reset
+
 // categoryHolderHTML is template for housing category
 let categoryHolderHTML = '\
             <div class="card shadow-sm" id="card-id">\
                 <div class="card-body rounded">\
-                    <h5 class="card-title">Category<div class="options"><i class="fa fa-pencil cursor-icon text-warning" onclick="editCategoryOpen()"></i></div></h5>\
-                    <div class="bookmarks">\
+                <h5 class="card-title">Category<div class="options"><i class="fa fa-pencil cursor-icon text-warning" onclick="editCategoryOpen()"></i></div></h5>\
+                <div class="bookmarks">\
                         "Bookmarks"\
                     </div>\
                     <div class="bg-secondary p-1 m-1 rounded shadow-sm text-light link-holder addbookmark">\
@@ -318,6 +322,11 @@ function toggleEdit() {
         $('#toggle').toggleClass('btn-danger');
         $('#toggle').toggleClass('btn-success');
         editMode = true;
+        //to handle multiple clicks
+        clearTimeout(resetEditMode);
+        resetEditMode = setTimeout(function(){
+            toggleEdit();
+        }, resetEditModeTime);
     } else {
         $('.options').css('display', 'none');
         $('.deletelink').css('display', 'none');
