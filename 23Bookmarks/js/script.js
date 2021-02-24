@@ -1,17 +1,24 @@
 "use strict"
 
+// just tracking the version for data model used for bookmarksData
+let version = 3;
+
 // Edit Mode is set to true by default
 let editMode = true;
 
 // Timeout for resetting edit mode
 let resetEditModeTime = 60000; // reset period set to one minute
 let resetEditMode; // function to reset
+let collapseState = {};
+
+// Tracking first loading
+let firstLoad = true;
 
 // categoryHolderHTML is template for housing category
 let categoryHolderHTML = '\
             <div class="card shadow-sm" id="card-id">\
                 <div class="card-body rounded">\
-                <h5 class="card-title">Category<div class="options"><i class="fa fa-pencil cursor-icon text-warning" onclick="editCategoryOpen()"></i></div></h5>\
+                <h5 class="card-title"><div class="d-inline ctitle"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> Category</div><div class="options"><i class="fa fa-pencil cursor-icon text-warning" onclick="editCategoryOpen()"></i></div></h5>\
                 <div class="bookmarks">\
                         "Bookmarks"\
                     </div>\
@@ -34,13 +41,13 @@ let linkHolder = '\
             </div>\
         ';
 
-// Reading Bookmarks from LocalStorage
-let bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+// Reading Bookmarks data from LocalStorage
+let bookmarksData = JSON.parse(localStorage.getItem("bookmarks"));
 
-// If bookmarks are null then initialize it with sample
-if (bookmarks == null || bookmarks.bookmarks == null) {
+// If bookmarksData are null then initialize it with sample
+if (bookmarksData == null || bookmarksData.bookmarks == null) {
     // Sample Data Format Being Used
-    bookmarks = {
+    bookmarksData = {
         "bookmarks": [{
             "category": "Regulars",
             "bookmarks": [{
@@ -68,20 +75,48 @@ if (bookmarks == null || bookmarks.bookmarks == null) {
         }
         ],
         "backgroundUrl": "",
-        "backgroundColor": "#212121"
+        "backgroundColor": "#212121",
+        "collapseState": { "c0": "block" },
+        "version": version,
+        "modifications": 0
     };
+}
+
+// Keeping a backup of old version just in case if any issues occurs
+if (bookmarksData.version == undefined) {
+    console.log("Got a version 0 data");
+    localStorage.setItem("bookmarksV0", JSON.stringify(bookmarksData));
+} else if (bookmarksData.version != version) {
+    console.log("Got an old version data");
+    localStorage.setItem("bookmarksV"+bookmarksData.version, JSON.stringify(bookmarksData));
+}
+
+// Checking and assigning collapseState to each Category
+if (bookmarksData.collapseState == undefined || Object.keys(bookmarksData.collapseState).length != bookmarksData.bookmarks.length) {
+    // Fix for existing data
+    bookmarksData.collapseState = {};
+    bookmarksData.bookmarks.forEach((bookmark, index) => {
+        bookmarksData.collapseState["c" + index] = "block";
+    });
+}
+
+// Setting latest version
+bookmarksData.version = version;
+
+if (bookmarksData.modifications == undefined) {
+    bookmarksData.modifications = 0;
 }
 
 // Function to display Bookmarks on UI
 function processBookmarks() {
-    if (bookmarks == null ||
-        bookmarks.bookmarks == null) {
+    if (bookmarksData == null ||
+        bookmarksData.bookmarks == null) {
         return;
     }
     //Clearing data
     $('.card-columns')[0].innerHTML = "";
     // Processing Data if Available
-    bookmarks.bookmarks.forEach((bookmarks, index) => {
+    bookmarksData.bookmarks.forEach((bookmarks, index) => {
         let bookmarkHolder = '';
         let categoryId = "c" + index;
         let bookmarkLinkClass = "b" + index;
@@ -101,23 +136,39 @@ function processBookmarks() {
         $('#' + categoryId).css('color', bookmarks.categoryTextColor);
         $('.' + bookmarkClass).css('background', bookmarks.bookmarkColor);
         $('.' + bookmarkLinkClass).css('color', bookmarks.bookmarkTextColor);
+        // checking collapsed state
+        if (bookmarksData.collapseState == null || bookmarksData.collapseState[categoryId] == "block" || bookmarksData.collapseState[categoryId] == null) {
+            $('#' + categoryId).find('.bookmarks').show();
+        } else {
+            $('#' + categoryId).find('.bookmarks').hide();
+            $('#' + categoryId).find('.ctitle').find('.fa').toggleClass('fa-chevron-circle-right').toggleClass('fa-chevron-circle-down');
+        }
     });
-    if (bookmarks.backgroundUrl != "") {
-        $('body').css('background-image', 'url(' + bookmarks.backgroundUrl + ')');
+    if (bookmarksData.backgroundUrl != null && bookmarksData.backgroundUrl != "") {
+        $('body').css('background-image', 'url(' + bookmarksData.backgroundUrl + ')');
     } else {
         $('body').css('background-image', 'none');
-        $('body').css('background-color', bookmarks.backgroundColor);
+        $('body').css('background-color', bookmarksData.backgroundColor);
     }
-    localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+    $('#toggle')[0].innerHTML = "Edit Mode On";
+    if ($('#toggle').hasClass('btn-danger')) {
+        $('#toggle').toggleClass('btn-danger').toggleClass('btn-success');
+    }
+    editMode = true;
+    if (!firstLoad) {
+        bookmarksData.modifications += 1;
+    }
+    firstLoad = false;
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarksData));
 }
 
 // Function to Validate Bookmarks - it returns true and empty message if everything is ok else returns false with given message
-function validateBookmarks(bookmarks) {
-    if (bookmarks == null || bookmarks.bookmarks == null || bookmarks.bookmarks.length == 0) {
-        return { valid: false, message: "Bookmarks are empty" };
+function validateBookmarks(bookmarksData) {
+    if (bookmarksData == null || bookmarksData.bookmarks == null || bookmarksData.bookmarks.length == 0) {
+        return { valid: false, message: "bookmarksData is empty" };
     }
     try {
-        bookmarks.bookmarks.forEach((bookmarks, cindex) => {
+        bookmarksData.bookmarks.forEach((bookmarks, cindex) => {
             if (bookmarks.category == undefined) {
                 bookmarks.category = "";
             }
@@ -157,8 +208,8 @@ function validateBookmarks(bookmarks) {
     return { valid: true, message: "" };
 }
 
-// Initially Validating Bookmarks
-validateBookmarks(bookmarks);
+// Initially Validating bookmarksData
+validateBookmarks(bookmarksData);
 
 // Calling it for first time to load UI
 processBookmarks();
@@ -192,13 +243,13 @@ function saveLink() {
         return;
     }
     let catID = $('#cat-id')[0].value.split("c")[1];
-    let bookmarklist = bookmarks.bookmarks[catID].bookmarks;
+    let bookmarklist = bookmarksData.bookmarks[catID].bookmarks;
     bookmarklist[bookmarklist.length] = {
         name: linkName,
         url: linkURL,
         created: new Date()
     };
-    bookmarks.bookmarks[catID].updated = new Date();
+    bookmarksData.bookmarks[catID].updated = new Date();
     processBookmarks();
     $('#link').hide();
     $('.hover').hide();
@@ -222,8 +273,8 @@ function saveCategory() {
         return;
     }
     $('.card-columns')[0].innerHTML += categoryHolderHTML.replace("card-id",
-        "c" + bookmarks.bookmarks.length).replace("Category", categoryName).replace('"Bookmarks"', "");
-    bookmarks.bookmarks[bookmarks.bookmarks.length] = {
+        "c" + bookmarksData.bookmarks.length).replace("Category", categoryName).replace('"Bookmarks"', "");
+    bookmarksData.bookmarks[bookmarksData.bookmarks.length] = {
         category: categoryName,
         bookmarks: [],
         created: new Date(),
@@ -233,7 +284,7 @@ function saveCategory() {
         bookmarkColor: $('#bookmark-bg-color').val(),
         bookmarkTextColor: $('#bookmark-text-color').val()
     }
-    localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarksData));
     $('#category').hide();
     processBookmarks();
     if ($('.options').css('display') == "none") {
@@ -265,29 +316,30 @@ function editCategoryOpen() {
     $('#category-id')[0].value = event.srcElement.parentNode.parentNode.parentNode.parentNode.id;
     let catID = $('#category-id')[0].value.split("c")[1];
     // Loading and setting the existing colors in color selectors
-    $('#category-edit-bg-color').val(bookmarks.bookmarks[catID].categoryColor);
-    $('#category-edit-text-color').val(bookmarks.bookmarks[catID].categoryTextColor);
-    $('#bookmark-edit-bg-color').val(bookmarks.bookmarks[catID].bookmarkColor);
-    $('#bookmark-edit-text-color').val(bookmarks.bookmarks[catID].bookmarkTextColor);
+    $('#category-edit-bg-color').val(bookmarksData.bookmarks[catID].categoryColor);
+    $('#category-edit-text-color').val(bookmarksData.bookmarks[catID].categoryTextColor);
+    $('#bookmark-edit-bg-color').val(bookmarksData.bookmarks[catID].bookmarkColor);
+    $('#bookmark-edit-text-color').val(bookmarksData.bookmarks[catID].bookmarkTextColor);
     $('.hover').show();
     $('#category-edit').show();
-    $('#category-name-edit').val(bookmarks.bookmarks[catID].category);
-    $('#category-name-current').val(bookmarks.bookmarks[catID].category);
+    $('#category-name-edit').val(bookmarksData.bookmarks[catID].category);
+    $('#category-name-current').val(bookmarksData.bookmarks[catID].category);
 }
 
 // Function to Edit Category
 function editCategory() {
     let catID = $('#category-id')[0].value.split("c")[1];
-    bookmarks.bookmarks[catID].category = $('#category-name-edit').val();
-    bookmarks.bookmarks[catID].updated = new Date();
-    bookmarks.bookmarks[catID].categoryColor = $('#category-edit-bg-color').val();
-    bookmarks.bookmarks[catID].categoryTextColor = $('#category-edit-text-color').val();
-    bookmarks.bookmarks[catID].bookmarkColor = $('#bookmark-edit-bg-color').val();
-    bookmarks.bookmarks[catID].bookmarkTextColor = $('#bookmark-edit-text-color').val();
+    bookmarksData.bookmarks[catID].category = $('#category-name-edit').val();
+    bookmarksData.bookmarks[catID].updated = new Date();
+    bookmarksData.bookmarks[catID].categoryColor = $('#category-edit-bg-color').val();
+    bookmarksData.bookmarks[catID].categoryTextColor = $('#category-edit-text-color').val();
+    bookmarksData.bookmarks[catID].bookmarkColor = $('#bookmark-edit-bg-color').val();
+    bookmarksData.bookmarks[catID].bookmarkTextColor = $('#bookmark-edit-text-color').val();
     processBookmarks();
     closeEditCategory();
 }
 
+// Function to close Edit Category View Panel
 function closeEditCategory() {
     $('#category-edit').hide();
     $('.hover').hide();
@@ -295,11 +347,26 @@ function closeEditCategory() {
     $('#labelcheck').addClass('text-light');
 }
 
+// Function to update collapseState
+function updateCollapseState(catId) {
+    catId = "c" + catId;
+    let updatedCollapseState = {};
+    if (bookmarksData.collapseState[catId] != undefined) {
+        delete bookmarksData.collapseState[catId];
+        Object.keys(bookmarksData.collapseState).forEach((element, index) => {
+            updatedCollapseState["c" + index] = bookmarksData.collapseState[element];
+        }
+        );
+    }
+    return updatedCollapseState;
+}
+
 // Function to delete a category
 function deleteCategory() {
     if ($('#catCheck')[0].checked) {
         let catID = $('#category-id')[0].value.split("c")[1];
-        bookmarks.bookmarks.splice(catID, 1);
+        bookmarksData.bookmarks.splice(catID, 1);
+        bookmarksData.collapseState = updateCollapseState(catID);
         processBookmarks();
         $('#catCheck')[0].checked = false;
         $('#labelcheck').removeClass('text-warning');
@@ -314,26 +381,27 @@ function deleteCategory() {
 
 // Function to toggle Edit option
 function toggleEdit() {
+    //to handle multiple
+    if (resetEditMode != undefined) {
+        clearTimeout(resetEditMode);
+    }
     if (!editMode) {
-        $('.options').css('display', 'inline');
-        $('.deletelink').css('display', 'inline');
+        $('.options,.deletelink').css('display', 'inline');
         $('.addbookmark').css('display', 'block');
         $('#toggle')[0].innerHTML = "Edit Mode On";
-        $('#toggle').toggleClass('btn-danger');
-        $('#toggle').toggleClass('btn-success');
+        if ($('#toggle').hasClass('btn-danger')) {
+            $('#toggle').toggleClass('btn-danger').toggleClass('btn-success');
+        }
         editMode = true;
-        //to handle multiple clicks
-        clearTimeout(resetEditMode);
-        resetEditMode = setTimeout(function(){
+        resetEditMode = setTimeout(function () {
             toggleEdit();
         }, resetEditModeTime);
     } else {
-        $('.options').css('display', 'none');
-        $('.deletelink').css('display', 'none');
-        $('.addbookmark').css('display', 'none');
+        $('.options,.deletelink,.addbookmark').css('display', 'none');
         $('#toggle')[0].innerHTML = "Edit Mode Off";
-        $('#toggle').toggleClass('btn-danger');
-        $('#toggle').toggleClass('btn-success');
+        if ($('#toggle').hasClass('btn-success')) {
+            $('#toggle').toggleClass('btn-danger').toggleClass('btn-success');
+        }
         editMode = false;
     }
     localStorage.setItem("isEditModeEnabled", JSON.stringify(editMode));
@@ -360,7 +428,7 @@ function closeMenu() {
 // Function to load Exported JSON Form
 function exportJSON() {
     $('#menu').hide();
-    $('#jsonOp')[0].value = JSON.stringify(bookmarks, undefined, 4);
+    $('#jsonOp')[0].value = JSON.stringify(bookmarksData, undefined, 4);
     $('#exportjson').show();
 }
 
@@ -372,10 +440,11 @@ function closeExportJSON() {
 
 // Function to open Import JSON Form
 function openImportJSON() {
+    alert('Warning!!!! You are about to delete your existing data and replace it with your Imported Data. Proceed ahead with caution!');
     $('#menu').hide();
     $('#jsonIn').val("");
     // Re/Setting placeholder
-    $('#jsonIn')[0].placeholder = "Insert Bookmarks Compatible JSON";
+    $('#jsonIn')[0].placeholder = "Warning!!!! You are about to delete your existing data and replace it with new Imported Data. Insert Bookmarks Compatible JSON";
     $('#importjson').show();
 }
 
@@ -383,11 +452,14 @@ function openImportJSON() {
 function importJSON() {
     $('#menu').hide();
     try {
-        bookmarks = JSON.parse($('#jsonIn').val());
-        let validation = validateBookmarks(bookmarks);
+        let bookmarksJSON = JSON.parse($('#jsonIn').val());
+        let validation = validateBookmarks(bookmarksJSON);
         if (!validation.valid) {
             throw validation.message;
         }
+        bookmarksJSON.version = bookmarksData.version;
+        bookmarksJSON.modifications = bookmarksData.modifications;
+        bookmarksData = bookmarksJSON;
         processBookmarks();
     } catch (error) {
         $('#jsonIn').val("");
@@ -428,7 +500,7 @@ function openDeleteLink() {
 function deleteLink() {
     let catId = $('#cat-delete-id').val().split("c")[1];
     let linkId = $('#link-delete-id').val().split("l")[1];
-    bookmarks.bookmarks[catId].bookmarks.splice(linkId, 1);
+    bookmarksData.bookmarks[catId].bookmarks.splice(linkId, 1);
     processBookmarks();
     $('#link-delete').hide();
     $('.hover').hide();
@@ -502,12 +574,12 @@ function updateBackground() {
     let bgColor = $('#bgcolor').val();
     if (bgUrl != "") {
         $('body').css('background-image', 'url(' + bgUrl + ')');
-        bookmarks.backgroundUrl = bgUrl;
+        bookmarksData.backgroundUrl = bgUrl;
     } else {
         $('body').css('background-image', 'none');
         $('body').css('background-color', bgColor);
-        bookmarks.backgroundColor = bgColor;
-        bookmarks.backgroundUrl = "";
+        bookmarksData.backgroundColor = bgColor;
+        bookmarksData.backgroundUrl = "";
     }
     processBookmarks();
     $('#background').hide();
@@ -520,8 +592,40 @@ function closeEditBackground() {
     $('.hover').hide();
 }
 
+// // Below function is not used because it simply complicates easy process
+// // Function to show/hide bookmarks in given category
+// function hideBookmarks(element) {
+//     let selectedBookmarks = element.parentNode.parentNode.querySelector('.bookmarks');
+//     if (selectedBookmarks.style.display == "" || selectedBookmarks.style.display == "block") {
+//         selectedBookmarks.style.display = "none";
+//     } else {
+//         selectedBookmarks.style.display = "block";
+//     }
+// }
+
+// Avoid using below code because it won't work for newly added bookmarks
+// $('.ctitle').on('click', function(event) {
+//     console.log(event);
+// });
+
+// To avoid above issue, we are instead applying the event listener on super-parent element under which changes are going to happen, This way when we click on any new created element it will check to see if the element is of class "ctitle" and then only fire callback.
+$('.card-columns').on('click', '.ctitle', function (event) {
+    let selectedBookmarks = event.currentTarget.parentElement.parentElement.querySelector('.bookmarks');
+    $(selectedBookmarks).toggle();
+    $(event.currentTarget.children[0]).toggleClass('fa-chevron-circle-right').toggleClass('fa-chevron-circle-down');
+    // lets record the state
+    let catId = $(event.currentTarget).parents('.card').attr('id');
+    if ($(selectedBookmarks).css('display') == "none") {
+        bookmarksData.collapseState[catId] = "none";
+    } else {
+        bookmarksData.collapseState[catId] = "block";
+    }
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarksData));
+});
+
 // Reading isEditModeEnabled from LocalStorage
 let isEditModeEnabled = JSON.parse(localStorage.getItem("isEditModeEnabled"));
+
 // Setting editMode based on isEditModeEnabled Flag
 if (isEditModeEnabled != null && isEditModeEnabled == false) {
     toggleEdit();

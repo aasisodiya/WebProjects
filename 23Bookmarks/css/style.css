@@ -13,6 +13,8 @@ body {
     font-family: 'Patua One', sans-serif;
     cursor: default;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 button:hover {
@@ -61,6 +63,10 @@ i:hover {
     cursor: pointer;
 }
 
+.ctitle {
+    cursor: pointer;
+}
+
 .cursor-icon {
     cursor: pointer;
 }
@@ -79,7 +85,13 @@ i:hover {
     cursor: pointer;
 }
 
-.deletelink:hover, .options:hover {
+/* .deletelink:hover, */
+
+.options:hover {
+    background: wheat;
+}
+
+.deletelink {
     background: wheat;
 }
 
@@ -121,6 +133,8 @@ i:hover {
 
 .hexlink {
     white-space: nowrap;
+    width: 100%;
+    display: block;
 }
 
 .holder {
