@@ -27,7 +27,3 @@
 - https://aasisodiya.github.io/WebProjects/20ProjectileMotion/
 - https://aasisodiya.github.io/WebProjects/21DigitalClock/
 - https://aasisodiya.github.io/WebProjects/23Bookmarks/
-
-## Notes
-
-- Comparison
