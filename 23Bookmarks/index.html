@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarks</title>
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="Website to display all your bookmarks in one place">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+        </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Below code is for Menu containing various options -->
+    <div id="menu">
+        <div class="row">
+            <div class="col px-4">
+                <button type="button" class="btn btn-dark btn-sm btn-block shadow-sm" onclick="addCategory()"><i
+                        class="fa fa-plus-circle"></i> Add
+                    Category</button>
+                <button type="button" class="btn btn-dark btn-sm btn-block shadow-sm" onclick="showHelp()"><i
+                        class="fa fa-info-circle"></i> Help</button>
+                <button type="button" class="btn btn-dark btn-sm btn-block shadow-sm" onclick="exportJSON()"><i
+                        class="fa fa-arrow-circle-up"></i> Export JSON</button>
+                <button type="button" class="btn btn-dark btn-sm btn-block shadow-sm" onclick="openImportJSON()"><i
+                        class="fa fa-arrow-circle-down"></i> Import JSON</button>
+                <div class="input-group input-group-sm my-2 mobilehide">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-dark border-dark text-white">Number of Columns</span>
+                        <button class="btn btn-outline-secondary border-dark bg-danger" type="button"
+                            onclick="decreaseColumn()" id="colDec"><i class="fa fa-minus text-white"></i></button>
+                    </div>
+                    <input type="number" class="form-control bg-dark border-dark text-white text-center"
+                        placeholder="Enter  Number of Columns" aria-label="" aria-describedby="basic-addon1" id="col"
+                        value="4" disabled>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary border-dark bg-danger" type="button"
+                            onclick="increaseColumn()" id="colIn"><i class="fa fa-plus text-white"></i></button>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-dark btn-sm btn-block shadow-sm text-danger" id="colMsg"
+                    disabled>Don't go too high or the UI will look like trash</button>
+                <button type="button" class="btn btn-dark btn-sm btn-block shadow-sm" onclick="openEditBackground()"><i
+                        class="fa fa-pencil-square-o"></i> Edit Background</button>
+                <button type="button" class="btn btn-danger btn-sm btn-block shadow-sm" onclick="closeMenu()"><i
+                        class="fa fa-times"></i> Close</button>
+            </div>
+        </div>
+    </div>
+    <!-- Below code is for Edit Mode On/Off Button -->
+    <button id="toggle" class="editmode shadow-sm btn btn-sm btn-success" onclick="toggleEdit()">Edit Mode On</button>
+    <!-- Below code is for blurred overlay background -->
+    <div class="hover"></div>
+    <!-- Below code is for Help Section -->
+    <div id="help" class="px-4">
+        <div class="row bg-dark p-2 text-center rounded shadow-sm">
+            <div class="col text-light px-4 scroll-text scroll-bar">
+                <h3><i class="fa fa-info-circle"></i> Help</h3>
+                <p class="text-justify">Bookmarks is a SPA that helps you to store all Bookmarks in one page so that you
+                    can view them all together. </p>
+                <p class="text-justify">
+                    To Add Category : Go to Menu > Click Add Category > Enter Category Name > Click on Add Sign > Done
+                </p>
+                <p class="text-justify">
+                    To Add a Link : Switch On Edit Mode by Clicking Edit Mode Button > Click on Add Sign in required
+                    Category > Enter Bookmark Name and URL and click Add Sign
+                </p>
+                <p class="text-justify">
+                    To Edit/Delete Category : Switch On Edit Mode by Clicking Edit Mode Button > Then Click on Pencil
+                    Sign > Now in case of edit Enter new Name for Category and click on Edit Category and in case you
+                    want to delete the whole category and links inside it then check the given checkbox and click on
+                    Delete Category button
+                </p>
+                <p class="text-justify">
+                    To Edit/Delete Link : Switch On Edit Mode by Clicking Edit Mode Button > Then hover on the link that
+                    you want to edit/delete then click on delete icon > Then confirm deletion > Done (For edit just
+                    delete and add the new link)
+                </p>
+                <p class="text-justify">
+                    To Export/Import Bookmarks : Go to Menu > Click on Export/Import JSON > Copy the data for exporting
+                    / Paste your own data for importing and click import
+                </p>
+                <p class="text-justify">
+                    To Hide/Show Category Bookmarks List : You can simply click on the circled arrow / category name in order to hide/show the bookmarks in that category list.
+                </p>
+            </div>
+        </div>
+        <div class="row bottomButton">
+            <div class="col px-4">
+                <button type="button" class="btn btn-danger btn-sm btn-block shadow-sm"
+                    onclick="hideHelp()"><i class="fa fa-times"></i> Close</button>
+            </div>
+        </div>
+    </div>
+    <!-- Below code is for Title Bar -->
+    <div class="row m-0 p-3 text-warning align-items-center">
+        <h2 class="font-shadow-sm m-0"><i class="fa fa-bookmark"></i> Bookmarks</h2>
+        <!-- Below code is for Menu Button -->
+        <button type="button" class="btn btn-dark btn-sm btn-block shadow-sm" id="menu-button"
+            onclick="openMenu()">
+            <i class="fa fa-bars"></i> Menu
+        </button>
+    </div>
+    <!-- Below code houses all your bookmarks using JS -->
+    <div class="m-0 p-3 holder">
+        <div class="card-columns">
+        </div>
+    </div>
+    <!-- Below code is for form to insert link  -->
+    <div id="link" class="px-4">
+        <div class="bg-dark p-2 text-center rounded height-120 shadow-sm">
+            <input type="text" name="" id="link-id" class="d-none" value="">
+            <input type="text" name="" id="cat-id" class="d-none" value="">
+            <div class="input-group input-group-sm mb-3 shadow-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" id="link-name" placeholder="Bookmark Name">
+            </div>
+            <div class="input-group input-group-sm mb-3 shadow-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">URL</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" id="link-url" placeholder="Website URL">
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <button type="button" class="btn btn-success btn-sm btn-block shadow-sm"
+                        onclick="saveLink()"><i class="fa fa-plus"></i></button>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-warning btn-sm btn-block shadow-sm"
+                        onclick="closeSaveLink()"><i class="fa fa-times"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Below code is for dialogue to confirm if user want to delete the link -->
+    <div id="link-delete" class="px-4">
+        <div class="bg-dark p-2 text-center rounded height-70 shadow-sm">
+            <input type="text" name="" id="link-delete-id" class="d-none" value="">
+            <input type="text" name="" id="cat-delete-id" class="d-none" value="">
+            <p class="text-white">Are you sure you want to delete?</p>
+            <div class="row">
+                <div class="col-6">
+                    <button type="button" class="btn btn-danger btn-sm btn-block shadow-sm"
+                        onclick="deleteLink()"><i class="fa fa-trash"></i> Yes</button>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-primary btn-sm btn-block shadow-sm"
+                        onclick="closeDeleteLink()"><i class="fa fa-times"></i> No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Below code is for form to insert category -->
+    <div id="category" class="px-4 text-center">
+        <div class="bg-dark p-2 rounded height-255 shadow-sm">
+            <div class="input-group input-group-sm mb-3 shadow-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Category Name</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" id="category-name" placeholder="Enter Category Name">
+            </div>
+            <div class="input-group input-group-sm mb-3 shadow-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Category BG Color</span>
+                </div>
+                <input type="color" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" id="category-bg-color" value="#343a40">
+            </div>
+            <div class="input-group input-group-sm mb-3 shadow-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Category Text Color</span>
+                </div>
+                <input type="color" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" id="category-text-color" value="#f8f9fa">
+            </div>
+            <div class="input-group input-group-sm mb-3 shadow-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Bookmark BG Color</span>
+                </div>
+                <input type="color" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" id="bookmark-bg-color" value="#dc3545">
+            </div>
+            <div class="input-group input-group-sm mb-3 shadow-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Bookmark Text Color</span>
+                </div>
+                <input type="color" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" id="bookmark-text-color" value="#f8f9fa">
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <button type="button" class="btn btn-success btn-sm btn-block shadow-sm"
+                        onclick="saveCategory()"><i class="fa fa-plus"></i></button>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-danger btn-sm btn-block shadow-sm"
+                        onclick="closeCategory()"><i class="fa fa-times"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Below code is for form to update Category Name or Delete Category -->
+    <div id="category-edit" class="px-4">
+        <div class="closeUpCat" onclick="closeEditCategory()"><i class="fa fa-times text-danger"></i></div>
+        <div class="bg-dark p-2 text-center rounded height-340 shadow-sm">
+            <input type="text" id="category-id" class="d-none" value="">
+            <div class="input-group input-group-sm mb-3 shadow-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Current Category Name</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" id="category-name-current" value="Default Category"
+                    disabled>
+            </div>
+            <div class="input-group input-group-sm mb-3 shadow-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">New Category Name</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" id="category-name-edit" value="Default Category">
+            </div>
+            <div class="input-group input-group-sm mb-3 shadow-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Category BG Color</span>
+                </div>
+                <input type="color" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" id="category-edit-bg-color" value="#343a40">
+            </div>
+            <div class="input-group input-group-sm mb-3 shadow-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Category Text Color</span>
+                </div>
+                <input type="color" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" id="category-edit-text-color" value="#f8f9fa">
+            </div>
+            <div class="input-group input-group-sm mb-3 shadow-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Bookmark BG Color</span>
+                </div>
+                <input type="color" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" id="bookmark-edit-bg-color" value="#dc3545">
+            </div>
+            <div class="input-group input-group-sm mb-3 shadow-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Bookmark Text Color</span>
+                </div>
+                <input type="color" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" id="bookmark-edit-text-color" value="#f8f9fa">
+            </div>
+            <div class="form-check pb-2">
+                <input class="form-check-input" type="checkbox" id="catCheck">
+                <label class="form-check-label text-light" for="catCheck" id="labelcheck">
+                    Delete the category and all links inside
+                </label>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <button type="button" class="btn btn-success btn-sm btn-block shadow-sm"
+                        onclick="editCategory()"><i class="fa fa-pencil"></i> Update</button>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-danger btn-sm btn-block shadow-sm"
+                        onclick="deleteCategory()"><i class="fa fa-trash"></i> Delete Category</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Below code is for dialogue to export bookmarks in JSON -->
+    <div id="exportjson" class="px-4">
+        <div class="row m-0">
+            <div class="col">
+                <textarea class="form-control shadow-sm scroll-bar bg-dark border-dark text-light" id="jsonOp"
+                    rows="3"></textarea>
+            </div>
+        </div>
+        <div class="m-1"></div>
+        <div class="row px-4">
+            <div class="col-6">
+                <button type="button" class="btn btn-success btn-sm btn-block shadow-sm"
+                    onclick="copyJSON()"><i class="fa fa-clone"></i> Copy</button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-danger btn-sm btn-block shadow-sm"
+                    onclick="closeExportJSON()"><i class="fa fa-times"></i> Close</button>
+            </div>
+        </div>
+    </div>
+    <!-- Below code is for dialogue to import bookmarks in JSON -->
+    <div id="importjson" class="px-4">
+        <div class="row m-0">
+            <div class="col">
+                <textarea class="form-control shadow-sm scroll-bar bg-dark border-dark text-light" id="jsonIn" rows="3"
+                    placeholder="Insert Bookmarks Compatible JSON"></textarea>
+            </div>
+        </div>
+        <div class="m-1"></div>
+        <div class="row px-4">
+            <div class="col-6">
+                <button type="button" class="btn btn-success btn-sm btn-block shadow-sm"
+                    onclick="importJSON()"><i class="fa fa-arrow-down"></i> Import</button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-danger btn-sm btn-block shadow-sm"
+                    onclick="closeImportJSON()"><i class="fa fa-times"></i> Close</button>
+            </div>
+        </div>
+    </div>
+    <!-- Below code is for form to edit background  -->
+    <div id="background" class="px-4">
+        <div class="bg-dark p-2 text-center rounded height-180 shadow-sm">
+            <div class="input-group input-group-sm mb-3 shadow-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Background Image</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" id="bgimage" placeholder="Insert Image URL">
+            </div>
+            <div class="input-group input-group-sm mb-3 shadow-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Background Color</span>
+                </div>
+                <input type="color" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm" id="bgcolor" value="#212121">
+            </div>
+            <p class="text-white">Leave Background Image URL blank if you want to use Background Color</p>
+            <div class="row">
+                <div class="col-6">
+                    <button type="button" class="btn btn-success btn-sm btn-block shadow-sm"
+                        onclick="updateBackground()"><i class="fa fa-pencil-square-o"></i>
+                        Update</button>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-danger btn-sm btn-block shadow-sm"
+                        onclick="closeEditBackground()"><i class="fa fa-times"></i> Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="m-2 text-warning">
+        <i class="fa fa-code" aria-hidden="true"></i> by
+        <a href="https://github.com/aasisodiya" class="github">
+            <i class="fa fa-github"></i> aasisodiya
+        </a>
+    </div>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
+
+<!-- Z-index was causing issue with cards -->

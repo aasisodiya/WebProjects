@@ -1,5 +1,7 @@
 # WebProjects
 
+## Project URLs
+
 - https://aasisodiya.github.io/WebProjects/release/vr/
 - https://aasisodiya.github.io/WebProjects/release/v2/
 - https://aasisodiya.github.io/WebProjects/release/v3/
@@ -20,3 +22,12 @@
 - https://aasisodiya.github.io/WebProjects/15SunAndMoon/
 - https://aasisodiya.github.io/WebProjects/16Menu/
 - https://aasisodiya.github.io/WebProjects/17MasonryGrid/
+- https://aasisodiya.github.io/WebProjects/18SVGLineAnimation/
+- https://aasisodiya.github.io/WebProjects/19TextAnimation/
+- https://aasisodiya.github.io/WebProjects/20ProjectileMotion/
+- https://aasisodiya.github.io/WebProjects/21DigitalClock/
+- https://aasisodiya.github.io/WebProjects/23Bookmarks/
+
+## Notes
+
+- Comparison

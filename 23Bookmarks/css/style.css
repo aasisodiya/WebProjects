@@ -1,0 +1,282 @@
+/* Tags */
+
+a {
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: orange !important;
+}
+
+body {
+    background: #212121;
+    font-family: 'Patua One', sans-serif;
+    cursor: default;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+button:hover {
+    color: orange !important;
+}
+
+i:hover {
+    color: orange !important;
+}
+
+/* Class */
+
+.addlink {
+    cursor: pointer;
+}
+
+.bottomButton {
+    position: relative;
+    bottom: 15px;
+}
+
+.card:hover {
+    background: #2c3137 !important;
+}
+
+.card:hover>div>h5 {
+    color: #f8f9fa !important;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    margin-left: 4px;
+}
+
+.closeUpCat {
+    position: absolute;
+    right: 10px;
+    top: -20px;
+    font-size: 25px;
+    border-radius: 10px;
+    text-align: center;
+    width: 20px;
+    cursor: pointer;
+}
+
+.ctitle {
+    cursor: pointer;
+}
+
+.cursor-icon {
+    cursor: pointer;
+}
+
+.deletelink, .options {
+    position: absolute;
+    right: 16px;
+    display: inline;
+    border-radius: 10px;
+    height: 24px;
+    width: 24px;
+    text-align: center;
+}
+
+.deletelink>i, .options>i {
+    cursor: pointer;
+}
+
+/* .deletelink:hover, */
+
+.options:hover {
+    background: wheat;
+}
+
+.deletelink {
+    background: wheat;
+}
+
+.editmode {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+    z-index: 1;
+}
+
+.font-shadow-sm {
+    text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .4) !important;
+    letter-spacing: 2px;
+}
+
+.github {
+    color: white;
+}
+
+.height-70 {
+    height: 70px;
+}
+
+.height-120 {
+    height: 120px;
+}
+
+.height-180 {
+    height: 180px;
+}
+
+.height-255 {
+    height: 255px;
+}
+
+.height-340 {
+    height: 340px;
+}
+
+.hexlink {
+    white-space: nowrap;
+    width: 100%;
+    display: block;
+}
+
+.holder {
+    min-height: calc(100vh - 110px);
+}
+
+.hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 2;
+    display: none;
+    backdrop-filter: blur(6px);
+}
+
+.link-holder {
+    overflow: hidden;
+}
+
+.link-holder:hover {
+    background: #23272b !important;
+    overflow: visible;
+}
+
+.link-holder:hover>.row>.col>a {
+    color: #f8f9fa !important;
+    white-space: normal;
+}
+
+.link-holder:hover>.row>.col>a:hover {
+    color: orange !important;
+}
+
+.scroll-text {
+    height: 360px;
+    overflow: auto;
+}
+
+.scroll-bar::-webkit-scrollbar {
+    width: 5px;
+    /* width of the entire scrollbar */
+}
+
+.scroll-bar::-webkit-scrollbar-track {
+    background: #212529;
+    /* color of the tracking area */
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+    background-color: #dc3545;
+    border-radius: 20px;
+}
+
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .375) !important;
+}
+
+/* Ids */
+
+#background {
+    height: 180px;
+}
+
+#category-edit, #category, #exportjson, #help, #importjson, #link-delete, #link, #menu, #background {
+    display: none;
+    position: fixed;
+    max-width: 500px;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 3;
+}
+
+#category-edit {
+    height: 350px;
+}
+
+#category {
+    height: 255px;
+}
+
+#link-delete {
+    height: 70px;
+}
+
+#colMsg {
+    display: none;
+}
+
+#help {
+    font-size: 12px;
+    height: 360px;
+}
+
+#jsonOp, #jsonIn, #exportjson, #importjson {
+    height: 60vh;
+}
+
+#link {
+    height: 120px;
+}
+
+#menu {
+    height: 250px;
+    text-align: center;
+}
+
+#menu-button {
+    /* position: fixed !important;
+    top: 10px;
+    right: 10px;
+    width: 110px;
+    z-index: 1; */
+    position: absolute;
+    display: inline;
+    width: 100px;
+    right: 1rem;
+    z-index: 1;
+}
+
+#toggle:hover {
+    color: orange;
+}
+
+/* Conditional */
+
+@media only screen and (min-width: 720px) {
+    .card-columns {
+        column-count: 4;
+    }
+}
+
+/* Below code hides option to change columns from mobile users / small screen users */
+
+@media screen and (max-width: 575px) {
+    .mobilehide {
+        display: none !important;
+    }
+    .card-columns {
+        column-count: 1 !important;
+    }
+}
