@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: 'Righteous', sans-serif;
+}
+
+.grid-container {
+    /* The CSS Grid Layout Module offers a grid-based layout system,
+    with rows and columns, making it easier to design web pages
+    without having to use floats and positioning. */
+    display: grid;
+    /* The grid-template-columns property specifies the number (and the widths) of columns in a grid layout.
+    The values are a space separated list, where each value specifies the size of the respective column. */
+    /* grid-template-columns: 100px 100px 100px 100px 100px 100px 100px; */
+    grid-template-columns: auto auto auto auto auto auto auto;
+    /* using (auto auto auto auto) will create 4 columns.
+    Where the size of the columns is determined by
+    the size of the container and on the size of
+    the content of the items in the column */
+    grid-gap: 2px;
+    padding: 2px;
+    width: fit-content;
+}
+
+.grid-container>div {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* text-align: center; */
+    /* padding: 10px 0; */
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    /* width: fit-content; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#moodcanvas {
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+}
+
+#moodcanvas2 {
+    width: 190px;
+    border: 20px solid black;
+    /* margin: auto; */ /* Causing Issues to Downloaded Image */
+    background: #cb2d3e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
