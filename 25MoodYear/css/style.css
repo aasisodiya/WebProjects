@@ -1,3 +1,8 @@
+/* Variables */
+:root {
+
+}
+
 * {
     margin: 0;
 }
@@ -14,14 +19,14 @@ body {
     /* The grid-template-columns property specifies the number (and the widths) of columns in a grid layout.
     The values are a space separated list, where each value specifies the size of the respective column. */
     /* grid-template-columns: 100px 100px 100px 100px 100px 100px 100px; */
-    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
     /* using (auto auto auto auto) will create 4 columns.
     Where the size of the columns is determined by
     the size of the container and on the size of
     the content of the items in the column */
-    grid-gap: 2px;
+    grid-gap: 5px; /* This is the gap between every grid element */
     padding: 2px;
-    width: fit-content;
+    width: fit-content; /* Width as fit-content will retrict current element width to the overall width of the content */
 }
 
 .grid-container>div {
@@ -37,17 +42,31 @@ body {
     align-items: center;
 }
 
-#moodcanvas {
-    width: fit-content;
-    margin: auto;
-    padding: 10px;
+.transparent-bg {
+    background-color: #00000090 !important;
 }
 
-#moodcanvas2 {
-    width: 190px;
-    border: 20px solid black;
+#moodcanvas {
+    /* position: absolute; */
+    /* width: fit-content; */
+    /* margin: auto; */
+    padding: 10px;
+    right: 0;
+    left: 0;
+}
+
+#holder {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    /* padding: 40px; */
+    /* position: relative; */
+    /* width: 290px; */
+    /* border: 20px solid black; */ /* Causing Issues to Downloaded Image */
     /* margin: auto; */ /* Causing Issues to Downloaded Image */
     background: #cb2d3e;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+/* https://thoughtbot.com/blog/positioning */

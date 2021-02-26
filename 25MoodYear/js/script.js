@@ -17,27 +17,57 @@ function getNextDate() {
 }
 
 // Lets fill in the first column (if any, then populating the last days from previous years)
-for (let index = 0; index < currentYearStartDay; index++) {
-    let date = (daysInDecember - currentYearStartDay) + index + 1;
-    $(".grid-container")[0].innerHTML += ('<div>' + date + '</div>');
-}
+// for (let index = 0; index < currentYearStartDay; index++) {
+//     let date = (daysInDecember - currentYearStartDay) + index + 1;
+//     $(".grid-container")[0].innerHTML += ('<div>' + date + '</div>');
+// }
 
 // Now lets start populating the actual dates
-while (incrDate.getFullYear() < (currentYear + 1)) {
-    $(".grid-container")[0].innerHTML += ('<div>' + incrDate.getDate() + '</div>');
-    getNextDate();
+// while (incrDate.getFullYear() < (currentYear + 1)) {
+//     $(".grid-container")[0].innerHTML += ('<div>' + incrDate.getDate() + '</div>');
+//     getNextDate();
+// }
+
+
+
+// Function to Generate Calendar
+function generateCalendar() {
+    for (let day = 1; day <= 31; day++) {
+        for (let month = 0; month < 12; month++) {
+            if (day < 28) {
+                $(".grid-container")[0].innerHTML += ('<div>' + day + '</div>');
+            } else {
+                let lastDay = new Date(currentYear, (month + 1), 0);
+                if (day <= lastDay.getDate()) {
+                    $(".grid-container")[0].innerHTML += ('<div>' + day + '</div>');
+                } else {
+                    $(".grid-container")[0].innerHTML += ('<div class="transparent-bg"></div>');
+                }
+            }
+        }
+    }
 }
 
+generateCalendar();
+
+$('.grid-container>div').on('click', function (event) {
+    console.log($('.grid-container>div').index(this));
+})
+
 // Code to export canvas as an image
-var moodcanvas = $("#moodcanvas2").get(0);
-$('#moodcanvas2').on('click', function (event) {
+$('#downloadcanvas').on('click', function (event) {
+    var moodcanvas = $("#holder").get(0);
     html2canvas(moodcanvas).then(function (canvas) {
         let fileType = "png";
         let fileName = "test"
         let width = canvas.width;
         let height = canvas.height;
+        console.log(canvas);
         Canvas2Image.saveAsImage(canvas, width, height, fileType, fileName);
-        // document.body.appendChild(canvas);
+        // -- OR --
+        // canvas.toBlob(function(blob) {
+        //     saveAs(blob, "test.png");
+        // });
     });
 });
 
