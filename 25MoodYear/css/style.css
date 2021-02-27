@@ -70,3 +70,18 @@ body {
 }
 
 /* https://thoughtbot.com/blog/positioning */
+
+.container {
+    background-color: rgb(140, 140, 140);
+    display: grid;
+    grid-auto-flow: column; /* The grid-auto-flow CSS property controls how the auto-placement algorithm works, specifying exactly how auto-placed items get flowed into the grid. grid-auto-flow when set to column will automatically  */
+    grid-row: 2;
+}
+
+.leftContainer {
+    background-color: orange;
+}
+
+.rightContainer {
+    background-color: rgb(39, 39, 39);
+}
