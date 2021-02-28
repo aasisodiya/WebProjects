@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="target vs currentTarget">
+    <title>target Vs currentTarget Property</title>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        * {
+            color: white;
+        }
+
+        #listener {
+            background-color: darkblue;
+            padding: 10px;
+            width: fit-content;
+        }
+
+        #listener>div {
+            background-color: blueviolet;
+            padding: 10px;
+        }
+
+        #listener>div>div {
+            background-color: cornflowerblue;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="listener">Listener Div
+        <div id="div1">Nested Div
+            <div id="div2">Div on which click operation is performed</div>
+        </div>
+    </div>
+    <script>
+        $('#listener').on('click', function (event) {
+            alert("Please open console to see logs (Neglect if already opened)");
+            console.log(event.target); // This will point to the div2
+            console.log(event.currentTarget); // This will point to listener div
+        });
+    </script>
+</body>
+
+</html>
