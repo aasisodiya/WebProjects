@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vertically Divided Element Example">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../../../../shared/img/favicon.png" type="image/x-icon">
+    <title>Vertically Divided Element</title>
+    <style>
+        * {
+            margin: 0;
+            color: white;
+            font-family: monospace;
+        }
+
+        .container {
+            background-color: black;
+            display: grid;
+            /* grid-auto-flow: column; */
+            grid-template-columns: auto auto;
+            min-height: 100vh;
+            font-size: 2rem;
+        }
+
+        .leftContainer {
+            background-color: orange;
+        }
+
+        .rightContainer {
+            background-color: black;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+        }
+
+        .github {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="leftContainer">Left Container</div>
+        <div class="rightContainer">Right Container</div>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a>
+    </div>
+</body>
+
+</html>
