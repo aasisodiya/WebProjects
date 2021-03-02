@@ -1,5 +1,15 @@
 `use strict`
 
+// Saved user data in cache
+let userdata = localStorage.getItem("userdata");
+// LoadData from localstorage
+if (userdata != null) {
+    console.log("Found data to work with");
+    userdata = JSON.parse(userdata);
+} else {
+    userdata = {};
+}
+
 // Get current time data
 let currentDate = new Date();
 let currentMonth = currentDate.getMonth(); // Month starts from 0
@@ -15,26 +25,29 @@ if (currentMonth.toString().length < 2) {
 let yyyyMM = currentYear + "-" + realMonth;
 $('#moodmonth').val(yyyyMM);
 
-// set current month and year on main screen
-const month = currentDate.toLocaleString('default', { month: 'long' });
-$('#selectedMonth').html(month);
-$('#selectedYear').html(currentYear);
-
 // Functiont to get number of days in month
 function getDaysInMonth(datetime) {
     return (new Date(datetime.getFullYear(), datetime.getMonth() + 1, 0)).getDate();
 }
 
+// Init
+let selectedTime = new Date();
+// selectedDateBlock stores the object of the date block of calendar you have selected
+let selectedDateBlock = null;
+
 // Function to create calendar for the selected month
 function generateCalendar(yyyyMM) {
     // extract year and month from yyyyMM
-    let selectedTime = new Date(yyyyMM);
+    selectedTime = new Date(yyyyMM);
+    // Lets update the title of the calendar
+    let month = selectedTime.toLocaleString('default', { month: 'long' });
+    $('#selectedMonthYear').html(month + " " + selectedTime.getFullYear());
     // lets start building calendar
     // First lets clear our calendar
     $('#month-calendar').html('');
     // Now lets insert Initials of weekdays
     let weekdayInitials = ["S", "M", "T", "W", "T", "F", "S"];
-    let template = "<div class='classname'>replacement<span><!-- emoji --></span></div>";
+    let template = "<div class='classname'><div>replacement</div><span><!-- emoji --></span></div>";
     let titleRow = '';
     weekdayInitials.forEach(weekday => {
         titleRow += template.replace("replacement", weekday).replace("classname", "weekdayInitials");
@@ -61,9 +74,67 @@ function generateCalendar(yyyyMM) {
         blanksAtEnd += template.replace("replacement", "").replace("classname", "deadcell");
     }
     $('#month-calendar').append(blanksAtEnd);
+    populateEmoji();
 }
 
+// Loading Calendar on Website Load
 generateCalendar($('#moodmonth').val());
+
+// Event Listener on change of MonthYear input
+$('#moodmonth').change(function (event) {
+    generateCalendar($(event.target).val());
+});
+
+$('.centerContent').on('click','.day', function (event) {
+    console.log("added");
+    // remove selection if any
+    $('.day').removeClass('selected');
+    // Apply selection class to new target
+    $(event.currentTarget).addClass('selected');
+    // get selected date
+    selectedDateBlock = $(event.currentTarget);
+});
+
+$('.emoji').on('click', function (event) {
+    // Check if calendar date has been selected or not
+    if (selectedDateBlock == null) {
+        alert('Please select a date from the calendar');
+        return;
+    }
+    // Get mood Color
+    let moodColor = $(event.currentTarget).css('background-color');
+    // Get selected Emoji
+    let selectedEmoji = $(event.currentTarget).find('.emoji-span').text();
+    // Set selected emoji
+    $(selectedDateBlock).find('span').html(selectedEmoji).css('display','block');
+    // Set Mood Color
+    selectedDateBlock.css('background-color', moodColor);
+    // Save the Data
+    let selectedDate = selectedDateBlock.find('div').text();
+    selectedTime.setDate(selectedDate);
+    let key = (selectedTime).toDateString();
+    userdata[key] = moodColor+'/'+selectedEmoji;
+    // save to localstorage
+    localStorage.setItem("userdata", JSON.stringify(userdata));
+});
+
+// Function to populate emoji in calendar for saved data
+function populateEmoji() {
+    let numberOfDays = getDaysInMonth(selectedTime);
+    for (let index = 0; index < numberOfDays; index++) {
+        selectedTime.setDate(index+1);
+        let key = selectedTime.toDateString();
+        if (userdata[key] != undefined) {
+            let target = $($('.day')[index]);
+            // Set selected emoji
+            target.find('span').html(userdata[key].split("/")[1]).css('display','block');
+            // Set Mood Color
+            target.css('background-color', userdata[key].split("/")[0]);
+        }
+    }
+}
+
+// To hide dates number from calendar set font size to zero
 
 // // const for number of days in december
 // const daysInDecember = 31;
