@@ -13,9 +13,20 @@
     <style>
         * {
             color: white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: black;
+            display: grid;
+            align-content: center;
+            margin: 0;
+            height: 100vh;
+            text-align: center;
         }
 
         #listener {
+            margin: auto;
             background-color: darkblue;
             padding: 10px;
             width: fit-content;
@@ -30,20 +41,36 @@
             background-color: cornflowerblue;
             padding: 10px;
         }
+
+        footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            font-weight: bold;
+        }
+
+        .github {
+            text-decoration: none;
+            color: orange;
+        }
     </style>
 </head>
 
 <body>
-    <div id="listener">Listener Div
-        <div id="div1">Nested Div
-            <div id="div2">Div on which click operation is performed</div>
+    <h1>Please open console to see logs (Neglect if already opened)</h1>
+    <div id="listener">Listener Div (id : listener)
+        <div id="div1">Nested Div (id : div1)
+            <div id="div2">Div on which click operation is to be performed (id : div2)</div>
         </div>
     </div>
+    <!-- Below code is for footer -->
+    <footer>
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a>
+    </footer>
     <script>
         $('#listener').on('click', function (event) {
-            alert("Please open console to see logs (Neglect if already opened)");
-            console.log(event.target); // This will point to the div2
-            console.log(event.currentTarget); // This will point to listener div
+            console.log("event.target: ", event.target); // This will point to the div2
+            console.log("event.currentTarget: ", event.currentTarget); // This will point to listener div
         });
     </script>
 </body>

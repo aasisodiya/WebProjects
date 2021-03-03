@@ -10,17 +10,17 @@
 ### Example To demonstrate the `target` and `currentTarget` property
 
 ```html
-    <div id="listener">Listener Div
-        <div id="div1">Nested Div
-            <div id="div2">Div on which click operation is performed</div>
-        </div>
+<div id="listener">Listener Div
+    <div id="div1">Nested Div
+        <div id="div2">Div on which click operation is performed</div>
     </div>
-    <script>
-        $('#listener').on('click', function(event){
-            console.log(event.target); // This will point to the div2
-            console.log(event.currentTarget); // This will point to listener div
-        });
-    </script>
+</div>
+<script>
+    $('#listener').on('click', function(event){
+        console.log("event.target: ", event.target); // This will point to the div2
+        console.log("event.currentTarget", event.currentTarget); // This will point to listener div
+    });
+</script>
 ```
 
 In above example, when user clicks on the `div#div2` element it will trigger the function defined on click on `div#listener` element. Function is devised to print the log for `event.target` and `event.currentTarget`. In console log you will clearly see that console logger for `event.target` will print the data of `div#div2` element and for `event.currentTarget` will print data of `div#listener` element. In conclusion **`target` points to clicked element** (given that *element is descendant of the selector*) and `currentTarget` points to the selector element on which event handler function is attached.
