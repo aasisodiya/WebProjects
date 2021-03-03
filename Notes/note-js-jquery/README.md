@@ -6,4 +6,4 @@
 
 ---
 
-[Common/Frequent Error](note-error-and-solution/README.md)
+[Common/Frequent Error](./note-error-and-solution/README.md)
