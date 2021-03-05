@@ -85,7 +85,7 @@ $('#moodmonth').change(function (event) {
     generateCalendar($(event.target).val());
 });
 
-$('.centerContent').on('click','.day', function (event) {
+$('.centerContent').on('click', '.day', function (event) {
     console.log("added");
     // remove selection if any
     $('.day').removeClass('selected');
@@ -106,14 +106,14 @@ $('.emoji').on('click', function (event) {
     // Get selected Emoji
     let selectedEmoji = $(event.currentTarget).find('.emoji-span').text();
     // Set selected emoji
-    $(selectedDateBlock).find('span').html(selectedEmoji).css('display','block');
+    $(selectedDateBlock).find('span').html(selectedEmoji).css('display', 'block');
     // Set Mood Color
     selectedDateBlock.css('background-color', moodColor);
     // Save the Data
     let selectedDate = selectedDateBlock.find('div').text();
     selectedTime.setDate(selectedDate);
     let key = (selectedTime).toDateString();
-    userdata[key] = moodColor+'/'+selectedEmoji;
+    userdata[key] = moodColor + '/' + selectedEmoji;
     // save to localstorage
     localStorage.setItem("userdata", JSON.stringify(userdata));
 });
@@ -122,12 +122,12 @@ $('.emoji').on('click', function (event) {
 function populateEmoji() {
     let numberOfDays = getDaysInMonth(selectedTime);
     for (let index = 0; index < numberOfDays; index++) {
-        selectedTime.setDate(index+1);
+        selectedTime.setDate(index + 1);
         let key = selectedTime.toDateString();
         if (userdata[key] != undefined) {
             let target = $($('.day')[index]);
             // Set selected emoji
-            target.find('span').html(userdata[key].split("/")[1]).css('display','block');
+            target.find('span').html(userdata[key].split("/")[1]).css('display', 'block');
             // Set Mood Color
             target.css('background-color', userdata[key].split("/")[0]);
         }
@@ -136,11 +136,14 @@ function populateEmoji() {
 
 // Code to export canvas as an image
 $('#download').on('click', function (event) {
+    // Calculate the statistics
+    calculateAndShowStatistics();
+    $('#statistics').show();
     $('.selected').removeClass('selected');
     selectedDateBlock = null;
     $('.transparent').show();
     // adjusting emoji spacing
-    $('.month-calendar>div>span').css('top','-0.3rem');
+    $('.month-calendar>div>span').css('top', '-0.3rem');
     var moodcanvas = $(".rightContainer").get(0);
     html2canvas(moodcanvas).then(function (canvas) {
         let fileType = "png";
@@ -155,5 +158,74 @@ $('#download').on('click', function (event) {
         // });
     });
     $('.transparent').hide();
-    $('.month-calendar>div>span').css('top','-0.2rem');
+    $('#statistics').hide();
+    $('.month-calendar>div>span').css('top', '-0.2rem');
 });
+
+// calculateAndShowStatistics to show count of each mood for given month
+function calculateAndShowStatistics() {
+    let emojidescription = [
+        "Awesome Day",
+        "Happy Day",
+        "Normal Day",
+        "Exhausted/Tired Day",
+        "Frustrating Day",
+        "Sad/Depressed Day",
+        "Stressful Day",
+        "Sick Day",
+        "Weird Day"
+    ];
+    let emojilist = ["🤩", "😃", "🙂", "😫", "😡", "😔", "😓", "😷", "🤔"];
+    let emojiCount = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let emojimap = $('#month-calendar>.day>span');
+    let dayCount = emojimap.length;
+    for (let index = 0; index < dayCount; index++) {
+        switch (emojimap.get(index).innerHTML) {
+            case emojilist[0]:
+                emojiCount[0]++;
+                break;
+            case emojilist[1]:
+                emojiCount[1]++;
+                break;
+            case emojilist[2]:
+                emojiCount[2]++;
+                break;
+            case emojilist[3]:
+                emojiCount[3]++;
+                break;
+            case emojilist[4]:
+                emojiCount[4]++;
+                break;
+            case emojilist[5]:
+                emojiCount[5]++;
+                break;
+            case emojilist[6]:
+                emojiCount[6]++;
+                break;
+            case emojilist[7]:
+                emojiCount[7]++;
+                break;
+            case emojilist[8]:
+                emojiCount[8]++;
+                break;
+            default:
+                break;
+        }
+    }
+    // Now display the statistics on UI
+    let statistics = "<div>";
+    for (let index = 0; index < emojiCount.length; index++) {
+        statistics = statistics + emojilist[index] + emojidescription[index] + ": " + emojiCount[index] + '<br>';
+        // console.log((index+1)%3);
+        if (index == 2 || index == 5) {
+            statistics += "</div><div>";
+        }
+    }
+    statistics += "</div>";
+    $('#statistics')[0].innerHTML = statistics;
+}
+
+// calculateAndShowStatistics();
+
+// Hide statistics using code (css not working)
+$('#statistics').hide();

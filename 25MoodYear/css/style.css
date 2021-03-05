@@ -241,7 +241,8 @@ body {
 
 .transparent {
     opacity: 20%;
-    display: none;  
+    display: none;
+    margin-top: 1rem;
 }
 
 @media screen and (max-width: 1000px) {
@@ -284,6 +285,23 @@ body {
 
 #moodmonth:hover, #download:hover {
     background: orange;
+}
+
+#statistics {
+    color: beige;
+    font-size: x-small;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    max-width: 320px;
+    margin: auto;
+}
+
+#statistics > div:last-child {
+    text-align: right;
+}
+
+#statistics > div:first-child {
+    text-align: left;
 }
 
 /* Animations */
