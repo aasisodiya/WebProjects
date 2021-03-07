@@ -27,5 +27,6 @@
 - https://aasisodiya.github.io/WebProjects/20ProjectileMotion/
 - https://aasisodiya.github.io/WebProjects/21DigitalClock/
 - https://aasisodiya.github.io/WebProjects/23Bookmarks/
+- https://aasisodiya.github.io/WebProjects/25MoodYear/
 
 [Notes](https://aasisodiya.github.io/WebProjects/Notes/)
