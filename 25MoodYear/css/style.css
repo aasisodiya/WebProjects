@@ -196,6 +196,12 @@ body {
     font-size: 1.5rem !important;
 }
 
+.disabledday {
+    background-color: darkgrey;
+    cursor: not-allowed;
+    font-size: 1.5rem !important;
+}
+
 .day:hover {
     background-color: rgb(255, 213, 136);
     color: darkslategray;
@@ -245,7 +251,7 @@ body {
     margin-top: 1rem;
 }
 
-@media screen and (max-width: 1000px), screen and (max-height: 600px) {
+@media screen and (max-width: 1000px) {
     .mobilewarning {
         position: fixed;
         width: 100vw;
