@@ -28,5 +28,6 @@
 - https://aasisodiya.github.io/WebProjects/21DigitalClock/
 - https://aasisodiya.github.io/WebProjects/23Bookmarks/
 - https://aasisodiya.github.io/WebProjects/25MoodYear/
+- [Animations](./26Animations/README.md)
 
 [Notes](https://aasisodiya.github.io/WebProjects/Notes/)
