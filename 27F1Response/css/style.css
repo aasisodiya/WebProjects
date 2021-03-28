@@ -1,0 +1,175 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    color: orange;
+    font-size: 0.5rem;
+    /* font-family: monospace; */
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orangered;
+}
+
+/* Template Code End */
+
+* {
+    margin: 0;
+    font-family: 'Exo 2', sans-serif;
+}
+
+:root {
+    --light-turned-off-color: black;
+    --stop-light-off-color: rgb(79, 0, 0);
+    --ready-light-off-color: rgb(121, 83, 0);
+    --go-light-off-color: rgb(37, 75, 0);
+    --stop-light-on-color: red;
+    --ready-light-on-color: orange;
+    --go-light-on-color: lawngreen;
+    --display-padding: 1rem;
+    --display-border-radius: 0;
+    --display-margin: 0;
+    --light-radius: 2rem;
+    --light-case-color: grey;
+    --light-case-padding: 0rem;
+    --light-case-border-radius: 10px;
+    --light-case-margin: 0 0.1rem;
+    --light-case-border: 2px solid rgb(75, 75, 75);
+    --background-image-url: url(https://cdn.pixabay.com/photo/2016/09/18/15/06/sunset-1678400_960_720.jpg);
+    --body-text-color: white;
+    --container-padding-top: 20px;
+    --light-around-margin: 10px;
+    --instructions-padding: 2rem 0;
+    --instructions-margin-bottom: 1rem;
+    --transparent-black-background: rgba(70, 70, 70, 0.5);
+    --card-radius: 10px;
+    --display-message-height: 7rem;
+    --display-margin-top: 1rem;
+    --rod-height: 2rem;
+    --rod-background-color: grey;
+    --rod-position: absolute;
+    --rod-top: 11rem;
+    --rod-width: 100%;
+    --rod-z-index: -1;
+    --timer-font-size: 5rem;
+    --message-font-size: 3rem;
+    --message-color: red;
+    --message-animation-start-font-size: 1rem;
+    --card-blur: 4px;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-image: var(--background-image-url);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: var(--body-text-color);
+}
+
+.container {
+    margin: auto;
+    padding-top: var(--container-padding-top);
+    width: fit-content;
+}
+
+.lightcase {
+    display: inline-block;
+    padding: var(--light-case-padding);
+    border-radius: var(--light-case-border-radius);
+    margin: var(--light-case-margin);
+    height: fit-content;
+    background-color: var(--light-case-color);
+    border: var(--light-case-border);
+}
+
+.light {
+    height: var(--light-radius);
+    width: var(--light-radius);
+    border-radius: 50%;
+    background-color: var(--light-turned-off-color);
+    margin: var(--light-around-margin);
+    border: var(--light-case-border);
+}
+
+.lightcase>.light:first-child {
+    background-color: var(--go-light-off-color);
+}
+
+.lightcase>.light:nth-child(2) {
+    background-color: var(--ready-light-off-color);
+}
+
+.lightcase>.light:nth-last-child(-n+2) {
+    background-color: var(--stop-light-off-color);
+}
+
+.display {
+    padding: var(--display-padding);
+    border-radius: var(--display-border-radius);
+    margin: var(--display-margin);
+    height: fit-content;
+    text-align: center;
+}
+
+.f1lights {
+    margin: auto;
+    width: fit-content;
+}
+
+.instructions {
+    text-align: center;
+    padding: var(--instructions-padding);
+    margin-bottom: var(--instructions-margin-bottom);
+    background-color: var(--transparent-black-background);
+    border-radius: var(--card-radius);
+    backdrop-filter: blur(var(--card-blur));
+}
+
+.displaymessage {
+    height: var(--display-message-height);
+}
+
+.display {
+    margin-top: var(--display-margin-top);
+    background-color: var(--transparent-black-background);
+    border-radius: var(--card-radius);
+    backdrop-filter: blur(var(--card-blur));
+}
+
+.rod {
+    height: var(--rod-height);
+    background-color: var(--rod-background-color);
+    position: var(--rod-position);
+    top: var(--rod-top);
+    width: var(--rod-width);
+    z-index: var(--rod-z-index);
+}
+
+#timer {
+    font-size: var(--timer-font-size);
+}
+
+#message {
+    display: none;
+    font-size: var(--message-font-size);
+    color: var(--message-color);
+    animation: boom 5s normal;
+    font-weight: bold;
+}
+
+@keyframes boom {
+    0% {
+        font-size: var(--message-animation-start-font-size);
+    }
+    10% {
+        font-size: var(--message-font-size);
+    }
+    100% {
+        font-size: var(--message-font-size);
+    }
+}
