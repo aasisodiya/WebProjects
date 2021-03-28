@@ -79,10 +79,10 @@ function startEvent() {
 $('body').on('mousedown', function () {
     startEvent();
 });
-// Add an event listener on body to start the race lights on touch
-$('body').on('touchstart', function () {
-    startEvent();
-});
+// // Add an event listener on body to start the race lights on touch
+// $('body').on('touchstart', function () {
+//     startEvent();
+// });
 // Add an event listener on body to start the race lights on touch
 $('body').on('keydown', function () {
     startEvent();
