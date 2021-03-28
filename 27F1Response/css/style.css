@@ -162,6 +162,12 @@ body {
     font-weight: bold;
 }
 
+#visitor {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
 @keyframes boom {
     0% {
         font-size: var(--message-animation-start-font-size);
