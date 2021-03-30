@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="Demonstration of User Has Visited/Seen Specific Element of Website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check if user has viewed particular element</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+        }
+
+        body {
+            padding-left: 10px;
+        }
+
+        div {
+            width: 50vw;
+            height: 50vh;
+            border: 10px solid black;
+            background-color: orange;
+        }
+
+        #elementId {
+            background-color: red;
+        }
+
+        #elementId1 {
+            background-color: magenta;
+            height: 200vh;
+        }
+
+        #longElementId {
+            background-color: blueviolet;
+            height: 150vh;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            font-weight: bold;
+        }
+
+        .github {
+            text-decoration: none;
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Open Console To See Logs</h1>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="elementId">isElementInViewport() will work for this because height is less than that of viewport</div>
+    <div></div>
+    <div></div>
+    <div id="elementId1">isElementInViewport() will <b>not</b> work for this because height is greater than that of
+        viewport. So you won't see any logs</div>
+    <div></div>
+    <div></div>
+    <div id="longElementId">isElementViewedTillEnd() will get trigger when you scroll till end of the div, else it won't
+        show log</div>
+    <div></div>
+    <div></div>
+    <!-- Below code is for footer -->
+    <footer>
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a>
+    </footer>
+</body>
+
+<script>
+    // Get the element
+    var element = $('#elementId');
+    var element1 = $('#elementId1');
+
+    // Function to check if element is in Viewport (returns true if present else returns false)
+    function isElementInViewport(element) {
+        // Get its position & geometric data
+        let elementData = element[0].getBoundingClientRect();
+        return (
+            elementData.top >= 0 &&
+            elementData.left >= 0 &&
+            elementData.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            elementData.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    };
+    // Get the element
+    var longElement = $('#longElementId');
+
+    // Function to check if element is in Viewport (returns true if present else returns false)
+    function isElementViewedTillEnd(element) {
+        console.log(typeof (element));
+        console.log(typeof (element[0]));
+        // Get its position & geometric data
+        let elementData = element[0].getBoundingClientRect();
+        return (
+            elementData.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    };
+
+    // Now will have to add an event listener in order to check if the element comes in viewport / element is viewed till end
+    $(document).on('scroll', function (event) {
+        if (isElementInViewport(element)) {
+            console.log("Red Element is in viewport!");
+        }
+        // Below code will never return true because of height issue
+        if (isElementInViewport(element1)) {
+            console.log("Magenta Element is in viewport!");
+        }
+        if (isElementViewedTillEnd(longElement)) {
+            console.log("BlueViolet Element was viewed till end!");
+        }
+    });
+</script>
+
+</html>

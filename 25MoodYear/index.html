@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tool to track - how was your day?">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../shared/img/favicon.png" type="image/x-icon">
+    <title>MoodYear</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="js/html2canvas.js"></script>
+    <script src="js/canvas2image.js"></script>
+    <script src="js/script.js" defer></script>
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="leftContainer">
+            <div id="leftHeader">Mood Year</div>
+            <div class="centerContent">
+                <!-- Month & Year Selector -->
+                <input type="month" id="moodmonth" name="moodmonth">
+                <hr class="divider">
+                <p>1. Select Month & Year</p>
+                <p>2. Select date from right side panel</p>
+                <p>3. Apply your mood for the selected date</p>
+                <p>4. Do this daily and generate a fun new calendar</p>
+                <p>5. Download the calendar and share it with whole world</p>
+                <hr class="divider">
+                <div class="mood-container">
+                    <div class="mood">
+                        <div class="emoji" style="background: orange;">
+                            <span class="emoji-span">&#129321;</span>
+                            <span class="emojidescription">Awesome Day
+                                <span class="arrow-down"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mood">
+                        <div class="emoji" style="background: greenyellow;">
+                            <span class="emoji-span">&#128515;</span>
+                            <span class="emojidescription">Happy Day
+                                <span class="arrow-down"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- can use 128522 for above -->
+                    <div class="mood">
+                        <div class="emoji" style="background: yellow;">
+                            <span class="emoji-span">&#128578;</span>
+                            <span class="emojidescription">Normal Day
+                                <span class="arrow-down"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mood">
+                        <div class="emoji" style="background: violet;">
+                            <span class="emoji-span">&#128555;</span>
+                            <span class="emojidescription">Exhausted/Tired Day
+                                <span class="arrow-down"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mood">
+                        <div class="emoji" style="background: red;">
+                            <span class="emoji-span">&#128545;</span>
+                            <span class="emojidescription">Frustrating Day
+                                <span class="arrow-down"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mood">
+                        <div class="emoji" style="background: brown;">
+                            <span class="emoji-span">&#128532;</span>
+                            <span class="emojidescription">Sad/Depressed Day
+                                <span class="arrow-down"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mood">
+                        <div class="emoji" style="background: grey;">
+                            <span class="emoji-span">&#128531;</span>
+                            <span class="emojidescription">Stressful Day
+                                <span class="arrow-down"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mood">
+                        <div class="emoji" style="background: deepskyblue;">
+                            <span class="emoji-span">&#128567;</span>
+                            <span class="emojidescription">Sick Day
+                                <span class="arrow-down"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- another option for above 129298 -->
+                    <div class="mood">
+                        <div class="emoji" style="background: blueviolet;">
+                            <span class="emoji-span">&#129300;</span>
+                            <span class="emojidescription">Weird Day
+                                <span class="arrow-down"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="downloadButton">
+                    <button id="download">&#11015;Download Image</button>
+                </div>
+            </div>
+        </div>
+        <div class="rightContainer">
+            <div class="centerContent">
+                <div id="selectedMonthYear"></div>
+                <hr class="divider">
+                <div class="month-calendar" id="month-calendar">
+                    Generating...
+                </div>
+                <hr class="divider">
+                <div id="statistics"></div>
+                <div class="transparent">&lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Screen Warning -->
+    <div class="mobilewarning">
+        THIS WEBSITE IS NOT FOR MOBILE DEVICES
+        <br />
+        PLEASE OPEN IT ON YOUR LAPTOP/DESKTOP IN FULLSCREEN
+        <br />
+        MIN VIEWPORT WIDTH REQUIRED IS 1000px
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a>
+    </div>
+</body>
+
+</html>
