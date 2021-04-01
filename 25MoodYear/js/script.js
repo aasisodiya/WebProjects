@@ -35,6 +35,20 @@ let selectedTime = new Date();
 // selectedDateBlock stores the object of the date block of calendar you have selected
 let selectedDateBlock = null;
 
+function activeDays(selectedTime) {
+    if (selectedTime < currentDate) {
+        if (selectedTime.getMonth() != currentDate.getMonth()) {
+            // since selected month is older than current month then all days will be active
+            return -1;
+        }
+        return (currentDate.getDate() - selectedTime.getDate()) + 1;
+    }
+    if (selectedTime > currentDate) {
+        // since selected time is greater than currentTime then all days will be disabled
+        return 0;
+    }
+}
+
 // Function to create calendar for the selected month
 function generateCalendar(yyyyMM) {
     // extract year and month from yyyyMM
@@ -62,9 +76,18 @@ function generateCalendar(yyyyMM) {
     $('#month-calendar').append(blanks);
     // Now Lets insert days now
     let numberOfDays = getDaysInMonth(selectedTime);
+    // Calculate active days
+    let activedays = activeDays(selectedTime);
+    console.log(activedays);
     let monthDays = ''
-    for (let index = 0; index < numberOfDays; index++) {
+    if (activedays == -1) {
+        activedays = numberOfDays;
+    }
+    for (let index = 0; index < activedays; index++) {
         monthDays += template.replace("replacement", (index + 1)).replace("classname", "day");
+    }
+    for (let index = activedays; index < numberOfDays; index++) {
+        monthDays += template.replace("replacement", (index + 1)).replace("classname", "disabledday");
     }
     $('#month-calendar').append(monthDays);
     // Now Lets insert blanks again to fill the grid
@@ -147,7 +170,7 @@ $('#download').on('click', function (event) {
     var moodcanvas = $(".rightContainer").get(0);
     html2canvas(moodcanvas).then(function (canvas) {
         let fileType = "png";
-        let fileName = "test"
+        let fileName = $('#moodmonth').val() + "-mood-calendar";
         let width = canvas.width;
         let height = canvas.height;
         console.log(canvas);
