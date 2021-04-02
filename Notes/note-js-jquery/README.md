@@ -4,7 +4,7 @@
 - [Date in JavaScript](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-js-dates/)
 - [target vs currentTarget property](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-target-vs-currenttarget/)
 - [Create Copy Of An Object In JavaScript](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-creating-copy-of-object/)
-- [Detect If User Has Seen / Visited an Element of Website](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-error-and-solution/)
+- [Detect If User Has Seen / Visited an Element of Website](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-detect-if-user-has-visited-or-seen-specific-element/)
 - [Sort Object By Keys](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-js/#sort-object-by-keys)
 - [Swap Key-Value in JSON](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-js/#swap-key-value-in-json)
 - [Copy Content To Clipboard](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-js/#copy-content-to-clipboard)
