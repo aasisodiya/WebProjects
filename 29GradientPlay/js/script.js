@@ -42,6 +42,8 @@ let colorDataArray = [{
 let lastColor = "#ffa500";
 let angle = "45deg";
 let radialType = "circle";
+let exportGradient = "";
+let isLinearGradient = true;
 
 // Function to load and display color swatches
 function displayColorSelectors() {
@@ -71,6 +73,7 @@ function displayGradient() {
         console.log(linearGradient.replace("{deg}", angle).replace("{colors}", gradientColors.toString()));
         linearGradient = linearGradient.replace("{deg}", angle).replace("{colors}", gradientColors.toString());
         $('.output').css('background', linearGradient);
+        exportGradient = linearGradient;
     } else if ($('.radial').hasClass('active')) {
         let radialGradient = "radial-gradient({type}, {colors})";
         // Array to store gradientColors
@@ -83,7 +86,22 @@ function displayGradient() {
         console.log(radialGradient.replace("{type}", radialType).replace("{colors}", gradientColors.toString()));
         radialGradient = radialGradient.replace("{type}", radialType).replace("{colors}", gradientColors.toString());
         $('.output').css('background', radialGradient);
+        exportGradient = radialGradient;
     }
+}
+
+// Update stop value for all colors equally
+function updateStopValue() {
+    // Update stop value for all colors equally
+    let eqStop = Math.round(100 / (colorDataArray.length - 1));
+    colorDataArray.forEach(function (colorData, index) {
+        console.log(index, colorData, (colorDataArray.length - 1))
+        if (index == (colorDataArray.length - 1)) {
+            colorData.stop = 100;
+        } else {
+            colorData.stop = index * eqStop;
+        }
+    });
 }
 
 // Initally on load
@@ -97,11 +115,13 @@ $('.addColor').on('click', function () {
         "stop": 100
     }
     colorDataArray.push(newColorData);
+    updateStopValue();
     displayColorSelectors();
+    displayGradient();
 });
 
 // Add Event Listener for when color is changed or stop value is changed
-$('.container').on('change', function (event) {
+$('body').on('change', function (event) {
     if (event.target.type == "color") {
         let index = $('input[type="color"]').index(event.target);
         colorDataArray[index].color = event.target.value
@@ -129,18 +149,24 @@ $('.container').on('change', function (event) {
 
 // Linear / radial selector
 $('.linear').on('click', function (param) {
-    $('.linear').toggleClass('active');
-    $('.radial').toggleClass('active');
-    $('.angle').toggle();
-    displayGradient();
+    if (!isLinearGradient) {
+        $('.linear').toggleClass('active');
+        $('.radial').toggleClass('active');
+        $('.angle').toggle();
+        displayGradient();
+        isLinearGradient = true;
+    }
 });
 
 // Linear / radial selector
 $('.radial').on('click', function (param) {
-    $('.linear').toggleClass('active');
-    $('.radial').toggleClass('active');
-    $('.angle').toggle();
-    displayGradient();
+    if (isLinearGradient) {
+        $('.linear').toggleClass('active');
+        $('.radial').toggleClass('active');
+        $('.angle').toggle();
+        displayGradient();
+        isLinearGradient = false;
+    }
 });
 
 // Delete Color Function
@@ -150,6 +176,63 @@ $('.container').on('click', '.fa-trash', function (event) {
     }
     let index = $('.fa-trash').index(event.target);
     colorDataArray.splice(index, 1);
+    updateStopValue();
     displayColorSelectors();
     displayGradient();
 });
+
+function hideOrShowEverything() {
+    $('.container').toggle();
+    $('.footer').toggle();
+    $('.holder').toggle();
+}
+
+// Function to open fullscreen
+var elem = document.getElementsByTagName('body')[0];
+function openFullscreen() {
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+    }
+}
+function closeFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Safari */
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE11 */
+        document.msExitFullscreen();
+    }
+}
+
+let isFullScreen = false;
+// Toggle gradient view in fullscreen
+$('.eye').on('click', function (params) {
+    if (isFullScreen) {
+        closeFullscreen();
+        isFullScreen = false;
+        hideOrShowEverything();
+    } else {
+        openFullscreen();
+        isFullScreen = true;
+        hideOrShowEverything();
+    }
+})
+
+// Function to Copy to ClipBoard
+function copyToClipboard(contentToCopy) {
+    var input = $("<input>");
+    $("body").append(input);
+    input.val(contentToCopy).select();
+    document.execCommand("copy");
+    input.remove();
+}
+
+// Function to copy gradient code for user
+$('.copyCode').on('click', function () {
+    let exportGradientCSS = "background: " + exportGradient + ";";
+    copyToClipboard(exportGradientCSS);
+})
