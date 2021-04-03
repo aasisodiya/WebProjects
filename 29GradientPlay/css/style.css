@@ -1,0 +1,302 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    top: 0px;
+    right: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+/* Template Code End */
+
+* {
+    margin: 0;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bold;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+body {
+    background-color: rgb(19, 19, 19);
+}
+
+.output {
+    min-height: 100vh;
+    background: linear-gradient(90deg, rgba(0, 42, 255, 1) 0%, rgba(255, 0, 52, 1) 100%);
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: min-content;
+    width: min-content;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    /* min-width: 50vw; */
+    width: fit-content;
+    background: #2b2b2b;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 25px 25px 0 0;
+    padding: 0.2rem;
+    text-align: center;
+}
+
+.colors {
+    display: inline-block;
+}
+
+/* Below code is for Color Selector */
+
+.colorselector {
+    display: inline-block;
+}
+
+.colordisplayholder {
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    height: 3rem;
+    width: 3rem;
+    display: inline-block;
+}
+
+.colordisplayholder:hover {
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.433);
+}
+
+.colordisplay {
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.stopinputholder {
+    position: relative;
+    height: 3rem;
+    width: 2rem;
+    margin-left: 0.1rem;
+    display: inline-block;
+}
+
+.stopinput {
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    z-index: 1;
+    text-align: left;
+}
+
+.label, .fa-trash {
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.fa {
+    cursor: pointer;
+}
+
+.fa-trash:hover {
+    color: tomato;
+}
+
+input[type="color"] {
+    display: block;
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0);
+    top: -2rem;
+    left: -2rem;
+    cursor: pointer;
+}
+
+input[type="color"]:focus {
+    border: 1px solid orange;
+    border-radius: 50%;
+    box-shadow: none;
+    outline: none;
+}
+
+input[type="number"] {
+    background: none;
+    border: none;
+    width: 2.5rem;
+    color: lightgray;
+}
+
+input[type="number"]:focus {
+    outline: none;
+}
+
+/* Above code is for Color Selector */
+
+.addColor {
+    background-color: orange;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.addColor:hover {
+    background-color: orangered;
+}
+
+.addColor:hover>.addsign>.fa-plus {
+    color: white;
+}
+
+.addsign {
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.fa-code {
+    font-weight: bold;
+}
+
+.holder {
+    color: white;
+    font-size: 0.8rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    margin: auto;
+    background: #2b2b2b;
+    padding: 0.2rem;
+    border-radius: 0 0 5px 5px;
+}
+
+.angle>span {
+    margin-left: 1rem;
+}
+
+.angle>input[type="range"] {
+    position: relative;
+    top: 0.25rem;
+}
+
+.gradienttype {
+    color: gray;
+}
+
+.linear, .radial {
+    display: inline-block;
+    background-color: darkslategrey;
+    padding: 0 10px;
+    margin: 0;
+    cursor: pointer;
+    width: 3rem;
+}
+
+.linear {
+    border-radius: 5px 0 0 5px;
+}
+
+.radial {
+    border-radius: 0 5px 5px 0;
+}
+
+.active, .linear:hover, .radial:hover {
+    background-color: darkturquoise;
+    color: black;
+}
+
+#visitor {
+    display: inline-block;
+    top: 5px;
+    position: relative;
+}
+
+/* Mobile Devices */
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: fit-content;
+        max-height: 100vh;
+        overflow: scroll;
+        height: fit-content;
+        background: #2b2b2b;
+        position: fixed;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        left: unset;
+        margin: auto;
+        border-radius: 25px 0 0 25px;
+        padding: 0.2rem;
+        text-align: center;
+    }
+    .colors {
+        display: block;
+    }
+    .colorselector {
+        display: block;
+        padding-bottom: 5px;
+    }
+    .addColor {
+        width: 5rem;
+        border-radius: 25px;
+    }
+    .footer {
+        position: fixed;
+        top: unset;
+        right: unset;
+        bottom: 5px;
+        left: 5px;
+        font-weight: bold;
+    }
+}

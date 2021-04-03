@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GradientPlay</title>
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="Play Around with Gradients in CSS and Visualize them at one place">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="output">
+        <h1>GRADIENTPLAY</h1>
+    </div>
+    <div class="container">
+        <div class="colors">
+            <div class="colorselector">
+                <div class="colordisplayholder">
+                    <div class="colordisplay">
+                        <input type="color" value="#002aff">
+                    </div>
+                </div>
+                <div class="stopinputholder">
+                    <div class="stopinput">
+                        <div class="label">
+                            <span>Stop</span>
+                        </div>
+                        <div>
+                            <input type="number" max="100" min="0" value="0">
+                        </div>
+                        <div>
+                            <i class="fa fa-trash"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="colorselector">
+                <div class="colordisplayholder">
+                    <div class="colordisplay">
+                        <input type="color" value="#ff0034">
+                    </div>
+                </div>
+                <div class="stopinputholder">
+                    <div class="stopinput">
+                        <div class="label">
+                            <span>Stop</span>
+                        </div>
+                        <div>
+                            <input type="number" max="100" min="0" value="100">
+                        </div>
+                        <div>
+                            <i class="fa fa-trash"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="addColor">
+            <div class="addsign"><i class="fa fa-plus"></i></div>
+        </div>
+        <div class="holder">
+            <div class="angle">
+                <span>Angle</span>
+                <input type="range" min="0" max="360" value="45">
+                <input id="angle" type="number" min="0" max="360" value="45">
+            </div>
+            <div class="gradienttype">
+                <div class="linear active">Linear</div>
+                <div class="radial">Radial</div>
+            </div>
+        </div>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        <i class="fa fa-code"></i> by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <div id="visitor">
+            <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.gradientplay" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
