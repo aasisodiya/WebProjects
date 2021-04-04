@@ -111,6 +111,20 @@ function updateStopValue() {
     });
 }
 
+// Update stop value for all colors equally
+function updateStopValue() {
+    // Update stop value for all colors equally
+    let eqStop = Math.round(100 / (colorDataArray.length - 1));
+    colorDataArray.forEach(function (colorData, index) {
+        console.log(index, colorData, (colorDataArray.length - 1))
+        if (index == (colorDataArray.length - 1)) {
+            colorData.stop = 100;
+        } else {
+            colorData.stop = index * eqStop;
+        }
+    });
+}
+
 // Initally on load
 displayColorSelectors();
 displayGradient();
