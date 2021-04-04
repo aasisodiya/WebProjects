@@ -20,65 +20,34 @@
 <body>
     <!-- Header -->
     <div class="output">
-        <h1>GRADIENTPLAY</h1>
+        <div class="copyCode">
+            <h1>GRADIENTPLAY</h1>
+            <p><i class="fa fa-copy"></i> Copy Gradient Code</p>
+            <span class="copied">Copied
+                <span class="arrow-down"></span>
+            </span>
+        </div>
     </div>
     <div class="container">
         <div class="colors">
-            <div class="colorselector">
-                <div class="colordisplayholder">
-                    <div class="colordisplay">
-                        <input type="color" value="#002aff">
-                    </div>
-                </div>
-                <div class="stopinputholder">
-                    <div class="stopinput">
-                        <div class="label">
-                            <span>Stop</span>
-                        </div>
-                        <div>
-                            <input type="number" max="100" min="0" value="0">
-                        </div>
-                        <div>
-                            <i class="fa fa-trash"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="colorselector">
-                <div class="colordisplayholder">
-                    <div class="colordisplay">
-                        <input type="color" value="#ff0034">
-                    </div>
-                </div>
-                <div class="stopinputholder">
-                    <div class="stopinput">
-                        <div class="label">
-                            <span>Stop</span>
-                        </div>
-                        <div>
-                            <input type="number" max="100" min="0" value="100">
-                        </div>
-                        <div>
-                            <i class="fa fa-trash"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="addColor">
             <div class="addsign"><i class="fa fa-plus"></i></div>
         </div>
-        <div class="holder">
-            <div class="angle">
-                <span>Angle</span>
-                <input type="range" min="0" max="360" value="45">
-                <input id="angle" type="number" min="0" max="360" value="45">
-            </div>
-            <div class="gradienttype">
-                <div class="linear active">Linear</div>
-                <div class="radial">Radial</div>
-            </div>
+    </div>
+    <div class="holder">
+        <div class="gradienttype">
+            <div class="linear active">Linear</div>
+            <div class="radial">Radial</div>
         </div>
+        <div class="angle">
+            <span>Angle</span>
+            <input type="range" min="0" max="360" value="45">
+            <input id="angle" type="number" min="0" max="360" value="45">
+        </div>
+    </div>
+    <div class="eye">
+        <i class="fa fa-eye"></i>
     </div>
     <!-- Below code is for footer -->
     <div class="footer">
