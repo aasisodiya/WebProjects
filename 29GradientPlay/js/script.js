@@ -232,7 +232,14 @@ function copyToClipboard(contentToCopy) {
 }
 
 // Function to copy gradient code for user
+let copiedMessageTimeout
 $('.copyCode').on('click', function () {
     let exportGradientCSS = "background: " + exportGradient + ";";
     copyToClipboard(exportGradientCSS);
+    clearTimeout(copiedMessageTimeout);
+    $('.copied').removeClass('copied-success');
+    $('.copied').toggleClass('copied-success');
+    copiedMessageTimeout = setTimeout(function (param) {
+        $('.copied').toggleClass('copied-success');
+    }, 1000);
 })
