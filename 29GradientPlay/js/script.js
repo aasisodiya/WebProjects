@@ -56,8 +56,17 @@ function displayColorSelectors() {
         displayTemplate += colorselectorTemplate.replace("{color}", element.color).replace("{stop}", element.stop);
         lastColor = element.color;
     });
-    // $(displayTemplate).insertBefore(".addColor");
     $(".colors").html(displayTemplate);
+    if (colorDataArray.length < 10) {
+        $('.addColor').show();
+    } else {
+        $('.addColor').hide();
+    }
+    if (colorDataArray.length <= 2) {
+        $('.fa-trash').hide();
+    } else {
+        $('.fa-trash').show();
+    }
 }
 
 function displayGradient() {
@@ -70,7 +79,6 @@ function displayGradient() {
             let gradientColor = colordata.color + " " + colordata.stop + "%";
             gradientColors.push(gradientColor);
         });
-        console.log(linearGradient.replace("{deg}", angle).replace("{colors}", gradientColors.toString()));
         linearGradient = linearGradient.replace("{deg}", angle).replace("{colors}", gradientColors.toString());
         $('.output').css('background', linearGradient);
         exportGradient = linearGradient;
@@ -83,11 +91,24 @@ function displayGradient() {
             let gradientColor = colordata.color + " " + colordata.stop + "%";
             gradientColors.push(gradientColor);
         });
-        console.log(radialGradient.replace("{type}", radialType).replace("{colors}", gradientColors.toString()));
         radialGradient = radialGradient.replace("{type}", radialType).replace("{colors}", gradientColors.toString());
         $('.output').css('background', radialGradient);
         exportGradient = radialGradient;
     }
+    console.log(exportGradient);
+}
+
+// Update stop value for all colors equally
+function updateStopValue() {
+    // Update stop value for all colors equally
+    let eqStop = Math.round(100 / (colorDataArray.length - 1));
+    colorDataArray.forEach(function (colorData, index) {
+        if (index == (colorDataArray.length - 1)) {
+            colorData.stop = 100;
+        } else {
+            colorData.stop = index * eqStop;
+        }
+    });
 }
 
 // Update stop value for all colors equally
@@ -110,6 +131,9 @@ displayGradient();
 
 // Add Event Listener for adding color
 $('.addColor').on('click', function () {
+    if (colorDataArray.length >= 10) {
+        return;
+    }
     let newColorData = {
         "color": lastColor,
         "stop": 100
@@ -122,21 +146,28 @@ $('.addColor').on('click', function () {
 
 // Add Event Listener for when color is changed or stop value is changed
 $('body').on('change', function (event) {
+    let index, activeColor, isIncr
     if (event.target.type == "color") {
-        let index = $('input[type="color"]').index(event.target);
-        colorDataArray[index].color = event.target.value
+        index = $('input[type="color"]').index(event.target);
+        colorDataArray[index].color = event.target.value;
     } else if (event.target.type == "number" && event.target.max == 100) {
-        let index = $('input[type="number"]').index(event.target);
+        index = $('input[type="number"]').index(event.target);
         if (event.target.value > 100) {
             event.target.value = 100;
-        } else if (event.target.value < 0) {
+        } else if (event.target.value < 0 || event.target.value == "") {
             event.target.value = 0;
         }
-        colorDataArray[index].stop = parseInt(event.target.value)
-    } else if (event.target.type == "range" || (event.target.type == "number" && event.target.max == 360)) {
+        if (colorDataArray[index].stop < parseInt(event.target.value)) {
+            isIncr = true;
+        } else {
+            isIncr = false;
+        }
+        colorDataArray[index].stop = parseInt(event.target.value);
+        activeColor = $('input[type="color"]')[index].value;
+    } else if (event.target.type == "range" || event.target.id == "angle") {
         if (event.target.value > 360) {
             event.target.value = 360;
-        } else if (event.target.value < 0) {
+        } else if (event.target.value < 0 || event.target.value == "") {
             event.target.value = 0;
         }
         angle = event.target.value + "deg";
@@ -145,6 +176,32 @@ $('body').on('change', function (event) {
     }
     displayColorSelectors();
     displayGradient();
+    if (event.target.type == "number" && event.target.id != "angle") {
+        if (activeColor != $('input[type="color"]')[index].value) {
+            if (isIncr) {
+                index += 1;
+            } else {
+                index -= 1;
+            }
+        }
+        $('input[type="number"]')[index].select();
+    }
+});
+
+// Add Event Listener for when color is changed or stop value is changed
+$('body').on('input', function (event) {
+    if (event.target.type == "range") {
+        if (event.target.value > 360) {
+            event.target.value = 360;
+        } else if (event.target.value < 0 || event.target.value == "") {
+            event.target.value = 0;
+        }
+        angle = event.target.value + "deg";
+        $('#angle').val(event.target.value);
+        $('input[type="range"]').val(event.target.value);
+        displayGradient();
+        displayColorSelectors();
+    }
 });
 
 // Linear / radial selector
