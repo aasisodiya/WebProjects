@@ -26,5 +26,3 @@
 [Common/Frequent Error](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-error-and-solution/)
 
 ---
-
-[Common/Frequent Error](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-error-and-solution/)

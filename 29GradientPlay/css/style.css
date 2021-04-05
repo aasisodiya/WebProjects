@@ -1,0 +1,412 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    top: 0px;
+    right: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+/* Template Code End */
+
+* {
+    margin: 0;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bold;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+body {
+    background-color: rgb(19, 19, 19);
+}
+
+.output {
+    min-height: 100vh;
+    background: linear-gradient(90deg, rgba(0, 42, 255, 1) 0%, rgba(255, 0, 52, 1) 100%);
+    text-align: center;
+    position: relative;
+}
+
+.copyCode {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: min-content;
+    width: min-content;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+p {
+    color: rgba(255, 255, 255, 0.555);
+}
+
+.container {
+    /* min-width: 50vw; */
+    width: fit-content;
+    background: #2b2b2b;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 25px 25px 0 0;
+    padding: 0.2rem;
+    text-align: center;
+    opacity: 0.4;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.container:hover {
+    opacity: 1;
+}
+
+.colors {
+    display: inline-block;
+}
+
+/* Below code is for Color Selector */
+
+.colorselector {
+    display: inline-block;
+}
+
+.colordisplayholder {
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    height: 3rem;
+    width: 3rem;
+    display: inline-block;
+}
+
+.colordisplayholder:hover {
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.433);
+}
+
+.colordisplay {
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.stopinputholder {
+    position: relative;
+    height: 3rem;
+    width: 2rem;
+    margin-left: 0.1rem;
+    display: inline-block;
+}
+
+.stopinput {
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    z-index: 1;
+    text-align: left;
+}
+
+.label, .fa-trash {
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.fa {
+    cursor: pointer;
+}
+
+.fa-trash:hover {
+    color: tomato;
+}
+
+input[type="color"] {
+    display: block;
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0);
+    top: -2rem;
+    left: -2rem;
+    cursor: pointer;
+}
+
+input[type="color"]:focus {
+    border: 1px solid orange;
+    border-radius: 50%;
+    box-shadow: none;
+    outline: none;
+}
+
+input[type="number"] {
+    background: none;
+    border: none;
+    width: 2.5rem;
+    color: lightgray;
+}
+
+input[type="number"]:focus {
+    outline: none;
+}
+
+/* Above code is for Color Selector */
+
+.addColor {
+    background-color: orange;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.addColor:hover {
+    background-color: orangered;
+}
+
+.addColor:hover>.addsign>.fa-plus {
+    color: white;
+}
+
+.addsign {
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.fa-code {
+    font-weight: bold;
+}
+
+.holder {
+    color: lightgray;
+    text-align: center;
+    font-size: 0.8rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    margin: auto;
+    background: #2b2b2b;
+    padding: 0.2rem;
+    border-radius: 0 0 5px 5px;
+    opacity: 0.4;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.holder:hover {
+    opacity: 1;
+}
+
+.angle>span {
+    margin-left: 1rem;
+}
+
+.angle>input[type="range"] {
+    position: relative;
+    top: -0.1rem;
+}
+
+.gradienttype {
+    color: gray;
+}
+
+.linear, .radial {
+    display: inline-block;
+    background-color: darkslategrey;
+    padding: 0 10px;
+    margin: 0;
+    cursor: pointer;
+    width: 3rem;
+}
+
+.linear {
+    border-radius: 5px 0 0 5px;
+}
+
+.radial {
+    border-radius: 0 5px 5px 0;
+}
+
+.active, .linear:hover, .radial:hover {
+    background-color: darkturquoise;
+    color: black;
+}
+
+#visitor {
+    display: inline-block;
+    top: 5px;
+    position: relative;
+}
+
+/* Mobile Devices */
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: fit-content;
+        max-height: 100vh;
+        overflow: auto;
+        height: fit-content;
+        position: fixed;
+        bottom: unset;
+        top: 1rem;
+        right: 0;
+        left: unset;
+        margin: auto;
+        border-radius: 25px 0 0 25px;
+        padding: 1rem;
+        text-align: center;
+    }
+    .colors {
+        display: block;
+    }
+    .colorselector {
+        display: block;
+        padding-bottom: 5px;
+    }
+    .addColor {
+        width: 5rem;
+        border-radius: 25px;
+    }
+    .footer {
+        position: fixed;
+        top: unset;
+        right: unset;
+        bottom: 5px;
+        left: 5px;
+        font-weight: bold;
+    }
+    .holder {
+        top: unset;
+        bottom: 10vh;
+        border-radius: 5px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+.eye {
+    position: fixed;
+    top: 0;
+    padding: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: #2b2b2b;
+    border-radius: 0 0 5px 0;
+}
+
+/* Code For Slider */
+
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 0.2rem;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    background: cyan;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 1rem;
+    height: 1rem;
+    background: cyan;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* .copied {
+    background-color: #121212;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+} */
+
+.copied {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(34, 34, 34, 0.7);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the emoji */
+    position: absolute;
+    z-index: 1;
+    bottom: 120%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.copied-success {
+    visibility: visible;
+    font-size: 0.7rem;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgba(34, 34, 34, 0.7);
+    position: absolute;
+    bottom: -10px;
+    left: calc(50% - 10px);
+}
