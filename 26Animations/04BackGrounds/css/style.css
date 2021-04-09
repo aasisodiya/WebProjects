@@ -33,11 +33,13 @@
 }
 
 .left {
+    cursor: pointer;
     padding: 1rem;
     margin-right: auto;
 }
 
 .right {
+    cursor: pointer;
     padding: 1rem;
     margin-left: auto;
 }
