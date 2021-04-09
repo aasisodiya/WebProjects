@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="backdrop-filter Example">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../../../../shared/img/favicon.png" type="image/x-icon">
+    <title>backdrop-filter Example</title>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet">
+    <style>
+        /* Example Template Code Start */
+        * {
+            margin: 0;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: bold;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+        }
+
+        .footer>a {
+            color: orange;
+        }
+
+        .github {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Example Template Code End */
+
+        /* Backdrop Filter Code Start */
+
+        .blur {
+            backdrop-filter: blur(2px);
+        }
+
+        .brightness {
+            backdrop-filter: brightness(60%);
+        }
+
+        .contrast {
+            backdrop-filter: contrast(40%);
+        }
+
+        .grayscale {
+            backdrop-filter: grayscale(90%);
+        }
+
+        .hue {
+            backdrop-filter: hue-rotate(120deg);
+        }
+
+        .invert {
+            backdrop-filter: invert(70%);
+        }
+
+        .sepia {
+            backdrop-filter: sepia(90%);
+        }
+
+        .saturate {
+            backdrop-filter: saturate(80%);
+        }
+
+        .opacity {
+            backdrop-filter: opacity(20%);
+        }
+
+        .drop-shadow {
+            backdrop-filter: drop-shadow(4px 4px 10px blue);
+        }
+
+        .half {
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            background: url(flash.png);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Backdrop Filter Code End */
+    </style>
+</head>
+
+<body>
+    <div class="blur half">BLUR</div>
+    <div class="brightness half">BRIGHTNESS</div>
+    <div class="contrast half">CONTRAST</div>
+    <div class="grayscale half">GRAYSCALE</div>
+    <div class="hue half">HUE</div>
+    <div class="invert half">INVERT</div>
+    <div class="sepia half">SEPIA</div>
+    <div class="saturate half">SATURATE</div>
+    <div class="opacity half">OPACITY</div>
+    <div class="drop-shadow half">DROP-SHADOW</div>
+
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a>
+    </div>
+</body>
+
+</html>

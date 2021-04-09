@@ -4,9 +4,12 @@
 
 ---
 
-## CSS Layouts
+## CSS
 
-- [Vertically Divided Element](https://aasisodiya.github.io/WebProjects/Notes/note-css-layout/note-vertically-divided-element/)
+- [CSS Notes](https://aasisodiya.github.io/WebProjects/Notes/note-css/)
+- [Note CSS Layouts](https://aasisodiya.github.io/WebProjects/Notes/note-css-layout/)
+  - [Vertically Divided Element](https://aasisodiya.github.io/WebProjects/Notes/note-css-layout/note-vertically-divided-element/)
+  - [Vertically & Horizontally Center Element](https://aasisodiya.github.io/WebProjects/Notes/note-css-layout/note-vertically-center-element/)
 
 ---
 
