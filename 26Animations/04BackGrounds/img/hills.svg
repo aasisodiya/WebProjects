@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_4"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 960 340.25" style="enable-background:new 0 0 960 340.25;" xml:space="preserve">
+	<style type="text/css">
+	.st0{fill:#657C71;}
+	.st1{fill:#979FA3;}
+	.st2{fill:#C8CFC5;}
+	.st3{fill:#FCF9F9;}
+	.st4{fill:#B5815E;}
+	.st5{fill:#834F27;}
+	.st6{fill:#B6C94D;}
+	.st7{fill:#728337;}
+	.st8{fill:#BCE63B;}
+	.st9{fill:#99BC32;}
+	.st10{fill:#FFF13E;}
+	.st11{fill:#FFFFFF;}
+	.st12{fill:#C8F3FD;}
+	.st13{fill:#97BB3C;}
+	.st14{fill:#D2F64C;}
+	</style>
+	<g id="Hills">
+		<g>
+			<g id="Tree_6_">
+				<rect id="XMLID_50_" x="219.09" y="228.64" class="st4" width="0" height="15.4"/>
+				<rect id="XMLID_49_" x="219.09" y="229.25" class="st5" width="2" height="15"/>
+				<polygon id="XMLID_48_" class="st6" points="214.18,236.25 219.09,236.25 219.09,214.01"/>
+				<polygon id="XMLID_47_" class="st7" points="219.09,214.01 219.09,236.25 225.25,236.25"/>
+			</g>
+			<g id="Tree_7_">
+				<rect id="XMLID_55_" x="231.09" y="228.64" class="st4" width="0" height="15.4"/>
+				<rect id="XMLID_54_" x="231.09" y="229.25" class="st5" width="2" height="15"/>
+				<polygon id="XMLID_53_" class="st6" points="226.9,236.25 231.09,236.25 231.09,214.01"/>
+				<polygon id="XMLID_52_" class="st7" points="231.09,214.01 231.09,236.25 237.97,236.25"/>
+			</g>
+			<g id="Tree_8_">
+				<rect id="XMLID_59_" x="244.09" y="228.64" class="st4" width="0" height="15.4"/>
+				<rect id="XMLID_58_" x="244.09" y="229.25" class="st5" width="2" height="15"/>
+				<polygon id="XMLID_57_" class="st6" points="239.62,236.25 244.09,236.25 244.09,214.01"/>
+				<polygon id="XMLID_56_" class="st7" points="244.09,214.01 244.09,236.25 250.69,236.25"/>
+			</g>
+			<g id="Tree_9_">
+				<rect id="XMLID_63_" x="257.09" y="228.64" class="st4" width="0" height="15.4"/>
+				<rect id="XMLID_62_" x="257.09" y="229.25" class="st5" width="2" height="15"/>
+				<polygon id="XMLID_61_" class="st6" points="252.34,236.25 257.09,236.25 257.09,214.01"/>
+				<polygon id="XMLID_60_" class="st7" points="257.09,214.01 257.09,236.25 263.41,236.25"/>
+			</g>
+		</g>
+		<g id="Mini_Mountain">
+			<g id="XMLID_18_">
+				<path id="XMLID_288_" class="st8" d="M37,301.25h197.47v-60.71C143.63,243.81,163.34,292.49,37,301.25z"/>
+				<path id="XMLID_289_" class="st9" d="M244.45,240.64c-3.46,0-6.7-0.22-9.99-0.1v60.71h194.99
+				C383.71,301.25,325.33,242.63,244.45,240.64z"/>
+			</g>
+			<g id="XMLID_17_">
+				<path id="XMLID_294_" class="st8" d="M233.89,301.25h195.39v-43.53C340.63,260.53,359.29,294.68,233.89,301.25z"/>
+				<path id="XMLID_295_" class="st9" d="M441.3,257.82c-4.19,0-7.64-0.22-12.02-0.1v43.53h197.06
+				C580.6,301.25,522.18,259.24,441.3,257.82z"/>
+			</g>
+			<g id="XMLID_3_">
+				<path id="XMLID_300_" class="st8" d="M450.67,301.25h174.52v-60.38C550.77,246.81,494.64,301.25,450.67,301.25z"/>
+				<path id="XMLID_301_" class="st9" d="M635.05,240.64c-3.13,0.08-5.48-0.02-9.86,0.22v60.38h217.93
+				C712.36,292.49,737.31,240.59,635.05,240.64z"/>
+			</g>
+		</g>
+	</g>
+</svg>
