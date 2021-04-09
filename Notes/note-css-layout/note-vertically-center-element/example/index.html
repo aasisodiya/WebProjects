@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Layout Example">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../../../../shared/img/favicon.png" type="image/x-icon">
+    <title>Vertical Layout</title>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet">
+    <style>
+        /* Example Template Code Start */
+        * {
+            margin: 0;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: bold;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+        }
+
+        .footer>a {
+            color: orange;
+        }
+
+        .github {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Example Template Code End */
+
+        /* Vertically Center Text In Fixed Size Div Start */
+        .vertical-horizontal-center-element {
+            background-color: orange;
+            display: flex;
+            /* justify-content will align it horizontally */
+            justify-content: center;
+            /* align-items will align it vertically */
+            align-items: center;
+            height: 50vh;
+        }
+
+        /* Vertically Center Text In Fixed Size Div End */
+    </style>
+</head>
+
+<body>
+    <div class="vertical-horizontal-center-element">
+        Vertically & Horizontally Center Text/Element Inside a Fixed Size Div
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a>
+    </div>
+</body>
+
+</html>
