@@ -1,4 +1,4 @@
-`use strict`
+'use strict'
 
 // Saved user data in cache
 let userdata = localStorage.getItem("userdata");
