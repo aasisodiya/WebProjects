@@ -29,6 +29,8 @@
 - [23Bookmarks](https://aasisodiya.github.io/WebProjects/23Bookmarks/)
 - [25MoodYear](https://aasisodiya.github.io/WebProjects/25MoodYear/)
 - [27F1Response](https://aasisodiya.github.io/WebProjects/27F1Response/)
+- [28DefinedColors](https://aasisodiya.github.io/WebProjects/28DefinedColors/)
+- [29GradientPlay](https://aasisodiya.github.io/WebProjects/29GradientPlay/)
 - [Animations](https://aasisodiya.github.io/WebProjects/26Animations/)
 
 [Notes](https://aasisodiya.github.io/WebProjects/Notes/)
