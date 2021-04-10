@@ -4,7 +4,7 @@
 
 ### Output
 
-![Vertically & Horizontally Centered Text/Element Inside A Fixed Size Div](img/output.png)
+![Vertically & Horizontally Centered Text/Element Inside A Fixed Size Div](img/vertically-center-text.png)
 
 ### Code Structure
 
