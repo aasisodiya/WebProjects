@@ -82,3 +82,8 @@
 |Swapping Values In Two Variables|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#swapping-values-in-two-variables)|15-April-2021|Short and Effective way to Swapping Values In Two Variables|
 |Convert String to Number|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#convert-string-to-number)|15-April-2021|Short and Effective way to Convert String to Number|
 |Substitute A Variable Inside A String|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#substitute-a-variable-inside-a-string)|15-April-2021|Short and Effective way to Substitute A Variable Inside A String|
+|Optional Chaining|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#optional-chaining)|16-April-2021|Short and Effective way to extract subproperty of data that too safely|
+|Creating Copy Of An Array|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#creating-copy-of-an-array)|16-April-2021|Correct way to Creating Copy Of An Array|
+|Split A String Into An Array|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#split-a-string-into-an-array)|16-April-2021|Short and Effective way to Split A String Into An Array|
+|Remove Duplicate Values From An Array|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#remove-duplicate-values-from-an-array)|16-April-2021|Short and Effective way to Remove Duplicate Values From An Array|
+|Single Line If-Else Condition Check|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#single-line-if-else-condition-check)|16-April-2021|Short way for using If-Else Condition Check|
