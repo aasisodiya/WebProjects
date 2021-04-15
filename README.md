@@ -73,8 +73,12 @@
 |FullScreen Function|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#fullscreen-function)|6-April-2021||
 |Popup Message|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#popup-message)|6-April-2021||
 |Swap Key-Value in JSON|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#swap-key-value-in-json)|6-April-2021||
-|Sort Object By Keys|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#sort-object-by-keys)|||
+|Sort Object By Keys|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#sort-object-by-keys)|6-April-2021||
 |Copy Content To Clipboard|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#copy-content-to-clipboard)|6-April-2021||
 |JS Dates|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-js-dates/)|27-February-2021||
 |on, off, one, click|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-method-on-off-one-click/)|27-February-2021||
 |Target Vs Current Target|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-target-vs-currenttarget/)|28-February-2021||
+|Clean Code|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code/)|15-April-2021|Short and Effective way of writing code|
+|Swapping Values In Two Variables|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#swapping-values-in-two-variables)|15-April-2021|Short and Effective way to Swapping Values In Two Variables|
+|Convert String to Number|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#convert-string-to-number)|15-April-2021|Short and Effective way to Convert String to Number|
+|Substitute A Variable Inside A String|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#substitute-a-variable-inside-a-string)|15-April-2021|Short and Effective way to Substitute A Variable Inside A String|
