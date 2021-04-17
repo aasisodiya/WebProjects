@@ -1,0 +1,181 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 1rem;
+    font-weight: bold;
+    color: white;
+    /* opacity: 0.5; */
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: 'Exo 2', sans-serif;
+    margin: 0;
+}
+
+/* Template Code End */
+
+body {
+    overflow: hidden;
+}
+
+:root {
+    --clock-edge: calc(100% - 4rem);
+    --clock-edge-radius: 1rem;
+    --timer-font-size: 3em;
+    --clock-background: #414141;
+    --display-background: #000000;
+    --timer-background: #212121;
+    --timer-color: #aaaaaa;
+    --options-icon: 1rem;
+    --control-button-color: black;
+    --control-background-color: orangered;
+    --correction: 2px;
+}
+
+.clock {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    /* grid-template-columns: auto auto; */
+    grid-template-rows: auto auto;
+    background-color: var(--clock-background);
+}
+
+.display {
+    background-color: var(--display-background);
+    border-radius: var(--clock-edge-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.timer {
+    cursor: pointer;
+    background-color: var(--timer-background);
+    height: var(--clock-edge);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: var(--clock-edge);
+    border-radius: var(--clock-edge-radius);
+    color: var(--timer-color);
+    box-shadow: 0px 0px 10px grey inset;
+}
+
+.timer>span {
+    font-size: var(--timer-font-size);
+}
+
+.options {
+    color: orangered;
+    position: absolute;
+    bottom: var(--options-icon);
+    right: var(--options-icon);
+}
+
+.container {
+    position: relative;
+}
+
+.clockcontrol {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: fit-content;
+    width: fit-content;
+}
+
+.controls {
+    color: var(--control-background-color);
+    display: inline-flex;
+}
+
+.fa-stack-1x {
+    color: var(--control-button-color);
+    /* top: var(--correction); */
+}
+
+.fa {
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 500px) {
+    .clock {
+        grid-template-columns: auto auto;
+        grid-template-rows: unset;
+    }
+    .fa-stack {
+        display: block;
+    }
+    .timer>span {
+        width: 30vw;
+        text-align: center;
+    }
+    .controls {
+        display: grid;
+    }
+}
+
+.stop, .running, .pause, .play {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.active {
+    background-color: gold;
+    color: black;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    position: fixed;
+    display: none;
+    backdrop-filter: blur(6px);
+}
+
+.controls>span {
+    margin: auto;
+}
+
+.help {
+    text-align: center;
+    display: none;
+    color: white;
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+}
+
+.close {
+    margin: auto;
+}
+
+h1, .close {
+    padding: 1rem 0;
+}
