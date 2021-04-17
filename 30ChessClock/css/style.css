@@ -81,7 +81,7 @@ body {
 }
 
 .options {
-    color: white;
+    color: orangered;
     position: absolute;
     bottom: var(--options-icon);
     right: var(--options-icon);
@@ -102,6 +102,7 @@ body {
 
 .controls {
     color: var(--control-background-color);
+    display: inline-flex;
 }
 
 .fa-stack-1x {
@@ -124,6 +125,9 @@ body {
     .timer>span {
         width: 30vw;
         text-align: center;
+    }
+    .controls {
+        display: grid;
     }
 }
 
@@ -154,16 +158,24 @@ body {
     backdrop-filter: blur(6px);
 }
 
-.controls > span {
+.controls>span {
     margin: auto;
 }
 
 .help {
     text-align: center;
     display: none;
-    color: orangered;
+    color: white;
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
 }
 
 .close {
     margin: auto;
+}
+
+h1, .close {
+    padding: 1rem 0;
 }

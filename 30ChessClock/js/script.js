@@ -38,9 +38,9 @@ $('.fa-minus').on('click', function () {
     updateBothClock(seconds);
 });
 
-function updateClock(activeClockIndex) {
-    let time = new Date(clocktimer[activeClockIndex] * 1000).toISOString().substr(14, 5);
-    $('.timer:eq(' + activeClockIndex + ')>span').text(time);
+function updateClock(clockIndex) {
+    let time = new Date(clocktimer[clockIndex] * 1000).toISOString().substr(14, 5);
+    $('.timer:eq(' + clockIndex + ')>span').text(time);
 }
 
 function updateBothClock(seconds) {
@@ -51,49 +51,54 @@ function updateBothClock(seconds) {
 
 let workingClockInterval
 
-function startClock(activeClockIndex) {
+function startClock(clockIndex) {
     $('.stop').removeClass('show');
     $('.play').removeClass('show');
     $('.running').addClass('show');
     $('.pause').addClass('show');
     workingClockInterval = setInterval(() => {
-        clocktimer[activeClockIndex]--;
-        updateClock(activeClockIndex);
+        clocktimer[clockIndex]--;
+        updateClock(clockIndex);
     }, 1000);
 }
 
-$('.timer').on('click', function (event) {
-    console.log(event.target)
+$('.timer').on('click', function () {
     clearInterval(workingClockInterval);
-    activeClockIndex = $('.timer').index(this);
-    console.log(activeClockIndex);
+    let clickedClockIndex = $('.timer').index(this);
+    if (clickedClockIndex == 0) {
+        activeClockIndex = 1;
+    } else {
+        activeClockIndex = 0;
+    }
     $('.active').removeClass('active');
-    $('.timer:eq('+activeClockIndex+')').addClass('active');
+    $('.timer:eq(' + activeClockIndex + ')').addClass('active');
     startClock(activeClockIndex);
 });
 
 // Function to pause the timer
-$('.fa-pause').on('click', function (event) {
+$('.fa-pause').on('click', function () {
     $('.stop').removeClass('show');
     $('.play').addClass('show');
     $('.running').addClass('show');
     $('.pause').removeClass('show');
     $('.overlay').show();
+    $('.question').hide();
     clearInterval(workingClockInterval);
 });
 
 // Function to resume the timer
-$('.fa-play').on('click', function (event) {
+$('.fa-play').on('click', function () {
     $('.stop').removeClass('show');
     $('.play').removeClass('show');
     $('.running').addClass('show');
     $('.pause').addClass('show');
     $('.overlay').hide();
+    $('.question').show();
     startClock(activeClockIndex);
 });
 
 // Function to stop the timer
-$('.fa-stop').on('click', function (event) {
+$('.fa-stop').on('click', function () {
     $('.stop').addClass('show');
     $('.play').removeClass('show');
     $('.overlay').hide();
@@ -105,13 +110,7 @@ $('.fa-stop').on('click', function (event) {
 });
 
 // Function to show help
-$('.fa-question').on('click', function (event) {
-    // $('.stop').removeClass('show');
-    // $('.play').removeClass('show');
-    // $('.running').removeClass('show');
-    // $('.pause').removeClass('show');
-    // $('.active').removeClass('active');
-
+$('.fa-question').on('click', function () {
     $('.controls').hide();
     $('.overlay').show();
     $('.help').show();
@@ -126,5 +125,3 @@ $('.fa-times').on('click', function (event) {
 
 // Initially
 updateBothClock(allocatedTime * 60);
-
-// new Date(SECONDS * 1000).toISOString().substr(11, 8)
