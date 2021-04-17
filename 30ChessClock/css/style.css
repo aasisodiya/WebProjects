@@ -172,10 +172,35 @@ body {
     transform: translate(-50%, -50%);
 }
 
+p {
+    text-align: left;
+}
+
 .close {
     margin: auto;
 }
 
 h1, .close {
     padding: 1rem 0;
+}
+
+.danger {
+    animation: mymove 1s infinite;
+}
+
+@keyframes mymove {
+    0% {
+        background-color: gold;
+    }
+    50% {
+        background-color: orangered;
+    }
+    100% {
+        background-color: gold;
+    }
+}
+
+.timesUp {
+    background-color: red;
+    color: black;
 }
