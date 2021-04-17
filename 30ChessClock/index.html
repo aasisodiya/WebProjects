@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Clock</title>
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="Chess Clock">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="clock">
+            <div class="display">
+                <div class="timer">
+                    <span>10:00</span>
+                </div>
+                <div class="options">
+                    <i class="fa fa-refresh fa-2x fa-fw"></i>
+                </div>
+            </div>
+            <div class="display">
+                <div class="timer">
+                    <span>10:00</span>
+                </div>
+                <div class="options">
+                    <i class="fa fa-refresh fa-2x fa-fw"></i>
+                </div>
+            </div>
+        </div>
+        <div class="overlay">
+            <div class="help">
+                <h1>Instructions</h1>
+                Use +/- to increase/decrease minutes in clock. <br>
+                When a player press on either of their clocks it will start the timer for other player <br>
+                <span class="fa-stack fa-lg close">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-times fa-stack-1x"></i>
+                </span>
+            </div>
+        </div>
+        <div class="clockcontrol">
+            <div class="controls">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-question fa-stack-1x"></i>
+                </span>
+                <span class="fa-stack fa-lg stop show">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-plus fa-stack-1x"></i>
+                </span>
+                <span class="fa-stack fa-lg stop show">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-minus fa-stack-1x"></i>
+                </span>
+                <span class="fa-stack fa-lg play">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-play fa-stack-1x"></i>
+                </span>
+                <span class="fa-stack fa-lg pause">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-pause fa-stack-1x"></i>
+                </span>
+                <span class="fa-stack fa-lg running">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stop fa-stack-1x"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <!-- <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.template" alt=""> -->
+    </div>
+</body>
+
+</html>
