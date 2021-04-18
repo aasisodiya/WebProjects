@@ -49,6 +49,10 @@ function updateClock(clockIndex) {
         time = new Date(clocktimer[clockIndex] * 1000).toISOString().substr(11, 8);
     } else if (clocktimer[clockIndex] > 60) {
         time = new Date(clocktimer[clockIndex] * 1000).toISOString().substr(14, 5);
+    } else if (clocktimer[clockIndex] == 60) {
+        time = "60";
+    } else if (clocktimer[clockIndex] == 0) {
+        time = "Time's Up!";
     } else {
         time = new Date(clocktimer[clockIndex] * 1000).toISOString().substr(17, 2);
     }
@@ -62,8 +66,8 @@ function updateBothClock(seconds) {
         time = new Date(seconds * 1000).toISOString().substr(11, 8);
     } else if (seconds > 60) {
         time = new Date(seconds * 1000).toISOString().substr(14, 5);
-    } else {
-        time = new Date(seconds * 1000).toISOString().substr(17, 2);
+    } else if (seconds == 60) {
+        time = "60";
     }
     clocktimer = [seconds, seconds];
     $('.timer>span').text(time);
@@ -79,7 +83,6 @@ function startClock(clockIndex) {
     $('.pause').addClass('show');
     workingClockInterval = setInterval(() => {
         clocktimer[clockIndex]--;
-        console.log(clocktimer[clockIndex]);
         updateClock(clockIndex);
         if (clocktimer[clockIndex] < 10) {
             $('.active').addClass('danger');
@@ -145,6 +148,7 @@ $('.fa-stop').on('click', function () {
     $('.active').removeClass('active');
     $('.danger').removeClass('danger');
     $('.timesUp').removeClass('timesUp');
+    $('.question').show();
     clearInterval(workingClockInterval);
     timesUp = false;
     updateBothClock(allocatedTime * 60);
