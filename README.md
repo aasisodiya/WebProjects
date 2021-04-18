@@ -49,6 +49,7 @@
 |V2|[Link](https://aasisodiya.github.io/WebProjects/release/v2/)|2017||
 |V3|[Link](https://aasisodiya.github.io/WebProjects/release/v3/)|2019||
 |VR|[Link](https://aasisodiya.github.io/WebProjects/release/vr/)|2016||
+|Chess Clock|[Link](https://aasisodiya.github.io/WebProjects/30ChessClock)|18-April-2021|A Digital Chess Clock|
 
 ## Notes
 
