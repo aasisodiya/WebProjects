@@ -11,6 +11,7 @@
   - [Change Event Vs Input Event](#change-event-vs-input-event)
   - [FullScreen Function](#fullscreen-function)
   - [Popup Message](#popup-message)
+  - [Formatted JSON](#formatted-json)
 
 ## Sort Object By Keys
 
@@ -138,6 +139,8 @@ function closeFullscreen() {
 }
 ```
 
+---
+
 ## Popup Message
 
 Use below code when you want to display a popup message just above an element. For Example, when you click on a copy button to copy some content, then below code can help you display a copied message
@@ -206,4 +209,17 @@ $('#clickbutton').on('click', function () {
     // below code is specific to popup message for click span
     $('.testclick > .popupmessage').toggle();
 });
+```
+
+---
+
+## Formatted JSON
+
+```javascript
+let formattedJson = JSON.stringify({ a: 'A', b: 'B' }, null, '\t');
+console.log(formattedJson);
+// "{
+//   "a": "A",
+//   "b": "B"
+// }"
 ```
