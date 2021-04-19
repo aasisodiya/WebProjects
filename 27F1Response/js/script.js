@@ -1,5 +1,5 @@
 // Template Code Start
-`use strict`
+'use strict'
 // Just for Fun!
 console.log('%c Stop Right There! ', 'background: #222; color: orange;font-size:20px');
 console.log('%c You Shall Not Pass! ', 'background: #222; color: red; font-size:40px');
@@ -60,7 +60,7 @@ function startEvent() {
         eventIsOngoing = true;
     } else {
         // record time
-        ctime = new Date();
+        let ctime = new Date();
         let userResponseTime = (ctime - rtime)
         let userResponseTimeSec = userResponseTime / 1000
         $('#timer').text(userResponseTimeSec);
