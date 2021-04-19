@@ -192,6 +192,72 @@
 
 /* Background 4 End */
 
+/* Background 5 (Animated Background) Start */
+
+.background5 {
+    position: relative;
+}
+
+.background5-1 {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(204, 51, 191) 50%, #09f 50%);
+    opacity: .5;
+    bottom: 0;
+    left: -50%;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.background5-2 {
+    animation-direction: alternate-reverse;
+    background-image: linear-gradient(-60deg, rgb(204, 51, 191) 50%, #09f 50%);
+    opacity: .5;
+    animation-duration: 4s;
+}
+
+.background5-3 {
+    animation-duration: 5s;
+    background-image: linear-gradient(-60deg, rgb(74, 51, 204) 50%, rgb(115, 255, 0) 50%);
+    opacity: .5;
+}
+
+.background5-4 {
+    animation-direction: alternate-reverse;
+    background-image: linear-gradient(60deg, rgb(204, 51, 191) 50%, #09f 50%);
+    opacity: .5;
+    animation-duration: 6s;
+}
+
+.background5-5 {
+    animation-duration: 7s;
+    background-image: linear-gradient(60deg, rgb(201, 204, 51) 50%, rgb(255, 0, 0) 50%);
+    opacity: .5;
+}
+
+.content {
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-family: monospace;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+/* Background 5 End */
+
 /* Set all background to display none */
 
 .hide {
