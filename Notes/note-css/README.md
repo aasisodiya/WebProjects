@@ -1,11 +1,14 @@
 # CSS Notes
 
+<link rel="icon" href="../../shared/img/favicon.png" type="image/x-icon">
+
 - [CSS Notes](#css-notes)
   - [Background Backdrop Filter](#background-backdrop-filter)
   - [Background-Size Property](#background-size-property)
   - [Using `calc()` In CSS](#using-calc-in-css)
     - [Notes](#notes)
   - [Orientation Based Styling](#orientation-based-styling)
+  - [Smooth Scroll To Given Element](#smooth-scroll-to-given-element)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -108,7 +111,21 @@ You can apply styling based on your device screen orientation by using `@media o
 
 Given above code, will change the background color to orangered when device screen orientation is landscape and will change it background color to yellow if device orientation is portrait. Output of the above code is given below
 
+Example: [Click Here](./orientation-example/)
+
 ![Output](./orientation-example/output.png)
+
+## Smooth Scroll To Given Element
+
+If you have ever referenced an internal element in your link, then you might have noticed that on click it jumps to that element directly. Which doesn't looks just as cool as `smooth-scroll` effect using css. You could simply add below code in your css and make your transition to that element way more cool.
+
+```css
+html {
+    scroll-behavior: smooth;
+}
+```
+
+[Click this link](./smooth-scroll/) to watch it in action
 
 ## Reference
 
