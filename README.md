@@ -91,3 +91,4 @@
 |Well Formatted JSON|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical#formatted-json)|19-April-2021|JSON with proper indentation and format|
 |Orientation Based Styling|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#orientation-based-styling)|21-April-2021|Orientation Based Styling|
 |Smooth Scroll|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#smooth-scroll-to-given-element)|22-April-2021|Smooth Scroll to an Element|
+|Scroll Reveal|[Link](https://aasisodiya.github.io/WebProjects/26Animations/05ScrollReveal/)|23-April-2021|CSS Reveal Animation based on scroll using Jquery|
