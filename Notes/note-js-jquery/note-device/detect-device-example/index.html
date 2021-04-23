@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detect Device Data</title>
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="Detect Device Data Using JS that your browser can share with any website">
+    <link rel="icon" href="../../../../shared/img/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            font-weight: bold;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        /* Template Code End */
+        * {
+            margin: 0;
+        }
+
+        body {
+            background: url(bg.jpg) no-repeat center;
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            max-width: 80vw;
+            background-color: rgba(138, 138, 138, 0.47);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 2px black;
+            margin: 1rem;
+        }
+
+        p {
+            font-weight: bold;
+        }
+
+        span {
+            font-weight: normal;
+        }
+
+        hr {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h1>Device Data</h1>
+                <hr>
+                <div id="data">
+                    <!-- <p>appVersion : <span id="appVersion"></span></p>
+                    <p>cookieEnabled : <span id="cookieEnabled"></span></p>
+                    <p>deviceMemory : <span id="deviceMemory"></span></p>
+                    <p>hardwareConcurrency : <span id="hardwareConcurrency"></span></p>
+                    <p>maxTouchPoints : <span id="maxTouchPoints"></span></p>
+                    <p>platform : <span id="platform"></span></p>
+                    <p>userAgent : <span id="userAgent"></span></p>
+                    <p>navigator.userAgentData.mobile : <span id="mobile"></span></p>
+                    <p>navigator.userAgentData.brands : <span id="brands"></span></p>
+                    <p>Temp: <span id="tmp"></span></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // let appVersion = navigator.appVersion;
+        // appVersion == undefined ? $('#appVersion').parent().hide() : $('#appVersion').text("appVersion:" + appVersion);
+        // let cookieEnabled = navigator.cookieEnabled;
+        // cookieEnabled == undefined ? $('#cookieEnabled').parent().hide() : $('#cookieEnabled').text(cookieEnabled);
+        // let deviceMemory = navigator.deviceMemory;
+        // deviceMemory == undefined ? $('#deviceMemory').parent().hide() : $('#deviceMemory').text(deviceMemory);
+        // let hardwareConcurrency = navigator.hardwareConcurrency;
+        // hardwareConcurrency == undefined ? $('#hardwareConcurrency').parent().hide() : $('#hardwareConcurrency').text(hardwareConcurrency);
+        // let maxTouchPoints = navigator.maxTouchPoints;
+        // maxTouchPoints == undefined ? $('#maxTouchPoints').parent().hide() : $('#maxTouchPoints').text(maxTouchPoints);
+        // let platform = navigator.platform;
+        // platform == undefined ? $('#platform').parent().hide() : $('#platform').text(platform);
+        // let userAgent = navigator.userAgent;
+        // userAgent == undefined ? $('#userAgent').parent().hide() : $('#userAgent').text(userAgent);
+        // let mobile = window?.navigator?.userAgentData?.mobile;
+        // mobile == undefined ? $('#mobile').parent().hide() : $('#mobile').text(mobile);
+        // let brands = JSON.stringify(window?.navigator?.userAgentData?.brands);
+        // brands == undefined ? $('#brands').parent().hide() : $('#brands').text(brands);
+        // $('#tmp').text("ok:" + navigator.);
+        let navigatorData =
+        {
+            'navigator.appCodeName': navigator.appCodeName,
+            'navigator.appName': navigator.appName,
+            'navigator.appVersion': navigator.appVersion,
+            // 'navigator.bluetooth': navigator.bluetooth,
+            // 'navigator.clipboard': navigator.clipboard,
+            'navigator.connection.downlink': navigator?.connection?.downlink,
+            'navigator.connection.effectiveType': navigator?.connection?.effectiveType,
+            'navigator.connection.rtt': navigator?.connection?.rtt,
+            'navigator.cookieEnabled': navigator.cookieEnabled,
+            // 'navigator.credentials': navigator.credentials,
+            'navigator.deviceMemory': navigator.deviceMemory,
+            // 'navigator.doNotTrack': navigator.doNotTrack,
+            // 'navigator.geolocation': navigator.geolocation,
+            'navigator.hardwareConcurrency': navigator.hardwareConcurrency,
+            // 'navigator.hid': navigator.hid,
+            // 'navigator.keyboard': navigator.keyboard,
+            'navigator.language': navigator.language,
+            'navigator.languages': navigator.languages,
+            // 'navigator.locks': navigator.locks,
+            'navigator.maxTouchPoints': navigator.maxTouchPoints,
+            // 'navigator.mediaCapabilities': navigator.mediaCapabilities,
+            // 'navigator.mediaDevices': navigator.mediaDevices,
+            // 'navigator.mediaSession': navigator.mediaSession,
+            // 'navigator.mimeTypes': navigator.mimeTypes,
+            'navigator.onLine': navigator.onLine,
+            // 'navigator.permissions': navigator.permissions,
+            'navigator.platform': navigator.platform,
+            // 'navigator.plugins': navigator.plugins,
+            // 'navigator.presentation': navigator.presentation,
+            'navigator.product': navigator.product,
+            'navigator.productSub': navigator.productSub,
+            // 'navigator.scheduling': navigator.scheduling,
+            // 'navigator.serial': navigator.serial,
+            // 'navigator.serviceWorker': navigator.serviceWorker,
+            // 'navigator.storage': navigator.storage,
+            // 'navigator.usb': navigator.usb,
+            'navigator.userActivation.hasBeenActive': navigator?.userActivation?.hasBeenActive,
+            'navigator.userActivation.isActive': navigator?.userActivation?.isActive,
+            'navigator.userAgent': navigator.userAgent,
+            'navigator.userAgentData.mobile': navigator?.userAgentData?.mobile,
+            'navigator.vendor': navigator.vendor,
+            // 'navigator.vendorSub': navigator.vendorSub,
+            // 'navigator.wakeLock': navigator.wakeLock,
+            'navigator.webdriver': navigator.webdriver,
+            // 'navigator.webkitPersistentStorage': navigator.webkitPersistentStorage,
+            // 'navigator.webkitTemporaryStorage': navigator.webkitTemporaryStorage,
+            // 'navigator.xr': navigator.xr
+        }
+        // Note: Above commented values didn't work
+
+        function conpileAndDisplayData() {
+            let displayData = '';
+            Object.keys(navigatorData).forEach(element => {
+                let data = navigatorData[element];
+                if (data != undefined && (typeof data) != "object" && data != "") {
+                    displayData += `<p>${element} : <span id="appVersion">${data}</span></p>`;
+                }
+            });
+            $('#data').html(displayData);
+        }
+        conpileAndDisplayData();
+    </script>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.detect-device-data" alt="">
+    </div>
+</body>
+
+</html>
