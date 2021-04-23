@@ -2,6 +2,7 @@
 
 - [Device Specific Data & Functions](#device-specific-data--functions)
   - [Getting Device Specific Data Using `navigator`](#getting-device-specific-data-using-navigator)
+  - [Detect Device Type](#detect-device-type)
   - [Reference](#reference)
 
 ## Getting Device Specific Data Using `navigator`
@@ -21,6 +22,26 @@
 Example: [Click Here](detect-device-example/)
 
 > Note: `navigator.userAgentData.mobile` and `navigator.userAgentData.brands` doesn't work on mobile devices*
+
+## Detect Device Type
+
+Below function code will help you detect the device type i.e wether it is Android, iPhone or iPad.
+
+```js
+function getDeviceType() {
+    let deviceData = navigator.userAgent.toLocaleLowerCase().toString();
+    // deviceData has all the userAgent data in lowercase string format
+    // Now we can check for keywords like - android, iphone and ipad
+    let deviceType
+    deviceData.indexOf('android') != -1 ? deviceType = "Android" : deviceType;
+    deviceData.indexOf('iphone') != -1 ? deviceType = "iPhone" : deviceType;
+    deviceData.indexOf('ipad') != -1 ? deviceType = "iPad" : deviceType;
+    return deviceType;
+}
+let deviceType = getDeviceType();
+```
+
+Example: [Click Here](detect-device-type/)
 
 ## Reference
 
