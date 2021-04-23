@@ -69,7 +69,8 @@
     <div class="container">
         <div class="card">
             <div class="card-body">
-                <h1>Detected Device Type: <span id="type">Android</span></h1>
+                <h1>Detected Device Type: <span id="type"></span></h1>
+                <p>Device Pixel Ration: <span id="devicePixelRatio"></span></p>
             </div>
         </div>
     </div>
@@ -82,10 +83,12 @@
             deviceData.indexOf('android') != -1 ? deviceType = "Android" : deviceType;
             deviceData.indexOf('iphone') != -1 ? deviceType = "iPhone" : deviceType;
             deviceData.indexOf('ipad') != -1 ? deviceType = "iPad" : deviceType;
+            deviceData.indexOf('windows') != -1 ? deviceType = "Windows" : deviceType;
             return deviceType;
         }
         let deviceType = getDeviceType();
         $('#type').html(deviceType);
+        $('#devicePixelRatio').text(devicePixelRatio);
     </script>
     <!-- Below code is for footer -->
     <div class="footer">
