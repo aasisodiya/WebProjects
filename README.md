@@ -92,4 +92,5 @@
 |Orientation Based Styling|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#orientation-based-styling)|21-April-2021|Orientation Based Styling|
 |Smooth Scroll|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#smooth-scroll-to-given-element)|22-April-2021|Smooth Scroll to an Element|
 |Scroll Reveal|[Link](https://aasisodiya.github.io/WebProjects/26Animations/05ScrollReveal/)|23-April-2021|CSS Reveal Animation based on scroll using Jquery|
-|Device Data from Navigator That Browser Can Share|[Link](Notes/note-js-jquery/note-device#getting-device-specific-data-using-navigator)|24-April-2021|Device data from navigator that browser can share|
+|Device Data from Navigator That Browser Can Share|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#getting-device-specific-data-using-navigator)|24-April-2021|Device data from navigator that browser can share|
+|Detect Device Type|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#detect-device-type)|24-April-2021|Detect the device type i.e wether it is Android, iPhone or iPad.|
