@@ -76,6 +76,8 @@ if(window.innerWidth > window.innerHeight){
 }
 ```
 
+---
+
 ## Reference
 
 - [Navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator)
