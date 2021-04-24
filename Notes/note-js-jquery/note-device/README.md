@@ -86,6 +86,14 @@ if(window.innerWidth > window.innerHeight){
 }
 ```
 
+Another code to detect the orientation is as given below
+
+```js
+screen?.orientation?.type
+```
+
+Above property will give you values like `"landscape-primary"` and `"portrait-primary"`
+
 Example: [Click Here](detect-device-type/)
 
 ---
