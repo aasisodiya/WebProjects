@@ -51,6 +51,12 @@ Example: [Click Here](detect-device-type/)
 
 ## `devicePixelRatio` Property
 
+```text
+                    resolution in physical pixels
+devicePixelRatio = -------------------------------
+                       resolution in CSS pixels
+```
+
 The `devicePixelRatio` of Window interface returns the ratio of the resolution in physical pixels to the resolution in CSS pixels for the current display device. This value could also be interpreted as the ratio of pixel sizes: the size of one CSS pixel to the size of one physical pixel. In simpler terms, this tells the browser how many of the screen's actual pixels should be used to draw a single CSS pixel.
 
 This is useful when dealing with the difference between rendering on a standard display versus a HiDPI or Retina display, which use more screen pixels to draw the same objects, resulting in a sharper image.
@@ -75,6 +81,8 @@ if(window.innerWidth > window.innerHeight){
     //landscape
 }
 ```
+
+Example: [Click Here](detect-device-type/)
 
 ---
 
