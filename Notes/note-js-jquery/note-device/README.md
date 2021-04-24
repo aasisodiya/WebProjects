@@ -5,6 +5,7 @@
   - [Detect Device Type](#detect-device-type)
   - [`devicePixelRatio` Property](#devicepixelratio-property)
   - [Detect Orientation or Orientation Change](#detect-orientation-or-orientation-change)
+  - [`window`, `document` And `screen` Properties](#window-document-and-screen-properties)
   - [Window Height Vs Document Height](#window-height-vs-document-height)
   - [Window Width Vs Document Width](#window-width-vs-document-width)
   - [`window.innerHeight` Vs `window.outerHeight`](#windowinnerheight-vs-windowouterheight)
@@ -95,6 +96,38 @@ screen?.orientation?.type
 Above property will give you values like `"landscape-primary"` and `"portrait-primary"`
 
 Example: [Click Here](detect-device-type/)
+
+---
+
+## `window`, `document` And `screen` Properties
+
+|Property|Description|
+|-|-|
+|`window.innerHeight`|Property returns the interior height of the window in pixels, including the height of the horizontal scroll bar, if present|
+|`window.innerWidth`|Property innerWidth returns the interior width of the window in pixels. This includes the width of the vertical scroll bar, if one is present|
+|`window.outerHeight`|Property returns the height in pixels of the whole browser window, including any sidebar, window chrome, and window-resizing borders/handles|
+|`window.outerWidth`|Property returns the width of the outside of the browser window. It represents the width of the whole browser window including sidebar (if expanded), window chrome and window resizing borders/handles|
+|`document.documentElement.offsetHeight`|Property returns the height of an element, including vertical padding and borders, as an integer|
+|`document.documentElement.clientHeight`|Property is zero for elements with no CSS or inline layout boxes; otherwise, it's the inner height of an element in pixels. It includes padding but excludes borders, margins, and horizontal scrollbars (if present)|
+|`document.documentElement.scrollHeight`|Property is a measurement of the height of an element's content, including content not visible on the screen due to overflow|
+|`document.documentElement.offsetWidth`|Property returns the layout width of an element as an integer|
+|`document.documentElement.clientWidth`|Property is zero for inline elements and elements with no CSS; otherwise, it's the inner width of an element in pixels. It includes padding but excludes borders, margins, and vertical scrollbars (if present)|
+|`document.documentElement.scrollWidth`|Property is a measurement of the width of an element's content, including content not visible on the screen due to overflow|
+|`document.documentElement.scrollTop`|Property gets or sets the number of pixels that an element's content is scrolled vertically|
+|`screen.availHeight`|Property returns the height, in CSS pixels, of the space available for Web content on the screen. Since Screen is exposed on the Window interface's window.screen property, you access availHeight using window.screen.availHeight|
+|`screen.availWidth`|Property returns the amount of horizontal space (in pixels) available to the window|
+|`screen.colorDepth`|Property returns the color depth of the screen. Per the CSSOM, some implementations return 24 for compatibility reasons. See the browser compatibility section for those that don't|
+|`screen.height`|Property returns the height of the screen in pixels|
+|`screen.pixelDepth`|Returns the bit depth of the screen. Per the CSSOM, some implementations return 24 for compatibility reasons|
+|`screen.width`|Property returns the width of the screen in pixels|
+|`window.scrollX`|The read-only scrollX property of the Window interface returns the number of pixels that the document is currently scrolled horizontally. This value is subpixel precise in modern browsers, meaning that it isn't necessarily a whole number|
+|`window.scrollY`|The read-only scrollY property of the Window interface returns the number of pixels that the document is currently scrolled vertically. This value is subpixel precise in modern browsers, meaning that it isn't necessarily a whole number|
+|`window.screenLeft`|Property returns the horizontal distance, in CSS pixels, from the left border of the user's browser viewport to the left side of the screen|
+|`window.screenTop`|Property returns the vertical distance, in CSS pixels, from the top border of the user's browser viewport to the top side of the screen|
+|`window.screenX`|Property returns the horizontal distance, in CSS pixels, of the left border of the user's browser viewport to the left side of the screen|
+|`window.screenY`|Property returns the vertical distance, in CSS pixels, of the top border of the user's browser viewport to the top edge of the screen|
+
+Example: [Click Here](all-all-properties/)
 
 ---
 

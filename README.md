@@ -98,3 +98,4 @@
 |Detect Orientation or Orientation Change|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#detect-orientation-or-orientation-change)|24-April-2021|Detect the device orientation|
 |Height & Width|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#window-height-vs-document-height)|24-April-2021|Height & Width|
 |Convert Seconds To hh:mm:ss Format|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-js-dates#convert-seconds-to-hhmmss-format)|24-April-2021|JS Code to Convert Seconds To hh:mm:ss Format|
+|`window`, `document` And `screen` Properties|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#window-document-and-screen-properties)|25-April-2021|`window`, `document` And `screen` Related Properties|
