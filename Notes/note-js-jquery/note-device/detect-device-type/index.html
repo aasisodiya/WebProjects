@@ -70,7 +70,8 @@
         <div class="card">
             <div class="card-body">
                 <h1>Detected Device Type: <span id="type"></span></h1>
-                <p>Device Pixel Ration: <span id="devicePixelRatio"></span></p>
+                <p>Device Pixel Ratio: <span id="devicePixelRatio"></span></p>
+                <p>Device Orientation: <span id="orientation"></span></p>
             </div>
         </div>
     </div>
@@ -86,9 +87,30 @@
             deviceData.indexOf('windows') != -1 ? deviceType = "Windows" : deviceType;
             return deviceType;
         }
+        function getDeviceOrientation() {
+            if (window.innerHeight > window.innerWidth) {
+                return "Portrait"
+            }
+            if (window.innerWidth > window.innerHeight) {
+                return "Landscape"
+            }
+            return "NA"
+        }
         let deviceType = getDeviceType();
+        let orientation = getDeviceOrientation();
         $('#type').html(deviceType);
         $('#devicePixelRatio').text(devicePixelRatio);
+        $('#orientation').text(orientation);
+        // Below code is for orientation change
+        $(window).on("orientationchange", function () {
+            orientation = getDeviceOrientation();
+            $('#orientation').text(orientation);
+        });
+        // Below code is for window resizing
+        $(window).resize(function () {
+            orientation = getDeviceOrientation();
+            $('#orientation').text(orientation);
+        });
     </script>
     <!-- Below code is for footer -->
     <div class="footer">
