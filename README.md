@@ -96,3 +96,4 @@
 |Detect Device Type|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#detect-device-type)|24-April-2021|Detect the device type i.e wether it is Android, iPhone or iPad.|
 |`devicePixelRatio` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#devicepixelratio-property)|24-April-2021|Device Pixel Ratio|
 |Detect Orientation or Orientation Change|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#detect-orientation-or-orientation-change)|24-April-2021|Detect the device orientation|
+|Height & Width|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#window-height-vs-document-height)|24-April-2021|Height & Width|

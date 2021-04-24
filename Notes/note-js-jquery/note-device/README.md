@@ -5,6 +5,10 @@
   - [Detect Device Type](#detect-device-type)
   - [`devicePixelRatio` Property](#devicepixelratio-property)
   - [Detect Orientation or Orientation Change](#detect-orientation-or-orientation-change)
+  - [Window Height Vs Document Height](#window-height-vs-document-height)
+  - [Window Width Vs Document Width](#window-width-vs-document-width)
+  - [`window.innerHeight` Vs `window.outerHeight`](#windowinnerheight-vs-windowouterheight)
+  - [`window.innerWidth` Vs `window.outerWidth`](#windowinnerwidth-vs-windowouterwidth)
   - [Reference](#reference)
 
 ## Getting Device Specific Data Using `navigator`
@@ -83,6 +87,40 @@ if(window.innerWidth > window.innerHeight){
 ```
 
 Example: [Click Here](detect-device-type/)
+
+---
+
+## Window Height Vs Document Height
+
+|Window Height|Document Height|
+|-|-|
+|`$(window).height()` gets you an unit-less pixel value of the height of the (browser) window aka viewport|`$(document).height()` returns an unit-less pixel value of the height of the document being rendered|
+|With respect to the web browsers the viewport here is visible portion of the canvas(which often is smaller than the document being rendered)|It is the actual document height. Also if the actual document’s body height is less than the viewport height then it will return the viewport height instead|
+
+> `$(window).height()` = `document.documentElement.clientHeight` and `window.innerHeight` != `document.documentElement.clientHeight`
+
+## Window Width Vs Document Width
+
+|Window Width|Document Width|
+|-|-|
+|`$(window).width()` gets you an unit-less pixel value of the width of the (browser) window aka viewport|`$(document).width()` returns an unit-less pixel value of the width of the document being rendered|
+|With respect to the web browsers the viewport here is visible portion of the canvas(which often is smaller than the document being rendered)|It is the actual document width. Also if the actual document’s body width is less than the viewport width then it will return the viewport width instead|
+
+> `$(window).width()` = `document.documentElement.clientWidth` and `window.innerWidth` != `document.documentElement.clientWidth`
+
+## `window.innerHeight` Vs `window.outerHeight`
+
+|`window.innerHeight`|`window.outerHeight`|
+|-|-|
+|The `window.innerHeight` property returns the height of a window's content area.|The `window.outerHeight` property returns the outer height of the browser window, including all interface elements (like toolbars/scrollbars)|
+|Changes when you resize the window or zoom in / zoom out|Stays the same when you resize the window or zoom in / zoom out|
+
+## `window.innerWidth` Vs `window.outerWidth`
+
+|`window.innerWidth`|`window.outerWidth`|
+|-|-|
+|The `window.innerWidth` property returns the width of a window's content area.|The `window.outerWidth` property returns the outer width of the browser window, including all interface elements (like toolbars/scrollbars).|
+|Changes when you resize the window or zoom in / zoom out|Stays the same when you resize the window or zoom in / zoom out|
 
 ---
 
