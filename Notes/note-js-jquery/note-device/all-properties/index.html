@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Properties</title>
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="All Properties">
+    <link rel="icon" href="../../../../shared/img/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0;
+            color: black;
+            font-weight: bold;
+            background: chartreuse;
+            display: flex;
+            align-items: center;
+            align-content: center;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orangered;
+        }
+
+        .footer>img {
+            position: relative;
+        }
+
+        * {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        /* Template Code End */
+        * {
+            margin: 0;
+        }
+
+        body {
+            background: black;
+            color: white;
+        }
+
+        code {
+            color: chartreuse;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            margin: 1rem;
+            margin-bottom: 5rem;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #151515;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>window.innerHeight</code></td>
+                <td>Property returns the interior height of the window in pixels, including the height of the horizontal
+                    scroll bar, if present</td>
+            </tr>
+            <tr>
+                <td><code>window.innerWidth</code></td>
+                <td>Property innerWidth returns the interior width of the window in pixels. This includes the width of
+                    the vertical scroll bar, if one is present</td>
+            </tr>
+            <tr>
+                <td><code>window.outerHeight</code></td>
+                <td>Property returns the height in pixels of the whole browser window, including any sidebar, window
+                    chrome, and window-resizing borders/handles</td>
+            </tr>
+            <tr>
+                <td><code>window.outerWidth</code></td>
+                <td>Property returns the width of the outside of the browser window. It represents the width of the
+                    whole browser window including sidebar (if expanded), window chrome and window resizing
+                    borders/handles</td>
+            </tr>
+            <tr>
+                <td><code>document.documentElement.offsetHeight</code></td>
+                <td>Property returns the height of an element, including vertical padding and borders, as an integer
+                </td>
+            </tr>
+            <tr>
+                <td><code>document.documentElement.clientHeight</code></td>
+                <td>Property is zero for elements with no CSS or inline layout boxes; otherwise, it&#39;s the inner
+                    height of an element in pixels. It includes padding but excludes borders, margins, and horizontal
+                    scrollbars (if present)</td>
+            </tr>
+            <tr>
+                <td><code>document.documentElement.scrollHeight</code></td>
+                <td>Property is a measurement of the height of an element&#39;s content, including content not visible
+                    on the screen due to overflow</td>
+            </tr>
+            <tr>
+                <td><code>document.documentElement.offsetWidth</code></td>
+                <td>Property returns the layout width of an element as an integer</td>
+            </tr>
+            <tr>
+                <td><code>document.documentElement.clientWidth</code></td>
+                <td>Property is zero for inline elements and elements with no CSS; otherwise, it&#39;s the inner width
+                    of an element in pixels. It includes padding but excludes borders, margins, and vertical scrollbars
+                    (if present)</td>
+            </tr>
+            <tr>
+                <td><code>document.documentElement.scrollWidth</code></td>
+                <td>Property is a measurement of the width of an element&#39;s content, including content not visible on
+                    the screen due to overflow</td>
+            </tr>
+            <tr>
+                <td><code>document.documentElement.scrollTop</code></td>
+                <td>Property gets or sets the number of pixels that an element&#39;s content is scrolled vertically</td>
+            </tr>
+            <tr>
+                <td><code>screen.availHeight</code></td>
+                <td>Property returns the height, in CSS pixels, of the space available for Web content on the screen.
+                    Since Screen is exposed on the Window interface&#39;s window.screen property, you access availHeight
+                    using window.screen.availHeight</td>
+            </tr>
+            <tr>
+                <td><code>screen.availWidth</code></td>
+                <td>Property returns the amount of horizontal space (in pixels) available to the window</td>
+            </tr>
+            <tr>
+                <td><code>screen.colorDepth</code></td>
+                <td>Property returns the color depth of the screen. Per the CSSOM, some implementations return 24 for
+                    compatibility reasons. See the browser compatibility section for those that don&#39;t</td>
+            </tr>
+            <tr>
+                <td><code>screen.height</code></td>
+                <td>Property returns the height of the screen in pixels</td>
+            </tr>
+            <tr>
+                <td><code>screen.pixelDepth</code></td>
+                <td>Returns the bit depth of the screen. Per the CSSOM, some implementations return 24 for compatibility
+                    reasons</td>
+            </tr>
+            <tr>
+                <td><code>screen.width</code></td>
+                <td>Property returns the width of the screen in pixels</td>
+            </tr>
+            <tr>
+                <td><code>window.scrollX</code></td>
+                <td>The read-only scrollX property of the Window interface returns the number of pixels that the
+                    document is currently scrolled horizontally. This value is subpixel precise in modern browsers,
+                    meaning that it isn&#39;t necessarily a whole number</td>
+            </tr>
+            <tr>
+                <td><code>window.scrollY</code></td>
+                <td>The read-only scrollY property of the Window interface returns the number of pixels that the
+                    document is currently scrolled vertically. This value is subpixel precise in modern browsers,
+                    meaning that it isn&#39;t necessarily a whole number</td>
+            </tr>
+            <tr>
+                <td><code>window.screenLeft</code></td>
+                <td>Property returns the horizontal distance, in CSS pixels, from the left border of the user&#39;s
+                    browser viewport to the left side of the screen</td>
+            </tr>
+            <tr>
+                <td><code>window.screenTop</code></td>
+                <td>Property returns the vertical distance, in CSS pixels, from the top border of the user&#39;s browser
+                    viewport to the top side of the screen</td>
+            </tr>
+            <tr>
+                <td><code>window.screenX</code></td>
+                <td>Property returns the horizontal distance, in CSS pixels, of the left border of the user&#39;s
+                    browser viewport to the left side of the screen</td>
+            </tr>
+            <tr>
+                <td><code>window.screenY</code></td>
+                <td>Property returns the vertical distance, in CSS pixels, of the top border of the user&#39;s browser
+                    viewport to the top edge of the screen</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // First Insert the Column
+        $("<th>Value</th>").insertAfter("th:first-child()");
+        let compiledProp = [window.innerHeight,
+        window.innerWidth,
+        window.outerHeight,
+        window.outerWidth,
+        document.documentElement.offsetHeight,
+        document.documentElement.clientHeight,
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetWidth,
+        document.documentElement.clientWidth,
+        document.documentElement.scrollWidth,
+        document.documentElement.scrollTop,
+        screen.availHeight,
+        screen.availWidth,
+        screen.colorDepth,
+        screen.height,
+        screen.pixelDepth,
+        screen.width,
+        window.scrollX,
+        window.scrollY,
+        window.screenLeft,
+        window.screenTop,
+        window.screenX,
+        window.screenY];
+        // Now insert data
+        compiledProp.forEach((element, index) => {
+            console.log(element, index);
+            $(`<td>${element}</td>`).insertAfter(`tr:nth-child(${index + 1}) > td:first-child()`);
+        });
+        function updateData() {
+            // on resize update data
+            compiledProp = [window.innerHeight,
+            window.innerWidth,
+            window.outerHeight,
+            window.outerWidth,
+            document.documentElement.offsetHeight,
+            document.documentElement.clientHeight,
+            document.documentElement.scrollHeight,
+            document.documentElement.offsetWidth,
+            document.documentElement.clientWidth,
+            document.documentElement.scrollWidth,
+            document.documentElement.scrollTop,
+            screen.availHeight,
+            screen.availWidth,
+            screen.colorDepth,
+            screen.height,
+            screen.pixelDepth,
+            screen.width,
+            window.scrollX,
+            window.scrollY,
+            window.screenLeft,
+            window.screenTop,
+            window.screenX,
+            window.screenY];
+            compiledProp.forEach((element, index) => {
+                console.log(element, index);
+                $(`tr:nth-child(${index + 1}) > td:nth-child(2)`).text(element);
+            });
+        }
+        $(window).resize(function () {
+            updateData();
+        });
+        $(window).scroll(function () {
+            updateData();
+        });
+    </script>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.all-properties" alt="">
+    </div>
+</body>
+
+</html>
