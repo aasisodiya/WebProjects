@@ -72,6 +72,7 @@
                 <h1>Detected Device Type: <span id="type"></span></h1>
                 <p>Device Pixel Ratio: <span id="devicePixelRatio"></span></p>
                 <p>Device Orientation: <span id="orientation"></span></p>
+                <p>Device Orientation Property: <span id="orientationProp"></span></p>
             </div>
         </div>
     </div>
@@ -101,15 +102,18 @@
         $('#type').html(deviceType);
         $('#devicePixelRatio').text(devicePixelRatio);
         $('#orientation').text(orientation);
+        $('#orientationProp').text(screen?.orientation?.type);
         // Below code is for orientation change
         $(window).on("orientationchange", function () {
             orientation = getDeviceOrientation();
             $('#orientation').text(orientation);
+            $('#orientationProp').text(screen?.orientation?.type);
         });
         // Below code is for window resizing
         $(window).resize(function () {
             orientation = getDeviceOrientation();
             $('#orientation').text(orientation);
+            $('#orientationProp').text(screen?.orientation?.type);
         });
     </script>
     <!-- Below code is for footer -->
