@@ -99,3 +99,7 @@
 |Height & Width|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#window-height-vs-document-height)|24-April-2021|Height & Width|
 |Convert Seconds To hh:mm:ss Format|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-js-dates#convert-seconds-to-hhmmss-format)|24-April-2021|JS Code to Convert Seconds To hh:mm:ss Format|
 |`window`, `document` And `screen` Properties|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#window-document-and-screen-properties)|25-April-2021|`window`, `document` And `screen` Related Properties|
+|`white-space` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#white-space-property)|25-April-2021|Sets how white space inside an element is handled|
+|`overflow-wrap` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#overflow-wrap-property)|25-April-2021|Setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box|
+|`word-break` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#word-break-property)|25-April-2021|Sets whether line breaks appear wherever the text would otherwise overflow its content box|
+|`hyphens` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#hyphens-property)|25-April-2021|How words should be hyphenated when text wraps across multiple lines|
