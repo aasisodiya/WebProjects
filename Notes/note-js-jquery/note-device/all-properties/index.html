@@ -82,6 +82,7 @@
         <thead>
             <tr>
                 <th>Property</th>
+                <th>RealtimeValue</th>
                 <th>Description</th>
             </tr>
         </thead>
@@ -141,6 +142,11 @@
             <tr>
                 <td><code>document.documentElement.scrollTop</code></td>
                 <td>Property gets or sets the number of pixels that an element&#39;s content is scrolled vertically</td>
+            </tr>
+            <tr>
+                <td><code>document.documentElement.scrollLeft</code></td>
+                <td>Property gets or sets the number of pixels that an element's content is scrolled from its left edge
+                </td>
             </tr>
             <tr>
                 <td><code>screen.availHeight</code></td>
@@ -207,7 +213,6 @@
 
     <script>
         // First Insert the Column
-        $("<th>Value</th>").insertAfter("th:first-child()");
         let compiledProp = [window.innerHeight,
         window.innerWidth,
         window.outerHeight,
@@ -218,7 +223,8 @@
         document.documentElement.offsetWidth,
         document.documentElement.clientWidth,
         document.documentElement.scrollWidth,
-        document.documentElement.scrollTop,
+        document.documentElement.scrollTop.toFixed(2),
+        document.documentElement.scrollLeft.toFixed(2),
         screen.availHeight,
         screen.availWidth,
         screen.colorDepth,
@@ -248,7 +254,8 @@
             document.documentElement.offsetWidth,
             document.documentElement.clientWidth,
             document.documentElement.scrollWidth,
-            document.documentElement.scrollTop,
+            document.documentElement.scrollTop.toFixed(2),
+            document.documentElement.scrollLeft.toFixed(2),
             screen.availHeight,
             screen.availWidth,
             screen.colorDepth,
@@ -256,7 +263,7 @@
             screen.pixelDepth,
             screen.width,
             window.scrollX,
-            window.scrollY,
+            window.scrollY.toFixed(2),
             window.screenLeft,
             window.screenTop,
             window.screenX,
@@ -266,9 +273,9 @@
                 $(`tr:nth-child(${index + 1}) > td:nth-child(2)`).text(element);
             });
         }
-        $(window).resize(function () {
-            updateData();
-        });
+        // $(window).resize(function () {
+        //     updateData();
+        // });
         $(window).scroll(function () {
             updateData();
         });
