@@ -4,6 +4,8 @@
 
 - [CSS Notes](#css-notes)
   - [Background Backdrop Filter](#background-backdrop-filter)
+  - [`filter` Property](#filter-property)
+  - [Difference Between `filter` and `backdrop-filter`](#difference-between-filter-and-backdrop-filter)
   - [Background-Size Property](#background-size-property)
   - [Using `calc()` In CSS](#using-calc-in-css)
     - [Notes](#notes)
@@ -17,6 +19,8 @@
   - [Reference](#reference)
 
 ## Background Backdrop Filter
+
+The `backdrop-filter` CSS property lets you apply graphical effects such as blurring or color shifting to the ***area behind an element***. Because it applies to everything behind the element, to see the effect you must make the element or its background at least partially transparent.
 
 ```css
 .blur {
@@ -66,7 +70,7 @@
 | `brightness(%)` | `brightness()` will set the brightness                  |
 | `contrast(%)`   | `contrast()` will change the contrast                   |
 | `grayscale()`   | `grayscale()` will add black & white (grayscale) effect |
-| `hue()`         | `hue()` will apply a hue rotation                       |
+| `hue-rotate()`  | `hue-rotate()` will apply a hue rotation                |
 | `invert()`      | `invert()` will invert the colors                       |
 | `sepia()`       | `sepia()` will show sepia effect                        |
 | `saturate()`    | `saturate()` will saturate the colors                   |
@@ -74,6 +78,18 @@
 | `drop-shadow()` | `drop-shadow()` applies a drop shadow effect            |
 
  Example : [Backdrop-Filter](backdrop-example/)
+
+## `filter` Property
+
+The `filter` CSS property applies graphical effects like blur or color shift to an element. Filters are commonly used to adjust the rendering of images, backgrounds, and borders.
+
+For filter refer above [`backdrop-filter`](#background-backdrop-filter) section
+
+## Difference Between `filter` and `backdrop-filter`
+
+|`backdrop-filter`|`filter`|
+|-|-|
+|Applies to area behind an element|Applies directly to an element|
 
 ---
 

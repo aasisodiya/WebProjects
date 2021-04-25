@@ -104,3 +104,4 @@
 |`word-break` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#word-break-property)|25-April-2021|Sets whether line breaks appear wherever the text would otherwise overflow its content box|
 |`hyphens` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#hyphens-property)|25-April-2021|How words should be hyphenated when text wraps across multiple lines|
 |`transition` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#transition-property)|25-April-2021|Apply animations to properties using `transition`|
+|`filter` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#filter-property)|26-April-2021|CSS property applies graphical effects like blur or color shift to an element  |
