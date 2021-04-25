@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Layout Example">
+    <meta name="author" content="Akash Sisodiya">
+    <link rel="icon" href="../../../shared/img/favicon.png" type="image/x-icon">
+    <title>CSS Marque</title>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0;
+            color: black;
+            font-weight: bold;
+            background: chartreuse;
+            display: flex;
+            align-items: center;
+            align-content: center;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orangered;
+        }
+
+        .footer>img {
+            position: relative;
+        }
+
+        * {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        /* Template Code End */
+        body {
+            background-color: black;
+        }
+
+        .marquee {
+            overflow: hidden;
+            height: 50px;
+            position: relative;
+            /* Below properties are optional */
+            background: black;
+            color: chartreuse;
+            border: 1px solid cyan;
+        }
+        .marquee p {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            line-height: 50px;
+            text-align: center;
+            /* Starting position */
+            -moz-transform: translateX(100%);
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+            /* Apply animation to this element */
+            -moz-animation: scroll-left 10s linear infinite;
+            -webkit-animation: scroll-left 10s linear infinite;
+            animation: scroll-left 10s linear infinite;
+        }
+        /* Move it (define the animation) */
+        @-moz-keyframes scroll-left {
+            0% {
+                -moz-transform: translateX(100%);
+            }
+            100% {
+                -moz-transform: translateX(-100%);
+            }
+        }
+        @-webkit-keyframes scroll-left {
+            0% {
+                -webkit-transform: translateX(100%);
+            }
+            100% {
+                -webkit-transform: translateX(-100%);
+            }
+        }
+        @keyframes scroll-left {
+            0% {
+                -moz-transform: translateX(100%);
+                /* Browser bug fix */
+                -webkit-transform: translateX(100%);
+                /* Browser bug fix */
+                transform: translateX(100%);
+            }
+            100% {
+                -moz-transform: translateX(-100%);
+                /* Browser bug fix */
+                -webkit-transform: translateX(-100%);
+                /* Browser bug fix */
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+    <div class="marquee">
+        <p>Left Scrolling Text...
+        </p>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <!-- <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.css-marque" alt=""> -->
+    </div>
+</body>
+
+</html>

@@ -6,10 +6,10 @@
   - [`devicePixelRatio` Property](#devicepixelratio-property)
   - [Detect Orientation or Orientation Change](#detect-orientation-or-orientation-change)
   - [`window`, `document` And `screen` Properties](#window-document-and-screen-properties)
-  - [Window Height Vs Document Height](#window-height-vs-document-height)
-  - [Window Width Vs Document Width](#window-width-vs-document-width)
-  - [`window.innerHeight` Vs `window.outerHeight`](#windowinnerheight-vs-windowouterheight)
-  - [`window.innerWidth` Vs `window.outerWidth`](#windowinnerwidth-vs-windowouterwidth)
+    - [Window Height Vs Document Height](#window-height-vs-document-height)
+    - [Window Width Vs Document Width](#window-width-vs-document-width)
+    - [`window.innerHeight` Vs `window.outerHeight`](#windowinnerheight-vs-windowouterheight)
+    - [`window.innerWidth` Vs `window.outerWidth`](#windowinnerwidth-vs-windowouterwidth)
   - [Reference](#reference)
 
 ## Getting Device Specific Data Using `navigator`
@@ -114,6 +114,7 @@ Example: [Click Here](detect-device-type/)
 |`document.documentElement.clientWidth`|Property is zero for inline elements and elements with no CSS; otherwise, it's the inner width of an element in pixels. It includes padding but excludes borders, margins, and vertical scrollbars (if present)|
 |`document.documentElement.scrollWidth`|Property is a measurement of the width of an element's content, including content not visible on the screen due to overflow|
 |`document.documentElement.scrollTop`|Property gets or sets the number of pixels that an element's content is scrolled vertically|
+|`document.documentElement.scrollLeft`|Property gets or sets the number of pixels that an element's content is scrolled from its left edge|
 |`screen.availHeight`|Property returns the height, in CSS pixels, of the space available for Web content on the screen. Since Screen is exposed on the Window interface's window.screen property, you access availHeight using window.screen.availHeight|
 |`screen.availWidth`|Property returns the amount of horizontal space (in pixels) available to the window|
 |`screen.colorDepth`|Property returns the color depth of the screen. Per the CSSOM, some implementations return 24 for compatibility reasons. See the browser compatibility section for those that don't|
@@ -127,11 +128,11 @@ Example: [Click Here](detect-device-type/)
 |`window.screenX`|Property returns the horizontal distance, in CSS pixels, of the left border of the user's browser viewport to the left side of the screen|
 |`window.screenY`|Property returns the vertical distance, in CSS pixels, of the top border of the user's browser viewport to the top edge of the screen|
 
-Example: [Click Here](all-all-properties/)
+Example: [Click Here](all-properties/)
 
 ---
 
-## Window Height Vs Document Height
+### Window Height Vs Document Height
 
 |Window Height|Document Height|
 |-|-|
@@ -140,7 +141,7 @@ Example: [Click Here](all-all-properties/)
 
 > `$(window).height()` = `document.documentElement.clientHeight` and `window.innerHeight` != `document.documentElement.clientHeight`
 
-## Window Width Vs Document Width
+### Window Width Vs Document Width
 
 |Window Width|Document Width|
 |-|-|
@@ -149,14 +150,14 @@ Example: [Click Here](all-all-properties/)
 
 > `$(window).width()` = `document.documentElement.clientWidth` and `window.innerWidth` != `document.documentElement.clientWidth`
 
-## `window.innerHeight` Vs `window.outerHeight`
+### `window.innerHeight` Vs `window.outerHeight`
 
 |`window.innerHeight`|`window.outerHeight`|
 |-|-|
 |The `window.innerHeight` property returns the height of a window's content area.|The `window.outerHeight` property returns the outer height of the browser window, including all interface elements (like toolbars/scrollbars)|
 |Changes when you resize the window or zoom in / zoom out|Stays the same when you resize the window or zoom in / zoom out|
 
-## `window.innerWidth` Vs `window.outerWidth`
+### `window.innerWidth` Vs `window.outerWidth`
 
 |`window.innerWidth`|`window.outerWidth`|
 |-|-|
