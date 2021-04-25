@@ -103,3 +103,4 @@
 |`overflow-wrap` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#overflow-wrap-property)|25-April-2021|Setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box|
 |`word-break` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#word-break-property)|25-April-2021|Sets whether line breaks appear wherever the text would otherwise overflow its content box|
 |`hyphens` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#hyphens-property)|25-April-2021|How words should be hyphenated when text wraps across multiple lines|
+|`transition` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#transition-property)|25-April-2021|Apply animations to properties using `transition`|

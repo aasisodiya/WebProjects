@@ -13,6 +13,7 @@
   - [`overflow-wrap` Property](#overflow-wrap-property)
   - [`word-break` Property](#word-break-property)
   - [`hyphens` Property](#hyphens-property)
+  - [`transition` Property](#transition-property)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -205,6 +206,48 @@ The `hyphens` CSS property specifies how words should be hyphenated when text wr
 |`hyphens: auto;`|The browser is free to automatically break words at appropriate hyphenation points, following whatever rules it chooses. However, suggested line break opportunities will override automatic break point selection when present.|
 
 For Live Example [Click Here](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens)
+
+---
+
+## `transition` Property
+
+The `transition` CSS property is a shorthand property for `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`. So basically syntax is as follows:
+
+```css
+transition: transition-property transition-duration transition-timing-function transition-delay;
+/*Example : transition: margin-right 2s ease-in-out .5s;*/
+/* Apply to 1 property */
+/* property name | duration */
+transition: margin-right 4s;
+
+/* property name | duration | delay */
+transition: margin-right 4s 1s;
+
+/* property name | duration | easing function */
+transition: margin-right 4s ease-in-out;
+
+/* property name | duration | easing function | delay */
+transition: margin-right 4s ease-in-out 1s;
+
+/* Apply to 2 properties */
+transition: margin-right 4s, color 1s;
+
+/* Apply to all changed properties */
+transition: all 0.5s ease-out;
+```
+
+Transitions enable you to define the transition between two states of an element. Different states may be defined using pseudo-classes like `:hover` or `:active` or dynamically set using JavaScript.
+
+|Property|Description|
+|-|-|
+|`transition-property`|The `transition-property` CSS property sets the CSS properties to which a transition effect should be applied. Ex. `all`, `none`, `width` or combination like `width, height`|
+|`transition-duration`|The `transition-duration` CSS property sets the length of time a transition animation should take to complete. By default, the value is 0s, meaning that no animation will occur. Ex. 1s, 800ms|
+|`transition-timing-function`|The `transition-timing-function` CSS property sets how intermediate values are calculated for CSS properties being affected by a transition effect. Ex. `ease`, `ease-in`, `ease-out`, `ease-in-out`, `linear`, `step-start`, `step-end`|
+|`transition-delay`|The `transition-delay` CSS property specifies the duration to wait before starting a property's transition. Ex. 1s, 300ms|
+
+> Note: Check Animatable Properties Here [Link](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties)
+
+For Live Example [Click Here](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
 
 ## Reference
 
