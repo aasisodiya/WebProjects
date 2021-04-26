@@ -106,3 +106,9 @@
 |`transition` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#transition-property)|25-April-2021|Apply animations to properties using `transition`|
 |`filter` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#filter-property)|26-April-2021|CSS property applies graphical effects like blur or color shift to an element|
 |CSS Marquee|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-marquee/)|26-April-2021|CSS Marquee|
+|`animation-play-state` Property|[Link](https://aasisodiya.github.io/WebProjects/26Animations#animation-play-state-property)|27-April-2021|Animation CSS Property|
+|`animation-delay` Property|[Link](https://aasisodiya.github.io/WebProjects/26Animations#animation-delay-property)|27-April-2021|Animation CSS Property|
+|`animation-iteration-count` Property|[Link](https://aasisodiya.github.io/WebProjects/26Animations#animation-iteration-count-property)|27-April-2021|Animation CSS Property|
+|`animation-fill-mode` Property|[Link](https://aasisodiya.github.io/WebProjects/26Animations#animation-fill-mode-property)|27-April-2021|Animation CSS Property|
+|Rotation Animation on Scroll|[Link](https://aasisodiya.github.io/WebProjects/26Animations#rotation-animation-on-scroll)|27-April-2021|Rotation Animation on Scroll|
+|Translation Animation on Scroll|[Link](https://aasisodiya.github.io/WebProjects/26Animations#translation-animation-on-scroll)|27-April-2021|Translation Animation on Scroll|
