@@ -112,3 +112,4 @@
 |`animation-fill-mode` Property|[Link](https://aasisodiya.github.io/WebProjects/26Animations#animation-fill-mode-property)|27-April-2021|Animation CSS Property|
 |Rotation Animation on Scroll|[Link](https://aasisodiya.github.io/WebProjects/26Animations#rotation-animation-on-scroll)|27-April-2021|Rotation Animation on Scroll|
 |Translation Animation on Scroll|[Link](https://aasisodiya.github.io/WebProjects/26Animations#translation-animation-on-scroll)|27-April-2021|Translation Animation on Scroll|
+|`position` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#position-property)|28-April-2021|`position` Poperty|
