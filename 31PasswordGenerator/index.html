@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="Password Generator to generate random strong password">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="title">
+        PASSWORD GENERATOR
+    </div>
+    <div class="container">
+        <div class="password">
+            <input type="text" placeholder="Password" id="password" disabled>
+        </div>
+        <div class="conditions">
+            <div class="left">
+                <div class="sizecondition">
+                    <div>
+                        <input type="number" placeholder="SIZE" id="passwordlength" value="15" min="0">
+                    </div>
+                    <div>PASSWORD SIZE</div>
+                </div>
+            </div>
+            <div class="middle">
+                <h3>Preference</h3>
+                <hr>
+                <div class="condition">
+                    <div class="selector">
+                        <input type="checkbox" id="numbers" checked>
+                    </div>
+                    <div class="statement">NUMBERS</div>
+                </div>
+                <div class="condition">
+                    <div class="selector">
+                        <input type="checkbox" id="lowercase" checked>
+                    </div>
+                    <div class="statement">LOWERCASE ALPHABETS</div>
+                </div>
+                <div class="condition">
+                    <div class="selector">
+                        <input type="checkbox" id="uppercase">
+                    </div>
+                    <div class="statement">UPPERCASE ALPHABETS</div>
+                </div>
+                <div class="condition">
+                    <div class="selector">
+                        <input type="checkbox" id="character">
+                    </div>
+                    <div class="statement">CHARACTERS [!@#$%^&*_-=+?]</div>
+                </div>
+                <div class="condition">
+                    <div class="selector">
+                        <input type="checkbox" id="character2">
+                    </div>
+                    <div class="statement">CHARACTERS [`~,.<>;:{}[]|]</div>
+                </div>
+            </div>
+            <div class="right">
+                <div>
+                    <button id="generate"><i class="fa fa-key" aria-hidden="true"></i> GENERATE</button>
+                </div>
+                <div>
+                    <button id="copy"><i class="fa fa-clone" aria-hidden="true"></i> COPY</button>
+                </div>
+            </div>
+        </div>
+        <hr class="divider">
+        <div class="notetitle">
+            <h1><i class="fa fa-info-circle" aria-hidden="true"></i> Note</h1>
+        </div>
+        <div class="notes">
+            <div>
+                <ul>
+                    <li>Click on Generate Button to generate new password</li>
+                    <li>Click on Copy Button to copy generated password</li>
+                    <li>You need to specify at least one set of preference to generate a password</li>
+                    <li>Its adviced to keep your password long and complicated</li>
+                    <li>Always use a unique password for each account you create</li>
+                    <li>Don’t use personally identifiable information in your passwords</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Make sure your passwords are at least 12 characters long</li>
+                    <li>Make sure your passwords contain letters, numbers, and
+                        special characters</li>
+                    <li>Try using phrases and add random characters, but don't replace them in easy patterns</li>
+                    <li>Avoid using similar passwords that change only a single word or character</li>
+                    <li>You should never share your passwords via email or text message</li>
+                </ul>
+            </div>
+        </div>
+        <div id="copymessage">
+            Password Copied
+        </div>
+        <!-- Below code is for footer -->
+        <div class="footer">
+            &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+            <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.passwordgenerator" alt="">
+        </div>
+</body>
+
+</html>

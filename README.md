@@ -50,6 +50,7 @@
 |V3|[Link](https://aasisodiya.github.io/WebProjects/release/v3/)|2019||
 |VR|[Link](https://aasisodiya.github.io/WebProjects/release/vr/)|2016||
 |Chess Clock|[Link](https://aasisodiya.github.io/WebProjects/30ChessClock)|18-April-2021|A Digital Chess Clock|
+|Password Generator|[Link](https://aasisodiya.github.io/WebProjects/31PasswordGenerator)|30-April-2021|Password Generator Tool|
 
 ## Notes
 

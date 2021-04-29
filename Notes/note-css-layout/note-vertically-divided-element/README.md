@@ -1,4 +1,4 @@
-# Vertically Devided Elements
+# Vertically Divided Elements
 
 ## Output
 
