@@ -130,75 +130,96 @@ $('#copy').on('click', function () {
     // 2000 above matches the copymessage animation time
 });
 
-// Test Cases Below
+// // Animation
+// let definedSet = ["PASSWORD", "P@SSW0RD"];
+// let di = 0, ci = 0;
+// $('#title').text('');
+// setInterval(function () {
+//     let selected = definedSet[di];
+//     let charset = [...selected];
+//     if (ci < charset.length) {
+//         $('#title').text($('#title').text() + charset[ci]);
+//         ci++;
+//     }
+//     else {
+//         di ++;
+//         if (di == definedSet.length) {
+//             di =0;
+//         }
+//         ci = 0;
+//         $('#title').text('');
+//     }
+// }, 200);
 
-// Password Length 0
-console.log(GeneratePassword());
-console.log("Generating password with length zero:", GeneratePassword());
+// // Test Cases Below
 
-// Password Length > 0
-passwordLength = 5;
-console.log("Generating password with no selected set of characters:", GeneratePassword());
+// // Password Length 0
+// console.log(GeneratePassword());
+// console.log("Generating password with length zero:", GeneratePassword());
 
-// lowercase password
-hasLowercase = true;
-hasUppercase = false;
-hasNumbers = false;
-hasSymbols = false;
-hasCompSymbols = false;
-passwordLength = 10;
-console.log("Generating password with lowercase:", GeneratePassword());
+// // Password Length > 0
+// passwordLength = 5;
+// console.log("Generating password with no selected set of characters:", GeneratePassword());
 
-// uppercase password
-hasLowercase = false;
-hasUppercase = true;
-hasNumbers = false;
-hasSymbols = false;
-hasCompSymbols = false;
-passwordLength = 10;
-console.log("Generating password with uppercase:", GeneratePassword());
+// // lowercase password
+// hasLowercase = true;
+// hasUppercase = false;
+// hasNumbers = false;
+// hasSymbols = false;
+// hasCompSymbols = false;
+// passwordLength = 10;
+// console.log("Generating password with lowercase:", GeneratePassword());
 
-// numbers password
-hasLowercase = false;
-hasUppercase = false;
-hasNumbers = true;
-hasSymbols = false;
-hasCompSymbols = false;
-passwordLength = 10;
-console.log("Generating password with numbers:", GeneratePassword());
+// // uppercase password
+// hasLowercase = false;
+// hasUppercase = true;
+// hasNumbers = false;
+// hasSymbols = false;
+// hasCompSymbols = false;
+// passwordLength = 10;
+// console.log("Generating password with uppercase:", GeneratePassword());
 
-// lowercase and uppercase password
-hasLowercase = true;
-hasUppercase = true;
-hasNumbers = false;
-hasSymbols = false;
-hasCompSymbols = false;
-passwordLength = 10;
-console.log("Generating password with lowercase and uppercase:", GeneratePassword());
+// // numbers password
+// hasLowercase = false;
+// hasUppercase = false;
+// hasNumbers = true;
+// hasSymbols = false;
+// hasCompSymbols = false;
+// passwordLength = 10;
+// console.log("Generating password with numbers:", GeneratePassword());
 
-// lowercase, uppercase and numbers password
-hasLowercase = true;
-hasUppercase = true;
-hasNumbers = true;
-hasSymbols = false;
-hasCompSymbols = false;
-passwordLength = 10;
-console.log("Generating password with lowercase, uppercase and numbers:", GeneratePassword());
+// // lowercase and uppercase password
+// hasLowercase = true;
+// hasUppercase = true;
+// hasNumbers = false;
+// hasSymbols = false;
+// hasCompSymbols = false;
+// passwordLength = 10;
+// console.log("Generating password with lowercase and uppercase:", GeneratePassword());
 
-// lowercase, uppercase, numbers and symbols password
-hasLowercase = true;
-hasUppercase = true;
-hasNumbers = true;
-hasSymbols = true;
-hasCompSymbols = false;
-passwordLength = 10;
-console.log("Generating password with lowercase, uppercase, numbers and symbols:", GeneratePassword());
+// // lowercase, uppercase and numbers password
+// hasLowercase = true;
+// hasUppercase = true;
+// hasNumbers = true;
+// hasSymbols = false;
+// hasCompSymbols = false;
+// passwordLength = 10;
+// console.log("Generating password with lowercase, uppercase and numbers:", GeneratePassword());
 
-// lowercase, uppercase, numbers and symbols password
-hasLowercase = true;
-hasUppercase = true;
-hasNumbers = true;
-hasSymbols = true;
-hasCompSymbols = true;
-passwordLength = 10;
-console.log("Generating password with lowercase, uppercase, numbers and comp symbols:", GeneratePassword());
+// // lowercase, uppercase, numbers and symbols password
+// hasLowercase = true;
+// hasUppercase = true;
+// hasNumbers = true;
+// hasSymbols = true;
+// hasCompSymbols = false;
+// passwordLength = 10;
+// console.log("Generating password with lowercase, uppercase, numbers and symbols:", GeneratePassword());
+
+// // lowercase, uppercase, numbers and symbols password
+// hasLowercase = true;
+// hasUppercase = true;
+// hasNumbers = true;
+// hasSymbols = true;
+// hasCompSymbols = true;
+// passwordLength = 10;
+// console.log("Generating password with lowercase, uppercase, numbers and comp symbols:", GeneratePassword());
