@@ -30,7 +30,7 @@
 |Digital Clock|[Link](https://aasisodiya.github.io/WebProjects/21DigitalClock/)|9-July-2020||
 |Quiz|Not Public|26-August-2020||
 |Bookmarks|[Link](https://aasisodiya.github.io/WebProjects/23Bookmarks/)|4-January-2021||
-|Parallax 3D Effect|In Progress|19-January-2021||
+|Parallax|[Link](https://aasisodiya.github.io/WebProjects/24Parallax/)|19-January-2021||
 |Mood Year|[Link](https://aasisodiya.github.io/WebProjects/25MoodYear/)|6-March-2021||
 |Animated Logo|[Link](https://aasisodiya.github.io/WebProjects/26Animations/01AnimatedLogo/)|2016||
 |Scroll Activated CSS|[Link](https://aasisodiya.github.io/WebProjects/26Animations/02ScrollActivatedCSS/)|2016||
