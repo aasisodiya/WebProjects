@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create And Download File From UI</title>
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="Create And Download File From UI">
+    <link rel="icon" href="../../../../shared/img/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0;
+            color: black;
+            font-weight: bold;
+            background: cyan;
+            display: flex;
+            align-items: center;
+            align-content: center;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: indigo;
+            margin: 0 5px;
+        }
+
+        .footer>img {
+            position: relative;
+            margin: 0 5px;
+        }
+
+        * {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        /* Template Code End */
+        * {
+            margin: 0;
+        }
+
+        body {
+            background: black;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .userinput,
+        .outputfile,
+        .download {
+            text-align: center;
+            padding-bottom: 1rem;
+        }
+
+        #content,
+        #filename {
+            border: none;
+            background-color: darkslategrey;
+            color: lime;
+            border-radius: 1rem;
+            padding: 1rem;
+            margin-left: -1rem;
+        }
+
+        #content::placeholder,
+        #filename::placeholder {
+            color: cyan;
+        }
+
+        #filename,
+        #content {
+            width: 100%;
+        }
+
+        #download {
+            border: none;
+            cursor: pointer;
+            color: cyan;
+            background: darkslategrey;
+            border-radius: 1rem;
+            padding: 1rem;
+            width: 100%;
+            font-weight: bold;
+            letter-spacing: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        #download:hover {
+            filter: grayscale(1);
+        }
+
+        #filename:focus-visible,
+        #content:focus-visible {
+            border-radius: 1rem;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <div class="userinput">
+                <textarea name="File Content" id="content" cols="30" rows="10"
+                    placeholder="Enter Content Here"></textarea>
+            </div>
+            <div class="outputfile">
+                <input type="text" id="filename" placeholder="Enter File Name with Extension">
+            </div>
+            <div class="download">
+                <button id="download">Download</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Function to download file
+        function createAndDownloadFile(content, filename) {
+            let encodedContent = encodeURIComponent(content);
+            let downloadButton =
+                `<a id="createAndDownloadFile" href="data:text/plain;charset=utf-8,${encodedContent}" download="${filename}">Test</a>`;
+            $("body").append(downloadButton);
+            // $("#createAndDownloadFile").trigger('click'); // Won't work for download
+            $("#createAndDownloadFile")[0].click(); // Use this or below code
+            // document.getElementById("createAndDownloadFile").click();
+            $("#createAndDownloadFile").remove();
+        }
+        // Download button event listener
+        $('#download').on('click', function () {
+            console.log('File Download Triggered');
+            let content = $('#content').val();
+            let filename = $('#filename').val();
+            createAndDownloadFile(content, filename);
+        });
+    </script>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.downloadfile" alt="">
+    </div>
+</body>
+
+</html>
