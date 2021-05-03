@@ -157,12 +157,14 @@ i:hover {
 
 .link-holder:hover {
     background: #23272b !important;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .link-holder:hover>.row>.col>a {
     color: #f8f9fa !important;
-    white-space: normal;
+    /* white-space: normal; */
+    /* transition: margin 1s; */
+    /* margin-left: -100%; */
 }
 
 .link-holder:hover>.row>.col>a:hover {
@@ -279,4 +281,9 @@ i:hover {
     .card-columns {
         column-count: 1 !important;
     }
+}
+
+* {
+    transition-property: background, color;
+    transition-duration: 1s;
 }
