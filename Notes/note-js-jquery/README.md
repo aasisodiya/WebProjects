@@ -1,11 +1,14 @@
 # JS/jQuery Notes
 
-- [jQuery Method - .on(), .off(), .one() and .click()](./note-method-on-off-one-click/README.md)
-- [Date in JavaScript](./note-js-dates/README.md)
-- [target vs currentTarget property](./note-target-vs-currenttarget/README.md)
-- [Create Copy Of An Object In JavaScript](./note-js-jquery/note-creating-copy-of-object/README.md)
-- [Detect If User Has Seen / Visited an Element of Website](./note-target-vs-currenttarget/README.md)
+- [jQuery Method - .on(), .off(), .one() and .click()](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-method-on-off-one-click/)
+- [Date in JavaScript](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-js-dates/)
+- [target vs currentTarget property](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-target-vs-currenttarget/)
+- [Create Copy Of An Object In JavaScript](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-creating-copy-of-object/)
+- [Detect If User Has Seen / Visited an Element of Website](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-detect-if-user-has-visited-or-seen-specific-element/)
+- [Sort Object By Keys](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#sort-object-by-keys)
+- [Swap Key-Value in JSON](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#swap-key-value-in-json)
+- [Copy Content To Clipboard](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#copy-content-to-clipboard)
 
 ---
 
-[Common/Frequent Error](./note-error-and-solution/README.md)
+[Common/Frequent Error](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-error-and-solution/)

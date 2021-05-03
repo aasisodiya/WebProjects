@@ -1,0 +1,272 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    font-weight: bold;
+    background: cyan;
+    width: 100%;
+    color: black;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: darkblue;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: 'Exo 2', sans-serif;
+}
+
+/* Template Code End */
+
+:root {
+    --generatebuttonfontsize: 1rem;
+    --generatebuttonborderradius: 5rem;
+    --generatebuttonpadding: 1rem;
+    --generatebuttonwidth: 10rem;
+    --sizeconditionfontsize: 1rem;
+    --statementfontsize: 1rem;
+    --checkboxwidth: 1rem;
+    --checkboxheight: 1rem;
+    --leftmiddlerightpadding: 0 1rem;
+    --paddwordlengthborderradius: 5rem;
+    --paddwordlengthfontsize: 2rem;
+    --paddwordlengthpadding: 0.5rem;
+    --paddwordlengthwidth: 5rem;
+    --passwordborderradius: 5rem;
+    --passwordpadding: 1rem;
+    --passwordfontsize: 2rem;
+    --passwordpadding: 1rem;
+    --passwordmargin: 3rem 0;
+    --containerpadding: 1rem;
+}
+
+body {
+    background: black;
+    color: white;
+}
+
+.container {
+    padding: var(--containerpadding);
+}
+
+.password {
+    /* background: cyan; */
+    padding: var(--passwordpadding);
+    border-radius: var(--passwordborderradius);
+    margin: var(--passwordmargin);
+    background: linear-gradient(-45deg, orange, Fuchsia, DeepSkyBlue, cyan);
+    background-size: 400% 400%;
+    animation: lineargradient 15s ease infinite;
+}
+
+@keyframes lineargradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+#password {
+    background: black;
+    color: white;
+    border: none;
+    padding: var(--passwordpadding);
+    width: calc(100% - 2rem);
+    border-radius: var(--passwordborderradius);
+    text-align: center;
+    font-size: var(--passwordfontsize);
+}
+
+#password:focus-visible, #passwordlength:focus-visible {
+    border-radius: var(--passwordborderradius);
+    outline: none;
+}
+
+#passwordlength {
+    border-radius: var(--paddwordlengthborderradius);
+    border: none;
+    background: white;
+    font-size: var(--paddwordlengthfontsize);
+    padding: var(--paddwordlengthpadding);
+    width: var(--paddwordlengthwidth);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+#passwordlength:hover {
+    background: cyan;
+    transform: scale(1.1);
+    font-weight: bold;
+}
+
+.left, .middle, .right {
+    padding: var(--leftmiddlerightpadding);
+}
+
+.conditions {
+    display: flex;
+    grid-template-columns: auto auto auto;
+    flex-wrap: nowrap;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.selector, .statement {
+    display: inline-block;
+}
+
+input[type="checkbox"] {
+    background: none;
+    border: none;
+    width: var(--checkboxwidth);
+    height: var(--checkboxheight);
+    cursor: pointer;
+}
+
+.statement {
+    font-size: var(--statementfontsize);
+}
+
+.sizecondition {
+    text-align: center;
+    font-size: var(--sizeconditionfontsize);
+}
+
+.sizecondition>div:nth-child(2) {
+    padding: 1rem;
+}
+
+#generate, #copy {
+    font-size: var(--generatebuttonfontsize);
+    border-radius: var(--generatebuttonborderradius);
+    padding: var(--generatebuttonpadding);
+    width: var(--generatebuttonwidth);
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+#generate:hover, #copy:hover {
+    background: cyan;
+    transform: scale(1.1);
+    font-weight: bold;
+}
+
+#copy {
+    margin-top: 2rem;
+    display: none;
+}
+
+.divider {
+    margin: 2rem 0;
+}
+
+.notes {
+    display: flex;
+    margin-bottom: 3rem;
+    justify-content: center;
+}
+
+.title {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    margin: auto;
+    background: #121212;
+    color: cyan;
+    padding: 1rem 5rem;
+    border-radius: 0 0 5rem 5rem;
+    box-shadow: 0 0 5px 1px cyan;
+    background: #00000000;
+    backdrop-filter: blur(50px);
+    /* Below code fix for IPhone */
+    -webkit-backdrop-filter: blur(50px);
+    z-index: 100;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.notetitle {
+    text-align: center;
+}
+
+#copymessage {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    padding: 5px;
+    color: black;
+    font-weight: bolder;
+    animation: slide forwards 2s;
+}
+
+@keyframes slide {
+    0% {
+        right: -10rem;
+    }
+    10% {
+        right: 0rem;
+    }
+    90% {
+        right: 0rem;
+    }
+    100% {
+        right: -10rem;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .conditions {
+        display: block;
+    }
+    .left, .middle, .right {
+        padding: 1rem 0;
+    }
+    .right {
+        text-align: center;
+    }
+    .middle {
+        margin: auto;
+        width: fit-content;
+    }
+    .sizecondition {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .notes {
+        display: block;
+    }
+    ul {
+        margin: 0;
+    }
+}

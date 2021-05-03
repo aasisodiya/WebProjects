@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orientation Example</title>
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="Orientation Example : Changing Styles based on device Orientation">
+    <link rel="icon" href="../../../shared/img/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            font-weight: bold;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        /* Template Code End */
+        body {
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .portrait,
+        .landscape {
+            display: none;
+            font-weight: bold;
+        }
+
+        /* Actual Orientation Code */
+        @media only screen and (orientation: landscape) {
+            body {
+                background-color: orangered;
+            }
+
+            .landscape {
+                display: block;
+            }
+        }
+
+        @media only screen and (orientation: portrait) {
+            body {
+                background-color: yellow;
+            }
+
+            .portrait {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="portrait">Portrait Mode</div>
+    <div class="landscape">Landscape Mode</div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.orientation-example" alt="">
+    </div>
+</body>
+
+</html>
