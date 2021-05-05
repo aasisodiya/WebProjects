@@ -12,8 +12,8 @@ console.log(
 // Template Code End
 
 // Below code handles the mouse movement event
-$("body").on('mousemove touchmove', function (event) {
-    let positionaldata
+$("body").on("mousemove touchmove", function (event) {
+    let positionaldata;
     if (event.type == "touchmove") {
         let x = event.changedTouches[0].clientX - 30;
         let y = event.changedTouches[0].clientY - 30;
@@ -21,12 +21,12 @@ $("body").on('mousemove touchmove', function (event) {
     } else {
         positionaldata = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
     }
-    $('.cursor').show();
     $(".cursor").css("transform", positionaldata);
+    $('.overlay').hide();
 });
 
 $("body").on("touchcancel touchleave touchend mouseout", function (event) {
-    $('.cursor').hide();
+    $('.overlay').show();
 });
 
 let elem = document.getElementsByTagName("body")[0];
@@ -57,4 +57,9 @@ function closeFullscreen() {
     }
     $('#fullscreenopen').show();
     $('#fullscreenclose').hide();
+}
+
+let content = $(".content").html();
+for (let index = 0; index < 5; index++) {
+    $(".content").append(content);
 }
