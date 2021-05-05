@@ -5,6 +5,8 @@
     bottom: 5px;
     left: 5px;
     font-weight: bold;
+    color: white;
+    z-index: 100;
 }
 
 .footer>a {
@@ -25,10 +27,20 @@
 
 * {
     margin: 0;
+    user-select: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+    background: black;
 }
 
 .bg {
-    background: red;
+    background: rgb(255, 255, 157);
     height: 100vh;
     width: 100%;
     position: relative;
@@ -38,13 +50,16 @@
 .cursor {
     left: 0;
     top: 0;
-    width: 50px;
-    height: 50px;
-    background: radial-gradient(black 10px, transparent 10px, transparent 20px, black 20px);
+    width: 5000px;
+    height: 5000px;
+    background: radial-gradient(transparent 20px, black 40px);
+    top: -2500px;
+    left: -2500px;
     position: absolute;
     border-radius: 50%;
-    top: -25px;
-    left: -25px;
+    /* background-color: blue;
+    height: 10px;
+    width: 10px; */
 }
 
 /* .cursorface {
@@ -94,6 +109,8 @@
     text-align: center;
     color: black;
 }
+
+#torchpower {}
 
 #fullscreenopen>button {
     margin-top: 1rem;
