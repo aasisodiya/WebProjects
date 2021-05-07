@@ -117,3 +117,6 @@
 |Translation Animation on Scroll|[Link](https://aasisodiya.github.io/WebProjects/26Animations#translation-animation-on-scroll)|27-April-2021|Translation Animation on Scroll|
 |`position` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#position-property)|28-April-2021|`position` Property|
 |Create and Download File on UI|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-create-download-file/)|03-May-2021|Create and Download File on UI|
+|Using `display-mode` in media rule|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#using-display-mode-in-media-rule)|08-May-2021|Using `display-mode` to Detect FullScreen Using CSS|
+|Events|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-events/#list-of-events)|Events List|
+|Handle Touch Move / Cursor Move Event & `event.changedTouches` & `event.touches`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-events/#list-of-events)|Handle Touch Move / Cursor Move Event and extract the data using |
