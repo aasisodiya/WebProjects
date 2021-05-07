@@ -45,6 +45,7 @@ function getDeviceType() {
     deviceData.indexOf('android') != -1 ? deviceType = "Android" : deviceType;
     deviceData.indexOf('iphone') != -1 ? deviceType = "iPhone" : deviceType;
     deviceData.indexOf('ipad') != -1 ? deviceType = "iPad" : deviceType;
+    deviceData.indexOf('windows') != -1 ? deviceType = "Windows" : deviceType;
     return deviceType;
 }
 let deviceType = getDeviceType();

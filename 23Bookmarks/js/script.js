@@ -51,20 +51,20 @@ if (bookmarksData == null || bookmarksData.bookmarks == null) {
         "bookmarks": [{
             "category": "Regulars",
             "bookmarks": [{
-                "name": "Createxion",
-                "url": "https://www.createxion.com/",
-                "created": ""
-            },
-            {
-                "name": "Youtube",
-                "url": "https://www.youtube.com/channel/UCJVZT03z5fLJF5eO4PEbEUA",
-                "created": ""
-            },
-            {
-                "name": "Github",
-                "url": "http://github.com/aasisodiya",
-                "created": ""
-            }
+                    "name": "Createxion",
+                    "url": "https://www.createxion.com/",
+                    "created": ""
+                },
+                {
+                    "name": "Youtube",
+                    "url": "https://www.youtube.com/channel/UCJVZT03z5fLJF5eO4PEbEUA",
+                    "created": ""
+                },
+                {
+                    "name": "Github",
+                    "url": "http://github.com/aasisodiya",
+                    "created": ""
+                }
             ],
             "created": "",
             "updated": "",
@@ -72,13 +72,15 @@ if (bookmarksData == null || bookmarksData.bookmarks == null) {
             "categoryTextColor": "#f8f9fa",
             "bookmarkColor": "#dc3545",
             "bookmarkTextColor": "#f8f9fa"
-        }
-        ],
+        }],
         "backgroundUrl": "",
         "backgroundColor": "#212121",
-        "collapseState": { "c0": "block" },
+        "collapseState": {
+            "c0": "block"
+        },
         "version": version,
-        "modifications": 0
+        "modifications": 0,
+        "clicks": 0
     };
 }
 
@@ -88,7 +90,7 @@ if (bookmarksData.version == undefined) {
     localStorage.setItem("bookmarksV0", JSON.stringify(bookmarksData));
 } else if (bookmarksData.version != version) {
     console.log("Got an old version data");
-    localStorage.setItem("bookmarksV"+bookmarksData.version, JSON.stringify(bookmarksData));
+    localStorage.setItem("bookmarksV" + bookmarksData.version, JSON.stringify(bookmarksData));
 }
 
 // Checking and assigning collapseState to each Category
@@ -105,6 +107,9 @@ bookmarksData.version = version;
 
 if (bookmarksData.modifications == undefined) {
     bookmarksData.modifications = 0;
+}
+if (bookmarksData.clicks == undefined) {
+    bookmarksData.clicks = 0;
 }
 
 // Function to display Bookmarks on UI
@@ -165,7 +170,10 @@ function processBookmarks() {
 // Function to Validate Bookmarks - it returns true and empty message if everything is ok else returns false with given message
 function validateBookmarks(bookmarksData) {
     if (bookmarksData == null || bookmarksData.bookmarks == null || bookmarksData.bookmarks.length == 0) {
-        return { valid: false, message: "bookmarksData is empty" };
+        return {
+            valid: false,
+            message: "bookmarksData is empty"
+        };
     }
     try {
         bookmarksData.bookmarks.forEach((bookmarks, cindex) => {
@@ -203,9 +211,15 @@ function validateBookmarks(bookmarksData) {
             }
         });
     } catch (error) {
-        return { valid: false, message: error };
+        return {
+            valid: false,
+            message: error
+        };
     }
-    return { valid: true, message: "" };
+    return {
+        valid: true,
+        message: ""
+    };
 }
 
 // Initially Validating bookmarksData
@@ -355,8 +369,7 @@ function updateCollapseState(catId) {
         delete bookmarksData.collapseState[catId];
         Object.keys(bookmarksData.collapseState).forEach((element, index) => {
             updatedCollapseState["c" + index] = bookmarksData.collapseState[element];
-        }
-        );
+        });
     }
     return updatedCollapseState;
 }
@@ -459,6 +472,7 @@ function importJSON() {
         }
         bookmarksJSON.version = bookmarksData.version;
         bookmarksJSON.modifications = bookmarksData.modifications;
+        bookmarksJSON.clicks = bookmarksData.clicks;
         bookmarksData = bookmarksJSON;
         processBookmarks();
     } catch (error) {
@@ -630,6 +644,32 @@ let isEditModeEnabled = JSON.parse(localStorage.getItem("isEditModeEnabled"));
 if (isEditModeEnabled != null && isEditModeEnabled == false) {
     toggleEdit();
 }
+
+// Function to download file
+function createAndDownloadFile(content, filename) {
+    let encodedContent = encodeURIComponent(content);
+    let downloadButton =
+        `<a id="createAndDownloadFile" href="data:text/plain;charset=utf-8,${encodedContent}" download="${filename}">Test</a>`;
+    $("body").append(downloadButton);
+    // $("#createAndDownloadFile").trigger('click'); // Won't work for download
+    $("#createAndDownloadFile")[0].click(); // Use this or below code
+    // document.getElementById("createAndDownloadFile").click();
+    $("#createAndDownloadFile").remove();
+}
+
+// Download button event listener
+function download() {
+    console.log('File Download Triggered');
+    let content = $('#jsonOp').val();
+    let filename = 'bookmarks-' + (new Date()).toJSON() + '.json';
+    createAndDownloadFile(content, filename);
+};
+
+// Below function counts clicks on links
+$('a').on('click', function () {
+    bookmarksData.clicks += 1;
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarksData));
+});
 
 // Just for Fun!
 console.log('%c Stop Right There! ', 'background: #222; color: orange;font-size:20px');
