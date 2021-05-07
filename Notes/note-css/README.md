@@ -17,6 +17,7 @@
   - [`hyphens` Property](#hyphens-property)
   - [`transition` Property](#transition-property)
   - [`position` Property](#position-property)
+  - [Using `display-mode` in media rule](#using-display-mode-in-media-rule)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -279,6 +280,28 @@ For Live Example [Click Here](https://developer.mozilla.org/en-US/docs/Web/CSS/t
 |`position: sticky`|The element is positioned according to the normal flow of the document, and then offset relative to its nearest scrolling ancestor and containing block (nearest block-level ancestor), including table-related elements, based on the values of `top`, `right`, `bottom`, and `left`. The offset does not affect the position of any other elements|
 
 For Example [Click Here](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+
+---
+
+## Using `display-mode` in media rule
+
+You can apply set of styles to elements based on the `display-mode`. For Example below code applies the styling to element when display mode is FullScreen
+
+```CSS
+@media all and (display-mode: fullscreen) {
+    /* every CSS goes here that you want
+    to apply or alter in the fullscreen mode*/
+}
+```
+
+|Display Mode|Description|
+|-|-|
+|`fullscreen`|Used for FullScreen|
+|`browser`|Used for view in conventional browser|
+|`minimal-ui`|The application will look and feel like a standalone application, but will have a minimal set of UI elements for controlling navigation. The elements will vary by browser.|
+|`standalone`|The application will look and feel like a standalone application. This can include the application having a different window, its own icon in the application launcher, etc. In this mode, the user agent will exclude UI elements for controlling navigation, but can include other UI elements such as a status bar.|
+
+For More Details [Click Here](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/display-mode)
 
 ---
 
