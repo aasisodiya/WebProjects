@@ -10,6 +10,7 @@
     - [Window Width Vs Document Width](#window-width-vs-document-width)
     - [`window.innerHeight` Vs `window.outerHeight`](#windowinnerheight-vs-windowouterheight)
     - [`window.innerWidth` Vs `window.outerWidth`](#windowinnerwidth-vs-windowouterwidth)
+  - [Count Touch Points Using `event.touches.length`](#count-touch-points-using-eventtoucheslength)
   - [Reference](#reference)
 
 ## Getting Device Specific Data Using `navigator`
@@ -164,6 +165,31 @@ Example: [Click Here](all-properties/)
 |-|-|
 |The `window.innerWidth` property returns the width of a window's content area.|The `window.outerWidth` property returns the outer width of the browser window, including all interface elements (like toolbars/scrollbars).|
 |Changes when you resize the window or zoom in / zoom out|Stays the same when you resize the window or zoom in / zoom out|
+
+---
+
+## Count Touch Points Using `event.touches.length`
+
+You can use below code to count the number of active touch points on your screen
+
+```javascript
+// Below Code Updates The Touch Points on touchstart (i.e when you start touching screen)
+$("body").on("touchstart", function (event) {
+if (event.type == "touchstart") {
+    $("#touchpoints").text(event.touches.length);
+    $("#bg").text(event.touches.length);
+}
+});
+// Below Code Updates The Touch Points on touchend (i.e when you stop touching screen)
+$("body").on("touchend", function (event) {
+if (event.type == "touchend") {
+    $("#touchpoints").text(event.touches.length);
+    $("#bg").text(event.touches.length);
+}
+});
+```
+
+For Live Example of the above code [click here](detect-touch-points/)
 
 ---
 
