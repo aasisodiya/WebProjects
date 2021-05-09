@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Detect Device Touch Points</title>
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Detect Device Touch Points" />
+    <link rel="icon" href="../../../../shared/img/favicon.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            font-weight: bold;
+            color: white;
+            z-index: 30;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: lime;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: "Exo 2", sans-serif;
+        }
+
+        /* Template Code End */
+        * {
+            margin: 0;
+            user-select: none;
+        }
+
+        body {
+            background: black;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            position: fixed;
+            color: lime;
+            z-index: 20;
+            background: rgba(0, 0, 0, 0.809);
+            backdrop-filter: blur(20px);
+        }
+
+        .card {
+            max-width: 80vw;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 10rem;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0px 0px 15px lime;
+            }
+
+            to {
+                text-shadow: 0px 0px 5px lime;
+            }
+        }
+
+        h3 {
+            z-index: 40;
+            color: white;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            padding-top: 1rem;
+        }
+
+        #bg {
+            position: fixed;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30rem;
+            color: lime;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="bg">0</h1>
+    <h3>Active Number Of Touch Points</h3>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h2><span id="touchpoints">0</span></h2>
+            </div>
+        </div>
+    </div>
+    <script>
+        $("body").on("touchstart", function (event) {
+            if (event.type == "touchstart") {
+                $("#touchpoints").text(event.touches.length);
+                $("#bg").text(event.touches.length);
+            }
+        });
+        $("body").on("touchend", function (event) {
+            if (event.type == "touchend") {
+                $("#touchpoints").text(event.touches.length);
+                $("#bg").text(event.touches.length);
+            }
+        });
+    </script>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.detect-device-touch-points"
+            alt="">
+    </div>
+</body>
+
+</html>
