@@ -1,0 +1,85 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    margin: 0;
+    user-select: none;
+}
+
+/* Template Code End */
+
+:root {
+    /* !Important : Size Cannot be Smaller then 30px */
+    --size: 100px;
+}
+
+.inactive {
+    pointer-events: none;
+}
+
+body {
+    background: black;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#playground {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: fit-content;
+    grid-gap: 10px;
+    padding: 10px;
+    margin: auto;
+}
+
+.block {
+    margin: 0;
+    width: var(--size);
+    height: var(--size);
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 2px whitesmoke;
+}
+
+.blockimage, .blockcover {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: inherit;
+    width: 100%;
+}
+
+.blockcover {
+    background: #121212;
+}
+
+.coverimage {
+    width: calc(100% - 20px);
+}
+
+.playimage {
+    width: 100%;
+}
