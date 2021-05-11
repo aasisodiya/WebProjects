@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Detect Device Touch Points</title>
     <meta name="author" content="Akash Sisodiya" />
     <meta name="description" content="Detect Device Touch Points" />
@@ -42,6 +42,7 @@
         * {
             margin: 0;
             user-select: none;
+            -webkit-user-select: none;
         }
 
         body {
@@ -59,6 +60,7 @@
             z-index: 20;
             background: rgba(0, 0, 0, 0.809);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
 
         .card {
