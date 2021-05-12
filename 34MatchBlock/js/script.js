@@ -19,6 +19,33 @@ let lastSelectedIndex = -1;
 let reset;
 // remaining helps to record the number of remaining pairs to match (if there are 20 images then there has to be 10 remaining pairs so remaining = 10)
 let remaining = Infinity;
+// playtime helps to record the time taken to solve the puzzle
+let playtime;
+// gameSetSize is the number of blocks on your playground
+let gameSetSize;
+// gamescoreboard records all the scores
+let gamescoreboard = localStorage.getItem("matchblock") == undefined || localStorage.getItem("matchblock") == "" ? {} : JSON.parse(localStorage.getItem("matchblock"));
+
+// loadScoreBoard function will load the score board with available data (if any)
+function loadScoreBoard() {
+    if (jQuery.isEmptyObject(gamescoreboard)) {
+        return;
+    }
+    let data = '';
+    Object.keys(gamescoreboard).forEach(element => {
+        let playedTime = new Date(gamescoreboard[element]).toISOString().substr(11, 12);
+        let template = `<div class="score">
+            <span class="stage">${element}</span>
+            <span class="time">${playedTime}</span>
+        </div>`;
+        data += template;
+    });
+    $('#scorelist').html('');
+    $('#scorelist').html(data);
+}
+
+// Initially load the score board
+loadScoreBoard();
 
 // createAndGetPlaySet function will first of all create a set of all images using inputSetSize (Note: images are represented by id i.e number, because I have named our images as 1.png and so on) so basically set is like [1,2,3]. Now this generated set has all the image ids that are in our inputSetSize. Then function shuffles the set i.e basically re-arranging the ids randomly. Then it creates a slice of setSize (i.e half of gameSetSize, so that we can just double the setSize knowing that we need 2 of the given ids). Then it adds the slice of setSize and we get our playable set of image ids. Then again we shuffle the same to make it random. At the end the set is returned for processing.
 function createAndGetPlaySet(gameSetSize, inputSetSize) {
@@ -46,7 +73,7 @@ function populatePlayground(rows, columns) {
     }
     $("#playground").css("grid-template-columns", templateColumns);
 
-    let gameSetSize = rows * columns;
+    gameSetSize = rows * columns;
     let inputSetSize = 33;
     let generatedSet = createAndGetPlaySet(gameSetSize, inputSetSize);
     console.log(generatedSet);
@@ -113,9 +140,32 @@ function hideBoth(selectedIndex) {
         console.log(remaining);
         if (remaining == 0) {
             // Reset The Game
+            updateScoreBoard();
+            $(".menu").show();
             analyzeAndPopulateThePlayground();
         }
     }, 1000);
+}
+
+// updateScoreBoard will update the score board data
+function updateScoreBoard() {
+    let diff = new Date() - playtime;
+    let playedTime = new Date(diff).toISOString().substr(11, 12);
+    let message = `${gameSetSize} Blocks Puzzle Solved In (hh:mm:ss.sss) : ${playedTime}`;
+    $("#lastscore").html(message);
+    if (gamescoreboard[gameSetSize] == undefined) {
+        console.log("New Score");
+        gamescoreboard[gameSetSize] = diff;
+    } else if (gamescoreboard[gameSetSize] > diff) {
+        console.log("Best Score");
+        gamescoreboard[gameSetSize] = diff;
+    } else {
+        console.log("Not The Best Score", gamescoreboard[gameSetSize], ">>", diff);
+    }
+    // Save the data to local storage
+    localStorage.setItem("matchblock", JSON.stringify(gamescoreboard));
+    // refresh the scoreboard
+    loadScoreBoard();
 }
 
 // resetBoth function will just reset the view of wrongly selected non matching pair
@@ -130,8 +180,7 @@ function resetBoth() {
     }, 1000);
 }
 
-// Initial Call
-
+// Initial Call to analyze and populate the playground
 function analyzeAndPopulateThePlayground() {
     let width = $(window).innerWidth();
     let height = $(window).innerHeight();
@@ -167,4 +216,17 @@ function analyzeAndPopulateThePlayground() {
 }
 analyzeAndPopulateThePlayground();
 
-// n = (width + gap - 2*padding) / (cardSize + gap)
+// !important n = (width + gap - 2*padding) / (cardSize + gap)
+
+// Event Listener to start game on "start game" button click/touch
+$(".startGame").on("click touch", function () {
+    $(".menu").hide();
+    playtime = new Date();
+});
+
+function scoreRecord(numberOfBlocks, time) {
+    return {
+        block: numberOfBlocks,
+        time: time,
+    };
+}
