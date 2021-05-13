@@ -20,11 +20,13 @@ let reset;
 // remaining helps to record the number of remaining pairs to match (if there are 20 images then there has to be 10 remaining pairs so remaining = 10)
 let remaining = Infinity;
 // playtime helps to record the time taken to solve the puzzle
-let playtime;
+let playtime = new Date();
 // gameSetSize is the number of blocks on your playground
 let gameSetSize;
 // gamescoreboard records all the scores
 let gamescoreboard = localStorage.getItem("matchblock") == undefined || localStorage.getItem("matchblock") == "" ? {} : JSON.parse(localStorage.getItem("matchblock"));
+// Display clock
+let clock;
 
 // loadScoreBoard function will load the score board with available data (if any)
 function loadScoreBoard() {
@@ -76,7 +78,6 @@ function populatePlayground(rows, columns) {
     gameSetSize = rows * columns;
     let inputSetSize = 33;
     let generatedSet = createAndGetPlaySet(gameSetSize, inputSetSize);
-    console.log(generatedSet);
     // Reset Playground
     $("#playground").html("");
     // Populate Playground
@@ -109,7 +110,6 @@ $("body").on("touch click", ".block", function (event) {
 
 // processSelection function helps to process the user selection - i.e it checks if the newly selected image is only the active one, if yes then it simply goes ahead revealing the image to user. But if selected image is second active image in playground then it compares both the image, if they match then they disappear after set period of time, else they reset to their original state after set period of time.
 function processSelection(selectedIndex, imageId) {
-    console.log(lastSelectedIndex, lastSelectedImageId, selectedIndex, imageId);
     if (selectedIndex == lastSelectedIndex) {
         // do nothing
         console.log("Do Nothing!");
@@ -137,12 +137,12 @@ function hideBoth(selectedIndex) {
         lastSelectedImageId = -1;
         lastSelectedIndex = -1;
         remaining--;
-        console.log(remaining);
         if (remaining == 0) {
             // Reset The Game
             updateScoreBoard();
             $(".menu").show();
             analyzeAndPopulateThePlayground();
+            clearInterval(clock);
         }
     }, 1000);
 }
@@ -192,7 +192,6 @@ function analyzeAndPopulateThePlayground() {
     // calculating rows and columns
     let columns = Math.floor((width + gap - 2 * padding) / (cardSize + gap));
     let rows = Math.floor((height + gap - 2 * padding) / (cardSize + gap));
-    console.log(columns, rows);
 
     // Now lets decide usable rows and columns (why 66? because we have 33 images so total images on pairing will be 66)
     if (columns * rows > 66) {
@@ -211,10 +210,10 @@ function analyzeAndPopulateThePlayground() {
     } else {
         columns = columns - 1;
     }
-    console.log(columns, rows);
     populatePlayground(rows, columns);
+    clearInterval(clock);
+    displayClock();
 }
-analyzeAndPopulateThePlayground();
 
 // !important n = (width + gap - 2*padding) / (cardSize + gap)
 
@@ -222,11 +221,23 @@ analyzeAndPopulateThePlayground();
 $(".startGame").on("click touch", function () {
     $(".menu").hide();
     playtime = new Date();
+    analyzeAndPopulateThePlayground();
+    // Display clock
 });
 
+// scoreRecord helps to store scoreRecord
 function scoreRecord(numberOfBlocks, time) {
     return {
         block: numberOfBlocks,
         time: time,
     };
+}
+
+// displayClock function to display clock
+function displayClock() {
+    clock = setInterval(() => {
+        let diff = new Date() - playtime;
+        let playedTime = new Date(diff).toISOString().substr(11, 12);
+        $('#clock').html(playedTime);
+    }, 10);
 }
