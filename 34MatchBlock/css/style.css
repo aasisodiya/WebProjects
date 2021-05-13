@@ -6,7 +6,7 @@
     left: 5px;
     font-weight: bold;
     color: white;
-    z-index: 5;
+    z-index: 3;
 }
 
 .footer>a {
@@ -154,4 +154,14 @@ h4 {
 
 h2, h3, h4 {
     color: orange;
+}
+
+#clock {
+    position: fixed;
+    top: 0;
+    text-align: center;
+    width: 100vw;
+    color: white;
+    z-index: 1;
+    font-size: 1rem;
 }
