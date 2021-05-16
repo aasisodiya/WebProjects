@@ -6,6 +6,7 @@
     left: 5px;
     font-weight: bold;
     color: white;
+    z-index: 3;
 }
 
 .footer>a {
@@ -82,4 +83,85 @@ body {
 
 .playimage {
     width: 100%;
+}
+
+.menu {
+    color: white;
+    position: fixed;
+    z-index: 2;
+    background: black;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary {
+    text-align: center;
+    padding: 1rem;
+}
+
+.startGame {
+    background: linear-gradient(45deg, rgb(31, 31, 31), rgb(0, 0, 0));
+    border: 5px solid orange;
+    border-radius: 1rem;
+    font-size: 2rem;
+    padding: 1rem;
+    margin: 1rem;
+    color: white;
+    cursor: pointer;
+}
+
+.secondary {
+    text-align: center;
+    padding: 1rem;
+}
+
+.scorehead {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.score>span, .scorehead>span {
+    min-width: 40vw;
+}
+
+h4 {
+    margin-bottom: 1rem;
+}
+
+@media only screen and (max-height: 400px) {
+    .menu {
+        overflow: scroll;
+        overflow-x: hidden;
+        justify-content: flex-start;
+    }
+}
+
+h2, h3, h4 {
+    color: orange;
+}
+
+#clock {
+    position: fixed;
+    top: 0;
+    text-align: center;
+    width: 100vw;
+    color: white;
+    z-index: 1;
+    font-size: 1rem;
 }
