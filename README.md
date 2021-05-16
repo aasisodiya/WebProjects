@@ -122,3 +122,5 @@
 |Events|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-events/#list-of-events)|08-May-2021|Events List|
 |Handle Touch Move / Cursor Move Event & `event.changedTouches` & `event.touches`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-events/#list-of-events)|08-May-2021|Handle Touch Move / Cursor Move Event and extract the data using |
 |Count Touch Points Using `event.touches.length`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#count-touch-points-using-eventtoucheslength)|10-May-2021|Count Touch Points Using `event.touches.length`|
+|Check If Object Is Empty using `jQuery.isEmptyObject()`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#check-if-object-is-empty-using-jqueryisemptyobject)|16-May-2021|Check If Object Is Empty using `jQuery.isEmptyObject()`|
+|Shuffle an Array / Randomize an Array|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#shuffle-an-array--randomize-an-array)|16-May-2021|Shuffle an Array / Randomize an Array|
