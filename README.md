@@ -122,3 +122,16 @@
 |Events|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-events/#list-of-events)|08-May-2021|Events List|
 |Handle Touch Move / Cursor Move Event & `event.changedTouches` & `event.touches`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-events/#list-of-events)|08-May-2021|Handle Touch Move / Cursor Move Event and extract the data using |
 |Count Touch Points Using `event.touches.length`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#count-touch-points-using-eventtoucheslength)|10-May-2021|Count Touch Points Using `event.touches.length`|
+|Check If Object Is Empty using `jQuery.isEmptyObject()`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#check-if-object-is-empty-using-jqueryisemptyobject)|16-May-2021|Check If Object Is Empty using `jQuery.isEmptyObject()`|
+|Shuffle an Array / Randomize an Array|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#shuffle-an-array--randomize-an-array)|16-May-2021|Shuffle an Array / Randomize an Array|
+|`@import` Rule|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css/#import-rule)|16-May-2021|Using `@import` Rule to import another css file in given css file and also for importing google fonts|
+|HTML Notes|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#html-notes)|17-May-2021||
+|`<meta>` tag: The metadata element|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#meta-tag-the-metadata-element)|17-May-2021|`<meta>` tag: The metadata element|
+|Standard metadata names|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#standard-metadata-names)|17-May-2021|Standard metadata names|
+|Uncommon MetaData Names|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#uncommon-metadata-names)|17-May-2021|Uncommon MetaData Names|
+|Values for the content of `<meta name="robots">`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#values-for-the-content-of-meta-namerobots)|17-May-2021|Values for the content of `<meta name="robots">`|
+|MetaData Viewport|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#viewport)|17-May-2021|MetaData Viewport|
+|Refresh A Page On Specific Interval|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#refresh-a-page-on-specific-interval)|17-May-2021|Refresh A Page On Specific Interval|
+|Redirect To A Page After Specific Interval|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#redirect-to-a-page-after-specific-interval)|17-May-2021|Redirect To A Page After Specific Interval|
+|Prevent Zoom on Your Website|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#prevent-zoom-on-your-website)|17-May-2021|Prevent Zoom on Your Website|
+|`Robots.txt` File|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#robotstxt-file)|17-May-2021|`Robots.txt` File|

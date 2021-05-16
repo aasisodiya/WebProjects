@@ -18,6 +18,8 @@
   - [`transition` Property](#transition-property)
   - [`position` Property](#position-property)
   - [Using `display-mode` in media rule](#using-display-mode-in-media-rule)
+  - [`@import` Rule](#import-rule)
+    - [Importing Font in CSS](#importing-font-in-css)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -304,6 +306,24 @@ You can apply set of styles to elements based on the `display-mode`. For Example
 For More Details [Click Here](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/display-mode)
 
 ---
+
+## `@import` Rule
+
+The `@import` rule also allows you to import another style sheet into given style sheet. The @import rule must be at the top of the document.
+
+```css
+@import url("anothercssfile.css");
+/* or */
+@import "anothercssfile.css";
+```
+
+### Importing Font in CSS
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+```
+
+You can use above code to import fonts in css.
 
 ## Reference
 
