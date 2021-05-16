@@ -135,3 +135,4 @@
 |Redirect To A Page After Specific Interval|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#redirect-to-a-page-after-specific-interval)|17-May-2021|Redirect To A Page After Specific Interval|
 |Prevent Zoom on Your Website|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#prevent-zoom-on-your-website)|17-May-2021|Prevent Zoom on Your Website|
 |`Robots.txt` File|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#robotstxt-file)|17-May-2021|`Robots.txt` File|
+|`color-scheme` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css/#color-scheme-property)|17-May-2021|Using `color-scheme` to specify preference of colors|

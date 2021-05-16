@@ -20,6 +20,7 @@
   - [Using `display-mode` in media rule](#using-display-mode-in-media-rule)
   - [`@import` Rule](#import-rule)
     - [Importing Font in CSS](#importing-font-in-css)
+  - [`color-scheme` Property](#color-scheme-property)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -317,6 +318,8 @@ The `@import` rule also allows you to import another style sheet into given styl
 @import "anothercssfile.css";
 ```
 
+---
+
 ### Importing Font in CSS
 
 ```css
@@ -324,6 +327,21 @@ The `@import` rule also allows you to import another style sheet into given styl
 ```
 
 You can use above code to import fonts in css.
+
+---
+
+## `color-scheme` Property
+
+The `color-scheme` CSS property allows an element to indicate which color schemes it can comfortably be rendered in. Common choices for operating system color schemes are `light` and `dark`, or `day mode` and `night mode`. When a user selects one of these color schemes, the operating system makes adjustments to the user interface. This includes form controls, scrollbars, and the used values of CSS system colors.
+
+```css
+color-scheme: normal;
+color-scheme: light;
+color-scheme: dark;
+color-scheme: light dark;
+```
+
+> The color-scheme property's value must be one of the following keywords: `normal`, `light` and `dark`.
 
 ## Reference
 
