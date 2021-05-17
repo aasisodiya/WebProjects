@@ -1,0 +1,115 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    color: whitesmoke;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+}
+
+/* Template Code End */
+
+body {
+    background-color: black;
+}
+
+.holder {
+    display: flex;
+    justify-content: center;
+}
+
+.postholder {
+    background-color: black;
+    padding: 16px;
+    border: 1px solid grey;
+}
+
+.postbody {
+    display: flex;
+    align-items: stretch;
+    width: 560px !important;
+}
+
+.leftbody {
+    margin-right: 12px;
+}
+
+.profileicon {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-image: url(../img/favicon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.rightbody {
+    font-size: 15px;
+}
+
+.handledetails {
+    display: flex;
+}
+
+.handlename {
+    color: rgb(217, 217, 217);
+}
+
+.handleverifiedicon {
+    color: rgb(217, 217, 217);
+    padding: 0 2px;
+}
+
+.handleid {
+    color: rgb(110, 118, 125);
+    margin-left: 4px;
+}
+
+.handledot {
+    color: rgb(110, 118, 125);
+    padding: 0 2px;
+}
+
+.handletime {
+    color: rgb(110, 118, 125);
+}
+
+.handleoptions {
+    color: rgb(110, 118, 125);
+    margin-left: auto;
+}
+
+.tweet {
+    padding-top: 5px;
+    color: rgb(217, 217, 217);
+}
+
+.tweetimages {
+    margin-top: 12px;
+    border-radius: 25px;
+    border: 1px solid grey;
+    width: 490px !important;
+    text-align: center;
+}
+
+.tweetattr {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 5px 0;
+    color: rgb(110, 118, 125);
+}

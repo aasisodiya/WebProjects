@@ -54,6 +54,7 @@
 |Cursor Follower|[Link](https://aasisodiya.github.io/WebProjects/32Cursor)|05-May-2021|Custom Cursor, Target Cursor, Cursor Follower|
 |Torch Cursor|[Link](https://aasisodiya.github.io/WebProjects/33Torch)|06-May-2021|Torch Cursor that helps you read the content in dark|
 |Match Block|[Link](https://aasisodiya.github.io/WebProjects/34MatchBlock)|11-May-2021|Matching Block Puzzle|
+|Twitter Post Generator|[Link](https://aasisodiya.github.io/WebProjects/35TwitterPostGenerator)|18-May-2021|Template to generate a Twitter post|
 
 ## Notes
 
