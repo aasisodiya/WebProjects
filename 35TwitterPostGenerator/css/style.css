@@ -24,7 +24,36 @@
 /* Template Code End */
 
 body {
-    background-color: black;
+    background-color: rgb(28, 28, 28);
+    margin: 0;
+}
+
+.nav {
+    border-bottom: 1px solid black;
+    margin-bottom: 1rem;
+    background-color: #1da1f2;
+    margin: 0;
+    padding: 1rem;
+}
+
+.nav>h1 {
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+.help {
+    color: white;
+    text-align: justify;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.help>p {
+    max-width: 490px !important;
 }
 
 .holder {
@@ -41,7 +70,7 @@ body {
 .postbody {
     display: flex;
     align-items: stretch;
-    width: 560px !important;
+    /* width: 560px !important; */
 }
 
 .leftbody {
@@ -52,14 +81,25 @@ body {
     border-radius: 50%;
     height: 50px;
     width: 50px;
-    background-image: url(../img/favicon.png);
+    /* background-image: url(../img/favicon.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: contain; */
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileicon>img {
+    max-width: 100%;
 }
 
 .rightbody {
     font-size: 15px;
+    max-width: 500px;
 }
 
 .handledetails {
@@ -102,14 +142,56 @@ body {
 .tweetimages {
     margin-top: 12px;
     border-radius: 25px;
-    border: 1px solid grey;
-    width: 490px !important;
+    border: 0.5px solid grey;
+    /* width: 490px !important; */
     text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.tweetimages>img {
+    max-width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+    .tweetimages {
+        width: 490px !important;
+    }
 }
 
 .tweetattr {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    padding: 5px 0;
+    padding-top: 12px;
     color: rgb(110, 118, 125);
+}
+
+.imageuploader {
+    display: none;
+}
+
+.downloadoption {
+    padding: 1rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.downloadbuttonholder {}
+
+#download {
+    width: 300px;
+    background-color: #1da1f2;
+    border: none;
+    height: 50px;
+    border-radius: 500px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }

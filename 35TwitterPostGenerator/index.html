@@ -10,32 +10,44 @@
     <meta name="description" content="Have fun generating a custom twitter post using a defined template" />
     <link rel="icon" href="img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="js/html2canvas.js"></script>
+    <script src="js/canvas2image.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/script.js" defer></script>
 </head>
 
-<body>
+<body spellcheck="false">
+    <div class="nav">
+        <h1>Twitter Post Generator</h1>
+    </div>
+    <div class="help">
+        <!-- <p>
+            You can edit below template as you like. Just select the element and start editing. You can edit the Profile
+            Photo and Profile Name, Twitter Handle Id, Time of Publish, Tweet Body and Image, Number of Comments, Number
+            of Retweets and Number of Likes. When done you can even export and save the template as an image.
+        </p> -->
+    </div>
     <!-- Twitter Post Body -->
     <div class="holder">
         <div class="postholder">
             <div class="postbody">
                 <div class="leftbody">
                     <div class="profileicon">
-                        <!-- <img src="./img/favicon.png" alt=""> -->
+                        <img src="./img/favicon.png" alt="" id="profileicon">
                     </div>
                 </div>
                 <div class="rightbody">
                     <div class="handledetails">
                         <div class="handlename" contenteditable="true">
-                            Akash Sisodiya
+                            John Doe
                         </div>
                         <div class="handleverifiedicon">
                             <i class="fa fa-check-circle-o" aria-hidden="true"></i>
                         </div>
-                        <div class="handleid" contenteditable="true">@aasisodiya</div>
+                        <div class="handleid" contenteditable="true">@johndoe</div>
                         <div class="handledot">.</div>
                         <div class="handletime" contenteditable="true">8h</div>
                         <div class="handleoptions">
@@ -43,10 +55,15 @@
                         </div>
                     </div>
                     <div class="tweet" contenteditable="true">
-                        Everything is Awesome!
+                        You can edit this template as you like. Just select the element and start editing. You can edit
+                        the Profile
+                        Photo and Profile Name, Twitter Handle Id, Time of Publish, Tweet Body and Image, Number of
+                        Comments, Number
+                        of Retweets and Number of Likes. When done you can even export and save the template as an
+                        image.
                     </div>
                     <div class="tweetimages">
-                        <img src="./img/favicon.png" alt="" />
+                        <img src="./img/favicon.png" alt="" id="tweetimage" />
                     </div>
                     <div class="tweetattr">
                         <div class="comments">
@@ -70,7 +87,17 @@
         </div>
     </div>
     <!-- Twitter Post Body -->
-
+    <div class="imageuploader">
+        <div class="imageinput">
+            <input type="file" name="Image" id="imageupload" accept=".jpg, .jpeg, .png">
+        </div>
+    </div>
+    <!-- Download Button -->
+    <div class="downloadoption">
+        <div class="downloadbuttonholder">
+            <button id="download">Download</button>
+        </div>
+    </div>
     <!-- Below code is for footer -->
     <div class="footer">
         &lt;&gt; by
