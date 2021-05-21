@@ -1,42 +1,51 @@
 // Template Code Start
-"use strict"
+"use strict";
 // Just for Fun!
-console.log('%c Stop Right There! ', 'background: #222; color: orange;font-size:20px');
-console.log('%c You Shall Not Pass! ', 'background: #222; color: red; font-size:40px');
+console.log(
+    "%c Stop Right There! ",
+    "background: #222; color: orange;font-size:20px"
+);
+console.log(
+    "%c You Shall Not Pass! ",
+    "background: #222; color: red; font-size:40px"
+);
 // Template Code End
 
 let target = "";
 
-$('.tweetimages').on('click', function (param) {
-    console.log('tweetimage');
+$(".tweetimages").on("click", function (param) {
+    console.log("tweetimage");
     target = "tweetimage";
-    $('#imageupload').click();
+    $("#imageupload").click();
 });
 
-$('.profileicon').on('click', function (param) {
-    console.log('profileicon');
+$(".profileicon").on("click", function (param) {
+    console.log("profileicon");
     target = "profileicon";
-    $('#imageupload').click();
+    $("#imageupload").click();
 });
 
-$('#imageupload').change(function (e) {
+$("input#imageupload").change(function (e) {
     e.preventDefault();
     console.log(e);
     // $('#image')[0].files[0]
-    readAndLoadImage($('#imageupload')[0].files[0], target);
+    readAndLoadImage($("#imageupload")[0].files[0], target);
+    // Another way to do it
+    // let img = $('#' + target)[0];
+    // img.src = URL.createObjectURL($('#imageupload')[0].files[0]);
 });
 
 function readAndLoadImage(file, imgElemId) {
     // Check if the file is an image.
-    if (file.type && !file.type.startsWith('image/')) {
-        console.log('File is not an image.', file.type, file);
+    if (file.type && !file.type.startsWith("image/")) {
+        console.log("File is not an image.", file.type, file);
         return;
     }
 
-    let img = $('#' + imgElemId)[0];
+    let img = $("#" + imgElemId)[0];
 
     const reader = new FileReader();
-    reader.addEventListener('load', (event) => {
+    reader.addEventListener("load", (event) => {
         console.log(img);
         img.src = event.target.result;
         console.log("done");
@@ -45,9 +54,9 @@ function readAndLoadImage(file, imgElemId) {
 }
 
 // Code to export canvas as an image
-$('#download').on('click', function (event) {
-    $('.nav').hide();
-    $('.help').hide();
+$("#download").on("click", function (event) {
+    $(".nav").hide();
+    $(".help").hide();
     var moodcanvas = $(".postholder").get(0);
     html2canvas(moodcanvas).then(function (canvas) {
         let fileType = "png";
@@ -61,6 +70,44 @@ $('#download').on('click', function (event) {
         //     saveAs(blob, "test.png");
         // });
     });
-    $('.nav').show();
-    $('.help').show();
+    $(".nav").show();
+    $(".help").show();
 });
+
+// Handle Themes Button
+
+$("#dark").on("click", function () {
+    $(".postholder").css("background-color", "black");
+    $(".handlename").css("color", "#d9d9d9");
+    $(".handleverifiedicon").css("color", "#d9d9d9");
+    $(".tweet").css("color", "#d9d9d9");
+    $(".active").toggleClass("active");
+    $("#dark").toggleClass("active");
+});
+
+$("#dim").on("click", function () {
+    $(".postholder").css("background-color", "#15202b");
+    $(".handlename").css("color", "#d9d9d9");
+    $(".handleverifiedicon").css("color", "#d9d9d9");
+    $(".tweet").css("color", "#d9d9d9");
+    $(".active").toggleClass("active");
+    $("#dim").toggleClass("active");
+});
+
+$("#light").on("click", function () {
+    $(".postholder").css("background-color", "#ffffff");
+    $(".handlename").css("color", "black");
+    $(".handleverifiedicon").css("color", "#1da1f2");
+    $(".tweet").css("color", "black");
+    $(".active").toggleClass("active");
+    $("#light").toggleClass("active");
+});
+
+// Adding a focusout event handler for when user is done editing the tweet. Below function will style all hashtags and mentions.
+$('.tweet').on('focusout', function () {
+    // Format the hashtags and mentions
+    $('.tweet').html($('.tweet').text().replace(/(^|\s)([#@][a-z\d-]+)/ig, "$1<span class='tags'>$2</span>"));
+})
+
+// Default the theme to dim
+$("#dim").click();
