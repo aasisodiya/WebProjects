@@ -59,6 +59,7 @@ body {
 .holder {
     display: flex;
     justify-content: center;
+    padding: 0 1rem;
 }
 
 .postholder {
@@ -91,6 +92,7 @@ body {
     align-content: center;
     justify-content: center;
     align-items: center;
+    border: 1px solid rgba(128, 128, 128, 0.5);
 }
 
 .profileicon>img {
@@ -141,8 +143,8 @@ body {
 
 .tweetimages {
     margin-top: 12px;
-    border-radius: 25px;
-    border: 0.5px solid grey;
+    border-radius: 16px;
+    border: 1px solid rgba(128, 128, 128, 0.5);
     /* width: 490px !important; */
     text-align: center;
     cursor: pointer;
@@ -174,16 +176,17 @@ body {
     display: none;
 }
 
-.downloadoption {
-    padding: 1rem;
+.downloadoption, .themeselector {
+    padding-top: 1rem;
     display: flex;
     align-content: center;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3rem;
 }
 
-.downloadbuttonholder {}
+.downloadoption {
+    margin-bottom: 3rem;
+}
 
 #download {
     width: 300px;
@@ -194,4 +197,69 @@ body {
     color: white;
     font-weight: bold;
     cursor: pointer;
+    transition: all 0.2s;
+}
+
+#dim, #light, #dark {
+    width: 80px;
+    background-color: #1da1f2;
+    border: 0 solid #1da1f2;
+    border-radius: 500px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.2em;
+    margin: 0.2em;
+    transition: all 0.2s;
+}
+
+#dim:hover, #light:hover, #dark:hover {
+    border: 2px solid #1da1f2 !important;
+}
+
+.comments {
+    color: #1da1f2;
+}
+
+.retweets {
+    color: #17bf63;
+}
+
+.likes {
+    color: #e0245e;
+}
+
+.share {
+    color: #1da1f2;
+}
+
+.comments>span, .retweets>span, .likes>span, .share>span {
+    padding: 12px;
+}
+
+#dim {
+    background-color: #15202b;
+    color: rgb(217, 217, 217);
+}
+
+#light {
+    background-color: #ffffff;
+    color: black;
+}
+
+#dark {
+    background-color: black;
+    color: rgb(217, 217, 217);
+}
+
+.active {
+    border: 2px solid #1da1f2 !important;
+}
+
+#download:hover {
+    background-color: cornflowerblue;
+}
+
+.tags {
+    color: rgb(27, 149, 224);
 }
