@@ -33,6 +33,9 @@ $("input#imageupload").change(function (e) {
     // Another way to do it
     // let img = $('#' + target)[0];
     // img.src = URL.createObjectURL($('#imageupload')[0].files[0]);
+
+    // Below code is required as bug fix - (Bug: You can't upload same image twice. Analysis: given function only triggers when input change, but when you have selected that image previously, and select the same image again - there is no change. This the change event never gets triggered. So as a fix I am simply resetting the input value)
+    $("input#imageupload")[0].value = "";
 });
 
 function readAndLoadImage(file, imgElemId) {
@@ -106,7 +109,7 @@ $("#light").on("click", function () {
 // Adding a focusout event handler for when user is done editing the tweet. Below function will style all hashtags and mentions.
 $('.tweet').on('focusout', function () {
     // Format the hashtags and mentions
-    $('.tweet').html($('.tweet').text().replace(/(^|\s)([#@][a-z\d-]+)/ig, "$1<span class='tags'>$2</span>"));
+    $('.tweet').html($('.tweet').html().replaceAll("<span class=\"tags\">", "").replaceAll("</span>", "").replace(/(^|\s|>|;)([#@][a-z\d-]+)/ig, "$1<span class='tags'>$2</span>"));
 })
 
 // Default the theme to dim
