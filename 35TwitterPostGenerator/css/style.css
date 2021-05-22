@@ -273,7 +273,7 @@ body {
 
 .disclaimer {
     position: fixed;
-    width: fit-content;
+    width: 100%;
     height: fit-content;
     top: 0;
     text-align: center;
