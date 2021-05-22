@@ -60,6 +60,7 @@ function readAndLoadImage(file, imgElemId) {
 $("#download").on("click", function (event) {
     $(".nav").hide();
     $(".help").hide();
+    window.scrollTo(0, 0);
     var moodcanvas = $(".postholder").get(0);
     html2canvas(moodcanvas).then(function (canvas) {
         let fileType = "png";
@@ -114,3 +115,8 @@ $('.tweet').on('focusout', function () {
 
 // Default the theme to dim
 $("#dim").click();
+
+// Function to hide disclaimer when user agree with the condition
+$('#agree').on('click', function () {
+    $('.disclaimer').hide();
+});

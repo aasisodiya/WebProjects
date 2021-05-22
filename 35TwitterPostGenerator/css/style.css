@@ -5,6 +5,7 @@
     bottom: 5px;
     left: 5px;
     color: whitesmoke;
+    z-index: 2;
 }
 
 .footer>a {
@@ -262,4 +263,41 @@ body {
 
 .tags {
     color: rgb(27, 149, 224);
+}
+
+::-webkit-scrollbar {
+    display: none;
+    /*Removed Default Scroll Bar*/
+    width: 0;
+}
+
+.disclaimer {
+    position: fixed;
+    width: fit-content;
+    height: fit-content;
+    top: 0;
+    text-align: center;
+    height: 100vh;
+    backdrop-filter: blur(50px);
+}
+
+.warning {
+    background-color: orange;
+    padding: 1rem;
+}
+
+.warning>h1 {
+    margin: 0;
+}
+
+#agree {
+    width: 200px;
+    background-color: black;
+    border: 0 solid #1da1f2;
+    border-radius: 500px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1em;
+    margin: 1em;
 }
