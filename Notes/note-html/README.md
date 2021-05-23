@@ -10,6 +10,7 @@
     - [Refresh A Page On Specific Interval](#refresh-a-page-on-specific-interval)
     - [Redirect To A Page After Specific Interval](#redirect-to-a-page-after-specific-interval)
     - [Prevent Zoom on Your Website](#prevent-zoom-on-your-website)
+  - [Making Website Text Content Editable](#making-website-text-content-editable)
   - [`Robots.txt` File](#robotstxt-file)
   - [Reference](#reference)
 
@@ -123,9 +124,25 @@ You can use below code to prevent zoom operation on your website
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' >
 ```
 
+---
+
+## Making Website Text Content Editable
+
+Below code enables you to make any text element of your website editable. Which means you can simply select the element and it will turn into an input, which enables you to edit that content as you like. All you have to do is set the `contenteditable` attribute on nearly any HTML element to make it editable using `contenteditable="true"`.
+
+```html
+<div contenteditable="true">
+  This text can be edited by the user.
+</div>
+```
+
+---
+
 ## `Robots.txt` File
 
 Robots.txt is a file which is usually placed in the root of any website. It decides whether crawlers are permitted or forbidden access to the web site. For example, the site admin can forbid crawlers to visit a certain folder (and all the files therein contained) or to crawl a specific file, usually to prevent those files being indexed by other search engines.
+
+---
 
 ## Reference
 
