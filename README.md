@@ -138,3 +138,4 @@
 |`Robots.txt` File|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#robotstxt-file)|17-May-2021|`Robots.txt` File|
 |`color-scheme` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css/#color-scheme-property)|17-May-2021|Using `color-scheme` to specify preference of colors|
 |Upload Image to a static website without server|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-upload-image)|20-May-2021|Upload Image to a static website without server. Input Image Tag. `FileReader()` and `URL.createObjectURL()`|
+|Making Website Text Content Editable|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#making-website-text-content-editable)|24-May-2021|Enable user to edit any text element of your website using `contenteditable` attribute|
