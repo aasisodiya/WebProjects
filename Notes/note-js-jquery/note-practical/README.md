@@ -12,6 +12,7 @@
   - [FullScreen Function](#fullscreen-function)
   - [Popup Message](#popup-message)
   - [Formatted JSON](#formatted-json)
+  - [Detect Hashtags and Mentions(@) In `input` or `textarea`](#detect-hashtags-and-mentions-in-input-or-textarea)
 
 ## Sort Object By Keys
 
@@ -223,3 +224,25 @@ console.log(formattedJson);
 //   "b": "B"
 // }"
 ```
+
+---
+
+## Detect Hashtags and Mentions(@) In `input` or `textarea`
+
+Below code uses regex to detect Hashtags and Mentions(@) in user specified `input` and `textarea` tags. Below code is same as the one I used in my project [Twitter Post Generator](https://aasisodiya.github.io/WebProjects/35TwitterPostGenerator). What below code does is - it detects text beginning with `@` or `#` i.e HashTags and Mentions same as the ones used in Twitter and Facebook. After detecting my code simply encloses them inside `span.tags` tag. Which in result applies styling that I have specified for call `tags`.
+
+**Regex Used**: `/(^|\s|>|;)([#@][a-z\d-]+)/ig` which identifies the match with 2 group. First group specified by `(^|\s|>|;)` which states that group 1 is `^` Beginning or `\s` has white-space, tabs or line breaks or `>` an ending character `>` for html tags or `;` semi-colon (for encoded values). Second group is specified by `([#@][a-z\d-]+)` as a set of characters starting with wither `#` or `@` then followed by combination of alphabets, numbers or hyphen `-`. Play with regex [here](https://regexr.com/)
+
+```javascript
+    $('.tweet').html($('.tweet').html().replaceAll("<span class=\"tags\">", "").replaceAll("</span>", "").replace(/(^|\s|>|;)([#@][a-z\d-]+)/ig, "$1<span class='tags'>$2</span>"));
+```
+
+Below `css` file highlights the Hashtags and Mentions with color after being enclosed by `span.tags` by above regex function
+
+```css
+.tags {
+    color: rgb(27, 149, 224);
+}
+```
+
+**Note**: In above sample code `.tweet` class in my code is a div and not `textarea` or `input` and the div is made editable using `contenteditable` attribute set to true.
