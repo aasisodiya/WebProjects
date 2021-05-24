@@ -139,3 +139,5 @@
 |`color-scheme` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css/#color-scheme-property)|17-May-2021|Using `color-scheme` to specify preference of colors|
 |Upload Image to a static website without server|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-upload-image)|20-May-2021|Upload Image to a static website without server. Input Image Tag. `FileReader()` and `URL.createObjectURL()`|
 |Making Website Text Content Editable|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#making-website-text-content-editable)|24-May-2021|Enable user to edit any text element of your website using `contenteditable` attribute|
+|Spellcheck Attribute|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#spellchecktrue-attribute)|25-May-2021|Enable website to perform spellcheck for editable element using `spellcheck="true"` attribute|
+|Detect Hashtags(#) and Mentions(@) In `input` or `textarea`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#detect-hashtags-and-mentions-in-input-or-textarea)|25-May-2021|Detect Hashtags and Mentions(@) In `input` or `textarea`|

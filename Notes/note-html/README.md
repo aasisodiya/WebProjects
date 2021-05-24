@@ -12,6 +12,7 @@
     - [Prevent Zoom on Your Website](#prevent-zoom-on-your-website)
   - [Making Website Text Content Editable](#making-website-text-content-editable)
   - [`Robots.txt` File](#robotstxt-file)
+  - [`spellcheck="true"` Attribute](#spellchecktrue-attribute)
   - [Reference](#reference)
 
 ## `<meta>` tag: The metadata element
@@ -141,6 +142,12 @@ Below code enables you to make any text element of your website editable. Which 
 ## `Robots.txt` File
 
 Robots.txt is a file which is usually placed in the root of any website. It decides whether crawlers are permitted or forbidden access to the web site. For example, the site admin can forbid crawlers to visit a certain folder (and all the files therein contained) or to crawl a specific file, usually to prevent those files being indexed by other search engines.
+
+---
+
+## `spellcheck="true"` Attribute
+
+The `spellcheck` global attribute is an enumerated attribute defines whether the element may be checked for spelling errors. This attribute is merely a hint for the browser: browsers are not required to check for spelling errors. Typically non-editable elements are not checked for spelling errors, even if the `spellcheck` attribute is set to `true` and the browser supports spellchecking.
 
 ---
 
