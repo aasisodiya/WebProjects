@@ -13,6 +13,10 @@
   - [Popup Message](#popup-message)
   - [Formatted JSON](#formatted-json)
   - [Detect Hashtags and Mentions(@) In `input` or `textarea`](#detect-hashtags-and-mentions-in-input-or-textarea)
+  - [White Gap Issue Related To `html2canvas` or `canvas2image`](#white-gap-issue-related-to-html2canvas-or-canvas2image)
+    - [Observations](#observations)
+    - [Possible Fixes / Workarounds That Worked For Me](#possible-fixes--workarounds-that-worked-for-me)
+    - [Other Solutions](#other-solutions)
 
 ## Sort Object By Keys
 
@@ -246,3 +250,32 @@ Below `css` file highlights the Hashtags and Mentions with color after being enc
 ```
 
 **Note**: In above sample code `.tweet` class in my code is a div and not `textarea` or `input` and the div is made editable using `contenteditable` attribute set to true.
+
+---
+
+## White Gap Issue Related To `html2canvas` or `canvas2image`
+
+### Observations
+
+- There is a white gap at left side / top side mostly
+- This is not specific but in my case they were mostly on left side.
+
+### Possible Fixes / Workarounds That Worked For Me
+
+- Try building the target to export in viewport itself. In simple words I tried keeping the div always visible in viewport and avoided for it to overflow outside viewport.
+- Try keeping the target div always on start / top of the webpage (this helps avoid the top white space when exporting)
+- Try to hide all useless elements which are not needed (In my cases I usually hide the navbar / any div above my target div thus bringing my div to top of the page)
+
+### Other Solutions
+
+- Hide the Scroll Bar using below code
+
+  ```css
+  ::-webkit-scrollbar {
+    display: none;
+    /*Removed Default Scroll Bar*/
+    width: 0;
+  }
+  ```
+
+- Before your call to `html2canvas` you need to scroll to the top left of the page using `window.scrollTo(0, 0);`
