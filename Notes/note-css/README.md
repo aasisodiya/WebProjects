@@ -21,6 +21,7 @@
   - [`@import` Rule](#import-rule)
     - [Importing Font in CSS](#importing-font-in-css)
   - [`color-scheme` Property](#color-scheme-property)
+  - [`pointer-events` Property](#pointer-events-property)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -342,6 +343,25 @@ color-scheme: light dark;
 ```
 
 > The color-scheme property's value must be one of the following keywords: `normal`, `light` and `dark`.
+
+---
+
+## `pointer-events` Property
+
+The `pointer-events` CSS property sets under what circumstances (if any) a particular graphic element can become the target of pointer events.
+
+|Value|Description|
+|-|-|
+|`auto`|The element behaves as it would if the pointer-events property were not specified. In SVG content, this value and the value visiblePainted have the same effect.|
+|`none`|The element is never the target of pointer events; however, pointer events may target its descendant elements if those descendants have pointer-events set to some other value. In these circumstances, pointer events will trigger event listeners on this parent element as appropriate on their way to/from the descendant during the event capture/bubble phases.|
+
+```css
+pointer-events: auto | none | visiblePainted | visibleFill | visibleStroke | visible | painted | fill | stroke | all | inherit
+```
+
+`visiblePainted`, `visibleFill`, `visibleStroke`, `visible`, `painted`, `fill`, `stroke`, `all` are all SVG only values and are applicable only on SVG elements.
+
+---
 
 ## Reference
 
