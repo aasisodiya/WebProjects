@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Lilita+One&display=swap');
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-size: small;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+/* Template Code End */
+
+* {
+    /* font-family: 'Exo 2', sans-serif; */
+    font-family: 'Bungee Shade', cursive;
+    /* font-family: 'Lilita One', sans-serif; */
+    margin: 0;
+}
+
+body {
+    background-color: white !important;
+}
+
+.header {
+    text-align: center;
+}
+
+.playground {
+    display: flex;
+    min-height: 80vh;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.holder {
+    position: relative;
+    overflow: hidden;
+    border: 5px solid black;
+}
+
+.door, .object, .holder {
+    min-height: 200px;
+    width: 25vw;
+}
+
+.door, .object {
+    position: absolute;
+}
+
+.door {
+    z-index: 1;
+    background: -webkit-linear-gradient(brown 50%, #111 50%);
+    background: -o-linear-gradient(brown 50%, #111 50%);
+    background: linear-gradient(brown 50%, #111 50%);
+    background-size: 100% 20px;
+    background-repeat: repeat-y;
+}
+
+.dooropen {
+    animation: opendoor 1s forwards;
+}
+
+@keyframes opendoor {
+    from {
+        top: 0px;
+    }
+    to {
+        top: -60vh;
+    }
+}
+
+.object {
+    /* background-color: yellow; */
+    text-align: center;
+}
+
+.donkey, .car {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.donkey {
+    background-image: url(../img/donkey.svg);
+}
+
+.car {
+    background-image: url(../img/tesla.jpg);
+}
