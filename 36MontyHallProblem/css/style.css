@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Lilita+One&family=Press+Start+2P&display=swap');
 /* Template Code Start */
 
 .footer {
@@ -7,6 +7,7 @@
     left: 5px;
     font-size: small;
     font-weight: bold;
+    z-index: 10;
 }
 
 .footer>a {
@@ -26,10 +27,17 @@
     font-family: 'Bungee Shade', cursive;
     /* font-family: 'Lilita One', sans-serif; */
     margin: 0;
+    user-select: none;
 }
 
 body {
     background-color: white !important;
+}
+
+#message {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    padding: 0 2rem;
 }
 
 .header {
@@ -38,7 +46,7 @@ body {
 
 .playground {
     display: flex;
-    min-height: 80vh;
+    min-height: 60vh;
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
@@ -51,7 +59,7 @@ body {
 }
 
 .door, .object, .holder {
-    min-height: 200px;
+    min-height: 60vh;
     width: 25vw;
 }
 
@@ -87,7 +95,7 @@ body {
 }
 
 .donkey, .car {
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -97,5 +105,36 @@ body {
 }
 
 .car {
-    background-image: url(../img/tesla.jpg);
+    background-image: url(../img/car.svg);
+}
+
+#action1, #action2, #action3, #action4 {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    padding: 1rem;
+    display: none;
+}
+
+#help {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem 1rem;
+    font-size: 2rem;
+    line-height: 3rem;
+    background-color: brown;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    border: 0.3rem solid black;
+    cursor: pointer;
+}
+
+.action {
+    min-height: 1rem;
+}
+
+.buffer {
+    height: 2rem;
 }

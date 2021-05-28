@@ -28,6 +28,10 @@ let carIndex;
 let doorClickCounts = 0;
 
 function startGame() {
+    $('#action2').hide();
+    $('#action3').hide();
+    $('#action4').hide();
+    $('#action1').show();
     $('.donkey').removeClass('donkey');
     $('.car').removeClass('car');
     $('.dooropen').removeClass('dooropen');
@@ -37,9 +41,17 @@ function startGame() {
     doorClickCounts = 0;
 }
 
+$('#help').on('click', function () {
+    $('#message').toggle();
+});
+
+$('#message').hide();
+
 $('.door').on('click', function (event) {
     // first click
     if (doorClickCounts == 0) {
+        $('#action1').hide();
+        $('#action2').show();
         let donkeyIndex;
         if ($(this).siblings().attr("class").includes("donkey")) {
             donkeyIndex = $('.donkey').index($(this).siblings());
@@ -55,10 +67,19 @@ $('.door').on('click', function (event) {
         doorClickCounts++;
     } else {
         // open all doors
+        $('#action1').hide();
+        $('#action2').hide();
         $('.door').addClass('dooropen');
+
+        if ($(this).siblings().attr("class").includes("donkey")) {
+            $('#action4').show();
+        } else {
+            $('#action3').show();
+        }
+
         setTimeout(function () {
             startGame();
-        }, 2000);
+        }, 5000);
     }
 })
 
