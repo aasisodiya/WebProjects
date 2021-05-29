@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Lilita+One&family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Lilita+One&family=Press+Start+2P&display=swap");
 /* Template Code Start */
 
 .footer {
@@ -24,7 +24,7 @@
 
 * {
     /* font-family: 'Exo 2', sans-serif; */
-    font-family: 'Bungee Shade', cursive;
+    font-family: "Bungee Shade", cursive;
     /* font-family: 'Lilita One', sans-serif; */
     margin: 0;
     user-select: none;
@@ -36,7 +36,7 @@ body {
 
 #message {
     text-align: center;
-    font-family: 'Press Start 2P', cursive;
+    font-family: "Press Start 2P", cursive;
     padding: 0 2rem;
 }
 
@@ -58,12 +58,12 @@ body {
     border: 5px solid black;
 }
 
-.door, .object, .holder {
+.door, .object, .holder, .selected {
     min-height: 60vh;
     width: 25vw;
 }
 
-.door, .object {
+.door, .object, .selected {
     position: absolute;
 }
 
@@ -89,7 +89,7 @@ body {
     }
 }
 
-.object {
+.object, .selected {
     /* background-color: yellow; */
     text-align: center;
 }
@@ -110,7 +110,7 @@ body {
 
 #action1, #action2, #action3, #action4 {
     text-align: center;
-    font-family: 'Press Start 2P', cursive;
+    font-family: "Press Start 2P", cursive;
     padding: 1rem;
     display: none;
 }
@@ -137,4 +137,21 @@ body {
 
 .buffer {
     height: 2rem;
+}
+
+.selected {
+    z-index: 2;
+    pointer-events: none;
+    display: none;
+    position: relative;
+    bottom: 0;
+}
+
+.fa-hand-o-up {
+    color: DeepSkyBlue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
