@@ -22,6 +22,7 @@
     - [Importing Font in CSS](#importing-font-in-css)
   - [`color-scheme` Property](#color-scheme-property)
   - [`pointer-events` Property](#pointer-events-property)
+  - [Buttons Template Code](#buttons-template-code)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -362,6 +363,30 @@ pointer-events: auto | none | visiblePainted | visibleFill | visibleStroke | vis
 `visiblePainted`, `visibleFill`, `visibleStroke`, `visible`, `painted`, `fill`, `stroke`, `all` are all SVG only values and are applicable only on SVG elements.
 
 ---
+
+## Buttons Template Code
+
+A sample code for Big Button with shadow and linear gradient background and cursor as pointer. Sample Output:
+
+![Sample Button](assets/samplebutton.PNG)
+
+```html
+<button class="myButton">Button</button>
+```
+
+```css
+.myButton {
+    background: linear-gradient(45deg, purple, cyan);
+    border: none;
+    padding: 1rem;
+    width: 10rem;
+    border-radius: 1rem;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0px 0px 1px black;
+    cursor: pointer;
+}
+```
 
 ## Reference
 
