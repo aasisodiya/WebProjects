@@ -1,5 +1,11 @@
 # Date in JavaScript
 
+- [Date in JavaScript](#date-in-javascript)
+  - [Constructor, Static and Instance Method](#constructor-static-and-instance-method)
+  - [Code](#code)
+  - [Convert Seconds To hh:mm:ss Format](#convert-seconds-to-hhmmss-format)
+  - [Reference](#reference)
+
 ## Constructor, Static and Instance Method
 
 > Note: Data below is specific to time when I wrote this code
@@ -122,6 +128,21 @@ console.log("date.toUTCString():",date.toUTCString());
 console.log("The number of milliseconds between 1 January 1970 00:00:00 UTC and the given date. date.valueOf():",date.valueOf());
 // Output: The number of milliseconds between 1 January 1970 00:00:00 UTC and the given date. date.valueOf(): 1614435067320
 ```
+
+---
+
+## Convert Seconds To hh:mm:ss Format
+
+```js
+let SECONDS = 3500;
+let hhmmss = new Date(SECONDS * 1000).toISOString().substr(11, 8);
+console.log(hhmmss);
+// Output : 00:58:20
+```
+
+> [Click here](./example/) to test out the live example of above code
+
+---
 
 ## Reference
 

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monty Hall Problem</title>
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description"
+        content="The Monty Hall problem is a brain teaser, in the form of a probability puzzle, loosely based on the American television game show Let's Make a Deal and named after its original host, Monty Hall.">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Monty Hall Problem</h1>
+    </div>
+    <div id="help">
+        ?
+    </div>
+    <div id="message">Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who
+        knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to
+        you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
+    </div>
+    <div class="action">
+        <div id="action1">Choose a door that you think has a car</div>
+        <div id="action2">You can switch to another door or stay with the same. <br /> Select a door again!</div>
+        <div id="action3">Congratulations You Won The Car!</div>
+        <div id="action4">Sorry You Lost The Car, But You Won A Donkey!</div>
+    </div>
+    <div class="playground">
+        <div class="holder">
+            <div class="door"></div>
+            <div class="object"></div>
+            <div class="selected">
+                <i class="fa fa-hand-o-up fa-5x"></i>
+            </div>
+        </div>
+        <div class="holder">
+            <div class="door"></div>
+            <div class="object"></div>
+            <div class="selected">
+                <i class="fa fa-hand-o-up fa-5x"></i>
+            </div>
+        </div>
+        <div class="holder">
+            <div class="door"></div>
+            <div class="object"></div>
+            <div class="selected">
+                <i class="fa fa-hand-o-up fa-5x"></i>
+            </div>
+        </div>
+    </div>
+    <div class="buffer"></div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.montyhallproblem" alt="">
+    </div>
+</body>
+
+</html>

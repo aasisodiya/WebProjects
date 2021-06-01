@@ -30,7 +30,7 @@
 |Digital Clock|[Link](https://aasisodiya.github.io/WebProjects/21DigitalClock/)|9-July-2020||
 |Quiz|Not Public|26-August-2020||
 |Bookmarks|[Link](https://aasisodiya.github.io/WebProjects/23Bookmarks/)|4-January-2021||
-|Parallax 3D Effect|In Progress|19-January-2021||
+|Parallax|[Link](https://aasisodiya.github.io/WebProjects/24Parallax/)|19-January-2021||
 |Mood Year|[Link](https://aasisodiya.github.io/WebProjects/25MoodYear/)|6-March-2021||
 |Animated Logo|[Link](https://aasisodiya.github.io/WebProjects/26Animations/01AnimatedLogo/)|2016||
 |Scroll Activated CSS|[Link](https://aasisodiya.github.io/WebProjects/26Animations/02ScrollActivatedCSS/)|2016||
@@ -50,6 +50,14 @@
 |V3|[Link](https://aasisodiya.github.io/WebProjects/release/v3/)|2019||
 |VR|[Link](https://aasisodiya.github.io/WebProjects/release/vr/)|2016||
 |Chess Clock|[Link](https://aasisodiya.github.io/WebProjects/30ChessClock)|18-April-2021|A Digital Chess Clock|
+|Password Generator|[Link](https://aasisodiya.github.io/WebProjects/31PasswordGenerator)|30-April-2021|Password Generator Tool|
+|Cursor Follower|[Link](https://aasisodiya.github.io/WebProjects/32Cursor)|05-May-2021|Custom Cursor, Target Cursor, Cursor Follower|
+|Torch Cursor|[Link](https://aasisodiya.github.io/WebProjects/33Torch)|06-May-2021|Torch Cursor that helps you read the content in dark|
+|Match Block|[Link](https://aasisodiya.github.io/WebProjects/34MatchBlock)|11-May-2021|Matching Block Puzzle|
+|Twitter Post Generator|[Link](https://aasisodiya.github.io/WebProjects/35TwitterPostGenerator)|18-May-2021|Template to generate a Twitter post|
+|Monty Hall Problem|[Link](https://aasisodiya.github.io/WebProjects/36MontyHallProblem)|28-May-2021|Monty Hall Problem Game|
+
+---
 
 ## Notes
 
@@ -92,3 +100,51 @@
 |Orientation Based Styling|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#orientation-based-styling)|21-April-2021|Orientation Based Styling|
 |Smooth Scroll|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#smooth-scroll-to-given-element)|22-April-2021|Smooth Scroll to an Element|
 |Scroll Reveal|[Link](https://aasisodiya.github.io/WebProjects/26Animations/05ScrollReveal/)|23-April-2021|CSS Reveal Animation based on scroll using Jquery|
+|Device Data from Navigator That Browser Can Share|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#getting-device-specific-data-using-navigator)|24-April-2021|Device data from navigator that browser can share|
+|Detect Device Type|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#detect-device-type)|24-April-2021|Detect the device type i.e wether it is Android, iPhone or iPad.|
+|`devicePixelRatio` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#devicepixelratio-property)|24-April-2021|Device Pixel Ratio|
+|Detect Orientation or Orientation Change|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#detect-orientation-or-orientation-change)|24-April-2021|Detect the device orientation|
+|Height & Width|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#window-height-vs-document-height)|24-April-2021|Height & Width|
+|Convert Seconds To hh:mm:ss Format|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-js-dates#convert-seconds-to-hhmmss-format)|24-April-2021|JS Code to Convert Seconds To hh:mm:ss Format|
+|`window`, `document` And `screen` Properties|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#window-document-and-screen-properties)|25-April-2021|`window`, `document` And `screen` Related Properties|
+|`white-space` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#white-space-property)|25-April-2021|Sets how white space inside an element is handled|
+|`overflow-wrap` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#overflow-wrap-property)|25-April-2021|Setting whether the browser should insert line breaks within an otherwise unbreakable string to prevent text from overflowing its line box|
+|`word-break` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#word-break-property)|25-April-2021|Sets whether line breaks appear wherever the text would otherwise overflow its content box|
+|`hyphens` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#hyphens-property)|25-April-2021|How words should be hyphenated when text wraps across multiple lines|
+|`transition` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#transition-property)|25-April-2021|Apply animations to properties using `transition`|
+|`filter` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#filter-property)|26-April-2021|CSS property applies graphical effects like blur or color shift to an element|
+|CSS Marquee|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-marquee/)|26-April-2021|CSS Marquee|
+|`animation-play-state` Property|[Link](https://aasisodiya.github.io/WebProjects/26Animations#animation-play-state-property)|27-April-2021|Animation CSS Property|
+|`animation-delay` Property|[Link](https://aasisodiya.github.io/WebProjects/26Animations#animation-delay-property)|27-April-2021|Animation CSS Property|
+|`animation-iteration-count` Property|[Link](https://aasisodiya.github.io/WebProjects/26Animations#animation-iteration-count-property)|27-April-2021|Animation CSS Property|
+|`animation-fill-mode` Property|[Link](https://aasisodiya.github.io/WebProjects/26Animations#animation-fill-mode-property)|27-April-2021|Animation CSS Property|
+|Rotation Animation on Scroll|[Link](https://aasisodiya.github.io/WebProjects/26Animations#rotation-animation-on-scroll)|27-April-2021|Rotation Animation on Scroll|
+|Translation Animation on Scroll|[Link](https://aasisodiya.github.io/WebProjects/26Animations#translation-animation-on-scroll)|27-April-2021|Translation Animation on Scroll|
+|`position` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#position-property)|28-April-2021|`position` Property|
+|Create and Download File on UI|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-create-download-file/)|03-May-2021|Create and Download File on UI|
+|Using `display-mode` in media rule|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#using-display-mode-in-media-rule)|08-May-2021|Using `display-mode` to Detect FullScreen Using CSS|
+|Events|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-events/#list-of-events)|08-May-2021|Events List|
+|Handle Touch Move / Cursor Move Event & `event.changedTouches` & `event.touches`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-events/#list-of-events)|08-May-2021|Handle Touch Move / Cursor Move Event and extract the data using |
+|Count Touch Points Using `event.touches.length`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#count-touch-points-using-eventtoucheslength)|10-May-2021|Count Touch Points Using `event.touches.length`|
+|Check If Object Is Empty using `jQuery.isEmptyObject()`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#check-if-object-is-empty-using-jqueryisemptyobject)|16-May-2021|Check If Object Is Empty using `jQuery.isEmptyObject()`|
+|Shuffle an Array / Randomize an Array|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#shuffle-an-array--randomize-an-array)|16-May-2021|Shuffle an Array / Randomize an Array|
+|`@import` Rule|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css/#import-rule)|16-May-2021|Using `@import` Rule to import another css file in given css file and also for importing google fonts|
+|HTML Notes|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#html-notes)|17-May-2021||
+|`<meta>` tag: The metadata element|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#meta-tag-the-metadata-element)|17-May-2021|`<meta>` tag: The metadata element|
+|Standard metadata names|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#standard-metadata-names)|17-May-2021|Standard metadata names|
+|Uncommon MetaData Names|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#uncommon-metadata-names)|17-May-2021|Uncommon MetaData Names|
+|Values for the content of `<meta name="robots">`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#values-for-the-content-of-meta-namerobots)|17-May-2021|Values for the content of `<meta name="robots">`|
+|MetaData Viewport|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#viewport)|17-May-2021|MetaData Viewport|
+|Refresh A Page On Specific Interval|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#refresh-a-page-on-specific-interval)|17-May-2021|Refresh A Page On Specific Interval|
+|Redirect To A Page After Specific Interval|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#redirect-to-a-page-after-specific-interval)|17-May-2021|Redirect To A Page After Specific Interval|
+|Prevent Zoom on Your Website|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#prevent-zoom-on-your-website)|17-May-2021|Prevent Zoom on Your Website|
+|`Robots.txt` File|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#robotstxt-file)|17-May-2021|`Robots.txt` File|
+|`color-scheme` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css/#color-scheme-property)|17-May-2021|Using `color-scheme` to specify preference of colors|
+|Upload Image to a static website without server|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-upload-image)|20-May-2021|Upload Image to a static website without server. Input Image Tag. `FileReader()` and `URL.createObjectURL()`|
+|Making Website Text Content Editable|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#making-website-text-content-editable)|24-May-2021|Enable user to edit any text element of your website using `contenteditable` attribute|
+|Spellcheck Attribute|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#spellchecktrue-attribute)|25-May-2021|Enable website to perform spellcheck for editable element using `spellcheck="true"` attribute|
+|Detect Hashtags(#) and Mentions(@) In `input` or `textarea`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#detect-hashtags-and-mentions-in-input-or-textarea)|25-May-2021|Detect Hashtags and Mentions(@) In `input` or `textarea`|
+|White space issue with `html2canvas` and `canvas2image`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#white-gap-issue-related-to-html2canvas-or-canvas2image)|25-May-2021|Solutions for White Gap Issue Related To `html2canvas` or `canvas2image`|
+|Using `html2canvas` and `canvas2image` to export a webpage element as an Image|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#using-html2canvas-and-canvas2image-to-export-web-element-as-an-image)|26-May-2021|Using `html2canvas` and `canvas2image` to export a webpage element as an Image|
+|`pointer-events` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#pointer-events-property)|27-May-2021|CSS property sets under what circumstances (if any) a particular graphic element can become the target of pointer events|
+|Sample Button|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#buttons-template-code)|31-May-2021|Sample Button Code you can directly copy-paste|

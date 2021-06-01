@@ -12,6 +12,16 @@
   - [FullScreen Function](#fullscreen-function)
   - [Popup Message](#popup-message)
   - [Formatted JSON](#formatted-json)
+  - [Detect Hashtags and Mentions(@) In `input` or `textarea`](#detect-hashtags-and-mentions-in-input-or-textarea)
+  - [Using `html2canvas` and `canvas2image` to Export Web Element as an Image](#using-html2canvas-and-canvas2image-to-export-web-element-as-an-image)
+    - [Points to Note](#points-to-note)
+    - [`html2canvas` Script](#html2canvas-script)
+    - [`Canvas2Image` Script](#canvas2image-script)
+    - [Canvas Limitations](#canvas-limitations)
+  - [White Gap Issue Related To `html2canvas` or `canvas2image`](#white-gap-issue-related-to-html2canvas-or-canvas2image)
+    - [Observations](#observations)
+    - [Possible Fixes / Workarounds That Worked For Me](#possible-fixes--workarounds-that-worked-for-me)
+    - [Other Solutions](#other-solutions)
 
 ## Sort Object By Keys
 
@@ -204,7 +214,7 @@ Use below code when you want to display a popup message just above an element. F
 ```
 
 ```javascript
-// Funtion to show message as popup
+// Function to show message as popup
 $('#clickbutton').on('click', function () {
     // below code is specific to popup message for click span
     $('.testclick > .popupmessage').toggle();
@@ -223,3 +233,118 @@ console.log(formattedJson);
 //   "b": "B"
 // }"
 ```
+
+---
+
+## Detect Hashtags and Mentions(@) In `input` or `textarea`
+
+Below code uses regex to detect Hashtags and Mentions(@) in user specified `input` and `textarea` tags. Below code is same as the one I used in my project [Twitter Post Generator](https://aasisodiya.github.io/WebProjects/35TwitterPostGenerator). What below code does is - it detects text beginning with `@` or `#` i.e HashTags and Mentions same as the ones used in Twitter and Facebook. After detecting my code simply encloses them inside `span.tags` tag. Which in result applies styling that I have specified for call `tags`.
+
+**Regex Used**: `/(^|\s|>|;)([#@][a-z\d-]+)/ig` which identifies the match with 2 group. First group specified by `(^|\s|>|;)` which states that group 1 is `^` Beginning or `\s` has white-space, tabs or line breaks or `>` an ending character `>` for html tags or `;` semi-colon (for encoded values). Second group is specified by `([#@][a-z\d-]+)` as a set of characters starting with wither `#` or `@` then followed by combination of alphabets, numbers or hyphen `-`. Play with regex [here](https://regexr.com/)
+
+```javascript
+    $('.tweet').html($('.tweet').html().replaceAll("<span class=\"tags\">", "").replaceAll("</span>", "").replace(/(^|\s|>|;)([#@][a-z\d-]+)/ig, "$1<span class='tags'>$2</span>"));
+```
+
+Below `css` file highlights the Hashtags and Mentions with color after being enclosed by `span.tags` by above regex function
+
+```css
+.tags {
+    color: rgb(27, 149, 224);
+}
+```
+
+**Note**: In above sample code `.tweet` class in my code is a div and not `textarea` or `input` and the div is made editable using `contenteditable` attribute set to true.
+
+---
+
+## Using `html2canvas` and `canvas2image` to Export Web Element as an Image
+
+You can use `html2canvas` and `canvas2image` to export any element of you website as an Image. You can refer below template code for the same
+
+```javascript
+// Code to export canvas as an image on click of a download button with id download
+$("#download").on("click", function (event) {
+    // If you face any issues with exported image try to hide all (if any) elements 
+    // above your exported element. Later make them visible at last.
+    // also scroll to the top left (in case you face any issues)
+    // window.scrollTo(0, 0);
+
+    // myCanvas below is the element that you want to export
+    // below here we are exporting a div with class name 'classtoexport'
+    var myCanvas = $(".classtoexport").get(0);
+    html2canvas(myCanvas).then(function (canvas) {
+        let fileType = "png";
+        let fileName = "ExportedFileName";
+        let width = canvas.width;
+        let height = canvas.height;
+        // console.log(canvas);
+        Canvas2Image.saveAsImage(canvas, width, height, fileType, fileName);
+        // -- OR --
+        // canvas.toBlob(function(blob) {
+        //     saveAs(blob, "test.png");
+        // });
+    });
+    // Now you can restore all element that were set to hidden in top of the code
+});
+```
+
+### Points to Note
+
+- `fileType` in above code can be `png`, `jpeg`, `gif` and `bmp`
+- `fileName` is to be specified without any extensions i.e simply just the name for the file
+- `width` and `height` are set to the target canvas itself in-order to avoid any cropping of image
+
+### `html2canvas` Script
+
+The script allows you to take "screenshots" of webpages or parts of it, directly on the users browser. The screenshot is based on the DOM and as such may not be 100% accurate to the real representation as it does not make an actual screenshot, but builds the screenshot based on the information available on the page. To render an element with `html2canvas` with some (optional) options, simply call `html2canvas(element, options);` where element is your target element you want to screenshot and options are basically the configuration. For Details [Click Here](https://html2canvas.hertzen.com/configuration)
+
+> If you wish to exclude certain `Elements` from getting rendered, you can add a `data-html2canvas-ignore` attribute to those elements and html2canvas will exclude them from the rendering.
+
+### `Canvas2Image` Script
+
+Canvas2Image is A tool of saving or converting canvas to images. You can either save the canvas as an image or covert the canvas to an image and load it inside your website. [Reference](https://github.com/hongru/canvas2image)
+
+```javascript
+Canvas2Image.saveAsImage(canvasObj, width, height, fileType, fileName)
+Canvas2Image.convertToImage(canvasObj, width, height, fileType, fileName)
+```
+
+### Canvas Limitations
+
+The window limitations vary by browser, operating system and system hardware.
+|Browser|Limitations|
+|-|-|
+|Chrome|Maximum height/width: 32,767 pixels </br> Maximum area: 268,435,456 pixels (e.g., 16,384 x 16,384)|
+|Firefox|Maximum height/width: 32,767 pixels</br>Maximum area: 472,907,776 pixels (e.g., 22,528 x 20,992)|
+|Internet Explorer|Maximum height/width: 8,192 pixels</br>Maximum area: N/A|
+|iOS|The maximum size for a canvas element is 3 megapixels for devices with less than 256 MB RAM and 5 megapixels for devices with greater or equal than 256 MB RAM|
+
+---
+
+## White Gap Issue Related To `html2canvas` or `canvas2image`
+
+### Observations
+
+- There is a white gap at left side / top side mostly
+- This is not specific but in my case they were mostly on left side.
+
+### Possible Fixes / Workarounds That Worked For Me
+
+- Try building the target to export in viewport itself. In simple words I tried keeping the div always visible in viewport and avoided for it to overflow outside viewport.
+- Try keeping the target div always on start / top of the webpage (this helps avoid the top white space when exporting)
+- Try to hide all useless elements which are not needed (In my cases I usually hide the navbar / any div above my target div thus bringing my div to top of the page)
+
+### Other Solutions
+
+- Hide the Scroll Bar using below code
+
+  ```css
+  ::-webkit-scrollbar {
+    display: none;
+    /*Removed Default Scroll Bar*/
+    width: 0;
+  }
+  ```
+
+- Before your call to `html2canvas` you need to scroll to the top left of the page using `window.scrollTo(0, 0);`
