@@ -1,0 +1,115 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: 'Exo 2', sans-serif;
+}
+
+/* Template Code End */
+
+.confetti-container {
+    /* perspective: 1000px; */
+    position: fixed;
+    /* overflow to be hidden */
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* needs to be on top of everything */
+    z-index: 10;
+}
+
+.confetti {
+    position: absolute;
+    z-index: 1;
+    /* initial width and height */
+    width: 10px;
+    height: 10px;
+    /* initial background color */
+    background-color: orangered;
+    /* common animation properties */
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+.confetti-animation-1 {
+    animation-name: confetti-animation-1;
+}
+
+.confetti-animation-2 {
+    animation-name: confetti-animation-2;
+}
+
+.confetti-animation-3 {
+    animation-name: confetti-animation-3;
+}
+
+.confetti-animation-4 {
+    animation-name: confetti-animation-4;
+}
+
+.animation-slow {
+    animation-duration: 1.5s;
+}
+
+.animation-medium {
+    animation-duration: 2s;
+}
+
+.animation-fast {
+    animation-duration: 2.5s;
+}
+
+@keyframes confetti-animation-1 {
+    0% {
+        transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+    }
+    100% {
+        transform: translate3d(25px, 100vh, 0) rotateX(300deg) rotateY(180deg);
+    }
+}
+
+@keyframes confetti-animation-2 {
+    0% {
+        transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+    }
+    100% {
+        transform: translate3d(100px, 100vh, 0) rotateX(150deg) rotateY(360deg);
+    }
+}
+
+@keyframes confetti-animation-3 {
+    0% {
+        transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+    }
+    100% {
+        transform: translate3d(-50px, 100vh, 0) rotateX(10deg) rotateY(250deg);
+    }
+}
+
+@keyframes confetti-animation-4 {
+    0% {
+        transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+    }
+    100% {
+        transform: translate3d(-75px, 100vh, 0) rotateX(150deg) rotateY(150deg);
+    }
+}
