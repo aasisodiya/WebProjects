@@ -57,6 +57,7 @@
 |Twitter Post Generator|[Link](https://aasisodiya.github.io/WebProjects/35TwitterPostGenerator)|18-May-2021|Template to generate a Twitter post|
 |Monty Hall Problem|[Link](https://aasisodiya.github.io/WebProjects/36MontyHallProblem)|28-May-2021|Monty Hall Problem Game|
 |PIPBOY Template Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/07ScreenBuffer/)|02-June-2021|PIPBOY Animation Created using CSS and HTML - Screen Buffer Animation|
+|Confetti Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/08Confetti/)|03-June-2021|Confetti Animation Created using JS, CSS, HTML|
 
 ---
 
