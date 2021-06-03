@@ -18,10 +18,34 @@
 }
 
 * {
-    font-family: 'Exo 2', sans-serif;
+    font-family: "Exo 2", sans-serif;
 }
 
 /* Template Code End */
+
+.options {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    text-align: center;
+    padding: 1rem;
+    z-index: 100;
+}
+
+button {
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    padding: 1rem;
+    min-width: 10rem;
+    border-radius: 1rem;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0px 0px 2px black;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+}
+
+/* Confetti Code Below */
 
 .confetti-container {
     /* perspective: 1000px; */
@@ -83,7 +107,7 @@
         transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
     }
     100% {
-        transform: translate3d(25px, 100vh, 0) rotateX(300deg) rotateY(180deg);
+        transform: translate3d(25px, 100vh, 0) rotateX(300deg) rotateY(360deg);
     }
 }
 
