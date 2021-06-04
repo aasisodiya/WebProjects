@@ -116,3 +116,15 @@ $("#shoot").on("click", function () {
 $("#stop").on("click", function () {
     stopConfetti(confettiIntervalId);
 });
+// Event listener for input range
+$("#density").on("input", function () {
+    stopConfetti(confettiIntervalId);
+    confettiDensity = 100 - $(this).val();
+    shootConfetti(
+        confettiDensity,
+        animationNames,
+        animationTimes,
+        maxBufferConfettiSize,
+        confettiColors
+    );
+});

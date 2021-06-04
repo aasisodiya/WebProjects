@@ -23,18 +23,48 @@
 
 /* Template Code End */
 
+input[type=range] {
+    -webkit-appearance: none;
+    background: red;
+    height: 0.25rem;
+    outline: none;
+    opacity: 0.7;
+    border-radius: 5px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ffa500;
+    cursor: pointer;
+}
+
 .options {
     position: fixed;
+    display: block;
     top: 0;
+    left: 0;
     width: 100vw;
     text-align: center;
-    padding: 1rem;
     z-index: 100;
 }
 
+#density {
+    display: block;
+    margin: auto;
+}
+
+h5 {
+    margin: 0;
+}
+
 button {
-    background: rgba(0, 0, 0, 0.2);
+    background: #ffa6005f;
     border: none;
+    margin: 1rem;
     padding: 1rem;
     min-width: 10rem;
     border-radius: 1rem;
