@@ -23,6 +23,7 @@
   - [`color-scheme` Property](#color-scheme-property)
   - [`pointer-events` Property](#pointer-events-property)
   - [Buttons Template Code](#buttons-template-code)
+  - [Set the position on all four sides with one CSS property](#set-the-position-on-all-four-sides-with-one-css-property)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -385,6 +386,27 @@ A sample code for Big Button with shadow and linear gradient background and curs
     font-weight: bold;
     box-shadow: 0px 0px 1px black;
     cursor: pointer;
+}
+```
+
+## Set the position on all four sides with one CSS property
+
+```css
+.testdiv {
+    position: absolute;
+    top: 1rem;
+    right: 4rem;
+    bottom: 2rem;
+    left: 3rem;
+}
+```
+
+Above properties `top`, `right`, `bottom`, and `left` all can be replaced with one CSS property i.e `inset`. Below is the updated code for the one given above.
+
+```css
+.testdiv {
+    position: absolute;
+    inset: 1rem 2rem 3rem 4rem;
 }
 ```
 
