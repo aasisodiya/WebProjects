@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Theme Using Media Query</title>
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Smooth Scroll" />
+    <link rel="icon" href="../../../shared/img/favicon.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            font-weight: bold;
+            background-color: orangered;
+            width: 100%;
+            padding: 0 0 5px 5px;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: "Exo 2", sans-serif;
+        }
+
+        /* Template Code End */
+
+        body {
+            margin: 0;
+        }
+
+        :root {
+            --background: orange;
+            --text: black;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: black;
+                --text: orange;
+            }
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+        }
+
+        .steps {
+            max-width: 100%;
+            width: fit-content;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        .gutter {
+            height: 2rem;
+        }
+
+        .vhc {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        hr {
+            width: 80vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="vhc">
+        <h1>Toggle Your System Theme To See The Website Toggle Its Theme</h1>
+        <hr />
+        <h3>Steps to Change System Theme</h3>
+        <p>Go To Windows System's Settings</p>
+        <p>Click on <span>Personalisation</span></p>
+        <img class="steps" src="./img/step1.png" alt="" />
+        <p>Select <span>Colours</span> Tab on the left panel</p>
+        <img class="steps" src="./img/step2.png" alt="" />
+        <p>From <span>Choose your colour</span> dropdown toggle the theme</p>
+        <img class="steps" src="./img/step3.png" alt="" />
+        <p>
+            As soon as you toggle the theme, You can see the same reflect on the
+            website
+        </p>
+        <div class="gutter"></div>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.theme-media-query" alt="">
+    </div>
+</body>
+
+</html>
