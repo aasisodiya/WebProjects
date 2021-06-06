@@ -100,7 +100,7 @@
 |Single Line If-Else Condition Check|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#single-line-if-else-condition-check)|16-April-2021|Short way for using If-Else Condition Check|
 |Well Formatted JSON|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical#formatted-json)|19-April-2021|JSON with proper indentation and format|
 |Orientation Based Styling|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#orientation-based-styling)|21-April-2021|Orientation Based Styling|
-|Smooth Scroll|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#smooth-scroll-to-given-element)|22-April-2021|Smooth Scroll to an Element|
+|`scroll-behavior` Property for Smooth Scroll|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#smooth-scroll-to-given-element)|22-April-2021|Smooth Scroll to an Element using CSS|
 |Scroll Reveal|[Link](https://aasisodiya.github.io/WebProjects/26Animations/05ScrollReveal/)|23-April-2021|CSS Reveal Animation based on scroll using Jquery|
 |Device Data from Navigator That Browser Can Share|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#getting-device-specific-data-using-navigator)|24-April-2021|Device data from navigator that browser can share|
 |Detect Device Type|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#detect-device-type)|24-April-2021|Detect the device type i.e wether it is Android, iPhone or iPad.|
@@ -151,3 +151,4 @@
 |`pointer-events` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#pointer-events-property)|27-May-2021|CSS property sets under what circumstances (if any) a particular graphic element can become the target of pointer events|
 |Sample Button|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#buttons-template-code)|31-May-2021|Sample Button Code you can directly copy-paste|
 |`inset` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#set-the-position-on-all-four-sides-with-one-css-property)|06-June-2021|Set the position on all four sides with one CSS property. Property `top`, `right`, `bottom`, and `left` all together can be replaced with one CSS property i.e `inset`|
+|Using Media Query to set dark/light theme|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#darklight-mode-using-media-query)|07-June-2021|Using Media query i.e. `@media (prefers-color-scheme: dark/light)` for setting website theme based on system theme|

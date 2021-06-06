@@ -24,6 +24,7 @@
   - [`pointer-events` Property](#pointer-events-property)
   - [Buttons Template Code](#buttons-template-code)
   - [Set the position on all four sides with one CSS property](#set-the-position-on-all-four-sides-with-one-css-property)
+  - [Dark/Light Mode Using Media Query](#darklight-mode-using-media-query)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -389,6 +390,8 @@ A sample code for Big Button with shadow and linear gradient background and curs
 }
 ```
 
+---
+
 ## Set the position on all four sides with one CSS property
 
 ```css
@@ -409,6 +412,32 @@ Above properties `top`, `right`, `bottom`, and `left` all can be replaced with o
     inset: 1rem 2rem 3rem 4rem;
 }
 ```
+
+---
+
+## Dark/Light Mode Using Media Query
+
+Based on your System Theme mode you can change your website's Theme as well. Be it dark/light, the website will adjust itself to User's current mode. This can be done using `@media (prefers-color-scheme: dark/light)` where `dark` or `light` is your choice.
+
+```css
+:root {
+    --background: orange;
+    --textcolor: black;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: black;
+        --textcolor: orange;
+    }
+}
+```
+
+Here above is the sample code that sets color for `background` variable and `textcolor` variable using `@media (prefers-color-scheme: dark)`. Here I have set the preference for `dark` theme. When you set the system theme to `dark` the `background` variable will get set to the value of `black` and `textcolor` variable will get set to the value of `orange`. And when you toggle system theme to `light` theme then `background` variable will get set to the value of `orange` and `textcolor` variable will get set to the value of `black`.
+
+For Live Example [Click Here](https://aasisodiya.github.io/WebProjects/Notes/note-css/theme-media-query/)
+
+---
 
 ## Reference
 
