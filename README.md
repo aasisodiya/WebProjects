@@ -152,3 +152,4 @@
 |Sample Button|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#buttons-template-code)|31-May-2021|Sample Button Code you can directly copy-paste|
 |`inset` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#set-the-position-on-all-four-sides-with-one-css-property)|06-June-2021|Set the position on all four sides with one CSS property. Property `top`, `right`, `bottom`, and `left` all together can be replaced with one CSS property i.e `inset`|
 |Using Media Query to set dark/light theme|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#darklight-mode-using-media-query)|07-June-2021|Using Media query i.e. `@media (prefers-color-scheme: dark/light)` for setting website theme based on system theme|
+|CSS Units|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#css-units)|08-June-2021|Notes on CSS Units like `vh`,`vw`,`ch`,`em`,`rem`,`%`|
