@@ -25,6 +25,8 @@
   - [Buttons Template Code](#buttons-template-code)
   - [Set the position on all four sides with one CSS property](#set-the-position-on-all-four-sides-with-one-css-property)
   - [Dark/Light Mode Using Media Query](#darklight-mode-using-media-query)
+  - [CSS Units](#css-units)
+    - [`em` vs `rem`](#em-vs-rem)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -436,6 +438,29 @@ Based on your System Theme mode you can change your website's Theme as well. Be 
 Here above is the sample code that sets color for `background` variable and `textcolor` variable using `@media (prefers-color-scheme: dark)`. Here I have set the preference for `dark` theme. When you set the system theme to `dark` the `background` variable will get set to the value of `black` and `textcolor` variable will get set to the value of `orange`. And when you toggle system theme to `light` theme then `background` variable will get set to the value of `orange` and `textcolor` variable will get set to the value of `black`.
 
 For Live Example [Click Here](https://aasisodiya.github.io/WebProjects/Notes/note-css/theme-media-query/)
+
+---
+
+## CSS Units
+
+|Units|Notes|
+|-|-|
+|`rem`|Preferred for Font-Size. `rem` are like `em` but they are relative to the root element|
+|`em`|Preferred for padding on Buttons|
+|`%`|Preferred for Width|
+|`ch`|It is the width of the font/character|
+|`vh`|Preferred for heights. Can cause issues with Mobile Devices|
+|`vmin`|Minimum of the 2 units i.e `vh` or `vw`|
+|`vmax`|Maximum of the 2 units i.e `vh` or `vw`|
+
+### `em` vs `rem`
+
+|`em`|`rem`|
+|-|-|
+|`1em` generally defaults to `16px`|`rem` looks at the `html` font-size|
+|It is always in relation to parents|It is in relation to `html` font-size|
+|Font-size keeps compounding i.e if parents has changed its font-size, then the child element with `em` also gets changed|Doesn't compounds like `em`|
+|`em` for margin equals to that element's font-size, i.e of elements font-size is 2rem and you set `margin: 1rem` then the margin is equal to its font-size. Same applies for `padding`, `left`, `top`, `right`, `bottom`, `width` and all such properties|`rem` here is still consistent with `html` font-size|
 
 ---
 
