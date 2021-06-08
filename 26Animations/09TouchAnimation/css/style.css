@@ -1,0 +1,78 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    user-select: none;
+}
+
+/* Template Code End */
+
+body {
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+}
+
+.track {
+    width: 100%;
+    height: 100vh;
+    background-color: DimGray;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.player1t, .player2t {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.player1, .player2 {
+    height: 10vh;
+    width: 100%;
+}
+
+.player1 {
+    background: linear-gradient(30deg, darkviolet 0%, indigo 100%);
+}
+
+.player2 {
+    background: linear-gradient(270deg, DeepSkyBlue 0%, DodgerBlue 100%);
+}
+
+.divider {
+    position: fixed;
+    height: 100vh;
+    width: 5vw;
+    /* background: linear-gradient(45deg, black 50%, yellow 50%), linear-gradient(315deg, black 50%, yellow 50%), linear-gradient(45deg, yellow 50%, black 50%), linear-gradient(315deg, yellow 50%, black 50%); */
+    /* keep the width of each block half of the width of divider */
+    /* background-size: 2.5vw 2.5vw,2.5vw 2.5vw,2.5vw 2.5vw,2.5vw 2.5vw; */
+    /* background-position: top left, top right, top left, top right; */
+    background-image: repeating-linear-gradient( -45deg, yellow, yellow 2.5vw, black 2.5vw, black 5vw), repeating-linear-gradient( 45deg, yellow, yellow 2.5vw, black 2.5vw, black 5vw);
+    background-size: 2.5vw, 2.5vw;
+    background-position: left, right;
+    background-repeat: no-repeat;
+    top: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+}

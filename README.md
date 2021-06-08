@@ -58,6 +58,7 @@
 |Monty Hall Problem|[Link](https://aasisodiya.github.io/WebProjects/36MontyHallProblem)|28-May-2021|Monty Hall Problem Game|
 |PIPBOY Template Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/07ScreenBuffer/)|02-June-2021|PIPBOY Animation Created using CSS and HTML - Screen Buffer Animation|
 |Confetti Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/08Confetti/)|03-June-2021|Confetti Animation Created using JS, CSS, HTML|
+|Touch Race|[Link](https://aasisodiya.github.io/WebProjects/26Animations/09TouchAnimation/)|09-June-2021|Fastest one to tap the screen wins!|
 
 ---
 
@@ -126,7 +127,7 @@
 |Create and Download File on UI|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-create-download-file/)|03-May-2021|Create and Download File on UI|
 |Using `display-mode` in media rule|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#using-display-mode-in-media-rule)|08-May-2021|Using `display-mode` to Detect FullScreen Using CSS|
 |Events|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-events/#list-of-events)|08-May-2021|Events List|
-|Handle Touch Move / Cursor Move Event & `event.changedTouches` & `event.touches`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-events/#list-of-events)|08-May-2021|Handle Touch Move / Cursor Move Event and extract the data using |
+|Handle Touch Move / Cursor Move Event & `event.changedTouches` & `event.touches`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-events/#handle-touch-move--cursor-move-event)|08-May-2021|Handle Touch Move / Cursor Move Event and extract the data using |
 |Count Touch Points Using `event.touches.length`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#count-touch-points-using-eventtoucheslength)|10-May-2021|Count Touch Points Using `event.touches.length`|
 |Check If Object Is Empty using `jQuery.isEmptyObject()`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#check-if-object-is-empty-using-jqueryisemptyobject)|16-May-2021|Check If Object Is Empty using `jQuery.isEmptyObject()`|
 |Shuffle an Array / Randomize an Array|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#shuffle-an-array--randomize-an-array)|16-May-2021|Shuffle an Array / Randomize an Array|
