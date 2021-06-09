@@ -10,9 +10,20 @@ console.log(
     "background: #222; color: red; font-size:40px"
 );
 // Template Code End
+// $(".res").hide();
 
 let ph1 = 10;
 let ph2 = 10;
+
+// Function to reset Playground
+function reset() {
+    ph1 = 10;
+    ph2 = 10;
+    $(".player1").height(`${ph1}vh`);
+    $(".player2").height(`${ph2}vh`);
+}
+
+// Runner for Player 1
 $(".player1t").on("touchstart", function (event) {
     let x, y;
     if (event.type == "touchstart") {
@@ -22,16 +33,16 @@ $(".player1t").on("touchstart", function (event) {
         x = event.clientX;
         y = event.clientY;
     }
-    ph1 += 1
+    ph1 += 1;
     if (ph1 > 100) {
-        alert("Player 1 Won");
-        ph1 = 10;
-        ph2 = 10;
-        $('.player1').height(`${ph1}vh`);
-        $('.player2').height(`${ph2}vh`);
+        $("#result").text("Player 1 Won");
+        $(".res").show();
+        reset();
     }
-    $('.player1').height(`${ph1}vh`);
+    $(".player1").height(`${ph1}vh`);
 });
+
+// Runner for Player 2
 $(".player2t").on("touchstart", function (event) {
     let x, y;
     if (event.type == "touchstart") {
@@ -41,13 +52,17 @@ $(".player2t").on("touchstart", function (event) {
         x = event.clientX;
         y = event.clientY;
     }
-    ph2 += 1
+    ph2 += 1;
     if (ph2 > 100) {
-        alert("Player 2 Won");
-        ph1 = 10;
-        ph2 = 10;
-        $('.player1').height(`${ph1}vh`);
-        $('.player2').height(`${ph2}vh`);
+        $("#result").text("Player 2 Won");
+        $(".res").show();
+        reset();
     }
-    $('.player2').height(`${ph2}vh`);
+    $(".player2").height(`${ph2}vh`);
+});
+
+// Reset the playground on reset button click
+$("#restart").on("click", function () {
+    $("#restart").text("Play Again!");
+    $(".res").hide();
 });
