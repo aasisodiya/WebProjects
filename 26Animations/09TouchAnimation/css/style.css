@@ -5,6 +5,7 @@
     bottom: 5px;
     left: 5px;
     font-weight: bold;
+    z-index: 40;
 }
 
 .footer>a {
@@ -102,7 +103,7 @@ span {
     /* keep the width of each block half of the width of divider */
     /* background-size: 2.5vmin 2.5vmin,2.5vmin 2.5vmin,2.5vmin 2.5vmin,2.5vmin 2.5vmin; */
     /* background-position: top left, top right, top left, top right; */
-    background-image: repeating-linear-gradient( -45deg, yellow, yellow 2.5vmin, black 2.5vmin, black 5vmin), repeating-linear-gradient( 45deg, yellow, yellow 2.5vmin, black 2.5vmin, black 5vmin);
+    background-image: repeating-linear-gradient(-45deg, yellow, yellow 2.5vmin, black 2.5vmin, black 5vmin), repeating-linear-gradient(45deg, yellow, yellow 2.5vmin, black 2.5vmin, black 5vmin);
     background-size: 2.5vmin, 2.5vmin;
     background-position: left, right;
     background-repeat: no-repeat;
@@ -153,5 +154,56 @@ span {
 @keyframes vert {
     to {
         top: -300vmin;
+    }
+}
+
+.orientation-warning {
+    display: none;
+    z-index: 20;
+    position: fixed;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.rotate-icon {
+    margin-top: 2rem;
+    max-width: 80%;
+    max-height: 60vh;
+}
+
+#begin {
+    display: flex;
+    position: fixed;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 20;
+    font-weight: bolder;
+    font-size: 10rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    color: white;
+}
+
+.begin-holder {
+    display: none;
+}
+
+/* Below code handles the warning for screen orientation on mobile */
+
+@media only screen and (orientation: landscape) {
+    .orientation-warning {
+        display: block;
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    .orientation-warning {
+        display: none;
     }
 }
