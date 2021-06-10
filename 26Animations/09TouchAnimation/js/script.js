@@ -23,6 +23,25 @@ function reset() {
     $(".player2").height(`${ph2}vh`);
 }
 
+// Begin screen handler
+function begin() {
+    $(".begin-holder").show();
+    let countdown = 3;
+    $("#begin").text(countdown);
+    countdown--;
+    let timmer = setInterval(() => {
+        if (countdown == -1) {
+            clearInterval(timmer);
+            $(".begin-holder").hide();
+        } else if (countdown == 0) {
+            $("#begin").text("Go!");
+        } else {
+            $("#begin").text(countdown);
+        }
+        countdown--;
+    }, 1000);
+}
+
 // Runner for Player 1
 $(".player1t").on("touchstart", function (event) {
     let x, y;
@@ -65,4 +84,21 @@ $(".player2t").on("touchstart", function (event) {
 $("#restart").on("click", function () {
     $("#restart").text("Play Again!");
     $(".res").hide();
+    begin();
 });
+
+function getDeviceType() {
+    let deviceData = navigator.userAgent.toLocaleLowerCase().toString();
+    // deviceData has all the userAgent data in lowercase string format
+    // Now we can check for keywords like - android, iphone and ipad
+    let deviceType;
+    deviceData.indexOf("android") != -1 ? (deviceType = "Android") : deviceType;
+    deviceData.indexOf("iphone") != -1 ? (deviceType = "iPhone") : deviceType;
+    deviceData.indexOf("ipad") != -1 ? (deviceType = "iPad") : deviceType;
+    deviceData.indexOf("windows") != -1 ? (deviceType = "Windows") : deviceType;
+    return deviceType;
+}
+let deviceType = getDeviceType();
+if (deviceType != "Android" && deviceType != "iPhone" && deviceType != "iPad") {
+    $(".orientation-warning").hide();
+}

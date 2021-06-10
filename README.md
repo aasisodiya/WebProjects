@@ -100,7 +100,7 @@
 |Remove Duplicate Values From An Array|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#remove-duplicate-values-from-an-array)|16-April-2021|Short and Effective way to Remove Duplicate Values From An Array|
 |Single Line If-Else Condition Check|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-clean-code#single-line-if-else-condition-check)|16-April-2021|Short way for using If-Else Condition Check|
 |Well Formatted JSON|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical#formatted-json)|19-April-2021|JSON with proper indentation and format|
-|Orientation Based Styling|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#orientation-based-styling)|21-April-2021|Orientation Based Styling|
+|Orientation Based Styling|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#orientation-based-styling)|21-April-2021|Orientation Based Styling, Screen Rotation, Landscape, Portrait|
 |`scroll-behavior` Property for Smooth Scroll|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#smooth-scroll-to-given-element)|22-April-2021|Smooth Scroll to an Element using CSS|
 |Scroll Reveal|[Link](https://aasisodiya.github.io/WebProjects/26Animations/05ScrollReveal/)|23-April-2021|CSS Reveal Animation based on scroll using Jquery|
 |Device Data from Navigator That Browser Can Share|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-device#getting-device-specific-data-using-navigator)|24-April-2021|Device data from navigator that browser can share|
