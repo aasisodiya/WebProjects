@@ -59,6 +59,7 @@
 |PIPBOY Template Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/07ScreenBuffer/)|02-June-2021|PIPBOY Animation Created using CSS and HTML - Screen Buffer Animation|
 |Confetti Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/08Confetti/)|03-June-2021|Confetti Animation Created using JS, CSS, HTML|
 |Touch Race|[Link](https://aasisodiya.github.io/WebProjects/26Animations/09TouchAnimation/)|09-June-2021|Fastest one to tap the screen wins!|
+|Loader Screens|[Link](https://aasisodiya.github.io/WebProjects/26Animations/10ScreenLoader/)|12-June-2021|Pre Loader Screens|
 
 ---
 
