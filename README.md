@@ -60,6 +60,7 @@
 |Confetti Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/08Confetti/)|03-June-2021|Confetti Animation Created using JS, CSS, HTML|
 |Touch Race|[Link](https://aasisodiya.github.io/WebProjects/26Animations/09TouchAnimation/)|09-June-2021|Fastest one to tap the screen wins!|
 |Loader Screens|[Link](https://aasisodiya.github.io/WebProjects/26Animations/10ScreenLoader/)|12-June-2021|Pre Loader Screens|
+|Merry Go Round Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/11MerryGoRound/)|13-June-2021|Merry Go Round Animation|
 
 ---
 
