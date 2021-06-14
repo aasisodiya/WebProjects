@@ -62,6 +62,7 @@
 |Loader Screens|[Link](https://aasisodiya.github.io/WebProjects/26Animations/10ScreenLoader/)|12-June-2021|Pre Loader Screens|
 |Merry Go Round Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/11MerryGoRound/)|13-June-2021|Merry Go Round Animation|
 |3D CSS|[Link](https://aasisodiya.github.io/WebProjects/37CSS3D)|14-June-2021|3D Animation Using CSS Only|
+|Animated Clock|[Link](https://aasisodiya.github.io/WebProjects/26Animations/12AnimatedClock/)|14-June-2021|Animated Clock (inspired from some random 9gag post)|
 
 ---
 
