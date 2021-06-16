@@ -81,6 +81,26 @@ Old way was to use `display:table` and set its child to `display:table-cell` and
 }
 ```
 
+OR
+
+```css
+.parent {
+  position: relative;
+  height: 50vh;
+}
+
+.child {
+  width: fit-content;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: fit-content;
+}
+```
+
 ```html
 <div class="parent">
   <p class="child">Centered Using Relative-Absolute Positioning</p>

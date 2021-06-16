@@ -78,6 +78,24 @@
             text-align: center;
         }
 
+        /* or */
+
+        .parent1 {
+            position: relative;
+            height: 50vh;
+        }
+
+        .child1 {
+            width: fit-content;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: fit-content;
+        }
+
         /* Vertically Center Using Absolute-Relative Positioning */
         /* Vertically Center Using Grid */
 
@@ -86,6 +104,7 @@
             align-items: center;
             justify-content: center;
             height: 50vh;
+            background-color: orange;
         }
 
         /* Vertically Center Using Grid */
@@ -95,7 +114,6 @@
             display: grid;
             place-items: center;
             height: 50vh;
-            background-color: orange;
         }
 
         /* Vertically Center Using Grid with Place Items */
@@ -104,6 +122,7 @@
         .grid-margin {
             display: grid;
             height: 50vh;
+            background-color: orange;
         }
 
         .grid-margin-child {
@@ -124,6 +143,9 @@
     </div>
     <div class="parent">
         <p class="child">Centered Using Relative-Absolute Positioning</p>
+    </div>
+    <div class="parent1">
+        <p class="child1">Centered Using Relative-Absolute Positioning</p>
     </div>
     <div class="grid">
         <p>Centered Using Grid</p>
