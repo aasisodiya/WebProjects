@@ -27,6 +27,7 @@
   - [Dark/Light Mode Using Media Query](#darklight-mode-using-media-query)
   - [CSS Units](#css-units)
     - [`em` vs `rem`](#em-vs-rem)
+  - [Perspective CSS](#perspective-css)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -461,6 +462,24 @@ For Live Example [Click Here](https://aasisodiya.github.io/WebProjects/Notes/not
 |It is always in relation to parents|It is in relation to `html` font-size|
 |Font-size keeps compounding i.e if parents has changed its font-size, then the child element with `em` also gets changed|Doesn't compounds like `em`|
 |`em` for margin equals to that element's font-size, i.e of elements font-size is 2rem and you set `margin: 1rem` then the margin is equal to its font-size. Same applies for `padding`, `left`, `top`, `right`, `bottom`, `width` and all such properties|`rem` here is still consistent with `html` font-size|
+
+---
+
+## Perspective CSS
+
+`perspective` and `perspective-origin` are both set on an element’s parent container and determine the position of the vanishing point (i.e. the distance from the object’s plane from the position from which you are “looking” at the object), the object’s position and rotation is set using the transform property, which is declared on the object itself.
+
+```css
+.parent {
+    perspective: 300px;
+    -webkit-perspective: 300px;
+    perspective-origin: center;
+}
+```
+
+In Above snippet `perspective` is the depth / distance that you are viewing at or is the distance of camera/viewer/user from the object. `perspective-origin` is the position which can be `top`, `bottom`, `left`, `right` and `center` also combination of the same are allowed.
+
+> Example [Link](perspective/)
 
 ---
 
