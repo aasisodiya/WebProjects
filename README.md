@@ -159,3 +159,4 @@
 |Using Media Query to set dark/light theme|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#darklight-mode-using-media-query)|07-June-2021|Using Media query i.e. `@media (prefers-color-scheme: dark/light)` for setting website theme based on system theme|
 |CSS Units|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#css-units)|08-June-2021|Notes on CSS Units like `vh`,`vw`,`ch`,`em`,`rem`,`%`|
 |More Ways to Vertically Center An Element|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css-layout/note-vertically-center-element/)|17-June-2021|Vertically center using `display` as `table`, `grid` and `flex` or `position` as `relative` & `absolute`|
+|Perspective CSS|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#perspective-css)|18-June-2021|Implementing Perspective in CSS using `perspective` and `perspective-origin`|
