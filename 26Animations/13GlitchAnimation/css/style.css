@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Electrolize&display=swap");
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: white;
+    background: var(--cyberpunk-color4);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+}
+
+.footer>a {
+    text-decoration: none;
+    color: var(--cyberpunk-color3);
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Electrolize", sans-serif;
+}
+
+/* Template Code End */
+
+:root {
+    --cyberpunk-color1: #000000;
+    --cyberpunk-color2: #fcee0a;
+    --cyberpunk-color3: #0e0e0e;
+    --cyberpunk-color4: #02d7f2;
+    --cyberpunk-color5: #ff003c;
+    --cyberpunk-color6: #cdcdcd;
+}
+
+body {
+    margin: 0;
+    background: var(--cyberpunk-color2);
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.cyberpunk-content {
+    text-align: center;
+}
+
+.cyberpunk-video-content {
+    height: 10em;
+    width: 20em;
+    position: relative;
+    clip-path: polygon( 0% 5%, 25% 5%, 30% 0%, 90% 0%, 95% 5%, 95% 70%, 100% 75%, 100% 95%, 60% 95%, 55% 100%, 25% 100%, 0% 75%);
+}
+
+.cyberpunk-video-content video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* object-fit: scale-down; */
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* Glitch */
+
+.cyberpunk-glitch-btn-holder {
+    position: relative;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.cyberpunk-glitch-btn {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1em;
+    text-transform: uppercase;
+    background: var(--cyberpunk-color5);
+    position: relative;
+    clip-path: polygon( 0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 10% 100%, 0% 70%);
+    font-weight: bold;
+}
+
+.cyberpunk-glitch-btn-label {
+    position: absolute;
+    right: 2.5em;
+    bottom: -0.5em;
+    font-size: 0.5em;
+    line-height: 1;
+    color: var(--cyberpunk-color3);
+    letter-spacing: 0.1em;
+    z-index: 10;
+}
+
+.glitch {
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    animation: glitch 500ms infinite;
+}
+
+/* Reference: https://codepen.io/kevinpowell/pen/YzqerQm */
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    14% {
+        text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.05em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    15% {
+        text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), 0.025em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    49% {
+        text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), 0.025em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    50% {
+        text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    99% {
+        text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+    100% {
+        text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+    }
+}
