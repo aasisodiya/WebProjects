@@ -65,6 +65,7 @@
 |Animated Clock|[Link](https://aasisodiya.github.io/WebProjects/26Animations/12AnimatedClock/)|14-June-2021|Animated Clock (inspired from some random 9gag post)|
 |My Mobile Model in CSS|[Link](https://aasisodiya.github.io/WebProjects/38MobileTemplate/)|19-June-2021|Model of my mobile - Moto G5S+ using CSS|
 |Cyberpunk Glitch Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/13GlitchAnimation/)|20-June-2021|Cyberpunk Glitch Animation|
+|Cyberpunk Assets|[Link](https://aasisodiya.github.io/WebProjects/39CyberpunkAssets/)|21-June-2021|Cyberpunk Assets|
 
 ---
 
