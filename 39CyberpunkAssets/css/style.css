@@ -22,7 +22,7 @@
     font-weight: bold;
     color: white;
     background: var(--cyberpunk-color4);
-    clip-path: polygon(0 0, calc(100% - calc(0.5 * var(--size))) 0, 100% calc(0.5 * var(--size)), 100% 100%, 0 100%);
+    clip-path: polygon( 0 0, calc(100% - calc(0.5 * var(--size))) 0, 100% calc(0.5 * var(--size)), 100% 100%, 0 100%);
 }
 
 .footer>a {
@@ -73,6 +73,8 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* display: grid; */
+    /* grid-template-columns: auto auto auto; */
 }
 
 /* Cyberpunk Video Container */
@@ -124,7 +126,7 @@ a {
 }
 
 .cyberpunk-btn::after, .cyberpunk-btn::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -153,7 +155,7 @@ a {
 }
 
 .cyberpunk-btn-text::after {
-    content: '_';
+    content: "_";
     animation: blink 1s infinite;
     margin-left: 0.1em;
 }
@@ -195,7 +197,7 @@ a {
 }
 
 .cyberpunk-btn-label::after {
-    content: 'R25';
+    content: attr(data-sn);
     position: absolute;
     left: calc(95% - 2.5em);
     bottom: -0.5em;
@@ -215,130 +217,130 @@ a {
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
         -webkit-clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
-        clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%)
+        clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
     }
     2% {
         -webkit-clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
         clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
         -webkit-transform: translate(-5px);
-        transform: translate(-5px)
+        transform: translate(-5px);
     }
     6% {
         -webkit-clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
         clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
         -webkit-transform: translate(5px);
-        transform: translate(5px)
+        transform: translate(5px);
     }
     8% {
         -webkit-clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
         clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
         -webkit-transform: translate(-5px);
-        transform: translate(-5px)
+        transform: translate(-5px);
     }
     9% {
         -webkit-clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
         clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
         -webkit-transform: translate(0);
-        transform: translate(0)
+        transform: translate(0);
     }
     10% {
         -webkit-clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
         clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
         -webkit-transform: translate3d(5px, 0, 0);
-        transform: translate3d(5px, 0, 0)
+        transform: translate3d(5px, 0, 0);
     }
     13% {
         -webkit-clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
         clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
         -webkit-transform: translateZ(0);
-        transform: translateZ(0)
+        transform: translateZ(0);
     }
     13.1% {
         -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
         clip-path: polygon(0 0, 0 0, 0 0, 0 0);
         -webkit-transform: translate3d(5px, 0, 0);
-        transform: translate3d(5px, 0, 0)
+        transform: translate3d(5px, 0, 0);
     }
     15% {
         -webkit-clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
         clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
         -webkit-transform: translate3d(5px, 0, 0);
-        transform: translate3d(5px, 0, 0)
+        transform: translate3d(5px, 0, 0);
     }
     20% {
         -webkit-clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
         clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
         -webkit-transform: translate3d(-5px, 0, 0);
-        transform: translate3d(-5px, 0, 0)
+        transform: translate3d(-5px, 0, 0);
     }
     20.1% {
         -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
         clip-path: polygon(0 0, 0 0, 0 0, 0 0);
         -webkit-transform: translate3d(5px, 0, 0);
-        transform: translate3d(5px, 0, 0)
+        transform: translate3d(5px, 0, 0);
     }
     25% {
         -webkit-clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
         clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
         -webkit-transform: translate3d(5px, 0, 0);
-        transform: translate3d(5px, 0, 0)
+        transform: translate3d(5px, 0, 0);
     }
     30% {
         -webkit-clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
         clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
         -webkit-transform: translate3d(-5px, 0, 0);
-        transform: translate3d(-5px, 0, 0)
+        transform: translate3d(-5px, 0, 0);
     }
     30.1% {
         -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-        clip-path: polygon(0 0, 0 0, 0 0, 0 0)
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0);
     }
     35% {
         -webkit-clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
         clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
         -webkit-transform: translate(-5px);
-        transform: translate(-5px)
+        transform: translate(-5px);
     }
     40% {
         -webkit-clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
         clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
         -webkit-transform: translate(5px);
-        transform: translate(5px)
+        transform: translate(5px);
     }
     45% {
         -webkit-clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
         clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
         -webkit-transform: translate(-5px);
-        transform: translate(-5px)
+        transform: translate(-5px);
     }
     50% {
         -webkit-clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
         clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
         -webkit-transform: translate(0);
-        transform: translate(0)
+        transform: translate(0);
     }
     55% {
         -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
         clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
         -webkit-transform: translate3d(5px, 0, 0);
-        transform: translate3d(5px, 0, 0)
+        transform: translate3d(5px, 0, 0);
     }
     60% {
         -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
         clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
-        opacity: 1
+        opacity: 1;
     }
     60.1% {
         -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
         clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-        opacity: 1
+        opacity: 1;
     }
     to {
         -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
         clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-        opacity: 1
+        opacity: 1;
     }
 }
 
@@ -368,42 +370,42 @@ a {
     --padding: 1rem;
     background: var(--cyberpunk-color4);
     padding: var(--padding);
-    clip-path: polygon(0 var(--padding), var(--padding) 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon( 0 var(--padding), var(--padding) 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .cyberpunk-div-trc {
     --padding: 1rem;
     background: var(--cyberpunk-color4);
     padding: var(--padding);
-    clip-path: polygon(0 0, calc(100% - var(--padding)) 0, 100% calc(var(--padding)), 100% 100%, 0 100%);
+    clip-path: polygon( 0 0, calc(100% - var(--padding)) 0, 100% calc(var(--padding)), 100% 100%, 0 100%);
 }
 
 .cyberpunk-div-brc {
     --padding: 1rem;
     background: var(--cyberpunk-color4);
     padding: var(--padding);
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--padding)), calc(100% - var(--padding)) 100%, 0 100%);
+    clip-path: polygon( 0 0, 100% 0, 100% calc(100% - var(--padding)), calc(100% - var(--padding)) 100%, 0 100%);
 }
 
 .cyberpunk-div-blc {
     --padding: 1rem;
     background: var(--cyberpunk-color4);
     padding: var(--padding);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, var(--padding) 100%, 0 calc(100% - var(--padding)));
+    clip-path: polygon( 0 0, 100% 0, 100% 100%, var(--padding) 100%, 0 calc(100% - var(--padding)));
 }
 
 .cyberpunk-div-tlbrc {
     --padding: 1rem;
     background: var(--cyberpunk-color4);
     padding: var(--padding);
-    clip-path: polygon(0 var(--padding), var(--padding) 0, 100% 0, 100% calc(100% - var(--padding)), calc(100% - var(--padding)) 100%, 0 100%);
+    clip-path: polygon( 0 var(--padding), var(--padding) 0, 100% 0, 100% calc(100% - var(--padding)), calc(100% - var(--padding)) 100%, 0 100%);
 }
 
 .cyberpunk-div-trblc {
     --padding: 1rem;
     background: var(--cyberpunk-color4);
     padding: var(--padding);
-    clip-path: polygon(0 0, calc(100% - var(--padding)) 0, 100% calc(var(--padding)), 100% 100%, var(--padding) 100%, 0 calc(100% - var(--padding)));
+    clip-path: polygon( 0 0, calc(100% - var(--padding)) 0, 100% calc(var(--padding)), 100% 100%, var(--padding) 100%, 0 calc(100% - var(--padding)));
 }
 
 hr.cyberpunk-separator {
@@ -438,7 +440,76 @@ hr.cyberpunk-separator::after {
 .cyberpunk-link {}
 
 .cyberpunk-link::after {
-    font-family: 'Cyber', sans-serif;
+    font-family: "Cyber", sans-serif;
     content: ">";
     margin-left: 3px;
+}
+
+.cyberpunk-holder-shadow {
+    filter: drop-shadow(0 0 2px black);
+}
+
+.cyberpunk-image-holder {
+    --width: 200px;
+    --hover-color: var(--cyberpunk-color5);
+    --hover-border: calc(var(--width) / 100);
+    width: var(--width);
+    position: relative;
+    height: fit-content;
+}
+
+.cyberpunk-image-holder:hover::before {
+    display: block;
+}
+
+.cyberpunk-image-holder::before {
+    content: "";
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 4px;
+    /* Work this - something is affecting this 4px */
+    background: linear-gradient(135deg, var(--hover-color) 50%, transparent 50%) 0 0 / 60% calc(var(--hover-border) * 4), /* top-left bold line */
+    linear-gradient(315deg, var(--hover-color) 50%, transparent 50%) bottom right / 60% calc(var(--hover-border) * 4), /* Bottom right bold line */
+    linear-gradient(var(--hover-color), var(--hover-color)) top / 100% var(--hover-border), /* Top Line */
+    linear-gradient(var(--hover-color), var(--hover-color)) bottom / 100% var(--hover-border), /* Bottom Line */
+    linear-gradient(var(--hover-color), var(--hover-color)) left / var(--hover-border) 100%, /* Right Line */
+    linear-gradient(var(--hover-color), var(--hover-color)) right / var(--hover-border) 100%/* Left Line */
+    ;
+    background-repeat: no-repeat;
+}
+
+.cyberpunk-image-holder img, .cyberpunk-card-image-holder img {
+    width: 100%;
+    height: 100%;
+}
+
+.cyberpunk-card {
+    --background: var(--cyberpunk-color1);
+    --color: var(--cyberpunk-color2);
+    --width: 200px;
+    --padding: 1rem;
+    background: var(--background);
+    color: var(--color);
+    width: var(--width);
+    clip-path: polygon( 0 0, calc(100% - var(--padding)) 0, 100% calc(var(--padding)), 100% 100%, var(--padding) 100%, 0 calc(100% - var(--padding)));
+    padding-bottom: var(--padding);
+}
+
+.cyberpunk-card-image-holder {
+    --padding: inherit;
+    margin: 2px;
+    clip-path: polygon( 0 0, calc(100% - var(--padding)) 0, 100% calc(var(--padding)), 100% 100%, 0 100%);
+}
+
+.cyberpunk-card-content {
+    padding: 0.5rem 1rem 0 1rem;
+}
+
+.cyberpunk-card-content p {
+    font-size: 0.75rem;
+    text-align: left;
+    margin: 0;
 }
