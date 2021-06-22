@@ -163,3 +163,6 @@
 |CSS Units|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#css-units)|08-June-2021|Notes on CSS Units like `vh`,`vw`,`ch`,`em`,`rem`,`%`|
 |More Ways to Vertically Center An Element|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css-layout/note-vertically-center-element/)|17-June-2021|Vertically center using `display` as `table`, `grid` and `flex` or `position` as `relative` & `absolute`|
 |Perspective CSS|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#perspective-css)|18-June-2021|Implementing Perspective in CSS using `perspective` and `perspective-origin`|
+|`::first-letter` and `::first-line` Selector|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#first-letter-and-first-line-selector)|23-June-2021|Styling using `::first-letter` and `::first-line` Selector|
+|Styling the Bullets in Lists using `::marker`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#styling-the-bullets-in-lists-using-marker)|23-June-2021|Styling the Bullets in Lists using `::marker`|
+|Using SVG for bullets in List|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#using-svg-for-bullets-in-list)|23-June-2021|Using SVG for bullets in List|
