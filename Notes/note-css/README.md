@@ -28,6 +28,9 @@
   - [CSS Units](#css-units)
     - [`em` vs `rem`](#em-vs-rem)
   - [Perspective CSS](#perspective-css)
+  - [`::first-letter` and `::first-line` Selector](#first-letter-and-first-line-selector)
+  - [Styling the Bullets in Lists using `::marker`](#styling-the-bullets-in-lists-using-marker)
+  - [Using SVG for bullets in List](#using-svg-for-bullets-in-list)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -480,6 +483,89 @@ For Live Example [Click Here](https://aasisodiya.github.io/WebProjects/Notes/not
 In Above snippet `perspective` is the depth / distance that you are viewing at or is the distance of camera/viewer/user from the object. `perspective-origin` is the position which can be `top`, `bottom`, `left`, `right` and `center` also combination of the same are allowed.
 
 > Example [Link](perspective/)
+
+---
+
+## `::first-letter` and `::first-line` Selector
+
+`::first-letter` Selector helps you select the first letter of the element. Using `::first-letter` selector you can create some great styles. 
+
+`::first-line` selector helps you to select the first line of the paragraph. Using `::first-line` you can style out the first line as you need.
+
+```css
+.article::first-letter {
+    color: orange;
+    font-size: 2rem;
+    font-weight: bold;
+    float: left;
+    margin-right: 0.5rem;
+}
+
+.article::first-line {
+    color: orange;
+}
+```
+
+> Example [Link](css-selector-example/)
+
+---
+
+## Styling the Bullets in Lists using `::marker`
+
+You can easily style the bullets in Lists using `::marker` in CSS. `::marker` properties are not inherited. So you will have to apply them directly. `padding` and `margin` won't apply on `::marker` so you will have to apply those to parent.
+
+```css
+/* ::marker css example */
+.custom-marker li::marker {
+    color: orange;
+    content: '-';
+}
+
+.custom-marker li {
+    padding-left: 0.2em;
+}
+
+/* SVG Bullets */
+ul.svg-marker {
+    list-style: none;
+}
+```
+
+> Example [Link](css-selector-example/)
+
+---
+
+## Using SVG for bullets in List
+
+Below code is an example on how to use SVG as bullets for List
+
+```css
+.svg-marker > li {
+    position: relative;
+    padding-left: 0.2em;
+}
+
+.svg-marker li::before {
+    --size: 1rem;
+    content: '';
+    display: inline-block;
+    height: var(--size);
+    width: var(--size);
+    position: absolute;
+    left: calc(-1 * var(--size));
+    /* Adjusting top, might be not required for some other fonts */
+    top: 0.2rem;
+    background-image: url(img/alogo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+```
+
+> Example [Link](css-selector-example/)
+
+---
+
+> You can use svg in content property
 
 ---
 
