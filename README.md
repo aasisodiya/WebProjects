@@ -166,3 +166,4 @@
 |`::first-letter` and `::first-line` Selector|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#first-letter-and-first-line-selector)|23-June-2021|Styling using `::first-letter` and `::first-line` Selector|
 |Styling the Bullets in Lists using `::marker`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#styling-the-bullets-in-lists-using-marker)|23-June-2021|Styling the Bullets in Lists using `::marker`|
 |Using SVG for bullets in List|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#using-svg-for-bullets-in-list)|23-June-2021|Using SVG for bullets in List|
+|`mix-blend-mode` and `isolation` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#mix-blend-mode-and-isolation-property)|24-June-2021|`mix-blend-mode` and `isolation` Property Example|

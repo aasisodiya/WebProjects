@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mix Blend Mode Property Examples</title>
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="Mix Blend Mode Property Examples">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            font-weight: bold;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        /* Template Code End */
+        body {
+            margin: 0;
+        }
+
+        .container {
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, red, purple, magenta, violet);
+        }
+
+        .options {
+            position: fixed;
+            bottom: 2rem;
+            width: 100%;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        img {
+            height: 30vmin;
+        }
+
+        input#isolate {
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="isolateit">
+            <div class="holder">
+                <img src="img/alogo.svg" alt="">
+                <img src="img/favicon.png" alt="">
+            </div>
+        </div>
+        <div class="options">
+            <div>
+                <label for="cars">Choose a mix-blend-mode:</label>
+                <select id="mode" name="mix-blend-mode">
+                    <option value="normal">Normal</option>
+                    <option value="multiply">Multiply</option>
+                    <option value="screen">Screen</option>
+                    <option value="overlay">Overlay</option>
+                    <option value="darken">Darken</option>
+                    <option value="lighten">Lighten</option>
+                    <option value="color-dodge">Color-Dodge</option>
+                    <option value="color-burn">Color-Burn</option>
+                    <option value="hard-light">Hard-Light</option>
+                    <option value="soft-light">Soft-Light</option>
+                    <option value="difference">Difference</option>
+                    <option value="exclusion">Exclusion</option>
+                    <option value="hue">Hue</option>
+                    <option value="saturation">Saturation</option>
+                    <option value="color">Color</option>
+                    <option value="luminosity">Luminosity</option>
+                </select>
+            </div>
+            <div>
+                <label for="isolate">Isolate</label>
+                <input type="checkbox" name="isolate" id="isolate">
+            </div>
+        </div>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <!-- <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.mixblendmode" alt=""> -->
+    </div>
+    <script>
+        /*
+            mix-blend-mode: normal;
+            mix-blend-mode: multiply;
+            mix-blend-mode: screen;
+            mix-blend-mode: overlay;
+            mix-blend-mode: darken;
+            mix-blend-mode: lighten;
+            mix-blend-mode: color-dodge;
+            mix-blend-mode: color-burn;
+            mix-blend-mode: hard-light;
+            mix-blend-mode: soft-light;
+            mix-blend-mode: difference;
+            mix-blend-mode: exclusion;
+            mix-blend-mode: hue;
+            mix-blend-mode: saturation;
+            mix-blend-mode: color;
+            mix-blend-mode: luminosity;
+            isolation: auto;
+            isolation: isolate;
+        */
+
+        function applyMixBlendMode() {
+            if ($('#isolate').is(":checked")) {
+                $('.isolateit').css('isolation', 'isolate');
+            } else {
+                $('.isolateit').css('isolation', 'auto');
+            }
+            $('.holder').css('mix-blend-mode', $('#mode').val());
+        }
+
+        $('#mode').on('change', function (event) {
+            console.log(event.target.value);
+            applyMixBlendMode();
+        });
+        $('#isolate').on('change', function (event) {
+            console.log(event.target.checked);
+            applyMixBlendMode();
+        });
+    </script>
+</body>
+
+</html>
