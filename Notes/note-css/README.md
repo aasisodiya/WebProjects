@@ -31,6 +31,7 @@
   - [`::first-letter` and `::first-line` Selector](#first-letter-and-first-line-selector)
   - [Styling the Bullets in Lists using `::marker`](#styling-the-bullets-in-lists-using-marker)
   - [Using SVG for bullets in List](#using-svg-for-bullets-in-list)
+  - [`mix-blend-mode` and `isolation` Property](#mix-blend-mode-and-isolation-property)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -566,6 +567,40 @@ Below code is an example on how to use SVG as bullets for List
 ---
 
 > You can use svg in content property
+
+---
+
+## `mix-blend-mode` and `isolation` Property
+
+The `mix-blend-mode` CSS property sets how an element's content should blend with the content of the element's parent and the element's background. [Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode). `mix-blend-mode` can be used with `isolation`. The `isolation` CSS property determines whether an element must create a new stacking context. [Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/isolation)
+
+`isolation` is applied on parent. Consider a case that div with respective class a,b,c where c has `mix-blend-mode` property applied and `a` has background, then `b` has the power to `isolate` by using `isolation` property. *Check Why `mix-blend-mode` doesn't work with body with background*
+
+```css
+.possibleValues {
+  mix-blend-mode: normal;
+  mix-blend-mode: multiply;
+  mix-blend-mode: screen;
+  mix-blend-mode: overlay;
+  mix-blend-mode: darken;
+  mix-blend-mode: lighten;
+  mix-blend-mode: color-dodge;
+  mix-blend-mode: color-burn;
+  mix-blend-mode: hard-light;
+  mix-blend-mode: soft-light;
+  mix-blend-mode: difference;
+  mix-blend-mode: exclusion;
+  mix-blend-mode: hue;
+  mix-blend-mode: saturation;
+  mix-blend-mode: color;
+  mix-blend-mode: luminosity;
+  /* isolation */
+  isolation: auto;
+  isolation: isolate;
+}
+```
+
+> Example [Link](mix-blend-mode-example/)
 
 ---
 
