@@ -66,6 +66,7 @@
 |My Mobile Model in CSS|[Link](https://aasisodiya.github.io/WebProjects/38MobileTemplate/)|19-June-2021|Model of my mobile - Moto G5S+ using CSS|
 |Cyberpunk Glitch Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/13GlitchAnimation/)|20-June-2021|Cyberpunk Glitch Animation|
 |Cyberpunk Assets|[Link](https://aasisodiya.github.io/WebProjects/39CyberpunkAssets/)|21-June-2021|Cyberpunk Assets|
+|Cat Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/14CatAnimation/)|25-June-2021|Cat Animation inspired from Boom Slingers Mobile Game|
 
 ---
 
