@@ -18,7 +18,7 @@
 }
 
 * {
-    font-family: 'Exo 2', sans-serif;
+    font-family: "Exo 2", sans-serif;
 }
 
 /* Template Code End */
@@ -36,7 +36,7 @@
 
 body {
     margin: 0;
-    background: linear-gradient(45deg, purple, violet)
+    background: linear-gradient(45deg, purple, violet);
 }
 
 .container {
@@ -73,7 +73,7 @@ body {
 .behindleg {
     --cat-behind-leg-size: calc(var(--cat-size) * 1.08);
     width: calc(var(--cat-behind-leg-size));
-    height: calc(var(--cat-behind-leg-size)/2);
+    height: calc(var(--cat-behind-leg-size) / 2);
     background-color: var(--cat-behind-leg-color);
     border-radius: calc(var(--cat-behind-leg-size) * 2) calc(var(--cat-behind-leg-size) * 2) 0 0;
     /* Positional Data */
@@ -102,7 +102,7 @@ body {
 }
 
 .ear {
-    --cat-ears-bottom: calc(-1 * var(--cat-size)/4);
+    --cat-ears-bottom: calc(-1 * var(--cat-size) / 4);
     position: absolute;
     z-index: -1;
     bottom: var(--cat-ears-bottom);
@@ -134,6 +134,7 @@ body {
     /* Position Data */
     position: relative;
     transition: height 1s;
+    /* z-index: -1; */
 }
 
 .kat:hover .face {
@@ -141,8 +142,8 @@ body {
 }
 
 .faceelements {
-    --cat-eyes-holder-height: calc(var(--cat-size)/3);
-    height: calc(var(--cat-eyes-holder-height)/2);
+    --cat-eyes-holder-height: calc(var(--cat-size) / 3);
+    height: calc(var(--cat-eyes-holder-height) / 2);
     width: 80%;
     /* Position Data */
     position: absolute;
@@ -152,19 +153,20 @@ body {
 }
 
 .eyes {
-    --cat-eyes-size: calc(var(--cat-size)/3);
+    --cat-eyes-size: calc(var(--cat-size) / 3);
     width: calc(var(--cat-eyes-size));
-    height: calc(var(--cat-eyes-size)/2);
-    background: radial-gradient(circle at top, transparent 45%, black 45% 60%, var(--cat-eye-shadow) 60%);
+    height: calc(var(--cat-eyes-size) / 2);
+    background: radial-gradient( circle at top, transparent 45%, black 45% 60%, var(--cat-eye-shadow) 60%);
     border-radius: 0 0 calc(var(--cat-eyes-size)) calc(var(--cat-eyes-size));
     /* Position Data */
     position: absolute;
     /* display: grid;
     place-items: center; */
+    overflow: hidden;
 }
 
 .iris {
-    --cat-iris-size: calc(var(--cat-size)/12);
+    --cat-iris-size: calc(var(--cat-size) / 12);
     height: var(--cat-iris-size);
     width: var(--cat-iris-size);
     background: var(--cat-eyes-color);
@@ -178,11 +180,43 @@ body {
 }
 
 .kat:hover .eyes {
-    background: radial-gradient(circle at top, white 60%, var(--cat-eye-shadow) 60%);
+    background: radial-gradient( circle at top, white 60%, var(--cat-eye-shadow) 60%);
+    animation: eyeblink 4s 4s infinite;
+}
+
+@keyframes eyeblink {
+    0%, 10% {
+        background: radial-gradient( circle at top, transparent 45%, black 45% 60%, var(--cat-eye-shadow) 60%);
+    }
+    11%, 100% {
+        background: radial-gradient( circle at top, white 60%, var(--cat-eye-shadow) 60%);
+    }
 }
 
 .kat:hover .iris {
     display: block;
+    animation: eyesmove 2s forwards, eyehide 4s 4s infinite;
+}
+
+@keyframes eyehide {
+    0%, 10% {
+        background: transparent;
+    }
+    11%, 100% {
+        background: black;
+    }
+}
+
+@keyframes eyesmove {
+    0%, 50%, 100% {
+        transform: translateX(0) translateY(-50%);
+    }
+    25% {
+        transform: translateX(-100%) translateY(-50%);
+    }
+    75% {
+        transform: translateX(100%) translateY(-50%);
+    }
 }
 
 .eyesleft {
@@ -248,8 +282,8 @@ body {
 
 .frontleg {
     --cat-leg-size: calc(var(--cat-size) / 2);
-    width: calc(var(--cat-leg-size)/2);
-    height: calc(var(--cat-leg-size)/2);
+    width: calc(var(--cat-leg-size) / 2);
+    height: calc(var(--cat-leg-size) / 2);
     background-color: var(--cat-front-leg-color);
     border-radius: calc(var(--cat-leg-size)) 0 0 0;
     /* Position Data */
@@ -258,7 +292,7 @@ body {
 }
 
 .frontlegleft {
-    left: calc(-1 * var(--cat-leg-size)/2);
+    left: calc(-1 * var(--cat-leg-size) / 2);
 }
 
 .frontlegright {
@@ -281,4 +315,117 @@ body {
     left: 0;
     right: 0;
     text-align: center;
+}
+
+.sleepzzz {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 1px;
+    height: 1px;
+}
+
+.sleepzzz span {
+    position: absolute;
+    z-index: -1;
+    animation: sleep 10s linear infinite;
+}
+
+/* kat hover remove animation of sleep */
+
+.kat:hover .sleepzzz span {
+    animation: none;
+}
+
+.sleepzzz span:nth-child(1) {
+    animation-delay: 0;
+}
+
+.sleepzzz span:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.sleepzzz span:nth-child(3) {
+    animation-delay: 6s;
+}
+
+@keyframes sleep {
+    0% {
+        transform: translateY(-100%);
+    }
+    10% {
+        transform: translateY(-140%) translateX(100%);
+    }
+    20% {
+        transform: translateY(-180%) translateX(0);
+    }
+    30% {
+        transform: translateY(-220%) translateX(100%);
+        opacity: 1;
+    }
+    40% {
+        transform: translateY(-260%) translateX(0);
+    }
+    50%, 100% {
+        transform: translateY(-300%) translateX(100%);
+        opacity: 0;
+    }
+    /* 60% {
+        transform: translateY(-340%) translateX(0);
+    }
+    70% {
+        transform: translateY(-380%) translateX(100%);
+    }
+    80% {
+        transform: translateY(-420%) translateX(0);
+    }
+    90% {
+        transform: translateY(-460%) translateX(100%);
+    }
+    100% {
+        transform: translateY(-500%) translateX(0);
+        opacity: 0
+    } */
+}
+
+.prompt {
+    /* display: ; */
+    position: absolute;
+    top: calc(-1 * var(--cat-size));
+    font-size: calc(var(--cat-size) / 5);
+    text-align: center;
+    background: white;
+    border-radius: calc(var(--cat-size) / 5);
+    padding: calc(0.5 * var(--cat-size) / 5);
+    opacity: 0;
+}
+
+.prompt:after {
+    --cat-prompt-tip-size: calc(var(--cat-size) / 8);
+    --prompt-tip-color: white;
+    border-left: var(--cat-prompt-tip-size) solid transparent;
+    border-top: var(--cat-prompt-tip-size) solid var(--prompt-tip-color);
+    border-right: var(--cat-prompt-tip-size) solid transparent;
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    bottom: calc(-1 * var(--cat-prompt-tip-size));
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.kat:hover .prompt {
+    animation: displayprompt 2s forwards;
+}
+
+@keyframes displayprompt {
+    0%, 80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
