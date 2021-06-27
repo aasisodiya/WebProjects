@@ -1,0 +1,55 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    user-select: none;
+}
+
+/* Template Code End */
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+canvas {}
+
+#options {
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+}
+
+.myButton {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+    backdrop-filter: blur(1px);
+    cursor: pointer;
+}
+
+.myButton:active {
+    background: orange;
+}
