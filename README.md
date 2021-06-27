@@ -67,6 +67,7 @@
 |Cyberpunk Glitch Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/13GlitchAnimation/)|20-June-2021|Cyberpunk Glitch Animation|
 |Cyberpunk Assets|[Link](https://aasisodiya.github.io/WebProjects/39CyberpunkAssets/)|21-June-2021|Cyberpunk Assets|
 |Cat Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/14CatAnimation/)|25-June-2021|Cat Animation inspired from Boom Slingers Mobile Game|
+|Signature Pad|[Link](https://aasisodiya.github.io/WebProjects/40SignatureCanvas/)|28-June-2021|Signature Canvas To Draw and Save Your Signature|
 
 ---
 
@@ -168,3 +169,4 @@
 |Styling the Bullets in Lists using `::marker`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#styling-the-bullets-in-lists-using-marker)|23-June-2021|Styling the Bullets in Lists using `::marker`|
 |Using SVG for bullets in List|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#using-svg-for-bullets-in-list)|23-June-2021|Using SVG for bullets in List|
 |`mix-blend-mode` and `isolation` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#mix-blend-mode-and-isolation-property)|24-June-2021|`mix-blend-mode` and `isolation` Property Example|
+|Signature Pad|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-canvas/#signature-pad)|28-June-2021|Signature Canvas To Draw and Save Your Signature|
