@@ -53,3 +53,42 @@ canvas {}
 .myButton:active {
     background: orange;
 }
+
+.saveasholder {
+    display: none;
+    position: fixed;
+    top: 0;
+}
+
+.saveas {
+    display: grid;
+    place-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+}
+
+.saveas * {
+    margin-bottom: 1rem;
+}
+
+.saveas div {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    padding: 1rem;
+    backdrop-filter: blur(1px);
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+
+.saveas p {
+    text-align: center;
+    color: orange;
+    cursor: pointer;
+}
+
+.saveas p:hover {
+    color: red;
+}

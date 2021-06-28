@@ -20,6 +20,7 @@ var signaturePad = new SignaturePad(canvas, {
 function loadCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    signaturePad.clear();
 }
 
 // If user resize the screen / rotate the phone then also resize the canvas
@@ -27,41 +28,41 @@ function loadCanvas() {
 // Load the canvas on initial load
 loadCanvas();
 
-// Code to save signature as PNG
-$("#saveaspng").on("click", function () {
-    if (signaturePad.isEmpty()) {
-        return alert("Please provide a signature first.");
-    }
-    var data = signaturePad.toDataURL("image/png");
-    let a = document.createElement("a");
-    a.href = data;
-    a.download = "signature.png";
-    a.click();
-});
+// // Code to save signature as PNG
+// $("#saveaspng").on("click", function () {
+//     if (signaturePad.isEmpty()) {
+//         return alert("Please provide a signature first.");
+//     }
+//     var data = signaturePad.toDataURL("image/png");
+//     let a = document.createElement("a");
+//     a.href = data;
+//     a.download = "signature.png";
+//     a.click();
+// });
 
-// Code to save signature as JPEG
-$("#saveasjpeg").on("click", function () {
-    if (signaturePad.isEmpty()) {
-        return alert("Please provide a signature first.");
-    }
-    var data = signaturePad.toDataURL("image/jpeg");
-    let a = document.createElement("a");
-    a.href = data;
-    a.download = "signature.jpeg";
-    a.click();
-});
+// // Code to save signature as JPEG
+// $("#saveasjpeg").on("click", function () {
+//     if (signaturePad.isEmpty()) {
+//         return alert("Please provide a signature first.");
+//     }
+//     var data = signaturePad.toDataURL("image/jpeg");
+//     let a = document.createElement("a");
+//     a.href = data;
+//     a.download = "signature.jpeg";
+//     a.click();
+// });
 
-// Code to save signature as SVG
-$("#saveassvg").on("click", function () {
-    if (signaturePad.isEmpty()) {
-        return alert("Please provide a signature first.");
-    }
-    var data = signaturePad.toDataURL("image/svg+xml");
-    let a = document.createElement("a");
-    a.href = data;
-    a.download = "signature.svg";
-    a.click();
-});
+// // Code to save signature as SVG
+// $("#saveassvg").on("click", function () {
+//     if (signaturePad.isEmpty()) {
+//         return alert("Please provide a signature first.");
+//     }
+//     var data = signaturePad.toDataURL("image/svg+xml");
+//     let a = document.createElement("a");
+//     a.href = data;
+//     a.download = "signature.svg";
+//     a.click();
+// });
 
 // Code to clear the canvas
 $("#clear").on("click", function () {
@@ -93,4 +94,43 @@ $("#undo").on("click", function () {
 // Code to handle color change
 $("#color").on("change", function (event) {
     signaturePad.penColor = this.value;
+});
+
+// Open Save Option For User
+$("#save").on("click", function () {
+    $(".saveasholder").show();
+});
+
+// Download the image in user selected option
+$("#download").on("click", function () {
+    $(".saveasholder").hide();
+    if (signaturePad.isEmpty()) {
+        return alert("Please provide a signature first.");
+    }
+    var data, extn;
+    switch ($("#filetype").val()) {
+        case "png":
+            data = signaturePad.toDataURL("image/png");
+            extn = ".png";
+            break;
+        case "jpeg":
+            data = signaturePad.toDataURL("image/jpeg");
+            extn = ".jpeg";
+            break;
+        case "svg":
+            data = signaturePad.toDataURL("image/svg+xml");
+            extn = ".svg";
+            break;
+        default:
+            break;
+    }
+    let a = document.createElement("a");
+    a.href = data;
+    a.download = "signature" + extn;
+    a.click();
+});
+
+// Close download window
+$("#close").on("click", function () {
+    $(".saveasholder").hide();
 });
