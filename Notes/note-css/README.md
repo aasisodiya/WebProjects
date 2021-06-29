@@ -1,7 +1,5 @@
 # CSS Notes
 
-<link rel="icon" href="../../shared/img/favicon.png" type="image/x-icon">
-
 - [CSS Notes](#css-notes)
   - [Background Backdrop Filter](#background-backdrop-filter)
   - [`filter` Property](#filter-property)
@@ -32,6 +30,7 @@
   - [Styling the Bullets in Lists using `::marker`](#styling-the-bullets-in-lists-using-marker)
   - [Using SVG for bullets in List](#using-svg-for-bullets-in-list)
   - [`mix-blend-mode` and `isolation` Property](#mix-blend-mode-and-isolation-property)
+  - [`:hover` or `:active` doesn't work in IPhone's Safari](#hover-or-active-doesnt-work-in-iphones-safari)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -601,6 +600,12 @@ The `mix-blend-mode` CSS property sets how an element's content should blend wit
 ```
 
 > Example [Link](mix-blend-mode-example/)
+
+---
+
+## `:hover` or `:active` doesn't work in IPhone's Safari
+
+Solution is to add `ontouchstart` to the body tag. [Reference](https://stackoverflow.com/questions/3885018/active-pseudo-class-doesnt-work-in-mobile-safari)
 
 ---
 
