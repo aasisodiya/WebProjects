@@ -170,3 +170,5 @@
 |Using SVG for bullets in List|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#using-svg-for-bullets-in-list)|23-June-2021|Using SVG for bullets in List|
 |`mix-blend-mode` and `isolation` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#mix-blend-mode-and-isolation-property)|24-June-2021|`mix-blend-mode` and `isolation` Property Example|
 |Signature Pad|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-canvas/#signature-pad)|28-June-2021|Signature Canvas To Draw and Save Your Signature|
+|`:hover` or `:active` doesn't work in IPhone's Safari|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#hover-or-active-doesnt-work-in-iphones-safari)|29-June-2021|Solution is to use `ontouchstart` attribute with the tag|
+|CSS Interaction Media Queries|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-interaction-media-queries)|30-June-2021|CSS Interaction Media Queries like `hover` and `pointer`|
