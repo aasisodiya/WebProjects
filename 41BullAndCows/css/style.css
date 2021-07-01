@@ -1,0 +1,145 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    user-select: none;
+}
+
+/* Template Code End */
+
+body {
+    margin: 0;
+}
+
+/* Help Window CSS */
+
+.help-holder {
+    position: fixed;
+    width: 100%;
+}
+
+.help {
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    width: 100%;
+    min-height: 90vh;
+    place-content: center;
+    place-items: center;
+    text-align: center;
+}
+
+.helpbutton {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    display: none;
+    cursor: pointer;
+}
+
+/* Css For Button */
+
+.buttonholder {
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    min-width: 8rem;
+    cursor: pointer;
+    background: #eee;
+}
+
+button:enabled:hover, button:enabled:active {
+    background: orange;
+}
+
+button:disabled:hover, button[disabled]:hover {
+    /* background: red; */
+    cursor: not-allowed;
+}
+
+.container {
+    display: none;
+}
+
+.holder {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    place-content: center;
+    min-height: 100vh;
+}
+
+/* Show numbers inline and big, so that they are easy to click */
+
+.numbersholder {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: fit-content;
+    grid-gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.number {
+    font-size: 4rem;
+    width: 4rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.number.invalid {
+    color: red;
+}
+
+/* Results holder css */
+
+.resultsholder {
+    display: flex;
+    margin: 1rem 0;
+}
+
+.cows, .steps {
+    margin-left: 1rem;
+}
+
+/* hr splitter */
+
+hr {
+    width: 80%;
+    border: none;
+    border-top: 1px solid black;
+}
+
+/* logs css */
+
+.logs {
+    max-height: 50vh;
+    overflow: auto;
+    font-size: 0.6rem;
+}
+
+p:first-child {
+    color: orangered;
+    font-weight: bold;
+}
