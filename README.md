@@ -172,3 +172,4 @@
 |Signature Pad|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-canvas/#signature-pad)|28-June-2021|Signature Canvas To Draw and Save Your Signature|
 |`:hover` or `:active` doesn't work in IPhone's Safari|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#hover-or-active-doesnt-work-in-iphones-safari)|29-June-2021|Solution is to use `ontouchstart` attribute with the tag|
 |CSS Interaction Media Queries|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-interaction-media-queries)|30-June-2021|CSS Interaction Media Queries like `hover` and `pointer`|
+|`currentColor` Keyword|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#currentcolor-keyword)|01-July-2021|Using `currentColor` Keyword, to set value same as element's color property|
