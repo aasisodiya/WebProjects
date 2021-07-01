@@ -31,6 +31,7 @@
   - [Using SVG for bullets in List](#using-svg-for-bullets-in-list)
   - [`mix-blend-mode` and `isolation` Property](#mix-blend-mode-and-isolation-property)
   - [`:hover` or `:active` doesn't work in IPhone's Safari](#hover-or-active-doesnt-work-in-iphones-safari)
+  - [`currentColor` Keyword](#currentcolor-keyword)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -606,6 +607,22 @@ The `mix-blend-mode` CSS property sets how an element's content should blend wit
 ## `:hover` or `:active` doesn't work in IPhone's Safari
 
 Solution is to add `ontouchstart` to the body tag. [Reference](https://stackoverflow.com/questions/3885018/active-pseudo-class-doesnt-work-in-mobile-safari)
+
+---
+
+## `currentColor` Keyword
+
+The currentColor keyword represents the value of an element's color property. This lets you use the color value on properties that do not receive it by default. If currentColor is used as the value of the color property, it instead takes its value from the inherited value of the color property.
+
+Sample Code using `currentColor` Keyword to set the division border color same as its element's color
+
+```css
+.sameTextAndBorderColorDiv {
+    color: orange;
+    background: black;
+    border: 1px solid currentColor;
+}
+```
 
 ---
 
