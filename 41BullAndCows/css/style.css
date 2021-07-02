@@ -136,7 +136,7 @@ hr {
 .logs {
     max-height: 50vh;
     overflow: auto;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
 }
 
 p:first-child {
