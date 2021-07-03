@@ -32,6 +32,7 @@
   - [`mix-blend-mode` and `isolation` Property](#mix-blend-mode-and-isolation-property)
   - [`:hover` or `:active` doesn't work in IPhone's Safari](#hover-or-active-doesnt-work-in-iphones-safari)
   - [`currentColor` Keyword](#currentcolor-keyword)
+  - [Custom Cursor For Your Website](#custom-cursor-for-your-website)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -623,6 +624,31 @@ Sample Code using `currentColor` Keyword to set the division border color same a
     border: 1px solid currentColor;
 }
 ```
+
+---
+
+## Custom Cursor For Your Website
+
+You can add a custom cursor for your website with a simple css code. `cursor` property helps to achieve that. Sample code for which is given below.
+
+```css
+body {
+    cursor: url(./img/cursor.svg), auto;
+}
+```
+
+What we have done here is, set an image named `cursor.svg` as our cursor. `auto` here stands as backup in case `cursor.svg` has some issues. Some important points for cursor images are:
+
+- Cursor image can be of formats: `png` and `svg`. These are preferred because of transparency.
+- Cursor image cannot be bigger than `128×128px`. Larger cursor images are ignored.
+
+In case you are unable to see your cursor, make sure above conditions holds true. BTW One personal observation - on exporting a custom cursor I created in Adobe Illustrator didn't worked in my website. Even though the size of svg was `25×25px` which is well under `128×128px`. So after some debugging adding one line of code to my svg helped i.e `width='25' height='25'` was added to svg tag line.
+
+```svg
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width='25' height='25' viewBox="0 0 23.49 23.49">
+```
+
+> Example [Link](web-cursor/)
 
 ---
 
