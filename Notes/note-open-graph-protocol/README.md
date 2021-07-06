@@ -118,6 +118,16 @@ Types are:
 
 > [Example](example/)
 
+Sample output for above example looks like below on WhatsApp.
+
+![WhatsApp Card](./assets/sample-card-wa.png)
+
+## Twitter Card Validator
+
+You can check the preview of your card using [Twitter Card Validator](https://cards-dev.twitter.com/validator). Sample output looks like below.
+
+![Twitter Card Validator Output](./assets/sample-card.png)
+
 ## Reference
 
 - [The Open Graph protocol](https://ogp.me/)
