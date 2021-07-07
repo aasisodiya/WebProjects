@@ -70,6 +70,7 @@
 |Signature Pad|[Link](https://aasisodiya.github.io/WebProjects/40SignatureCanvas/)|28-June-2021|Signature Canvas To Draw and Save Your Signature|
 |Game of Bulls and Cows|[Link](https://aasisodiya.github.io/WebProjects/41BullAndCows/)|02-July-2021|A classic game of Bulls And Cows|
 |Drawing Board|[Link](https://aasisodiya.github.io/WebProjects/42DrawingBoard/)|06-July-2021|A drawing board code from [Link](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events)|
+|Magnifier|[Link](https://aasisodiya.github.io/WebProjects/43Magnifier/)|08-July-2021|A basic magnifier|
 
 ---
 
