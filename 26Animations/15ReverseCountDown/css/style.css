@@ -1,0 +1,84 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: 'Exo 2', sans-serif;
+}
+
+/* Template Code End */
+
+body {
+    margin: 0;
+}
+
+.holder {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.countdown {
+    --countdown-size: 100px;
+    width: var(--countdown-size);
+    height: var(--countdown-size);
+    position: relative;
+}
+
+.border {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 5px solid black;
+    border-radius: 50%;
+}
+
+
+.border.active {
+    animation: rotate 1s linear 10;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.counter {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+}
+
+.pointer {
+    --pointer-size: 10px;
+    background-color: black;
+    height: var(--pointer-size);
+    width: var(--pointer-size);
+    margin: auto;
+    border-radius: 50%;
+    margin-top: 5px;
+}
