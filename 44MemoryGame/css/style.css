@@ -1,0 +1,270 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+    z-index: 20;
+    color: white;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Template Code End */
+
+/* center the playground on the body */
+
+body {
+    margin: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    /* background: black; */
+    /* background: radial-gradient(#191e27, #2e3c42); */
+    background: radial-gradient(circle at center, #2e3c42, #191e27);
+}
+
+/* Countdown CSS Start */
+
+.countdown {
+    --countdown-size: 100px;
+    width: var(--countdown-size);
+    height: var(--countdown-size);
+    position: relative;
+}
+
+.border {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 5px solid black;
+    border-radius: 50%;
+}
+
+.border.active {
+    animation: rotate 1s linear 10;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.counter {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+}
+
+.pointer {
+    --pointer-size: 10px;
+    background-color: black;
+    height: var(--pointer-size);
+    width: var(--pointer-size);
+    margin: auto;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+/* Countdown CSS End */
+
+/* Start Screen CSS Start */
+
+#startscreen {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    z-index: 10;
+    background: radial-gradient(circle at center, cyan, black);
+    color: rgb(38, 38, 38);
+}
+
+.content {
+    padding: 0 2rem;
+    display: grid;
+    place-items: center;
+    max-width: 500px;
+}
+
+.content p {
+    text-align: justify;
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+h3 {
+    margin: 0;
+}
+
+.gamename, .instructions, .startbutton {
+    padding: 1rem;
+    background: #fff5;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+    margin-top: 1rem;
+}
+
+#start {
+    background: #fff5;
+    backdrop-filter: invert(1);
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 1rem;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0px 0px 2px black;
+    cursor: pointer;
+    margin: 0;
+    font-size: inherit;
+}
+
+#start:active {
+    box-shadow: 0px 0px 2px black inset;
+}
+
+/* Start Screen CSS End */
+
+/* Showcase CSS Start */
+
+#showcase {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    z-index: 8;
+    background: radial-gradient(circle at center, #923cb5, black);
+    color: rgb(38, 38, 38);
+}
+
+.showcasecontent {
+    padding: 0 2rem;
+    display: grid;
+    place-items: center;
+    max-width: 500px;
+    color: white;
+}
+
+#displaynumber {
+    font-size: 30rem;
+    text-shadow: 2px 2px 5px darkslategray;
+}
+
+.animate {
+    animation: flyin 1s infinite;
+}
+
+@keyframes flyin {
+    from {
+        transform: translateX(-10%);
+    }
+}
+
+/* Showcase CSS End */
+
+/* Game Over CSS Start */
+
+#gameover {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    z-index: 9;
+    background: radial-gradient(circle at center, red, black);
+    color: rgb(38, 38, 38);
+}
+
+.gameovercontent {
+    padding: 0 2rem;
+    display: grid;
+    place-items: center;
+    max-width: 500px;
+    color: white;
+}
+
+/* Game Over CSS End */
+
+/* Playground CSS Start */
+
+#playground {
+    position: relative;
+    top: 0;
+    --block-size: 75px;
+    --columns: 3;
+    width: fit-content;
+    display: grid;
+    /* grid-template-columns: auto auto auto; */
+    grid-template-columns: repeat(var(--columns), auto);
+    gap: calc(var(--block-size) / 10);
+}
+
+/* div that are direct children (>) of div#playground */
+
+#playground>div {
+    background: lightskyblue;
+    height: var(--block-size);
+    width: var(--block-size);
+    border-radius: calc(var(--block-size) / 5);
+    /* center position the text */
+    display: grid;
+    place-items: center;
+    /* font-size */
+    font-size: calc(var(--block-size) / 2);
+    font-weight: bold;
+    cursor: pointer;
+    /* box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.8); */
+    box-shadow: 1px 1px 0px 2px rgba(0, 0, 0, 0.8);
+}
+
+#playground>div:active {
+    /* box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.8) inset; */
+    box-shadow: 1px 1px 0px 2px rgba(0, 0, 0, 0.8) inset;
+    font-size: calc((var(--block-size) / 2) * 0.9);
+}
+
+/* The 0 in numpad needs to be in center */
+
+#playground>div:last-child {
+    grid-column: 2;
+}
+
+/* Playground CSS End */
