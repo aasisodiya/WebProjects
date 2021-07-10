@@ -179,3 +179,4 @@
 |`currentColor` Keyword|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#currentcolor-keyword)|01-July-2021|Using `currentColor` Keyword, to set value same as element's color property|
 |Custom Cursor For Your Website|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#custom-cursor-for-your-website)|04-July-2021|Using Custom Cursor For Your Website using `cursor` property|
 |The Open Graph Protocol|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-open-graph-protocol)|05-July-2021|The Open Graph Protocol|
+|Prevent Div Selection on Android|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#prevent-division-selection-on-chrome-android)|10-July-2021|Prevent Div Selection on Android using CSS|
