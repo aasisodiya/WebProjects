@@ -33,6 +33,7 @@
   - [`:hover` or `:active` doesn't work in IPhone's Safari](#hover-or-active-doesnt-work-in-iphones-safari)
   - [`currentColor` Keyword](#currentcolor-keyword)
   - [Custom Cursor For Your Website](#custom-cursor-for-your-website)
+  - [Prevent Division Selection on Chrome (Android)](#prevent-division-selection-on-chrome-android)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -649,6 +650,28 @@ In case you are unable to see your cursor, make sure above conditions holds true
 ```
 
 > Example [Link](web-cursor/)
+
+---
+
+## Prevent Division Selection on Chrome (Android)
+
+On Android Chrome, when you select a div it gets highlighted sometimes. For example as given below
+
+![Div highlight Example](assets/divhighlight.PNG)
+
+Now to prevent this you can use a simple CSS code i.e `-webkit-tap-highlight-color: transparent;`. You can also use below complete css code to prevent selection completely.
+
+```css
+.noselect{
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+```
 
 ---
 
