@@ -181,3 +181,4 @@
 |Custom Cursor For Your Website|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#custom-cursor-for-your-website)|04-July-2021|Using Custom Cursor For Your Website using `cursor` property|
 |The Open Graph Protocol|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-open-graph-protocol)|05-July-2021|The Open Graph Protocol|
 |Prevent Div Selection on Android|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#prevent-division-selection-on-chrome-android)|10-July-2021|Prevent Div Selection on Android using CSS|
+|Prevent Screen Reader From Reading an Element|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#prevent-screen-reader-from-reading-an-element-using-aria-hidden-attribute)|11-July-2021|Prevent Screen Reader From Reading an Element using `aria-hidden="true"`|

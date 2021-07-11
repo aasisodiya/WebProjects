@@ -34,6 +34,7 @@
   - [`currentColor` Keyword](#currentcolor-keyword)
   - [Custom Cursor For Your Website](#custom-cursor-for-your-website)
   - [Prevent Division Selection on Chrome (Android)](#prevent-division-selection-on-chrome-android)
+  - [Prevent Screen Reader From Reading An Element Using `aria-hidden` Attribute](#prevent-screen-reader-from-reading-an-element-using-aria-hidden-attribute)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -671,6 +672,32 @@ Now to prevent this you can use a simple CSS code i.e `-webkit-tap-highlight-col
     -ms-user-select: none;
     user-select: none;
 }
+```
+
+---
+
+## Prevent Screen Reader From Reading An Element Using `aria-hidden` Attribute
+
+You can prevent a screen reader from reading an element tag by using `aria-hidden` Attribute. All you need to do is add `aria-hidden="true"`. The `aria-hidden` attribute can either expose or hide non-interactive content from the accessibility API.
+
+Adding `aria-hidden="true"` to an element removes that element and all of its children from the accessibility tree. This can improve the experience for assistive technology users by hiding:
+
+- purely decorative content, such as icons or images
+- duplicated content, such as repeated text
+- offscreen or collapsed content, such as menus
+
+According to the fourth rule of ARIA, aria-hidden="true" should not be used on a focusable element. Additionally, since this attribute is inherited by an element's children, it should not be added onto the parent or ancestor of a focusable element.
+
+Using `aria-hidden="false"` will not re-expose the element to assistive technology if any of its parents specify `aria-hidden="true"`.
+
+> Reference: [Link](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-hidden_attribute)
+
+Example
+
+```html
+<p aria-hidden="true">
+  Some things are better left unsaid.
+</p>
 ```
 
 ---
