@@ -12,35 +12,22 @@ console.log(
 // Template Code End
 
 // Countdown Code Start
+// Countdown Interval to help stop the watch
+let countdownInterval;
+// Timer
+let timer = 0;
 
-function initializeCounters() {
-    $(".countdown").each((index, element) => {
-        // console.log(index, element);
-        let counterDiv = $(element).find("div.counter");
-        let timer = counterDiv.attr("data-counter");
-        counterDiv.text(timer);
-    });
-}
-
-initializeCounters();
-
-function startCountdown(element) {
+function startCountdown() {
+    let element = $(".countdown").get(0);
     let counterDiv = $(element).find("div.counter");
-    let timer = counterDiv.attr("data-counter");
     counterDiv.text(timer);
     // activate animation
     $(element).find("div.border").toggleClass("active");
-    $(element).find("div.active").css("animation-iteration-count", `${timer}`);
-    // decrease the count
-    let countdown = setInterval(() => {
-        timer--;
+    // increase the count
+    countdownInterval = setInterval(() => {
+        timer++;
         counterDiv.text(timer);
     }, 1000);
-    // stop the count down after set interval of counter
-    setTimeout(() => {
-        clearInterval(countdown);
-        $(element).find("div.border").toggleClass("active");
-    }, timer * 1000);
 }
 
 // Countdown Code End
@@ -119,10 +106,11 @@ function validateUserInput(input) {
         // console.log("Game is over");
         // Show game over screen
         $("#gameover").show();
-        setTimeout(() => {
-            // Show start screen after 3 seconds
-            $("#startscreen").show();
-        }, 3000);
+        let element = $(".countdown").get(0);
+        $(element).find("div.border").toggleClass("active");
+        clearInterval(countdownInterval);
+        $('#levelplayed').html(level - 1);
+        $('#timeplayed').html(timer);
     }
 }
 
@@ -131,6 +119,8 @@ function validateUserInput(input) {
 // Start the game on start button click
 
 $("#start").on("click", function () {
+    // Start Clock
+    startCountdown();
     // reset the level
     level = 1;
     startGame(level);
@@ -143,4 +133,15 @@ $("#playground div").on("click", function (event) {
     let numberClicked = index == 9 ? 0 : index + 1;
     // console.log(numberClicked);
     validateUserInput(numberClicked);
+});
+
+// Acknowledge Game Over
+$('#acknowledge').on('click', function () {
+    // Reset Clock
+    let element = $(".countdown").get(0);
+    let counterDiv = $(element).find("div.counter");
+    counterDiv.text(0);
+    // Show start screen after 3 seconds
+    $("#startscreen").show();
+    timer = 0;
 });

@@ -41,12 +41,14 @@
 </head>
 
 <body ontouchend>
-    <!-- <div class="countdown">
-        <div class="border">
-            <div class="pointer"></div>
+    <div class="countdownholder">
+        <div class="countdown">
+            <div class="border">
+                <div class="pointer"></div>
+            </div>
+            <div class="counter">0</div>
         </div>
-        <div class="counter" data-counter="40"></div>
-    </div> -->
+    </div>
     <div id="startscreen">
         <div class="content">
             <div class="gamename">
@@ -75,7 +77,12 @@
     </div>
     <div id="gameover">
         <div class="gameovercontent">
-            <h2>Game Over</h2>
+            <h1>Game Over</h1>
+            <h3>
+                You completed level <span id="levelplayed">1</span> in under
+                <span id="timeplayed">2</span> seconds
+            </h3>
+            <button id="acknowledge">Ok</button>
         </div>
     </div>
     <div id="playground">
