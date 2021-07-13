@@ -9,6 +9,7 @@
     - [Notes](#notes)
   - [Orientation Based Styling](#orientation-based-styling)
   - [Smooth Scroll To Given Element](#smooth-scroll-to-given-element)
+  - [Scroll With Padding Using `scroll-padding-top`](#scroll-with-padding-using-scroll-padding-top)
   - [`white-space` Property](#white-space-property)
   - [`overflow-wrap` Property](#overflow-wrap-property)
   - [`word-break` Property](#word-break-property)
@@ -172,6 +173,20 @@ html {
 ```
 
 [Click this link](./smooth-scroll/) to watch it in action
+
+---
+
+## Scroll With Padding Using `scroll-padding-top`
+
+When using `smooth-scroll` or simply target navigation, you will notice that some times the target stick to the top. Which can look a bit off. So to handle the same with zero effort you can simply add `scroll-padding-top` to your css code. Example:
+
+```css
+body {
+    scroll-padding-top: 4rem;
+}
+```
+
+[Example Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding-top)
 
 ---
 
