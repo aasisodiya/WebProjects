@@ -183,3 +183,4 @@
 |Prevent Div Selection on Android|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#prevent-division-selection-on-chrome-android)|10-July-2021|Prevent Div Selection on Android using CSS|
 |Prevent Screen Reader From Reading an Element|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#prevent-screen-reader-from-reading-an-element-using-aria-hidden-attribute)|11-July-2021|Prevent Screen Reader From Reading an Element using `aria-hidden="true"`|
 |Scroll With Padding Using `scroll-padding-top`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#scroll-with-padding-using-scroll-padding-top)|14-July-2021|Scroll With Padding Using `scroll-padding-top`|
+|`border` vs `outline`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#border-vs-outline)|15-July-2021|`border` vs `outline`|
