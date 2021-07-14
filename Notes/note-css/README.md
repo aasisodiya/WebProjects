@@ -36,6 +36,7 @@
   - [Custom Cursor For Your Website](#custom-cursor-for-your-website)
   - [Prevent Division Selection on Chrome (Android)](#prevent-division-selection-on-chrome-android)
   - [Prevent Screen Reader From Reading An Element Using `aria-hidden` Attribute](#prevent-screen-reader-from-reading-an-element-using-aria-hidden-attribute)
+  - [`border` vs `outline`](#border-vs-outline)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -714,6 +715,15 @@ Example
   Some things are better left unsaid.
 </p>
 ```
+
+---
+
+## `border` vs `outline`
+
+|`border`|`outline`|
+|-|-|
+|`border` of an element takes space|`outline` doesn't take any space|
+|You can have rounded corner|Rounded corners aren't supported|
 
 ---
 
