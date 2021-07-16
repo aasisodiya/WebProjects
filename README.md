@@ -73,6 +73,7 @@
 |Magnifier|[Link](https://aasisodiya.github.io/WebProjects/43Magnifier/)|08-July-2021|A basic magnifier|
 |Reverse Countdown Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/15ReverseCountDown)|09-July-2021|Reverse Countdown Animation|
 |Memory Game|[Link](https://aasisodiya.github.io/WebProjects/44MemoryGame/)|11-July-2021|Memory Game - Player at start is shown some numbers in random order. Then the number disappears and user is required to click the containers in same ascending order. Fastest wins!|
+|Light Saber Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/16LightSaber/)|17-July-2021|Light Saber Animation|
 
 ---
 
