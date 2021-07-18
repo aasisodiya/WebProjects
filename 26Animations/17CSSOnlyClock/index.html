@@ -78,6 +78,8 @@
             --min-start: 0deg;
             --hour-start: 0deg;
             --sec-start: 0deg;
+            --min-delay: 0s;
+            --hour-delay: 0s;
         }
 
         .clock {
@@ -107,15 +109,15 @@
         }
 
         .minhandholder {
-            animation: 3600s steps(60) tick infinite;
-            -webkit-animation: 3600s steps(60) tick infinite;
-            -moz-animation: 3600s steps(60) tick infinite;
+            animation: 3600s var(--min-delay) steps(60) tick infinite;
+            -webkit-animation: 3600s var(--min-delay) steps(60) tick infinite;
+            -moz-animation: 3600s var(--min-delay) steps(60) tick infinite;
         }
 
         .hourhandholder {
-            animation: 43200s linear tick infinite;
-            -webkit-animation: 43200s linear tick infinite;
-            -moz-animation: 43200s linear tick infinite;
+            animation: 43200s var(--hour-delay) linear tick infinite;
+            -webkit-animation: 43200s var(--hour-delay) linear tick infinite;
+            -moz-animation: 43200s var(--hour-delay) linear tick infinite;
         }
 
         .secondhand {
@@ -177,13 +179,16 @@
     <div class="footer">
         &lt;/&gt; by
         <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
-        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.analogueclock" alt="">
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.analogueclock" alt="" />
     </div>
     <script>
         let time = new Date();
-        let min = time.getMinutes() * 6 + 180; //(from 0 to 59)
-        let sec = time.getSeconds() * 6 + 180; //(from 0 to 59)
-        let hour = (time.getHours() % 12 || 12) * 30 + 180; //(from 0 to 23)
+        let h = time.getHours();
+        let m = time.getMinutes();
+        let s = time.getSeconds();
+        let min = m * 6 + 180; //(from 0 to 59)
+        let sec = s * 6 + 180; //(from 0 to 59)
+        let hour = (h % 12 || 12) * 30 + 180; //(from 0 to 23)
         console.table({
             min,
             sec,
@@ -192,6 +197,10 @@
         $("body").css("--min-start", `${min}deg`);
         $("body").css("--hour-start", `${hour}deg`);
         $("body").css("--sec-start", `${sec}deg`);
+        // fix the delay issue bu adjusting the delays
+        $("body").css("--min-delay", `-${s}s`);
+        let hourHandDelay = m * 60 + s;
+        $("body").css("--hour-delay", `-${hourHandDelay}s`);
     </script>
 </body>
 
