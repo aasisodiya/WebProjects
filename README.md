@@ -186,3 +186,5 @@
 |Prevent Screen Reader From Reading an Element|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#prevent-screen-reader-from-reading-an-element-using-aria-hidden-attribute)|11-July-2021|Prevent Screen Reader From Reading an Element using `aria-hidden="true"`|
 |Scroll With Padding Using `scroll-padding-top`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#scroll-with-padding-using-scroll-padding-top)|14-July-2021|Scroll With Padding Using `scroll-padding-top`|
 |`border` vs `outline`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#border-vs-outline)|15-July-2021|`border` vs `outline`|
+|Reading a File on UI|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-create-download-file/#reading-a-file-on-ui)|20-July-2021|Reading a File on UI|
+|Implementing Drag and Drop|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-create-download-file/#implementing-drag-and-drop)|20-July-2021|Implementing Drag and Drop|

@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create And Download File From UI</title>
-    <meta name="author" content="Akash Sisodiya">
-    <meta name="description" content="Create And Download File From UI">
-    <link rel="icon" href="../../../../shared/img/favicon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet">
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Create And Download File From UI" />
+    <link rel="icon" href="../../../../shared/img/favicon.png" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <style>
@@ -42,7 +42,7 @@
         }
 
         * {
-            font-family: 'Exo 2', sans-serif;
+            font-family: "Exo 2", sans-serif;
         }
 
         /* Template Code End */
@@ -58,7 +58,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         .userinput,
@@ -110,18 +110,51 @@
             border-radius: 1rem;
             outline: none;
         }
+
+        #readfile {
+            color: cyan;
+            background: darkslategrey;
+            margin-bottom: 1rem;
+            border-radius: 1rem;
+        }
+
+        #readfile::file-selector-button {
+            /* border: none; */
+            cursor: pointer;
+            color: cyan;
+            background: darkslategrey;
+            border-radius: 1rem;
+            border: cyan 1px solid;
+        }
+
+        /* Style for scroll */
+        .scroll-bar::-webkit-scrollbar {
+            width: 5px;
+            /* width of the entire scrollbar */
+        }
+
+        .scroll-bar::-webkit-scrollbar-track {
+            background: #212529;
+            /* color of the tracking area */
+        }
+
+        .scroll-bar::-webkit-scrollbar-thumb {
+            background-color: lime;
+            border-radius: 20px;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <div>
+            <input type="file" name="readfile" id="readfile" accept=".txt" />
             <div class="userinput">
-                <textarea name="File Content" id="content" cols="30" rows="10"
+                <textarea name="File Content" class="scroll-bar" id="content" cols="30" rows="10"
                     placeholder="Enter Content Here"></textarea>
             </div>
             <div class="outputfile">
-                <input type="text" id="filename" placeholder="Enter File Name with Extension">
+                <input type="text" id="filename" placeholder="Enter File Name with Extension" />
             </div>
             <div class="download">
                 <button id="download">Download</button>
@@ -141,16 +174,70 @@
             $("#createAndDownloadFile").remove();
         }
         // Download button event listener
-        $('#download').on('click', function () {
-            console.log('File Download Triggered');
-            let content = $('#content').val();
-            let filename = $('#filename').val();
+        $("#download").on("click", function () {
+            console.log("File Download Triggered");
+            let content = $("#content").val();
+            let filename = $("#filename").val();
+            if (filename == "") {
+                filename = "default.txt";
+            }
             createAndDownloadFile(content, filename);
+        });
+
+        // File reader
+        const reader = new FileReader();
+        reader.addEventListener("load", (event) => {
+            // This gets executed 2nd
+            // Log the content of txt file
+            console.log(event.target.result);
+            $("#content").text(event.target.result);
+        });
+        // Progress Tracker
+        reader.addEventListener("progress", (event) => {
+            // This gets executed 1st
+            if (event.loaded && event.total) {
+                const percent = (event.loaded / event.total) * 100;
+                console.log(`Progress: ${Math.round(percent)}`);
+            }
+        });
+
+        // Function to read file
+        $("#readfile").change(function (event) {
+            const fileList = event.target.files;
+            console.log(fileList);
+            let inputFile = fileList[0];
+            // FileList {0: File, length: 1}
+            console.log(inputFile.name);
+            // test-2020-03-10.csv
+            console.log(inputFile.type);
+            // text/plain
+            console.log(inputFile.size);
+            // 112
+            // after below func call only above 2 handlers get triggered
+            reader.readAsText(inputFile);
+            // reader.readAsDataURL(inputFile);
+        });
+
+        $("body").on("dragover", (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            event.originalEvent.dataTransfer.dropEffect = "copy";
+        });
+
+        $("body").on("drop", (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            const fileList = event.originalEvent.dataTransfer.files;
+            console.log(fileList);
+            let inputFile = fileList[0];
+            reader.readAsText(inputFile);
+            // reader.readAsDataURL(inputFile);
         });
     </script>
     <!-- Below code is for footer -->
     <div class="footer">
-        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        &lt;&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
         <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.downloadfile" alt="">
     </div>
 </body>
