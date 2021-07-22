@@ -76,6 +76,7 @@
 |Light Saber Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/16LightSaber/)|17-July-2021|Light Saber Animation|
 |CSS Clock Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/17CSSOnlyClock/)|18-July-2021|CSS Clock Animation|
 |Good&Bad Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/18GoodBadAnimation/)|21-July-2021|Inspired from [Music Video](https://video.eko.com/v/A98yoG)|
+|Cool Fonts|[Link](https://aasisodiya.github.io/WebProjects/45CoolFonts/)|23-July-2021|Collection of all fonts I have used|
 
 ---
 

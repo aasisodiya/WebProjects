@@ -1,0 +1,114 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    /* CSS Code to handle unwanted element highlights / div selection in Android */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Template Code End */
+
+body {
+    margin: 0;
+    background: linear-gradient(#f70440, #fa0956);
+    min-height: 100vh;
+}
+
+#myfonts {
+    width: fit-content;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 400px) {
+    #myfonts {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #myfonts {
+        grid-template-columns: auto;
+    }
+}
+
+.font {
+    max-width: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 2px 0 grey;
+    background: #13131491;
+    backdrop-filter: grayscale(1);
+    text-align: center;
+}
+
+.fontname {
+    color: orange;
+    width: inherit;
+    word-break: break-all;
+    padding: 5px;
+}
+
+.fontexample {
+    width: inherit;
+    word-break: break-all;
+    padding: 5px;
+    color: white;
+}
+
+.fontcss {
+    width: inherit;
+    word-break: break-all;
+    padding: 5px;
+    color: grey;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 0.8rem;
+}
+
+.fontcss>div {
+    cursor: pointer;
+}
+
+.fontcss>div::before {
+    content: "\f24d";
+    font-family: FontAwesome;
+    font-weight: 900;
+    margin-right: 5px;
+}
+
+.fontcss>div:hover {
+    color: white;
+    font-weight: bold;
+}
+
+.fontcss>div:hover::before {
+    color: orange;
+    font-weight: bold;
+}
