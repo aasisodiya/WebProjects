@@ -37,6 +37,7 @@
   - [Prevent Division Selection on Chrome (Android)](#prevent-division-selection-on-chrome-android)
   - [Prevent Screen Reader From Reading An Element Using `aria-hidden` Attribute](#prevent-screen-reader-from-reading-an-element-using-aria-hidden-attribute)
   - [`border` vs `outline`](#border-vs-outline)
+  - [Using Shadow with Clip-Path](#using-shadow-with-clip-path)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -724,6 +725,32 @@ Example
 |-|-|
 |`border` of an element takes space|`outline` doesn't take any space|
 |You can have rounded corner|Rounded corners aren't supported|
+
+---
+
+## Using Shadow with Clip-Path
+
+For applying shadow to and Element with `clip-path`, you can simply wrap the element inside another div and then applying `filter` property with `drop-shadow` value. Sample Example is given below
+
+```html
+<div class="rotor-wrap">
+    <div class="rotor"></div>
+</div>
+```
+
+```css
+.rotor {
+    background: orange;
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+.rotor-wrap {
+    filter: drop-shadow(0px 0px 5px orange);
+}
+```
+
+> Example [Link](../../26Animations/19OnTouchAnimation/)
 
 ---
 
