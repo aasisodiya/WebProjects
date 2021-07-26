@@ -38,6 +38,7 @@
   - [Prevent Screen Reader From Reading An Element Using `aria-hidden` Attribute](#prevent-screen-reader-from-reading-an-element-using-aria-hidden-attribute)
   - [`border` vs `outline`](#border-vs-outline)
   - [Using Shadow with Clip-Path](#using-shadow-with-clip-path)
+  - [`quotes` CSS Property](#quotes-css-property)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -751,6 +752,20 @@ For applying shadow to and Element with `clip-path`, you can simply wrap the ele
 ```
 
 > Example [Link](../../26Animations/19OnTouchAnimation/)
+
+---
+
+## `quotes` CSS Property
+
+The quotes CSS property sets how the browser should render quotation marks that are added using the open-quotes or close-quotes values of the CSS content property. Can only be used with `<q>` tag
+
+```css
+q {
+/* <string> values */
+  quotes: "«" "»";           /* Set open-quote and close-quote to the French quotation marks */
+  quotes: "«" "»" "‹" "›";   /* Set two levels of quotation marks */
+}
+```
 
 ---
 
