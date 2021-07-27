@@ -192,5 +192,6 @@
 |Reading a File on UI|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-create-download-file/#reading-a-file-on-ui)|20-July-2021|Reading a File on UI|
 |Implementing Drag and Drop|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-create-download-file/#implementing-drag-and-drop)|20-July-2021|Implementing Drag and Drop|
 |Using Shadow with Clip Path|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#using-shadow-with-clip-path)|25-July-2021|Using Shadow With Clip Path|
-|Columns Property in CSS|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css-layout#columns-in-css)|26-July-2021|`columns` Property in CSS|
-|Quotes in CSS|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#quotes-css-property)|27-July-2021|`quotes` CSS Property|
+|`columns` Property in CSS|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css-layout#columns-in-css)|26-July-2021|`columns` Property in CSS|
+|`quotes` CSS Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#quotes-css-property)|27-July-2021|`quotes` CSS Property|
+|`content` CSS Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#content-css-property)|28-July-2021|`content` CSS Property|
