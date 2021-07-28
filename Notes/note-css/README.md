@@ -732,7 +732,7 @@ Example
 
 ## Using Shadow with Clip-Path
 
-For applying shadow to and Element with `clip-path`, you can simply wrap the element inside another div and then applying `filter` property with `drop-shadow` value. Sample Example is given below
+For applying shadow to and Element with `clip-path`, you can simply wrap the element inside another div and then applying `filter` property with `drop-shadow` value. (i.e. applied on parent of clipped child) Sample Example is given below
 
 ```html
 <div class="rotor-wrap">
