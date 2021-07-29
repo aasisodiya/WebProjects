@@ -195,3 +195,4 @@
 |`columns` Property in CSS|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css-layout#columns-in-css)|26-July-2021|`columns` Property in CSS|
 |`quotes` CSS Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#quotes-css-property)|27-July-2021|`quotes` CSS Property|
 |`content` CSS Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#content-css-property)|28-July-2021|`content` CSS Property|
+|Draggable Element using Jquery|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-draggable)|30-July-2021|Making an element draggable using Jquery|
