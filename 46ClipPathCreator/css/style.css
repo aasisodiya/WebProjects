@@ -1,0 +1,118 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    /* CSS Code to handle unwanted element highlights / div selection in Android */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Template Code End */
+
+body {
+    background: linear-gradient(45deg, #121212, #000000);
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    min-height: 100vh;
+}
+
+.clippathgenerator {
+    height: 400px;
+    width: 300px;
+    position: relative;
+}
+
+.board, .clipboard, .reference {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.pointer {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(148, 0, 211, 0.5);
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
+    /* Add adjustment */
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.reference {
+    background: url(https://picsum.photos/300/500), linear-gradient(grey, black);
+    /* background: linear-gradient(green, orange); */
+    filter: brightness(0.5);
+}
+
+.board {
+    background: url(https://picsum.photos/300/500), linear-gradient(grey, black);
+    /* background: linear-gradient(red, orange); */
+}
+
+.clipboard {
+    background: rgba(0, 0, 0, 0);
+    cursor: crosshair;
+}
+
+.output {
+    background: #121212;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 2rem;
+    max-width: 400px;
+}
+
+.blue {
+    color: lightseagreen;
+}
+
+.red {
+    color: red;
+}
+
+.orange {
+    color: orange;
+}
+
+.logo {
+    color: white;
+    padding: 1rem;
+}
+
+.logo * {
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+}

@@ -78,6 +78,7 @@
 |Good&Bad Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/18GoodBadAnimation/)|21-July-2021|Inspired from [Music Video](https://video.eko.com/v/A98yoG)|
 |Cool Fonts|[Link](https://aasisodiya.github.io/WebProjects/45CoolFonts/)|23-July-2021|Collection of all fonts I have used|
 |Touch Initiated Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/19OnTouchAnimation/)|25-July-2021|Animation plays while you touch (or keep touching) the screen, and stops as soon as you stop touching|
+|Polygon Clip Path Generator|[Link](https://aasisodiya.github.io/WebProjects/46ClipPathCreator/)|31-July-2021|Polygon Clip Path Generator helps you generate polygon value for using with `clip-path` css property|
 
 ---
 
