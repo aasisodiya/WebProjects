@@ -35,13 +35,14 @@
 body {
     background: linear-gradient(45deg, #121212, #000000);
     margin: 0;
+    background-attachment: fixed;
 }
 
 .container {
     display: grid;
     place-content: center;
     justify-items: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 .clippathgenerator {
@@ -60,25 +61,33 @@ body {
 
 .pointer {
     position: absolute;
+    background: orange;
+    backdrop-filter: blur(5px);
+    cursor: move;
+}
+
+.pointer>div {
+    position: absolute;
     width: 10px;
     height: 10px;
-    background: rgba(148, 0, 211, 0.5);
-    border-radius: 50%;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
+    background: orange;
     /* Add adjustment */
     transform: translate3d(-50%, -50%, 0);
+    border-radius: 50%;
+    box-shadow: 0 0 1px 1px rgb(21, 21, 21);
 }
 
 .reference {
     background: url(https://picsum.photos/300/500), linear-gradient(grey, black);
     /* background: linear-gradient(green, orange); */
     filter: brightness(0.5);
+    background-size: cover;
 }
 
 .board {
     background: url(https://picsum.photos/300/500), linear-gradient(grey, black);
     /* background: linear-gradient(red, orange); */
+    background-size: cover;
 }
 
 .clipboard {
@@ -88,10 +97,11 @@ body {
 
 .output {
     background: #121212;
-    padding: 1rem;
+    padding: 1rem 2rem 1rem 1rem;
     border-radius: 5px;
     margin: 2rem;
     max-width: 400px;
+    position: relative;
 }
 
 .blue {
@@ -115,4 +125,93 @@ body {
     padding: 0;
     margin: 0;
     text-transform: uppercase;
+}
+
+#copy {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0.5rem;
+    bottom: 0;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    color: grey;
+}
+
+.output:hover>#copy {
+    color: white;
+}
+
+#copy:hover {
+    color: cyan !important;
+}
+
+#copy:active {
+    color: darkcyan !important;
+}
+
+.copied {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(130, 130, 130, 0.5);
+    border-radius: 5px;
+    padding: 1rem;
+    backdrop-filter: blur(5px);
+    animation: popup 4s;
+    transform: translateY(100px);
+    display: none;
+    font-weight: initial;
+    color: white;
+    display: none;
+}
+
+@keyframes popup {
+    0% {
+        transform: translateY(100px);
+    }
+    20% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    80% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(100px);
+    }
+}
+
+.sizeinput {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sizeinput div {
+    background: #333333;
+    padding-left: 0.5rem;
+    border-radius: 5px;
+}
+
+#width, #height {
+    width: 100px;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-left: 0.25rem;
+}
+
+.height {
+    margin-left: 1rem;
+}
+
+.label {
+    color: orange;
+    font-weight: bolder;
 }

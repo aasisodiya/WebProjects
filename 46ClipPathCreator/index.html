@@ -31,7 +31,7 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
     <!-- Font Awesome Import End -->
     <!-- Google Icons Import Start -->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- <link
         href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
         rel="stylesheet" /> -->
@@ -40,8 +40,8 @@
     <!-- Jquery Import Start -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script> -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <!-- Jquery Import End -->
     <!-- Custom JS Import Start -->
     <script src="js/script.js" defer></script>
@@ -53,6 +53,16 @@
         <h3>Polygon Clip Path Generator</h3>
     </div>
     <div class="container">
+        <div class="sizeinput">
+            <div class="width">
+                <span class="label">W</span>
+                <input type="number" name="width" id="width" placeholder="Width" value="300" />
+            </div>
+            <div class="height">
+                <span class="label">H</span>
+                <input type="number" name="height" id="height" placeholder="Height" value="400" />
+            </div>
+        </div>
         <div class="clippathgenerator">
             <div class="reference"></div>
             <div class="board"></div>
@@ -61,8 +71,10 @@
         <div class="output">
             <span class="blue">clip-path:</span> <span class="red">polygon(</span><span class="orange"
                 id="coord"></span><span class="red">);</span>;
+            <span class="material-icons" id="copy"> copy_all </span>
         </div>
     </div>
+    <div class="copied">Copied</div>
     <!-- Below code is for footer -->
     <div class="footer">
         &lt;/&gt; by

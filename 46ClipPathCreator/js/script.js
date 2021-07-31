@@ -58,8 +58,64 @@ $(".clipboard").on("click", function (event) {
         applyClipPath($(".board"), positions);
     }
     // Also add a visual pointer in order to make it interactive
-    let pointer = $("<div class='pointer'></div>")
+    let pointer = $("<div class='pointer'><div></div></div>")
         .css("top", `${yPercentage}%`)
         .css("left", `${xPercentage}%`);
     $(".clippathgenerator").append(pointer);
+
+    // Make pointer draggable
+    $(".pointer").draggable({
+        containment: "parent",
+        start: function () {},
+        drag: function () {
+            let top = $(this).css("top");
+            let left = $(this).css("left");
+            top = top.substr(0, top.length - 2);
+            left = left.substr(0, left.length - 2);
+            let index = $(".pointer").index(this);
+            let xPercentage = Math.abs(Math.round((left / rect.width) * 100));
+            let yPercentage = Math.abs(Math.round((top / rect.height) * 100));
+            positions[index].x = xPercentage;
+            positions[index].y = yPercentage;
+            applyClipPath($(".board"), positions);
+        },
+        stop: function () {},
+    });
+});
+
+// Function to Copy to ClipBoard
+function copyToClipboard(contentToCopy) {
+    var input = $("<input>");
+    $("body").append(input);
+    input.val(contentToCopy).select();
+    document.execCommand("copy");
+    input.remove();
+}
+
+// Funtion to show copied message as popup
+function popup() {
+    $(".copied").show();
+    $(".copied").animate();
+}
+
+// Event handlers for Copying code to clipboard
+$("#copy").on("click", function () {
+    $(".copied").hide();
+    let clipPathCSS = $("#coord").text();
+    let cssCopy = `clip-path: polygon(${clipPathCSS});`;
+    copyToClipboard(cssCopy);
+    popup();
+});
+
+$("#width, #height").on("change", function () {
+    let height = $("#height").val();
+    let width = $("#width").val();
+    console.log(height, width);
+    $(".clippathgenerator").css("width", `${width}`).css("height", `${height}`);
+    // Reset the clip path
+    $(".board").css("clip-path", "none");
+    // Delete all pointers
+    $(".pointer").remove();
+    // Reset the pointers positions array
+    positions = [];
 });
