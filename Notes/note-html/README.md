@@ -13,6 +13,8 @@
   - [Making Website Text Content Editable](#making-website-text-content-editable)
   - [`Robots.txt` File](#robotstxt-file)
   - [`spellcheck="true"` Attribute](#spellchecktrue-attribute)
+  - [Data Attributes](#data-attributes)
+    - [Ways To Read Data Attributes](#ways-to-read-data-attributes)
   - [Reference](#reference)
 
 ## `<meta>` tag: The metadata element
@@ -151,6 +153,52 @@ The `spellcheck` global attribute is an enumerated attribute defines whether the
 
 ---
 
+## Data Attributes
+
+Data Attributes i.e. `data-*` attributes allow us to store extra information on standard, semantic HTML elements without other hacks such as non-standard attributes, or extra properties on DOM. Any attribute on any element whose attribute name starts with data- is a data attribute. Example:
+
+```html
+<div data-category="car" data-type="4WD" data-fuel-type="diesel" data-class="racing">
+    ...
+</div>
+```
+
+> Each property is a string and can be read and written
+
+### Ways To Read Data Attributes
+
+Data Attributes can be read using `element.getAttribute(attributeName);` or a better simpler way is via a `dataset` property. To get a `data` attribute through the `dataset` object, get the property by the part of the attribute name after `data-`. Also the property can be read in CSS with the `attr()` function or can also be used as the attribute selectors in CSS
+
+> Note: dashes are converted to camelCase. Ex. `data-fuel-type` gets converted to `fuelType`
+
+```js
+const cardata = document.querySelector("#racecar1");
+console.log(cardata.dataset.category); // Output: car
+console.log(cardata.dataset.type); // Output: 4WD
+console.log(cardata.dataset.fuelType); // Output: diesel
+console.log(cardata.dataset.class); // Output: racing
+// OR
+const cardata = $("#racecar1");
+console.log(cardata.data("category")); // Output: car
+console.log(cardata.data("type")); // Output: 4WD
+console.log(cardata.data("fuelType")); // Output: diesel
+console.log(cardata.data("class")); // Output: racing
+```
+
+```css
+div:before {
+  content: attr(data-category);
+}
+div[data-fuel-type='diesel'] {
+  background: brown;
+}
+```
+
+> Using dataset is even slower than reading the data out with getAttribute().
+
+---
+
 ## Reference
 
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web)
+- [Using data-* attributes in JavaScript and CSS](https://hacks.mozilla.org/2012/10/using-data-attributes-in-javascript-and-css/)
