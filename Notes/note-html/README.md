@@ -15,6 +15,7 @@
   - [`spellcheck="true"` Attribute](#spellchecktrue-attribute)
   - [Data Attributes](#data-attributes)
     - [Ways To Read Data Attributes](#ways-to-read-data-attributes)
+  - [Global Attributes](#global-attributes)
   - [Reference](#reference)
 
 ## `<meta>` tag: The metadata element
@@ -195,6 +196,35 @@ div[data-fuel-type='diesel'] {
 ```
 
 > Using dataset is even slower than reading the data out with getAttribute().
+
+---
+
+## Global Attributes
+
+|Global Attribute|Description|
+|-|-|
+|accesskey|Specifies a shortcut key to activate/focus an element. Ex. `accesskey="a"`|
+|autocapitalize|Controls whether and how text input is automatically capitalized as it is entered/edited by the user. Ex. `autocapitalize=off|none|on|sentences|words|characters`|
+|autofocus|Indicates that an element is to be focused on page load. Ex. `autofocus=true|false`|
+|class|A space-separated list of the classes of the element.|
+|contenteditable|An enumerated attribute indicating if the element should be editable by the user. Ex. `contenteditable=true|false`|
+|data-*|Forms a class of attributes, called custom data attributes, that allow proprietary information to be exchanged|
+|dir|An enumerated attribute indicating the directionality of the element's text. Ex. `dir=ltr|rtl|auto`|
+|draggable|An enumerated attribute indicating whether the element can be dragged, using the Drag and Drop API. Ex. `draggable=true|false`|
+|enterkeyhint|Hints what action label (or icon) to present for the enter key on virtual keyboards.|
+|hidden|A Boolean attribute indicates that the element is not yet, or is no longer, relevant.|
+|id|Defines a unique identifier (ID) which must be unique in the whole document.|
+|inputmode|Provides a hint to browsers as to the type of virtual keyboard configuration to use when editing this element or its contents.|
+|is|Allows you to specify that a standard HTML element should behave like a registered custom built-in element|
+|lang|Helps define the language of an element: the language that non-editable elements are in, or the language that editable elements should be written in by the user.|
+|nonce|A cryptographic nonce ("number used once") which can be used by Content Security Policy to determine whether or not a given fetch will be allowed to proceed. Ex. `<script nonce="edv22gsd3klasak4ljs5lds">…</script>`|
+|part|A space-separated list of the part names of the element. Part names allows CSS to select and style specific elements in a shadow tree via the ::part pseudo-element.|
+|slot|Assigns a slot in a shadow DOM shadow tree to an element: An element with a slot attribute is assigned to the slot created by the <slot> element whose name attribute's value matches that slot attribute's value.|
+|spellcheck|An enumerated attribute defines whether the element may be checked for spelling errors|
+|style|Contains CSS styling declarations to be applied to the element.|
+|tabindex|An integer attribute indicating if the element can take input focus (is focusable), if it should participate to sequential keyboard navigation, and if so, at what position.|
+|title|Contains a text representing advisory information related to the element it belongs to. Such information can typically, but not necessarily, be presented to the user as a tooltip.|
+|translate|An enumerated attribute that is used to specify whether an element's attribute values and the values of its Text node children are to be translated when the page is localized, or whether to leave them unchanged.|
 
 ---
 
