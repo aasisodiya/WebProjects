@@ -198,3 +198,4 @@
 |`content` CSS Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#content-css-property)|28-July-2021|`content` CSS Property|
 |Draggable Element using Jquery|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-draggable)|30-July-2021|Making an element draggable using Jquery|
 |Data Attributes|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#data-attributes)|03-August-2021|Data Attributes in HTML i.e `data-*` Attributes|
+|Global Attributes|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#global-attributes)|04-August-2021|Global Attributes List|
