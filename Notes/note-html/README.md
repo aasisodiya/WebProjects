@@ -16,6 +16,7 @@
   - [Data Attributes](#data-attributes)
     - [Ways To Read Data Attributes](#ways-to-read-data-attributes)
   - [Global Attributes](#global-attributes)
+  - [Random Image Using `picsum.photos`](#random-image-using-picsumphotos)
   - [Reference](#reference)
 
 ## `<meta>` tag: The metadata element
@@ -225,6 +226,18 @@ div[data-fuel-type='diesel'] {
 |tabindex|An integer attribute indicating if the element can take input focus (is focusable), if it should participate to sequential keyboard navigation, and if so, at what position.|
 |title|Contains a text representing advisory information related to the element it belongs to. Such information can typically, but not necessarily, be presented to the user as a tooltip.|
 |translate|An enumerated attribute that is used to specify whether an element's attribute values and the values of its Text node children are to be translated when the page is localized, or whether to leave them unchanged.|
+
+---
+
+## Random Image Using `picsum.photos`
+
+Sometimes its better to focus on code, then on finding images for UI so for such time I like to use `picsum.photos`. Code is just as simple, as given below
+
+```html
+<img src="https://picsum.photos/10/10">
+```
+
+So all you have to do is use syntax: `https://picsum.photos/<width>/<height>` where both `<width>` and `<height>` are replaced with numbers representing pixels. Ex. `https://picsum.photos/300/100` will give you an image (random) with width of `300px` and height of `100px`
 
 ---
 
