@@ -37,6 +37,9 @@
   - [Prevent Division Selection on Chrome (Android)](#prevent-division-selection-on-chrome-android)
   - [Prevent Screen Reader From Reading An Element Using `aria-hidden` Attribute](#prevent-screen-reader-from-reading-an-element-using-aria-hidden-attribute)
   - [`border` vs `outline`](#border-vs-outline)
+  - [Using Shadow with Clip-Path](#using-shadow-with-clip-path)
+  - [`quotes` CSS Property](#quotes-css-property)
+  - [`content` CSS Property](#content-css-property)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -724,6 +727,91 @@ Example
 |-|-|
 |`border` of an element takes space|`outline` doesn't take any space|
 |You can have rounded corner|Rounded corners aren't supported|
+
+---
+
+## Using Shadow with Clip-Path
+
+For applying shadow to and Element with `clip-path`, you can simply wrap the element inside another div and then applying `filter` property with `drop-shadow` value. (i.e. applied on parent of clipped child) Sample Example is given below
+
+```html
+<div class="rotor-wrap">
+    <div class="rotor"></div>
+</div>
+```
+
+```css
+.rotor {
+    background: orange;
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+.rotor-wrap {
+    filter: drop-shadow(0px 0px 5px orange);
+}
+```
+
+> Example [Link](../../26Animations/19OnTouchAnimation/)
+
+---
+
+## `quotes` CSS Property
+
+The quotes CSS property sets how the browser should render quotation marks that are added using the open-quotes or close-quotes values of the CSS content property. Can only be used with `<q>` tag
+
+```css
+q {
+/* <string> values */
+  quotes: "«" "»";           /* Set open-quote and close-quote to the French quotation marks */
+  quotes: "«" "»" "‹" "›";   /* Set two levels of quotation marks */
+}
+```
+
+---
+
+## `content` CSS Property
+
+The `content` CSS property replaces an element with a generated value. Objects inserted using the content property are anonymous replaced elements. Also just an observation `content` property only works with `::after` and `::before`
+
+```css
+.contentValues {
+/* Keywords that cannot be combined with other values */
+content: normal;
+content: none;
+
+/* <image> values */
+content: url("http://www.example.com/test.png");
+content: linear-gradient(#e66465, #9198e5);
+content: image-set("image1x.png" 1x, "image2x.png" 2x);
+
+/* alt text for generated content, added in the Level 3 specification */
+content: url("http://www.example.com/test.png") / "This is the alt text";
+
+/* <string> value */
+content: "prefix";
+
+/* <counter> values, optionally with <list-style-type> */
+content: counter(chapter_counter);
+content: counter(chapter_counter, upper-roman);
+content: counters(section_counter, ".");
+content: counters(section_counter, ".", decimal-leading-zero);
+
+/* attr() value linked to the HTML attribute value */
+content: attr(value string);
+
+/* Language- and position-dependent keywords */
+content: open-quote;
+content: close-quote;
+content: no-open-quote;
+content: no-close-quote;
+
+/* Except for normal and none, several values can be used simultaneously */
+content: open-quote counter(chapter_counter);
+}
+```
+
+> [Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/content) & [Example](./content-example/)
 
 ---
 

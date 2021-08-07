@@ -13,6 +13,10 @@
   - [Making Website Text Content Editable](#making-website-text-content-editable)
   - [`Robots.txt` File](#robotstxt-file)
   - [`spellcheck="true"` Attribute](#spellchecktrue-attribute)
+  - [Data Attributes](#data-attributes)
+    - [Ways To Read Data Attributes](#ways-to-read-data-attributes)
+  - [Global Attributes](#global-attributes)
+  - [Random Image Using `picsum.photos`](#random-image-using-picsumphotos)
   - [Reference](#reference)
 
 ## `<meta>` tag: The metadata element
@@ -151,6 +155,93 @@ The `spellcheck` global attribute is an enumerated attribute defines whether the
 
 ---
 
+## Data Attributes
+
+Data Attributes i.e. `data-*` attributes allow us to store extra information on standard, semantic HTML elements without other hacks such as non-standard attributes, or extra properties on DOM. Any attribute on any element whose attribute name starts with data- is a data attribute. Example:
+
+```html
+<div data-category="car" data-type="4WD" data-fuel-type="diesel" data-class="racing">
+    ...
+</div>
+```
+
+> Each property is a string and can be read and written
+
+### Ways To Read Data Attributes
+
+Data Attributes can be read using `element.getAttribute(attributeName);` or a better simpler way is via a `dataset` property. To get a `data` attribute through the `dataset` object, get the property by the part of the attribute name after `data-`. Also the property can be read in CSS with the `attr()` function or can also be used as the attribute selectors in CSS
+
+> Note: dashes are converted to camelCase. Ex. `data-fuel-type` gets converted to `fuelType`
+
+```js
+const cardata = document.querySelector("#racecar1");
+console.log(cardata.dataset.category); // Output: car
+console.log(cardata.dataset.type); // Output: 4WD
+console.log(cardata.dataset.fuelType); // Output: diesel
+console.log(cardata.dataset.class); // Output: racing
+// OR
+const cardata = $("#racecar1");
+console.log(cardata.data("category")); // Output: car
+console.log(cardata.data("type")); // Output: 4WD
+console.log(cardata.data("fuelType")); // Output: diesel
+console.log(cardata.data("class")); // Output: racing
+```
+
+```css
+div:before {
+  content: attr(data-category);
+}
+div[data-fuel-type='diesel'] {
+  background: brown;
+}
+```
+
+> Using dataset is even slower than reading the data out with getAttribute().
+
+---
+
+## Global Attributes
+
+|Global Attribute|Description|
+|-|-|
+|accesskey|Specifies a shortcut key to activate/focus an element. Ex. `accesskey="a"`|
+|autocapitalize|Controls whether and how text input is automatically capitalized as it is entered/edited by the user. Ex. `autocapitalize=off|none|on|sentences|words|characters`|
+|autofocus|Indicates that an element is to be focused on page load. Ex. `autofocus=true|false`|
+|class|A space-separated list of the classes of the element.|
+|contenteditable|An enumerated attribute indicating if the element should be editable by the user. Ex. `contenteditable=true|false`|
+|data-*|Forms a class of attributes, called custom data attributes, that allow proprietary information to be exchanged|
+|dir|An enumerated attribute indicating the directionality of the element's text. Ex. `dir=ltr|rtl|auto`|
+|draggable|An enumerated attribute indicating whether the element can be dragged, using the Drag and Drop API. Ex. `draggable=true|false`|
+|enterkeyhint|Hints what action label (or icon) to present for the enter key on virtual keyboards.|
+|hidden|A Boolean attribute indicates that the element is not yet, or is no longer, relevant.|
+|id|Defines a unique identifier (ID) which must be unique in the whole document.|
+|inputmode|Provides a hint to browsers as to the type of virtual keyboard configuration to use when editing this element or its contents.|
+|is|Allows you to specify that a standard HTML element should behave like a registered custom built-in element|
+|lang|Helps define the language of an element: the language that non-editable elements are in, or the language that editable elements should be written in by the user.|
+|nonce|A cryptographic nonce ("number used once") which can be used by Content Security Policy to determine whether or not a given fetch will be allowed to proceed. Ex. `<script nonce="edv22gsd3klasak4ljs5lds">…</script>`|
+|part|A space-separated list of the part names of the element. Part names allows CSS to select and style specific elements in a shadow tree via the ::part pseudo-element.|
+|slot|Assigns a slot in a shadow DOM shadow tree to an element: An element with a slot attribute is assigned to the slot created by the <slot> element whose name attribute's value matches that slot attribute's value.|
+|spellcheck|An enumerated attribute defines whether the element may be checked for spelling errors|
+|style|Contains CSS styling declarations to be applied to the element.|
+|tabindex|An integer attribute indicating if the element can take input focus (is focusable), if it should participate to sequential keyboard navigation, and if so, at what position.|
+|title|Contains a text representing advisory information related to the element it belongs to. Such information can typically, but not necessarily, be presented to the user as a tooltip.|
+|translate|An enumerated attribute that is used to specify whether an element's attribute values and the values of its Text node children are to be translated when the page is localized, or whether to leave them unchanged.|
+
+---
+
+## Random Image Using `picsum.photos`
+
+Sometimes its better to focus on code, then on finding images for UI so for such time I like to use `picsum.photos`. Code is just as simple, as given below
+
+```html
+<img src="https://picsum.photos/10/10">
+```
+
+So all you have to do is use syntax: `https://picsum.photos/<width>/<height>` where both `<width>` and `<height>` are replaced with numbers representing pixels. Ex. `https://picsum.photos/300/100` will give you an image (random) with width of `300px` and height of `100px`
+
+---
+
 ## Reference
 
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web)
+- [Using data-* attributes in JavaScript and CSS](https://hacks.mozilla.org/2012/10/using-data-attributes-in-javascript-and-css/)

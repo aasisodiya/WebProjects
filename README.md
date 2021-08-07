@@ -77,6 +77,9 @@
 |CSS Clock Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/17CSSOnlyClock/)|18-July-2021|CSS Clock Animation|
 |Good&Bad Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/18GoodBadAnimation/)|21-July-2021|Inspired from [Music Video](https://video.eko.com/v/A98yoG)|
 |Cool Fonts|[Link](https://aasisodiya.github.io/WebProjects/45CoolFonts/)|23-July-2021|Collection of all fonts I have used|
+|Touch Initiated Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/19OnTouchAnimation/)|25-July-2021|Animation plays while you touch (or keep touching) the screen, and stops as soon as you stop touching|
+|Polygon Clip Path Generator|[Link](https://aasisodiya.github.io/WebProjects/46ClipPathCreator/)|31-July-2021|Polygon Clip Path Generator helps you generate polygon value for using with `clip-path` css property|
+|Neon Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/20NeonAnimation/)|06-Aug-2021|Neon Animation|
 
 ---
 
@@ -190,3 +193,11 @@
 |`border` vs `outline`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#border-vs-outline)|15-July-2021|`border` vs `outline`|
 |Reading a File on UI|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-create-download-file/#reading-a-file-on-ui)|20-July-2021|Reading a File on UI|
 |Implementing Drag and Drop|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-create-download-file/#implementing-drag-and-drop)|20-July-2021|Implementing Drag and Drop|
+|Using Shadow with Clip Path|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#using-shadow-with-clip-path)|25-July-2021|Using Shadow With Clip Path|
+|`columns` Property in CSS|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css-layout#columns-in-css)|26-July-2021|`columns` Property in CSS|
+|`quotes` CSS Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#quotes-css-property)|27-July-2021|`quotes` CSS Property|
+|`content` CSS Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#content-css-property)|28-July-2021|`content` CSS Property|
+|Draggable Element using Jquery|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-draggable)|30-July-2021|Making an element draggable using Jquery|
+|Data Attributes|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#data-attributes)|03-August-2021|Data Attributes in HTML i.e `data-*` Attributes|
+|Global Attributes|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#global-attributes)|04-August-2021|Global Attributes List|
+|Random Image Using `picsum.photos`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#random-image-using-picsumphotos)|05-August-2021|Random Image Using `picsum.photos`|
