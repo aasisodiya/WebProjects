@@ -55,7 +55,7 @@ reader.addEventListener("load", (event) => {
     // This gets executed 2nd
     // Log the content of txt file
     console.log(event.target.result);
-    $("#content").text(event.target.result);
+    $("#content").val(event.target.result);
 });
 // Progress Tracker
 reader.addEventListener("progress", (event) => {
@@ -70,6 +70,9 @@ reader.addEventListener("progress", (event) => {
 $("#readfile").change(function (event) {
     const fileList = event.target.files;
     console.log(fileList);
+    if (fileList.length == 0) {
+        return;
+    }
     let inputFile = fileList[0];
     // FileList {0: File, length: 1}
     console.log(inputFile.name);
