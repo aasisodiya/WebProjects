@@ -78,6 +78,7 @@ fontsCollection.push(new GoogleFont("Space Mono"));
 fontsCollection.push(new GoogleFont("Lato"));
 fontsCollection.push(new GoogleFont("Audiowide"));
 fontsCollection.push(new GoogleFont("Poiret One"));
+fontsCollection.push(new GoogleFont("Amatic SC"));
 fontsCollection.push(new GoogleFont("Special Elite"));
 fontsCollection.push(
     new Font(
