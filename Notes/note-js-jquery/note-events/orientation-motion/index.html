@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Device Orientation And Motion" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Device Orientation And Motion" />
+    <meta property="og:description" content="Device Orientation And Motion" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>Device Orientation And Motion</title>
+    <link rel="icon" href="../../shared/img/favicon.png" type="image/x-icon" />
+    <!-- Title and Icon of the Website -->
+    <!-- Google Font Import Start -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap" rel="stylesheet" />
+    <!-- Google Font Import End -->
+    <!-- Style -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap");
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: fit-content;
+            font-weight: bold;
+            color: white;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: cyan;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: "Exo 2", sans-serif;
+            /* CSS Code to handle unwanted element highlights / div selection in Android */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Template Code End */
+        body {
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, black, rgb(12, 12, 12));
+            color: white;
+        }
+    </style>
+</head>
+
+<body ontouchend>
+    <h1>Device Orientation & Motion</h1>
+    <div id="op1"></div>
+    <div id="op2"></div>
+    <script>
+        // The handleOrientation function can look something like this:
+        function handleOrientation(event) {
+            let absolute = event.absolute;
+            let alpha = event.alpha;
+            let beta = event.beta;
+            let gamma = event.gamma;
+            let op = {
+                absolute: absolute,
+                alpha: alpha,
+                beta: beta,
+                gamma: gamma,
+            };
+            console.table(op);
+            // Do stuff with the new orientation data
+            document.getElementById("op1").innerHTML = JSON.stringify(op);
+        }
+        // The handleMotion function can look something like this:
+        function handleMotion(deviceMotionEvent) {
+            let acceleration = deviceMotionEvent.acceleration;
+            let ax = acceleration.x;
+            let ay = acceleration.y;
+            let az = acceleration.z;
+            let accelerationIncludingGravity =
+                deviceMotionEvent.accelerationIncludingGravity;
+            let agx = accelerationIncludingGravity.x;
+            let agy = accelerationIncludingGravity.y;
+            let agz = accelerationIncludingGravity.z;
+            let rotationRate = deviceMotionEvent.rotationRate;
+            let alpha = rotationRate.alpha;
+            let beta = rotationRate.beta;
+            let gamma = rotationRate.gamma;
+            let interval = deviceMotionEvent.interval;
+            let op = {
+                ax: ax,
+                ay: ay,
+                az: az,
+                agx: agx,
+                agy: agy,
+                agz: agz,
+                alpha: alpha,
+                beta: beta,
+                gamma: gamma,
+                interval: interval,
+            };
+            console.table(op);
+            // Do stuff with the new motion data
+            document.getElementById("op2").innerHTML = JSON.stringify(op);
+        }
+        console.log("Test");
+        window.addEventListener("deviceorientation", handleOrientation, true);
+        window.addEventListener("devicemotion", handleMotion, true);
+    </script>
+
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.orientationmotion" alt="" />
+    </div>
+</body>
+
+</html>

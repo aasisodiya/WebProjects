@@ -201,3 +201,4 @@
 |Data Attributes|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#data-attributes)|03-August-2021|Data Attributes in HTML i.e `data-*` Attributes|
 |Global Attributes|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#global-attributes)|04-August-2021|Global Attributes List|
 |Random Image Using `picsum.photos`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#random-image-using-picsumphotos)|05-August-2021|Random Image Using `picsum.photos`|
+|Detect Device Orientation|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-events/#detecting-device-orientation)|10-August-2021|Detecting Device Orientation / Motion|
