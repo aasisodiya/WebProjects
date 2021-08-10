@@ -51,6 +51,18 @@ $("#draggable").draggable();
 $("#draggable").draggable({
   containment: "parent",
 });
+// Below code can help you detect the event of drag start, dragging and drag stop
+$("#draggable2").draggable({
+  start: function () {
+    console.log("Start");
+  },
+  drag: function () {
+    console.log("dragging");
+  },
+  stop: function () {
+    console.log("Stop");
+  },
+});
 ```
 
 > Example [link](./example/)
