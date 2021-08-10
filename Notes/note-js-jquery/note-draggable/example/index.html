@@ -60,7 +60,8 @@
 
         /* Template Code End */
 
-        #draggable {
+        #draggable,
+        #draggable2 {
             background: darkorange;
             height: 200px;
             width: 200px;
@@ -80,6 +81,9 @@
     <div id="draggable">
         <p>Draggable Block</p>
     </div>
+    <div id="draggable2">
+        <p>Draggable Block</p>
+    </div>
     <!-- Below code is for footer -->
     <div class="footer">
         &lt;/&gt; by
@@ -90,6 +94,17 @@
         // $("#draggable").draggable();
         $("#draggable").draggable({
             containment: "parent"
+        });
+        $("#draggable2").draggable({
+            start: function () {
+                console.log("Start");
+            },
+            drag: function () {
+                console.log("dragging");
+            },
+            stop: function () {
+                console.log("Stop");
+            }
         });
     </script>
 </body>
