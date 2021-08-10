@@ -70,13 +70,71 @@
             background: linear-gradient(45deg, black, rgb(12, 12, 12));
             color: white;
         }
+
+        .inline {
+            display: flex;
+        }
     </style>
 </head>
 
 <body ontouchend>
     <h1>Device Orientation & Motion</h1>
-    <div id="op1"></div>
-    <div id="op2"></div>
+    <div class="inline">
+        absolute :
+        <div id="absolute">absolute</div>
+    </div>
+    <div class="inline">
+        alpha :
+        <div id="alpha">alpha</div>
+    </div>
+    <div class="inline">
+        beta :
+        <div id="beta">beta</div>
+    </div>
+    <div class="inline">
+        gamma :
+        <div id="gamma">gamma</div>
+    </div>
+    <div class="inline">
+        ax :
+        <div id="ax">ax</div>
+    </div>
+    <div class="inline">
+        ay :
+        <div id="ay">ay</div>
+    </div>
+    <div class="inline">
+        az :
+        <div id="az">az</div>
+    </div>
+    <div class="inline">
+        agx :
+        <div id="agx">agx</div>
+    </div>
+    <div class="inline">
+        agy :
+        <div id="agy">agy</div>
+    </div>
+    <div class="inline">
+        agz :
+        <div id="agz">agz</div>
+    </div>
+    <div class="inline">
+        malpha :
+        <div id="malpha">malpha</div>
+    </div>
+    <div class="inline">
+        mbeta :
+        <div id="mbeta">mbeta</div>
+    </div>
+    <div class="inline">
+        mgamma :
+        <div id="mgamma">mgamma</div>
+    </div>
+    <div class="inline">
+        interval :
+        <div id="interval">interval</div>
+    </div>
     <script>
         // The handleOrientation function can look something like this:
         function handleOrientation(event) {
@@ -92,7 +150,10 @@
             };
             console.table(op);
             // Do stuff with the new orientation data
-            document.getElementById("op1").innerHTML = JSON.stringify(op);
+            document.getElementById("absolute").innerHTML = absolute;
+            document.getElementById("alpha").innerHTML = alpha;
+            document.getElementById("beta").innerHTML = beta;
+            document.getElementById("gamma").innerHTML = gamma;
         }
         // The handleMotion function can look something like this:
         function handleMotion(deviceMotionEvent) {
@@ -124,7 +185,16 @@
             };
             console.table(op);
             // Do stuff with the new motion data
-            document.getElementById("op2").innerHTML = JSON.stringify(op);
+            document.getElementById("ax").innerHTML = ax;
+            document.getElementById("ay").innerHTML = ay;
+            document.getElementById("az").innerHTML = az;
+            document.getElementById("agx").innerHTML = agx;
+            document.getElementById("agy").innerHTML = agy;
+            document.getElementById("agz").innerHTML = agz;
+            document.getElementById("malpha").innerHTML = alpha;
+            document.getElementById("mbeta").innerHTML = beta;
+            document.getElementById("mgamma").innerHTML = gamma;
+            document.getElementById("interval").innerHTML = interval;
         }
         console.log("Test");
         window.addEventListener("deviceorientation", handleOrientation, true);
