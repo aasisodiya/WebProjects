@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Tilt Card Animation" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tilt Card Animation" />
+    <meta property="og:description" content="Tilt Card Animation" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>Tilt Card Animation</title>
+    <link rel="icon" href="../../shared/img/favicon.png" type="image/x-icon" />
+    <!-- Title and Icon of the Website -->
+    <!-- Google Font Import Start -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap" rel="stylesheet" />
+    <!-- Google Font Import End -->
+    <!-- Tilt JS -->
+    <!-- <script src="https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.js" defer></script> -->
+    <script src="script/tilt.js"></script>
+    <!-- Tilt JS -->
+    <!-- Style -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap");
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: fit-content;
+            font-weight: bold;
+            color: white;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: "Exo 2", sans-serif;
+            /* CSS Code to handle unwanted element highlights / div selection in Android */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Template Code End */
+        body {
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, black, rgb(12, 12, 12));
+        }
+
+        .card {
+            background: orange;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background: rgb(255, 165, 0) url(./alogo.svg) no-repeat center;
+            background-size: 75%;
+            box-shadow: orangered 0 0 10px 5px inset, rgb(255 165 0 / 20%) 0px 0px 50px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body ontouchend>
+    <!-- Created using https://micku7zu.github.io/vanilla-tilt.js/ -->
+    <div class="card" data-tilt></div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.tiltanimation" alt="" />
+    </div>
+    <script defer>
+        // let reverseVal = false;
+        document.querySelector(".card").addEventListener("click", function (event) {
+            // reverseVal = !reverseVal;
+            console.log({
+                max: 50,
+                speed: 400,
+                scale: 1.2,
+                glare: true,
+                gyroscope: true,
+                // reverse: reverseVal, // Check why this don't work in given flow
+                "max-glare": 0.5, // the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
+            });
+            VanillaTilt.init(document.querySelector(".card"), {
+                max: 50,
+                speed: 400,
+                scale: 1.2,
+                glare: true,
+                gyroscope: true,
+                // reverse: reverseVal, // Check why this don't work in given flow
+                "max-glare": 0.5, // the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
+            });
+        })
+    </script>
+</body>
+
+</html>

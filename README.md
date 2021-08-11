@@ -80,6 +80,7 @@
 |Touch Initiated Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/19OnTouchAnimation/)|25-July-2021|Animation plays while you touch (or keep touching) the screen, and stops as soon as you stop touching|
 |Polygon Clip Path Generator|[Link](https://aasisodiya.github.io/WebProjects/46ClipPathCreator/)|31-July-2021|Polygon Clip Path Generator helps you generate polygon value for using with `clip-path` css property|
 |Neon Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/20NeonAnimation/)|06-Aug-2021|Neon Animation|
+|Tilt Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/21TiltAnimation/)|12-Aug-2021|Tilt Animation|
 
 ---
 
