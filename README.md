@@ -81,6 +81,7 @@
 |Polygon Clip Path Generator|[Link](https://aasisodiya.github.io/WebProjects/46ClipPathCreator/)|31-July-2021|Polygon Clip Path Generator helps you generate polygon value for using with `clip-path` css property|
 |Neon Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/20NeonAnimation/)|06-Aug-2021|Neon Animation|
 |Tilt Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/21TiltAnimation/)|12-Aug-2021|Tilt Animation|
+|Glass UI Example|[Link](https://aasisodiya.github.io/WebProjects/47GlassUI/)|14-Aug-2021|Glass UI Example|
 
 ---
 
