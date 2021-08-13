@@ -65,10 +65,11 @@
         body {
             display: grid;
             place-content: center;
-            min-height: 100vh;
+            min-height: calc(100vh - 2rem);
             margin: 0;
             background: linear-gradient(45deg, black, rgb(12, 12, 12));
             color: white;
+            padding: 1rem;
         }
 
         .inline {
@@ -80,59 +81,59 @@
 <body ontouchend>
     <h1>Device Orientation & Motion</h1>
     <div class="inline">
-        absolute :
+        Absolute (reference to the Earth's coordinate frame) :
         <div id="absolute">absolute</div>
     </div>
     <div class="inline">
-        alpha :
+        Alpha (Z-Axis Rotation) :
         <div id="alpha">alpha</div>
     </div>
     <div class="inline">
-        beta :
+        Beta (X-Axis Rotation) :
         <div id="beta">beta</div>
     </div>
     <div class="inline">
-        gamma :
+        Gamma (Y-Axis Rotation) :
         <div id="gamma">gamma</div>
     </div>
     <div class="inline">
-        ax :
+        Acceleration X :
         <div id="ax">ax</div>
     </div>
     <div class="inline">
-        ay :
+        Acceleration Y :
         <div id="ay">ay</div>
     </div>
     <div class="inline">
-        az :
+        Acceleration Z :
         <div id="az">az</div>
     </div>
     <div class="inline">
-        agx :
+        Acceleration Gravity X :
         <div id="agx">agx</div>
     </div>
     <div class="inline">
-        agy :
+        Acceleration Gravity Y :
         <div id="agy">agy</div>
     </div>
     <div class="inline">
-        agz :
+        Acceleration Gravity Z :
         <div id="agz">agz</div>
     </div>
     <div class="inline">
-        malpha :
+        Rate of Rotation (Z-Axis) :
         <div id="malpha">malpha</div>
     </div>
     <div class="inline">
-        mbeta :
+        Rate of Rotation (X-Axis) :
         <div id="mbeta">mbeta</div>
     </div>
     <div class="inline">
-        mgamma :
+        Rate of Rotation (Y-Axis) :
         <div id="mgamma">mgamma</div>
     </div>
     <div class="inline">
-        interval :
+        Rate/Interval at which data is getting obtained :
         <div id="interval">interval</div>
     </div>
     <script>
@@ -144,16 +145,16 @@
             let gamma = event.gamma;
             let op = {
                 absolute: absolute,
-                alpha: alpha,
-                beta: beta,
-                gamma: gamma,
+                alpha: alpha.toFixed(2),
+                beta: beta.toFixed(2),
+                gamma: gamma.toFixed(2),
             };
             console.table(op);
             // Do stuff with the new orientation data
-            document.getElementById("absolute").innerHTML = absolute;
-            document.getElementById("alpha").innerHTML = alpha;
-            document.getElementById("beta").innerHTML = beta;
-            document.getElementById("gamma").innerHTML = gamma;
+            document.getElementById("absolute").innerHTML = op.absolute;
+            document.getElementById("alpha").innerHTML = op.alpha;
+            document.getElementById("beta").innerHTML = op.beta;
+            document.getElementById("gamma").innerHTML = op.gamma;
         }
         // The handleMotion function can look something like this:
         function handleMotion(deviceMotionEvent) {
@@ -172,29 +173,29 @@
             let gamma = rotationRate.gamma;
             let interval = deviceMotionEvent.interval;
             let op = {
-                ax: ax,
-                ay: ay,
-                az: az,
-                agx: agx,
-                agy: agy,
-                agz: agz,
-                alpha: alpha,
-                beta: beta,
-                gamma: gamma,
-                interval: interval,
+                ax: ax == null ? "NA" : ax.toFixed(2),
+                ay: ay == null ? "NA" : ay.toFixed(2),
+                az: az == null ? "NA" : az.toFixed(2),
+                agx: agx == null ? "NA" : agx.toFixed(2),
+                agy: agy == null ? "NA" : agy.toFixed(2),
+                agz: agz == null ? "NA" : agz.toFixed(2),
+                alpha: alpha == null ? "NA" : alpha.toFixed(2),
+                beta: beta == null ? "NA" : beta.toFixed(2),
+                gamma: gamma == null ? "NA" : gamma.toFixed(2),
+                interval: interval == null ? "NA" : interval.toFixed(2),
             };
             console.table(op);
             // Do stuff with the new motion data
-            document.getElementById("ax").innerHTML = ax;
-            document.getElementById("ay").innerHTML = ay;
-            document.getElementById("az").innerHTML = az;
-            document.getElementById("agx").innerHTML = agx;
-            document.getElementById("agy").innerHTML = agy;
-            document.getElementById("agz").innerHTML = agz;
-            document.getElementById("malpha").innerHTML = alpha;
-            document.getElementById("mbeta").innerHTML = beta;
-            document.getElementById("mgamma").innerHTML = gamma;
-            document.getElementById("interval").innerHTML = interval;
+            document.getElementById("ax").innerHTML = op.ax;
+            document.getElementById("ay").innerHTML = op.ay;
+            document.getElementById("az").innerHTML = op.az;
+            document.getElementById("agx").innerHTML = op.agx;
+            document.getElementById("agy").innerHTML = op.agy;
+            document.getElementById("agz").innerHTML = op.agz;
+            document.getElementById("malpha").innerHTML = op.alpha;
+            document.getElementById("mbeta").innerHTML = op.beta;
+            document.getElementById("mgamma").innerHTML = op.gamma;
+            document.getElementById("interval").innerHTML = op.interval;
         }
         console.log("Test");
         window.addEventListener("deviceorientation", handleOrientation, true);
