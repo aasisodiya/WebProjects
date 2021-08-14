@@ -82,6 +82,7 @@
 |Neon Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/20NeonAnimation/)|06-Aug-2021|Neon Animation|
 |Tilt Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/21TiltAnimation/)|12-Aug-2021|Tilt Animation|
 |Glass UI Example|[Link](https://aasisodiya.github.io/WebProjects/47GlassUI/)|14-Aug-2021|Glass UI Example|
+|Webcam Integration in Background|[Link](https://aasisodiya.github.io/WebProjects/48Webcam/)|15-Aug-2021|Webcam Integration in Background|
 
 ---
 
