@@ -72,24 +72,46 @@
             min-height: 100vh;
             margin: 0;
             background: linear-gradient(45deg, black, rgb(12, 12, 12));
+            perspective: 400px;
         }
 
         .card {
-            background: orange;
             height: 200px;
             width: 200px;
             border-radius: 50%;
-            background: rgb(255, 165, 0) url(./alogo.svg) no-repeat center;
+            /* Don't add overflow, it will messup the 3d output */
+            /* overflow: hidden; */
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .card-bg {
+            background: orange;
+            box-shadow: orangered 0 0 10px 5px inset,
+                rgb(255 165 0 / 20%) 0px 0px 50px;
+            position: absolute;
+            inset: 0;
+            transform: translateZ(-10px);
+            border-radius: 50%;
+        }
+
+        .card-logo {
+            background: url(./alogo.svg) no-repeat center;
             background-size: 75%;
-            box-shadow: orangered 0 0 10px 5px inset, rgb(255 165 0 / 20%) 0px 0px 50px;
-            overflow: hidden;
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            transform: translateZ(20px);
         }
     </style>
 </head>
 
 <body ontouchend>
     <!-- Created using https://micku7zu.github.io/vanilla-tilt.js/ -->
-    <div class="card" data-tilt></div>
+    <div class="card" data-tilt>
+        <div class="card-bg"></div>
+        <div class="card-logo"></div>
+    </div>
     <!-- Below code is for footer -->
     <div class="footer">
         &lt;/&gt; by
@@ -98,7 +120,7 @@
     </div>
     <script defer>
         // let reverseVal = false;
-        document.querySelector(".card").addEventListener("click", function (event) {
+        window.onload = function (event) {
             // reverseVal = !reverseVal;
             console.log({
                 max: 50,
@@ -113,12 +135,12 @@
                 max: 50,
                 speed: 400,
                 scale: 1.2,
-                glare: true,
+                // glare: true,
                 gyroscope: true,
                 // reverse: reverseVal, // Check why this don't work in given flow
-                "max-glare": 0.5, // the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
+                // "max-glare": 0.5, // the maximum "glare" opacity (1 = 100%, 0.5 = 50%)
             });
-        })
+        };
     </script>
 </body>
 
