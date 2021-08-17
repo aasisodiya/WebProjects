@@ -11,6 +11,9 @@ console.log(
 );
 // Template Code End
 
+
+let borderColor, borderWidth, borderStyle;
+
 // Set Border Type
 $(".bordertype>button").on("click", function (event) {
     // Removed Active Border Marker from all buttons
@@ -21,12 +24,16 @@ $(".bordertype>button").on("click", function (event) {
     $("#result").toggleClass($(event.target).attr("class"));
     // Add active border marker to clicked button
     $(event.target).toggleClass("active-border");
+    // Generate Output for user to copy
+    generateOutput();
 });
 
 // Set Border Width
 $("#border-width").on("input", function (event) {
     let width = $(this).val();
     $("#result").css("border-width", `${width}px`);
+    // Generate Output for user to copy
+    generateOutput();
 });
 
 // Function to Copy to ClipBoard
@@ -47,8 +54,7 @@ function popup() {
 // Event handlers for Copying code to clipboard
 $("#copy").on("click", function () {
     $(".copied").hide();
-    let clipPathCSS = $("#coord").text();
-    let cssCopy = `clip-path: polygon(${clipPathCSS});`;
+    let cssCopy = `border: ${borderWidth} ${borderStyle} ${borderColor}`;
     copyToClipboard(cssCopy);
     popup();
 });
@@ -58,7 +64,7 @@ $("#width, #height").on("change", function () {
     let height = $("#height").val();
     let width = $("#width").val();
     console.log(height, width);
-    $("#result").css("width", `${width}`).css("height", `${height}`);
+    $("#result").css("width", `${width}`).css("height", `${height};`);
     // Reset the clip path
     $(".board").css("clip-path", "none");
     // Delete all pointers
@@ -66,3 +72,25 @@ $("#width, #height").on("change", function () {
     // Reset the pointers positions array
     positions = [];
 });
+
+// BG Color Handler
+$("#bgcolor").on("change", function () {
+    $("#result").css("background-color", $(this).val());
+});
+// Border Color Handler
+$("#bordercolor").on("change", function () {
+    $("#result").css("border-color", $(this).val());
+    // Generate Output for user to copy
+    generateOutput();
+});
+
+// Generate Output
+function generateOutput() {
+    // Parameters
+    borderColor = $("#result").css("border-color");
+    borderWidth = $("#result").css("border-width");
+    borderStyle = $("#result").css("border-style");
+    $("#border-op-width").text(borderWidth);
+    $("#border-op-type").text(borderStyle);
+    $("#border-op-color").text(borderColor);
+}
