@@ -72,7 +72,7 @@ body {
 }
 
 .logo {
-    color: grey;
+    color: rgb(184, 184, 184);
     padding: 1rem;
 }
 
@@ -175,15 +175,16 @@ body {
 /* Updated Code Below */
 
 #result {
-    width: 200px;
+    width: 250px;
     height: 200px;
-    background: tomato;
+    background: #272727;
     border-color: orange;
     border-width: 10px;
 }
 
 .bordertype {
     padding: 1rem;
+    text-align: center;
 }
 
 .bordertype>button {
@@ -249,6 +250,58 @@ body {
 
 /* border setting center */
 
+.border-width {
+    text-align: center;
+}
+
 #border-width {
-    width: 100%;
+    width: 80%;
+}
+
+/* Colors options css */
+
+.colors-options {
+    text-align: center;
+}
+
+input[type="color"] {
+    height: 4rem;
+    width: 4rem;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+
+input[type="color"]::after {
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    height: fit-content;
+    color: orange;
+    text-align: center;
+    width: 75%;
+    background: #333333;
+    border-radius: 0 0 5px 5px;
+    z-index: -1;
+    padding: 2px;
+    /* Below code is for left/right tags */
+    /* top: 0;
+    bottom: 0; */
+}
+
+input[type="color"]:nth-child(1):after {
+    content: 'BG';
+    transform: translate(0, -30%);
+    /* Below code is for left/right tags */
+    /* transform: translate(-70%) rotate(90deg); */
+}
+
+input[type="color"]:nth-child(2):after {
+    content: 'Border';
+    transform: translate(0, -30%);
+    /* Below code is for left/right tags */
+    /* transform: translate(70%) rotate(-90deg); */
 }
