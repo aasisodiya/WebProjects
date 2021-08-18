@@ -250,11 +250,12 @@ body {
 
 /* border setting center */
 
-.border-width {
+.border-width, .border-radius {
     text-align: center;
+    color: orange;
 }
 
-#border-width {
+#border-width, #border-radius {
     width: 80%;
 }
 

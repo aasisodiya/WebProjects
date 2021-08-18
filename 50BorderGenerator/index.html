@@ -61,15 +61,20 @@
             <div class="sizeinput">
                 <div class="width">
                     <span class="label">W</span>
-                    <input type="number" name="width" id="width" placeholder="Width" value="200" />
+                    <input type="number" name="width" id="width" placeholder="Width" value="250" min="1"/>
                 </div>
                 <div class="height">
                     <span class="label">H</span>
-                    <input type="number" name="height" id="height" placeholder="Height" value="200" />
+                    <input type="number" name="height" id="height" placeholder="Height" value="200" min="1"/>
                 </div>
             </div>
             <div class="border-width">
+                <label for="border-width">Border Width</label>
                 <input type="range" name="border-width" id="border-width" min="1" max="20" value="10" />
+            </div>
+            <div class="border-radius">
+                <label for="border-width">Border Radius</label>
+                <input type="range" name="border-radius" id="border-radius" min="0" max="50" value="0" />
             </div>
             <div class="colors-options">
                 <input type="color" name="bgcolor" id="bgcolor" value="#272727">
@@ -78,11 +83,19 @@
         </div>
 
         <div class="output">
-            <span class="blue">border:</span>
-            <span id="border-op-width" class="red">10px</span>
-            <span id="border-op-type" class="orange">solid</span>
-            <span id="border-op-color" class="cyan">orange</span><span class="blue">;</span>
-            <span class="material-icons" id="copy"> copy_all </span>
+            <div class="border-output">
+                <span class="blue">border:</span>
+                <span id="border-op-width" class="red">10px</span>
+                <span id="border-op-type" class="orange">solid</span>
+                <span id="border-op-color" class="cyan">orange</span>
+                <span class="blue">;</span>
+                <span class="material-icons" id="copy"> copy_all </span>
+            </div>
+            <div class="border-radius-output">
+                <span class="blue">border-radius:</span>
+                <span id="border-op-radius" class="red">0px</span>
+                <span class="blue">;</span>
+            </div>
         </div>
     </div>
     <div class="copied">Copied</div>

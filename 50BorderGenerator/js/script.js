@@ -11,8 +11,10 @@ console.log(
 );
 // Template Code End
 
-
-let borderColor, borderWidth, borderStyle;
+let borderColor = "orange",
+    borderWidth = "10px",
+    borderStyle = "solid",
+    borderRadius = "0px";
 
 // Set Border Type
 $(".bordertype>button").on("click", function (event) {
@@ -30,15 +32,23 @@ $(".bordertype>button").on("click", function (event) {
 
 // Set Border Width
 $("#border-width").on("input", function (event) {
-    let width = $(this).val();
-    $("#result").css("border-width", `${width}px`);
+    borderWidth = `${$(this).val()}px`;
+    $("#result").css("border-width", borderWidth);
+    // Generate Output for user to copy
+    generateOutput();
+});
+
+// Set Border Radius
+$("#border-radius").on("input", function (event) {
+    borderRadius = `${$(this).val()}px`;
+    $("#result").css("border-radius", borderRadius);
     // Generate Output for user to copy
     generateOutput();
 });
 
 // Function to Copy to ClipBoard
 function copyToClipboard(contentToCopy) {
-    var input = $("<input>");
+    var input = $("<textarea>");
     $("body").append(input);
     input.val(contentToCopy).select();
     document.execCommand("copy");
@@ -54,7 +64,12 @@ function popup() {
 // Event handlers for Copying code to clipboard
 $("#copy").on("click", function () {
     $(".copied").hide();
-    let cssCopy = `border: ${borderWidth} ${borderStyle} ${borderColor}`;
+    let cssCopy;
+    cssCopy = `border: ${borderWidth} ${borderStyle} ${borderColor};`;
+    if (borderRadius != "0px") {
+        cssCopy += `\nborder-radius: ${borderRadius};`;
+    }
+    console.log(cssCopy);
     copyToClipboard(cssCopy);
     popup();
 });
@@ -64,13 +79,7 @@ $("#width, #height").on("change", function () {
     let height = $("#height").val();
     let width = $("#width").val();
     console.log(height, width);
-    $("#result").css("width", `${width}`).css("height", `${height};`);
-    // Reset the clip path
-    $(".board").css("clip-path", "none");
-    // Delete all pointers
-    $(".pointer").remove();
-    // Reset the pointers positions array
-    positions = [];
+    $("#result").css("width", `${width}`).css("height", `${height}`);
 });
 
 // BG Color Handler
@@ -79,18 +88,25 @@ $("#bgcolor").on("change", function () {
 });
 // Border Color Handler
 $("#bordercolor").on("change", function () {
-    $("#result").css("border-color", $(this).val());
+    borderColor = $(this).val();
+    $("#result").css("border-color", borderColor);
     // Generate Output for user to copy
     generateOutput();
 });
 
 // Generate Output
 function generateOutput() {
-    // Parameters
-    borderColor = $("#result").css("border-color");
-    borderWidth = $("#result").css("border-width");
     borderStyle = $("#result").css("border-style");
     $("#border-op-width").text(borderWidth);
     $("#border-op-type").text(borderStyle);
     $("#border-op-color").text(borderColor);
+    $("#border-op-radius").text(borderRadius);
+    if (borderRadius == "0px") {
+        $(".border-radius-output").hide();
+    } else {
+        $(".border-radius-output").show();
+    }
 }
+
+// Initially hide
+$(".border-radius-output").hide();
