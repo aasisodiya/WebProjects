@@ -40,6 +40,7 @@
   - [Using Shadow with Clip-Path](#using-shadow-with-clip-path)
   - [`quotes` CSS Property](#quotes-css-property)
   - [`content` CSS Property](#content-css-property)
+  - [`aspect-ratio` CSS Property](#aspect-ratio-css-property)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -812,6 +813,22 @@ content: open-quote counter(chapter_counter);
 ```
 
 > [Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/content) & [Example](./content-example/)
+
+---
+
+## `aspect-ratio` CSS Property
+
+The `aspect-ratio` CSS property sets a preferred aspect ratio for the box, which will be used in the calculation of auto sizes and some other layout functions.
+
+```css
+aspect-ratio: 1 / 1;
+aspect-ratio: 16 / 9;
+/* aspect-ratio: width / height; */
+```
+
+`1 / 1` represents a Ratio. The box’s preferred aspect ratio is the specified ratio of `width` / `height`. Size calculations involving preferred aspect ratio work with the dimensions of the box specified by box-sizing.
+
+> An observation: aspect-ration will be over-ridden if content is bigger [Example Link](./aspect-ratio/)
 
 ---
 
