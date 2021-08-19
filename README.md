@@ -207,3 +207,4 @@
 |Global Attributes|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#global-attributes)|04-August-2021|Global Attributes List|
 |Random Image Using `picsum.photos`|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#random-image-using-picsumphotos)|05-August-2021|Random Image Using `picsum.photos`|
 |Detect Device Orientation|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-events/#detecting-device-orientation)|10-August-2021|Detecting Device Orientation / Motion|
+|`aspect-ratio` CSS Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#aspect-ratio-css-property)|20-August-2021|`aspect-ratio` CSS Property sets a preferred aspect ratio for the box|
