@@ -87,6 +87,7 @@
 |Border Generator|[Link](https://aasisodiya.github.io/WebProjects/50BorderGenerator/)|18-Aug-2021|Border Generator App helps to generate CSS code for border|
 |Skull Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/22SkullAnimation/)|21-August-2021|Skull Animation|
 |New Year Countdown|[Link](https://aasisodiya.github.io/WebProjects/26Animations/23NewYearCountDown/)|22-August-2021|New Year Countdown|
+|Login Page UI Sample|[Link](https://aasisodiya.github.io/WebProjects/51UISample/01LoginPage/)|23-August-2021|UI Template for a Sample Login Page inspired from many other Online References|
 
 ---
 

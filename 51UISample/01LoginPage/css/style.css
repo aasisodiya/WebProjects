@@ -1,0 +1,150 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+    color: slategrey;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: #0099ff;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    /* CSS Code to handle unwanted element highlights / div selection in Android */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Template Code End */
+
+/* LoginPage Template Start */
+
+body {
+    margin: 0;
+}
+
+:root {
+    --var-login-container-background-color: #2d2f30;
+}
+
+.login-container {
+    background: var(--var-login-container-background-color);
+    min-height: 100vh;
+    width: 100%;
+    /* Place the card in vertical and horizontal center */
+    display: grid;
+    place-content: center;
+}
+
+.login-card {
+    width: 300px;
+    background: linear-gradient(#191e27, #2f3c43);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* hide the overflow */
+    overflow: hidden;
+    /* Add shadow */
+    box-shadow: rgb(19 19 19 / 16%) 1px 1px 2px 1px;
+}
+
+.login-logo {
+    background: url(../img/alogo.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* Logo size */
+    height: 100px;
+    width: 100px;
+    /* logo position */
+    margin: 3rem auto;
+}
+
+.login-bg-wave {
+    background: url(../img/login-bg-wave.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    /* Size */
+    min-height: 200px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+}
+
+.login-form, .login-button {
+    width: fit-content;
+}
+
+.login-form {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+}
+
+.login-form input {
+    background: none;
+    border: none;
+    margin-left: 1rem;
+    border-bottom: #0099ff solid thin;
+    color: #0099ff;
+}
+
+.login-username, .login-password {
+    color: #0099ff;
+    /* To fix the issue with mis alignment of icon and input */
+    display: flex;
+}
+
+.login-button button, #login {
+    border: none;
+    background: none;
+    color: #0099ff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+    font-weight: bold;
+}
+
+.login-button button:hover, #login:hover {
+    background: #0099ff;
+    color: #191e27;
+    box-shadow: rgb(19 19 19 / 16%) 1px 1px 2px 1px;
+}
+
+.login-disclaimer {
+    color: thistle;
+    font-size: 0.8rem;
+}
+
+.forgotpassword {
+    color: grey;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* LoginPage Template End */
