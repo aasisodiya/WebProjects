@@ -17,6 +17,7 @@
     - [Ways To Read Data Attributes](#ways-to-read-data-attributes)
   - [Global Attributes](#global-attributes)
   - [Random Image Using `picsum.photos`](#random-image-using-picsumphotos)
+  - [ARIA Attributes](#aria-attributes)
   - [Reference](#reference)
 
 ## `<meta>` tag: The metadata element
@@ -238,6 +239,18 @@ Sometimes its better to focus on code, then on finding images for UI so for such
 ```
 
 So all you have to do is use syntax: `https://picsum.photos/<width>/<height>` where both `<width>` and `<height>` are replaced with numbers representing pixels. Ex. `https://picsum.photos/300/100` will give you an image (random) with width of `300px` and height of `100px`
+
+---
+
+## ARIA Attributes
+
+Accessible Rich Internet Applications (ARIA) is a set of attributes that define ways to make web content and web applications (especially those developed with JavaScript) more accessible to people with disabilities.
+
+Extension Recommended for Testing ARIA Attributes: [Screen Reader](https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en)
+
+It helps you to setup a website that is user friendly for people who rely on assistive technology
+
+[Youtube Tutorial: ARIA HTML Tutorial - What is ARIA & Why it's Important to Use!](https://www.youtube.com/watch?v=0hqhAIjE_8I)
 
 ---
 
