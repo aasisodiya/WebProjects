@@ -214,3 +214,4 @@
 |Useful Imports|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-imports)|24-August-2021|List of useful imports|
 |Google Fonts Material Icons|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-imports#google-fonts-material-icons)|24-August-2021|Google Fonts Material Icons Imports and Details|
 |ARIA Attributes|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#aria-attributes)|25-August-2021|ARIA Attributes are used for accessibilities|
+|Intersection Observer API|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-intersection-observer)|27-August-2021|Intersection Observer API provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport. Basically used with scroll.|
