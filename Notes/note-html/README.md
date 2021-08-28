@@ -18,6 +18,11 @@
   - [Global Attributes](#global-attributes)
   - [Random Image Using `picsum.photos`](#random-image-using-picsumphotos)
   - [ARIA Attributes](#aria-attributes)
+  - [`<fieldset>` The Field Set element](#fieldset-the-field-set-element)
+  - [`<datalist>`: The HTML Data List element used with input list](#datalist-the-html-data-list-element-used-with-input-list)
+  - [`<progress>`: The Progress Indicator element](#progress-the-progress-indicator-element)
+  - [`<meter>`: The HTML Meter element](#meter-the-html-meter-element)
+  - [`<template>`: The Content Template element](#template-the-content-template-element)
   - [Reference](#reference)
 
 ## `<meta>` tag: The metadata element
@@ -253,6 +258,106 @@ It helps you to setup a website that is user friendly for people who rely on ass
 [Youtube Tutorial: ARIA HTML Tutorial - What is ARIA & Why it's Important to Use!](https://www.youtube.com/watch?v=0hqhAIjE_8I)
 
 ---
+
+## `<fieldset>` The Field Set element
+
+The `<fieldset>` HTML element is used to group several controls as well as labels (`<label>`) within a web form. If a `<legend>` is present, it is placed over the block-start border.
+
+> **Note**: The caption for the fieldset is given by the first `<legend>` element nested inside it.
+
+```html
+<form action="#">
+  <fieldset>
+    <legend>Simple fieldset</legend>
+    <input type="radio" id="radio">
+    <label for="radio">Spirit of radio</label>
+  </fieldset>
+</form>
+```
+
+|Attributes|Description|
+|-|-|
+|`disabled`|`<fieldset disabled>` will disable the fieldset and all form controls that are descendants of the `<fieldset>` meaning they are not editable and won't be submitted along with the `<form>`|
+|`form`|This attribute takes the value of the id attribute of a `<form>` element you want the `<fieldset>` to be part of, even if it is not inside the form.|
+|`name`|The name associated with the group.|
+
+## `<datalist>`: The HTML Data List element used with input list
+
+The `<datalist>` HTML element contains a set of `<option>` elements that represent the permissible or recommended options available to choose from within other controls.
+
+> You get a search filter with datalist, unlike the `<select>` element
+
+```html
+<label for="myBrowser">Choose a browser from this list:</label>
+<input list="browsers" id="myBrowser" name="myBrowser" />
+<datalist id="browsers">
+  <option value="Chrome">
+  <option value="Firefox">
+  <option value="Internet Explorer">
+  <option value="Opera">
+  <option value="Safari">
+  <option value="Microsoft Edge">
+</datalist>
+```
+
+> Reference: [Link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist)
+
+## `<progress>`: The Progress Indicator element
+
+The `<progress>` HTML element displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+
+```html
+<label for="file">File progress:</label>
+
+<progress id="file" max="100" value="70"> 70% </progress>
+```
+
+|Attributes|Description|
+|-|-|
+|`max`|This attribute describes how much work the task indicated by the progress element requires.|
+|`value`|This attribute specifies how much of the task that has been completed.|
+
+## `<meter>`: The HTML Meter element
+
+The `<meter>` HTML element represents either a scalar value within a known range or a fractional value.
+
+```html
+<label for="fuel">Fuel level:</label>
+
+<meter id="fuel"
+       min="0" max="100"
+       low="33" high="66" optimum="80"
+       value="50">
+    at 50/100
+</meter>
+```
+
+|Attributes|Description|
+|-|-|
+|value|The current numeric value.|
+|min|The lower numeric bound of the measured range.|
+|max|The upper numeric bound of the measured range.|
+|low|The upper numeric bound of the low end of the measured range.|
+|high|The lower numeric bound of the high end of the measured range.|
+|optimum|This attribute indicates the optimal numeric value.|
+|form|The `<form>` element to associate the `<meter>` element with (its form owner). The value of this attribute must be the id of a <form> in the same document.|
+
+## `<template>`: The Content Template element
+
+The `<template>` HTML element is a mechanism for holding HTML that is not to be rendered immediately when a page is loaded but may be instantiated subsequently during runtime using JavaScript.
+
+Think of a template as a content fragment that is being stored for subsequent use in the document. While the parser does process the contents of the `<template>` element while loading the page, it does so only to ensure that those contents are valid; the element's contents are not rendered, however.
+
+```html
+<template id="productrow">
+  <tr>
+    <td class="record"></td>
+    <td></td>
+  </tr>
+</template>
+```
+
+> Reference: [Link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template)
 
 ## Reference
 

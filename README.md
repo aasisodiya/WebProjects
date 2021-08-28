@@ -216,3 +216,8 @@
 |Google Fonts Material Icons|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-imports#google-fonts-material-icons)|24-August-2021|Google Fonts Material Icons Imports and Details|
 |ARIA Attributes|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#aria-attributes)|25-August-2021|ARIA Attributes are used for accessibilities|
 |Intersection Observer API|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-intersection-observer)|27-August-2021|Intersection Observer API provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport. Basically used with scroll.|
+|`<fieldset>` Element|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#fieldset-the-field-set-element)|29-August-2021|`<fieldset>` Element|
+|`<datalist>` Element|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#datalist-the-html-data-list-element-used-with-input-list)|29-August-2021|`<datalist>` Element: The HTML Data List element used with input list|
+|`<progress>` Element|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#progress-the-progress-indicator-element)|29-August-2021|`<progress>`: The Progress Indicator element|
+|`<meter>` Element|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#meter-the-html-meter-element)|29-August-2021|`<meter>`: The HTML Meter element|
+|`<template>` Element|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#template-the-content-template-element)|29-August-2021|`<template>`: The Content Template element|
