@@ -89,6 +89,7 @@
 |New Year Countdown|[Link](https://aasisodiya.github.io/WebProjects/26Animations/23NewYearCountDown/)|22-August-2021|New Year Countdown|
 |Login Page UI Sample|[Link](https://aasisodiya.github.io/WebProjects/51UISample/01LoginPage/)|23-August-2021|UI Template for a Sample Login Page inspired from many other Online References|
 |Blob Animation|[Link](https://aasisodiya.github.io/WebProjects/26Animations/24BlobAnimation/)|28-August-2021|Blob Animation|
+|Curved Text using JS and CSS|[Link](https://aasisodiya.github.io/WebProjects/51UISample/02CurvedText/)|30-August-2021|Curved Text using JS and CSS|
 
 ---
 
