@@ -222,3 +222,4 @@
 |`<progress>` Element|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#progress-the-progress-indicator-element)|29-August-2021|`<progress>`: The Progress Indicator element|
 |`<meter>` Element|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#meter-the-html-meter-element)|29-August-2021|`<meter>`: The HTML Meter element|
 |`<template>` Element|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/#template-the-content-template-element)|29-August-2021|`<template>`: The Content Template element|
+|Set Text Inside a Polygon Using `shape-outside` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css-2/#set-text-inside-a-polygon-using-shape-outside-property)|31-August-2021|Set Text Inside a Polygon Using `shape-outside` Property|
