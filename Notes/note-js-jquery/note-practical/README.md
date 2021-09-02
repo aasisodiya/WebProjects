@@ -22,6 +22,7 @@
     - [Observations](#observations)
     - [Possible Fixes / Workarounds That Worked For Me](#possible-fixes--workarounds-that-worked-for-me)
     - [Other Solutions](#other-solutions)
+  - [How to import Jquery directly into your `script.js` file?](#how-to-import-jquery-directly-into-your-scriptjs-file)
 
 ## Sort Object By Keys
 
@@ -348,3 +349,31 @@ The window limitations vary by browser, operating system and system hardware.
   ```
 
 - Before your call to `html2canvas` you need to scroll to the top left of the page using `window.scrollTo(0, 0);`
+
+---
+
+## How to import Jquery directly into your `script.js` file?
+
+Step 1: In your `script.js` file add a single line of code given below
+
+```js
+import 'https://code.jquery.com/jquery-3.6.0.min.js';
+```
+
+Step 2: Update the script tag in your HTML, which may look like one given below
+
+```html
+<script src="js/script.js" defer></script>
+```
+
+This will be updated to below code, i.e `type="module"` is necessary else you will get following error on browser - `Uncaught SyntaxError: Cannot use import statement outside a module`
+
+```html
+<script src="js/script.js" type="module" defer></script>
+```
+
+Voilà! and you are done!
+
+> [How to import jQuery using ES6 Syntax](https://stackoverflow.com/questions/34338411/how-to-import-jquery-using-es6-syntax)
+
+---
