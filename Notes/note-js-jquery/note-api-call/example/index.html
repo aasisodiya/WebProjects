@@ -103,6 +103,10 @@
         hr {
             width: 300px;
         }
+
+        #pokemonImg {
+            filter: drop-shadow(2px 4px 6px white);
+        }
     </style>
 </head>
 
@@ -123,13 +127,16 @@
         let pokeData;
         // pokeData will store the data fetched from the API
 
-        const userAction = async () => {
-            const response = await fetch(
-                `https://pokeapi.co/api/v2/pokemon/${pokeNumber}`
-            );
+        const getPokemonDataById = async () => {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeNumber}`);
             pokeData = await response.json(); //extract JSON from the http response
+            return pokeData;
+        };
+        // userAction();
+        let response = getPokemonDataById();
+        console.log(response);
+        response.then((pokeData) => {
             console.log(pokeData);
-
             // Set Poke Order
             $("#pokemonOrder").text(pokeData.order);
             // Set Poke Type
@@ -137,12 +144,20 @@
             // Set Poke Name
             $("#pokemonName").text(pokeData.name);
             // Set Poke Image
-            $("#pokemonImg").attr(
-                "src",
-                pokeData.sprites.other.dream_world.front_default
-            );
-        };
-        userAction();
+            if (pokeData.sprites.other.dream_world.front_default != null) {
+                $("#pokemonImg").attr(
+                    "src",
+                    pokeData.sprites.other.dream_world.front_default
+                );
+            } else {
+                $("#pokemonImg").attr(
+                    "src",
+                    pokeData.sprites.other["official-artwork"].front_default
+                );
+            }
+            console.log(pokeData.sprites.other.dream_world.front_default);
+            console.log(pokeData.sprites.other["official-artwork"].front_default);
+        });
     </script>
     <!-- Below code is for footer -->
     <div class="footer">
