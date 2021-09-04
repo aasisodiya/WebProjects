@@ -96,7 +96,7 @@
             text-transform: capitalize;
         }
 
-        #pokemonOrder {
+        #pokemonId {
             width: 300px;
         }
 
@@ -114,10 +114,12 @@
     <h1>Pokemon</h1>
     <hr />
     <p>Below data is getting fetched using PokeAPI</p>
-    <p>Pokemon Id: <span id="pokemonOrder"></span></p>
-    <p>Pokemon Type: <span id="pokemonType"></span></p>
-    <p>Pokemon Name: <span id="pokemonName"></span></p>
-    <img id="pokemonImg" src="" alt="pokemon-image" />
+    <p>Pokemon Id: <span id="pokemonId">25</span></p>
+    <p>Pokemon Type: <span id="pokemonType">Electric</span></p>
+    <p>Pokemon Name: <span id="pokemonName">Pikachu</span></p>
+    <img id="pokemonImg"
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
+        alt="pokemon-image" />
     <script>
         // There are total of 1118 registered pokemon as of 4th-September-2021
         // So considering the value as maximum limit, we will get a random number under that value.
@@ -134,11 +136,11 @@
         };
         // userAction();
         let response = getPokemonDataById();
-        console.log(response);
         response.then((pokeData) => {
             console.log(pokeData);
+            // Process and manipulate data in pokeData
             // Set Poke Order
-            $("#pokemonOrder").text(pokeData.order);
+            $("#pokemonId").text(pokeData.id);
             // Set Poke Type
             $("#pokemonType").text(pokeData.types[0].type.name);
             // Set Poke Name

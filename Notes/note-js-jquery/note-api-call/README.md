@@ -232,9 +232,22 @@ const getPokemonDataById = async () => {
     `https://pokeapi.co/api/v2/pokemon/${pokeNumber}`
   );
   pokeData = await response.json(); //extract JSON from the http response
-  // Process and manipulate data in pokeData
 };
 getPokemonDataById();
+```
+
+so to handle the promise from function on return you can use below code
+
+```js
+const getPokemonDataById = async () => {
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeNumber}`);
+  pokeData = await response.json(); //extract JSON from the http response
+  return pokeData;
+};
+let response = getPokemonDataById();
+response.then((pokeData) => {
+    console.log(pokeData);
+});
 ```
 
 > Returning data from above function `getPokemonDataById()` will give you promise pending [Reference](https://stackoverflow.com/questions/59394620/why-fetch-returns-promise-pending)
