@@ -226,3 +226,4 @@
 |How to import Jquery directly into your `script.js` file?|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#how-to-import-jquery-directly-into-your-scriptjs-file)|03-September-2021|How to import Jquery directly into your `script.js` file / How to import jQuery using ES6 Syntax|
 |PokeAPI Example|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-api-call/example/)|04-September-2021|Randomly getting Pokemon using PokeAPI|
 |API Call From Website|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-api-call/)|05-September-2021|API Call From Website and all details|
+|`direction` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css-2/#direction-property)|08-September-2021|`direction` Property|
