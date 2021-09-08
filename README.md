@@ -227,3 +227,4 @@
 |PokeAPI Example|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-api-call/example/)|04-September-2021|Randomly getting Pokemon using PokeAPI|
 |API Call From Website|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-api-call/)|05-September-2021|API Call From Website and all details|
 |`direction` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css-2/#direction-property)|08-September-2021|`direction` Property|
+|WebXR Notes|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-webxr)|09-September-2021|WebXR Notes|
