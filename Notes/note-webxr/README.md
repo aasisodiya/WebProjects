@@ -7,6 +7,8 @@
       - [Degrees of freedom](#degrees-of-freedom)
     - [General-purpose 3D frameworks](#general-purpose-3d-frameworks)
     - [Game toolkits](#game-toolkits)
+  - [Resources](#resources)
+  - [Libraries](#libraries)
   - [Reference](#reference)
 
 **WebXR** is a group of standards which are used together to support rendering 3D scenes to hardware designed for presenting virtual worlds (virtual reality, or VR), or for adding graphical imagery to the real world, (augmented reality, or AR). The WebXR Device API implements the core of the WebXR feature set, managing the selection of output devices, render the 3D scene to the chosen device at the appropriate frame rate, and manage motion vectors created using input controllers.
@@ -79,6 +81,28 @@ These frameworks are good for general-purpose programming as well as for game de
 The game toolkits are designed for game developers and often include gaming-specific features such as physics models, input control systems, asset management, 3D sound playback, and the like.
 
 - [PlayCanvas](https://playcanvas.com/)
+
+## Resources
+
+- Khronos WebGL site The main web site for WebGL at the Khronos Group.
+- WebGL Fundamentals A basic tutorial with fundamentals of WebGL.
+- Raw WebGL: An introduction to WebGL A talk by Nick Desaulniers that introduces the basics of WebGL.
+- WebGL playground An online tool for creating and sharing WebGL projects. Good for quick prototyping and experimenting.
+- WebGL Academy An HTML/JavaScript editor with tutorials to learn basics of webgl programming.
+- WebGL Stats A site with statistics about WebGL capabilities in browsers on different platforms.
+
+## Libraries
+
+- three.js is an open-source, fully featured 3D WebGL library.
+- Babylon.js is a powerful, simple, and open game and 3D rendering engine packed into a friendly JavaScript framework.
+- Pixi.js is a fast, open-source 2D WebGL renderer.
+- Phaser is a fast, free and fun open source framework for Canvas and WebGL powered browser games.
+- PlayCanvas is an open-source game engine.
+- glMatrix is a JavaScript matrix and vector library for high-performance WebGL apps.
+- twgl is a library for making webgl less verbose.
+- RedGL is an open-source 3D WebGL library.
+- vtk.js is a JavaScript library for scientific visualization in your browser.
+- webgl-lint will help find errors in your WebGL code and provide useful info
 
 ## Reference
 
