@@ -9,6 +9,7 @@
     - [Game toolkits](#game-toolkits)
   - [Resources](#resources)
   - [Libraries](#libraries)
+  - [Build an augmented reality (AR) app using the WebXR Device API](#build-an-augmented-reality-ar-app-using-the-webxr-device-api)
   - [Reference](#reference)
 
 **WebXR** is a group of standards which are used together to support rendering 3D scenes to hardware designed for presenting virtual worlds (virtual reality, or VR), or for adding graphical imagery to the real world, (augmented reality, or AR). The WebXR Device API implements the core of the WebXR feature set, managing the selection of output devices, render the 3D scene to the chosen device at the appropriate frame rate, and manage motion vectors created using input controllers.
@@ -103,6 +104,12 @@ The game toolkits are designed for game developers and often include gaming-spec
 - RedGL is an open-source 3D WebGL library.
 - vtk.js is a JavaScript library for scientific visualization in your browser.
 - webgl-lint will help find errors in your WebGL code and provide useful info
+
+## Build an augmented reality (AR) app using the WebXR Device API
+
+> Reference : [Link](https://codelabs.developers.google.com/ar-with-webxr#0)
+
+
 
 ## Reference
 
