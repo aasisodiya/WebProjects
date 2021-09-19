@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="generator" content="Three.js Editor">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="ThreeJS Example" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ThreeJS Example" />
+    <meta property="og:description"
+        content="ThreeJS Example" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>ThreeJS Example</title>
+    <link rel="icon" href="../../shared/img/favicon.png" type="image/x-icon" />
+	<style>
+		body {
+			font-family: sans-serif;
+			font-size: 11px;
+			background-color: #000;
+			margin: 0px;
+		}
+
+		canvas {
+			display: block;
+		}
+	</style>
+</head>
+
+<body ontouchstart="">
+	<script type="module">
+		import * as THREE from './js/three.module.js';
+			import { APP } from './js/app.js';
+			import { VRButton } from './js/VRButton.js';
+			window.THREE = THREE; // Used by APP Scripts.
+			window.VRButton = VRButton; // Used by APP Scripts.
+			var loader = new THREE.FileLoader();
+			loader.load( 'app.json', function ( text ) {
+				var player = new APP.Player();
+				player.load( JSON.parse( text ) );
+				player.setSize( window.innerWidth, window.innerHeight );
+				player.play();
+				document.body.appendChild( player.dom );
+				window.addEventListener( 'resize', function () {
+					player.setSize( window.innerWidth, window.innerHeight );
+				} );
+			} );
+			var button = document.createElement( 'a' );
+			button.href = 'https://threejs.org/editor/#file=' + location.href.split( '/' ).slice( 0, - 1 ).join( '/' ) + '/app.json';
+			button.style.cssText = 'position: absolute; bottom: 20px; right: 20px; padding: 10px 16px; color: #fff; border: 1px solid #fff; border-radius: 20px; text-decoration: none;';
+			button.target = '_blank';
+			button.textContent = 'EDIT';
+			document.body.appendChild( button );
+		</script>
+</body>
+
+</html>
