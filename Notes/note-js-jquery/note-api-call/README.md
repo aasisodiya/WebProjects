@@ -15,6 +15,7 @@
   - [Using Request Object with `fetch()`](#using-request-object-with-fetch)
   - [Headers](#headers)
   - [Simple Get API Call Logic](#simple-get-api-call-logic)
+  - [`$.get()` Function](#get-function)
   - [Reference](#reference)
 
 ## `fetch()`
@@ -251,6 +252,24 @@ response.then((pokeData) => {
 ```
 
 > Returning data from above function `getPokemonDataById()` will give you promise pending [Reference](https://stackoverflow.com/questions/59394620/why-fetch-returns-promise-pending)
+
+---
+
+## `$.get()` Function
+
+Way to get data using `$.get()`. Sample of the same is given below.
+
+```js
+let websiteUrl = "https://www.github.com/aasisodiya"
+$.get(
+    websiteUrl,
+    function (data) {
+        console.log(data)
+    }
+);
+```
+
+---
 
 ## Reference
 

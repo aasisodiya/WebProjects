@@ -235,3 +235,4 @@
 |API Call From Website|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-api-call/)|05-September-2021|API Call From Website and all details|
 |`direction` Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css-2/#direction-property)|08-September-2021|`direction` Property|
 |WebXR Notes|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-webxr)|09-September-2021|WebXR Notes|
+|`$.get()` Function|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-api-call/#get-function)|22-September-2021|Way to get data / website data using `$.get()`|
