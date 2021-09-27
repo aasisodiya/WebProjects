@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Checkers Background using CSS" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Checkers Background" />
+    <meta property="og:description" content="Checkers Background using CSS" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>Checkers Background</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <!-- Title and Icon of the Website -->
+    <!-- Custom Style Sheet Import Start-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Custom Style Sheet Import End-->
+    <!-- Jquery Import Start -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Jquery Import End -->
+    <!-- A Frame Import -->
+    <script src="https://cdn.jsdelivr.net/npm/aframe@1.2.0/dist/aframe-master.min.js"></script>
+    <!-- Custom JS Import Start -->
+    <script src="js/script.js" defer></script>
+    <!-- Custom JS Import End -->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body ontouchend>
+    <div class="container">
+        <a-scene keyboard-shortcuts="enterVR: false">
+            <a-assets>
+                <a-asset-item id="crate-obj" src="./assets/me.obj"></a-asset-item>
+                <a-asset-item id="crate-mtl" src="./assets/me.mtl"></a-asset-item>
+            </a-assets>
+
+            <!-- Using the asset management system. -->
+            <a-obj-model src="#crate-obj" mtl="#crate-mtl" position="0 0 0" scale="0.1 0.1 0.1" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing:linear;">
+                <!-- <a-animation dur="100000" from="0 0 0" to="0 360 0" attribute="rotation" easing="linear"
+                    repeat="indefinite"></a-animation> -->
+            </a-obj-model>
+
+            <a-entity camera look-controls="enabled:false" wasd-controls="enabled:false" position="0 2 4"></a-entity>
+            <!-- <a-entity camera look-controls wasd-controls position="0 2 3" ></a-entity> -->
+        </a-scene>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.checkersbackground" alt="">
+    </div>
+</body>
+
+</html>
