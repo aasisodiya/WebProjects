@@ -23,6 +23,11 @@ body {
     font-family: 'Righteous', sans-serif;
 }
 
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
 .container {
     background-color: rgb(140, 140, 140);
     display: grid;
