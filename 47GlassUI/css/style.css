@@ -1,0 +1,142 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orangered;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    /* CSS Code to handle unwanted element highlights / div selection in Android */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Template Code End */
+
+body {
+    background: linear-gradient( 45deg, orange 33%, yellow 33% 66%, DarkSlateGrey 66%);
+    min-height: 100vh;
+    margin: 0;
+}
+
+.holder {
+    display: grid;
+    place-items: center;
+    min-height: calc(100vh - 2rem);
+    padding: 1rem;
+}
+
+.container {
+    min-height: 80vh;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.left, .right {
+    border-radius: 0.5em;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 2px 0px black;
+    overflow: hidden;
+}
+
+.left {
+    width: 40%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    /* Adding gap */
+    margin-right: 2px;
+}
+
+.left-top {
+    background: tomato;
+    color: wheat;
+    padding: 1rem;
+    min-height: max(20vh, 5rem);
+}
+
+.left-content {
+    background: linear-gradient(45deg, #f8cf7ea2, rgba(255, 217, 0, 0.616));
+    flex: auto;
+    color: darkslategrey;
+    padding: 1rem;
+}
+
+.left-bottom {
+    background: cyan;
+    color: darkslategray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: min(15vh, 3rem);
+}
+
+.left-bottom p {
+    /* padding: 1rem; */
+    margin: 0;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(153, 153, 153, 0.5);
+}
+
+.right-content {
+    flex: auto;
+    color: white;
+    padding: 1rem;
+}
+
+.right-bottom {
+    color: white;
+    /* height: 2rem; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: min(15vh, 3rem);
+    /* some overflow from icons */
+    overflow: hidden;
+    background: rgba(153, 153, 153, 0.5);
+}
+
+.right-bottom-content {
+    padding: 1rem;
+    flex: auto;
+}
+
+.right-bottom-actionitem {
+    /* padding: 1rem; */
+    min-width: 3rem;
+    padding: 1rem;
+    background: cyan;
+    display: grid;
+    place-items: center;
+}
+
+.right-bottom-actionitem:nth-child(2) {
+    background: darkcyan;
+}

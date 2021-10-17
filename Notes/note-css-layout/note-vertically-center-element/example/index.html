@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Layout Example" />
+    <meta name="author" content="Akash Sisodiya" />
+    <link rel="icon" href="../../../../shared/img/favicon.png" type="image/x-icon" />
+    <title>Vertical Layout</title>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
+    <style>
+        /* Example Template Code Start */
+        * {
+            margin: 0;
+            font-family: "Exo 2", sans-serif;
+            font-weight: bold;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+        }
+
+        .footer>a {
+            color: orange;
+        }
+
+        .github {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Example Template Code End */
+
+        /* Vertically Center Text In Fixed Size Div Start */
+        .vertical-horizontal-center-element {
+            background-color: orange;
+            display: flex;
+            /* justify-content will align it horizontally */
+            justify-content: center;
+            /* align-items will align it vertically */
+            align-items: center;
+            height: 50vh;
+        }
+
+        /* Vertically Center Text In Fixed Size Div End */
+        /* vertically Center using table */
+
+        .table {
+            display: table;
+            height: 50vh;
+            width: 100%;
+            text-align: center;
+        }
+
+        .table p {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        /* vertically Center using table */
+        /* Vertically Center Using Absolute-Relative Positioning */
+
+        .parent {
+            position: relative;
+            height: 50vh;
+            background-color: orange;
+        }
+
+        .child {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+
+        /* or */
+
+        .parent1 {
+            position: relative;
+            height: 50vh;
+        }
+
+        .child1 {
+            width: fit-content;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: fit-content;
+        }
+
+        /* Vertically Center Using Absolute-Relative Positioning */
+        /* Vertically Center Using Grid */
+
+        .grid {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+            background-color: orange;
+        }
+
+        /* Vertically Center Using Grid */
+        /* Vertically Center Using Grid with Place Items */
+
+        .grid-pi {
+            display: grid;
+            place-items: center;
+            height: 50vh;
+        }
+
+        /* Vertically Center Using Grid with Place Items */
+        /* Vertically Center Using Grid with margins*/
+
+        .grid-margin {
+            display: grid;
+            height: 50vh;
+            background-color: orange;
+        }
+
+        .grid-margin-child {
+            margin: auto;
+        }
+
+        /* Vertically Center Using Grid with margins */
+    </style>
+</head>
+
+<body>
+    <div class="vertical-horizontal-center-element">
+        Vertically & Horizontally Center Text/Element Inside a Fixed Size Div
+        using flex
+    </div>
+    <div class="table">
+        <p>Centered Using Display:Table</p>
+    </div>
+    <div class="parent">
+        <p class="child">Centered Using Relative-Absolute Positioning</p>
+    </div>
+    <div class="parent1">
+        <p class="child1">Centered Using Relative-Absolute Positioning</p>
+    </div>
+    <div class="grid">
+        <p>Centered Using Grid</p>
+    </div>
+    <div class="grid-pi">
+        <p>Centered Using Grid Place Items</p>
+    </div>
+    <div class="grid-margin">
+        <div class="grid-margin-child">Centered Using Grid and Margins</div>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a>
+    </div>
+</body>
+
+</html>

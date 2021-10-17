@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signature Drawing Canvas</title>
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Signature Drawing Canvas using basic code" />
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+
+    <script src="js/script.js" defer></script>
+</head>
+
+<body ontouchstart>
+    <div id="options">
+        <span class="myButton" id="draw"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+        <span class="myButton" id="erase"><i class="fa fa-eraser" aria-hidden="true"></i></span>
+        <span class="myButton" id="undo"><i class="fa fa-undo" aria-hidden="true"></i></span>
+        <span class="myButton" id="clear"><i class="fa fa-trash" aria-hidden="true"></i></span>
+        <!-- <span class="myButton" id="saveaspng"><i class="fa fa-floppy-o" aria-hidden="true"></i>png</span> -->
+        <!-- <span class="myButton" id="saveasjpeg"><i class="fa fa-floppy-o" aria-hidden="true"></i></span> -->
+        <!-- <span class="myButton" id="saveassvg"><i class="fa fa-floppy-o" aria-hidden="true"></i>svg</span> -->
+        <span class="myButton" id="save"><i class="fa fa-floppy-o" aria-hidden="true"></i></span>
+        <span class="myButton"><input type="color" name="" id="color"></span>
+    </div>
+
+    <div class="saveasholder">
+        <div class="saveas">
+            <label for="filetype">Choose Export File Type</label>
+            <select id="filetype" name="filetype">
+                <option value="jpeg">JPEG</option>
+                <option value="png">PNG</option>
+                <option value="svg">SVG</option>
+            </select>
+            <div id="download">Download</div>
+            <p id="close">Close</p>
+        </div>
+    </div>
+    <canvas id="signature-pad" class="signature-pad" width="400" height="200"></canvas>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.signaturepad" alt="">
+    </div>
+</body>
+
+</html>

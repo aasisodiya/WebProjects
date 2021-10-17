@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Based Animation</title>
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="Scroll Based Animation">
+    <link rel="icon" href="../../shared/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            font-weight: bold;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        /* Template Code End */
+
+        .rotate-scroll {
+            --animation-time: 10;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0px) rotate(0deg);
+            animation: rotate calc(var(--animation-time) * 1s) linear infinite;
+            animation-play-state: paused;
+            animation-delay: calc(var(--scroll) * var(--animation-time) * -1s);
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+        }
+
+        @keyframes rotate {
+            to {
+                transform: translate3d(-50%, -50%, 0px) rotate(360deg);
+            }
+        }
+
+        .translate-scroll {
+            --animation-time: 10;
+            color: red;
+            transform: translate3d(-50%, 0, 0px) rotateZ(45deg);
+            position: fixed;
+            animation: translate calc(var(--animation-time) * 1s) linear infinite;
+            animation-play-state: paused;
+            animation-delay: calc(var(--scroll) * var(--animation-time) * -1s);
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+            right: 90vw;
+        }
+
+        @keyframes translate {
+            to {
+                right: 0vw;
+            }
+        }
+
+
+        body {
+            min-height: 500vh;
+        }
+    </style>
+</head>
+
+<body>
+    <i class="fa fa-github rotate-scroll fa-4x"></i>
+    <i class="fa fa-rocket translate-scroll fa-4x"></i>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <!-- <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.scroll-animation" alt=""> -->
+    </div>
+    <script>
+        window.addEventListener(
+            "scroll",
+            () => {
+                document.body.style.setProperty(
+                    "--scroll",
+                    window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
+                );
+            },
+            false
+        );
+    </script>
+</body>
+
+</html>

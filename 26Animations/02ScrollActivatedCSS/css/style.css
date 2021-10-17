@@ -1,0 +1,44 @@
+#abovethefold{
+	background: #121212;
+	height: 800px;
+	text-align: center;
+	color: #ffa500;
+}
+h1{
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+	font-size: 3em;
+	padding-top: 325px;
+}
+
+#scroll{
+	margin-top: 200px;
+	margin-bottom: 200px;
+	text-align: center;
+}
+
+#first{
+	z-index: 2;
+}
+
+#scroll img{
+	position: relative;
+}
+
+.animate{
+	transition: 2s ease-in-out;
+	-moz-transition: 2s ease-in-out;
+	-webkit-transition: 2s ease-in-out; 
+}
+
+#first.animate{/*#first.animate and #first .animate is alot different*/
+	transform: translate(5em,0);
+	-moz-transform: translate(5em,0);
+	-webkit-transform: translate(5em,0);
+}
+
+#third.animate{
+	transform: translate(-10em,0);
+	-moz-transform: translate(-10em,0);
+	-webkit-transform: translate(-10em,0);
+}

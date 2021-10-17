@@ -1,0 +1,149 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: 'Exo 2', sans-serif;
+}
+
+/* Template Code End */
+
+* {
+    margin: 0;
+}
+
+.bg {
+    background: red;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.cursor {
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(black 10px, transparent 10px, transparent 20px, black 20px);
+    position: absolute;
+    border-radius: 50%;
+    top: -25px;
+    left: -25px;
+}
+
+/* .cursorface {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: #f2ff0038;
+    top: -50px;
+    left: -50px;
+} */
+
+/* .trail {
+    transform: scale(0.1);
+}
+
+.trail1 {
+    transition: transform .4s;
+}
+
+.trail2 {
+    transition: transform .3s;
+}
+
+.trail3 {
+    transition: transform .2s;
+} */
+
+#fullscreenclose, #fullscreenopen {
+    display: none;
+}
+
+#fullscreenopen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    margin: auto;
+    max-width: 80vw;
+    height: fit-content;
+    width: fit-content;
+    background: linear-gradient(-45deg, orange, orangered);
+    padding: 1rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    color: black;
+}
+
+#fullscreenopen>button {
+    margin-top: 1rem;
+    background: tomato;
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-weight: bold;
+    box-shadow: 0 0 2px 0px black;
+    cursor: pointer;
+}
+
+#fullscreenclose {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    margin: auto;
+    height: fit-content;
+    width: fit-content;
+}
+
+#fullscreenclose>button {
+    background: tomato;
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    box-shadow: 0 0 2px 0px black;
+    cursor: pointer;
+}
+
+@media all and (display-mode: fullscreen) {
+    /* every CSS goes here that you want 
+    to apply or alter in the fullscreen mode*/
+    body {
+        background: red;
+    }
+    #fullscreenclose {
+        display: block;
+    }
+}
+
+@media all and (display-mode: browser) {
+    /* every CSS goes here that you want 
+    to apply or alter in the fullscreen mode*/
+    body {
+        background: yellow;
+    }
+    #fullscreenopen {
+        display: block;
+    }
+}

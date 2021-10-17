@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="CSS Only Clock Animation" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CSS Only Clock Animation" />
+    <meta property="og:description" content="CSS Only Clock Animation" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>CSS Only Clock Animation</title>
+    <link rel="icon" href="../../shared/img/favicon.png" type="image/x-icon" />
+    <!-- Title and Icon of the Website -->
+    <!-- Google Font Import Start -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
+    <!-- Google Font Import End -->
+    <!-- Jquery Import Start -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Jquery Import End -->
+    <!-- Style -->
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: "Exo 2", sans-serif;
+            /* CSS Code to handle unwanted element highlights / div selection in Android */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Template Code End */
+        body {
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, black, darkslategrey);
+        }
+
+        /* Clock Code Start */
+
+        :root {
+            /* Clock Dimensions */
+            --clock-size: 300px;
+            --min-start: 0deg;
+            --hour-start: 0deg;
+            --sec-start: 0deg;
+            --min-delay: 0s;
+            --hour-delay: 0s;
+        }
+
+        .clock {
+            position: relative;
+            width: var(--clock-size);
+            height: var(--clock-size);
+            width: var(--clock-size);
+            border-radius: var(--clock-size);
+            background: rgba(0, 0, 0, 0.5) url(./img/clock.svg);
+            backdrop-filter: blur(2px);
+        }
+
+        .clock div {
+            position: absolute;
+            /* Center all hands in the clock */
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .sechandholder {
+            animation: 60s steps(60) tick infinite;
+            -webkit-animation: 60s steps(60) tick infinite;
+            -moz-animation: 60s steps(60) tick infinite;
+        }
+
+        .minhandholder {
+            animation: 3600s var(--min-delay) steps(60) tick infinite;
+            -webkit-animation: 3600s var(--min-delay) steps(60) tick infinite;
+            -moz-animation: 3600s var(--min-delay) steps(60) tick infinite;
+        }
+
+        .hourhandholder {
+            animation: 43200s var(--hour-delay) linear tick infinite;
+            -webkit-animation: 43200s var(--hour-delay) linear tick infinite;
+            -moz-animation: 43200s var(--hour-delay) linear tick infinite;
+        }
+
+        .secondhand {
+            height: calc(var(--clock-size) / 2.5);
+            width: calc(var(--clock-size) / 60);
+            transform: rotate(var(--sec-start)) translateY(calc(var(--clock-size) / 4));
+            background: orangered;
+            box-shadow: 0 0 5px grey;
+        }
+
+        .minutehand {
+            height: calc(var(--clock-size) / 3);
+            width: calc(var(--clock-size) / 60);
+            transform: rotate(var(--min-start)) translateY(calc(var(--clock-size) / 5));
+            background: yellow;
+            box-shadow: 0 0 5px grey;
+        }
+
+        .hourhand {
+            height: calc(var(--clock-size) / 4);
+            width: calc(var(--clock-size) / 60);
+            transform: rotate(var(--hour-start)) translateY(calc(var(--clock-size) / 8));
+            background: gold;
+            box-shadow: 0 0 5px grey;
+        }
+
+        .cap {
+            width: calc(var(--clock-size) / 6);
+            height: calc(var(--clock-size) / 6);
+            border-radius: calc(var(--clock-size));
+            background: darkorange;
+            box-shadow: 0 0 5px orangered inset;
+        }
+
+        @keyframes tick {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Clock Code End */
+    </style>
+</head>
+
+<body ontouchend>
+    <div class="clock">
+        <div class="sechandholder">
+            <div class="secondhand"></div>
+        </div>
+        <div class="minhandholder">
+            <div class="minutehand"></div>
+        </div>
+        <div class="hourhandholder">
+            <div class="hourhand"></div>
+        </div>
+        <div class="cap"></div>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.analogueclock" alt="" />
+    </div>
+    <script>
+        let time = new Date();
+        let h = time.getHours();
+        let m = time.getMinutes();
+        let s = time.getSeconds();
+        let min = m * 6 + 180; //(from 0 to 59)
+        let sec = s * 6 + 180; //(from 0 to 59)
+        let hour = (h % 12 || 12) * 30 + 180; //(from 0 to 23)
+        console.table({
+            min,
+            sec,
+            hour,
+        });
+        $("body").css("--min-start", `${min}deg`);
+        $("body").css("--hour-start", `${hour}deg`);
+        $("body").css("--sec-start", `${sec}deg`);
+        // fix the delay issue bu adjusting the delays
+        $("body").css("--min-delay", `-${s}s`);
+        let hourHandDelay = m * 60 + s;
+        $("body").css("--hour-delay", `-${hourHandDelay}s`);
+    </script>
+</body>
+
+</html>

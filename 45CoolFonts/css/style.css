@@ -1,0 +1,241 @@
+/* Template Code Start */
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway&family=Raleway+Dots&family=Exo+2&family=Patua+One&family=Fugaz+One&family=Racing+Sans+One&family=Bungee&family=Righteous&family=Roboto+Slab&family=Rubik&family=Orbitron&family=Electrolize&family=Bungee+Shade&family=Lilita+One&family=Press+Start+2P&family=Space+Mono&family=Lato&family=Audiowide&family=Poiret+One&family=Special+Elite&family=Amatic+SC&display=swap");
+@import url("https://fonts.cdnfonts.com/css/vcr-osd-mono");
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1px) grayscale(1);
+    width: 100%;
+    color: white;
+    z-index: 20;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: cyan;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    /* CSS Code to handle unwanted element highlights / div selection in Android */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Template Code End */
+
+body {
+    margin: 0;
+    background: linear-gradient(#f70440, #fa0956);
+    min-height: 100vh;
+}
+
+#myfonts {
+    width: fit-content;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    padding: calc(4rem + 10px) 10px 40px 10px;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 400px) {
+    #myfonts {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #myfonts {
+        grid-template-columns: auto;
+    }
+}
+
+.font {
+    max-width: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 2px 0 grey;
+    background: #13131491;
+    backdrop-filter: grayscale(1);
+    text-align: center;
+}
+
+.fontname {
+    color: orange;
+    width: inherit;
+    word-break: break-all;
+    padding: 5px;
+    font-family: inherit;
+    line-height: 20px;
+}
+
+.fontexample {
+    width: inherit;
+    word-break: break-all;
+    padding: 5px;
+    color: white;
+    font-family: inherit;
+    line-height: 20px;
+    margin-bottom: 25px;
+}
+
+.fontcss {
+    width: inherit;
+    word-break: break-all;
+    padding: 5px 0;
+    color: grey;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+}
+
+.fontcss>div {
+    cursor: pointer;
+}
+
+.fontcss>div::before {
+    content: "\f24d";
+    font-family: FontAwesome;
+    font-weight: 900;
+    margin-right: 5px;
+}
+
+.fontcss>div:hover, .fontcss>div:active {
+    color: white;
+    font-weight: bold;
+}
+
+.fontcss>div:hover::before, .fontcss>div:active::before {
+    color: orange;
+    font-weight: bold;
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1px) grayscale(1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    color: cyan;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav>* {
+    font-family: "Bungee";
+    margin: 0;
+    line-height: 2rem;
+}
+
+.message {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    z-index: 20;
+    font-family: "Bungee";
+    color: cyan;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px) grayscale(1);
+    text-align: center;
+}
+
+.message>h3 {
+    animation: moveup 2s linear forwards;
+}
+
+@keyframes moveup {
+    0% {
+        transform: translateX(-100vw);
+    }
+    20%, 80% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+#help {
+    font-size: 1.5rem;
+    transform: translateX(-2rem);
+    border-radius: 50%;
+    width: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+#help:hover {
+    color: white;
+}
+
+.help {
+    display: none;
+    top: 0;
+    position: fixed;
+    z-index: 5;
+    margin: 0;
+    background: linear-gradient(#f70440, #fa0956);
+    min-height: 100vh;
+    width: 100%;
+}
+
+.help>div>h3 {
+    max-width: 400px;
+    text-align: justify;
+}
+
+.help>div>h3>span {
+    color: cyan;
+}
+
+.help>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
+button {
+    background: cyan;
+    border: none;
+    padding: 0.5rem;
+    width: 10rem;
+    border-radius: 1rem;
+    color: #fa0956;
+    font-weight: bold;
+    box-shadow: 0px 0px 1px black;
+    cursor: pointer;
+    font-family: "Bungee";
+    font-size: 1rem;
+}

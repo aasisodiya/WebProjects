@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description"
+        content="Memory Game - Player at start is shown some numbers in random order. Then the number disappears and user is required to click the containers in same ascending order. Fastest wins!" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Memory Game" />
+    <meta property="og:description"
+        content="Memory Game - Player at start is shown some numbers in random order. Then the number disappears and user is required to click the containers in same ascending order. Fastest wins!" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>Memory Game</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <!-- Title and Icon of the Website -->
+    <!-- Custom Style Sheet Import Start-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Custom Style Sheet Import End-->
+    <!-- Google Font Import Start -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
+    <!-- Google Font Import End -->
+    <!-- Font Awesome Import Start -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+    <!-- Font Awesome Import End -->
+    <!-- Jquery Import Start -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Jquery Import End -->
+    <!-- Custom JS Import Start -->
+    <script src="js/script.js" defer></script>
+    <!-- Custom JS Import End -->
+</head>
+
+<body ontouchend>
+    <div class="countdownholder">
+        <div class="countdown">
+            <div class="border">
+                <div class="pointer"></div>
+            </div>
+            <div class="counter">0</div>
+        </div>
+    </div>
+    <div id="startscreen">
+        <div class="content">
+            <div class="gamename">
+                <h1>Memory Game</h1>
+            </div>
+            <div class="instructions">
+                <h3>Instructions</h3>
+                <p>
+                    As a player, you will be shown some numbers in a specific order.
+                    Your task is to memorize them. When numbers are finished being
+                    displayed, you will have to enter those numbers in that exact order
+                    onto the Numpad. Level by level, the length of numbers will increase
+                    by 1. Try advancing to the highest level you can.
+                </p>
+            </div>
+            <div class="startbutton">
+                <button id="start">Start Game</button>
+            </div>
+        </div>
+    </div>
+    <div id="showcase">
+        <div class="showcasecontent">
+            <h3>Pay Attention</h3>
+            <span id="displaynumber"></span>
+        </div>
+    </div>
+    <div id="gameover">
+        <div class="gameovercontent">
+            <h1>Game Over</h1>
+            <h3>
+                You completed level <span id="levelplayed">1</span> in under
+                <span id="timeplayed">2</span> seconds
+            </h3>
+            <button id="acknowledge">Ok</button>
+        </div>
+    </div>
+    <div id="playground">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>0</div>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.memorygame" alt="">
+    </div>
+</body>
+
+</html>

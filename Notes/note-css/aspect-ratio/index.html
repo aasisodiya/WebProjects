@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Aspect Ratio CSS Property" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aspect Ratio CSS Property" />
+    <meta property="og:description" content="Aspect Ratio CSS Property" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>Aspect Ratio CSS Property</title>
+    <link rel="icon" href="https://aasisodiya.github.io/WebProjects/shared/img/favicon.png" type="image/x-icon" />
+    <!-- Title and Icon of the Website -->
+    <!-- Google Font Import Start -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            font-weight: bold;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: "Exo 2", sans-serif;
+            /* CSS Code to handle unwanted element highlights / div selection in Android */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            margin: 0;
+            background: black;
+        }
+
+        /* Template Code End */
+        .example {
+            aspect-ratio: 16/5;
+            background: purple;
+            width: 300px;
+            display: inline-block;
+        }
+        .example2 {
+            aspect-ratio: 1/5;
+            background: violet;
+            height: 300px;
+            display: inline-block;
+        }
+        .example3 {
+            aspect-ratio: 4/3;
+            background: magenta;
+        }
+        .example4 {
+            aspect-ratio: 5/2;
+            background: violet;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body ontouchend>
+    <div class="example">
+        aspect-ratio: 16/5 and width 300px
+    </div>
+    <div class="example2">
+        aspect-ratio: 1/5 and height 300px
+    </div>
+    <div class="example4">
+        aspect-ratio: 5/2 and width 300px
+    </div>
+    <div class="example4">
+        aspect-ratio: 5/2 and width 300px <b>but with large content. So the aspect-ratio won't hold</b>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quae eum aperiam atque maxime sed quam suscipit nesciunt labore porro! Tempora, facere inventore laboriosam perspiciatis libero modi natus cupiditate temporibus? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint, reprehenderit quae. Aliquid, totam. Temporibus, dolores! Recusandae ad quae deleniti est dolor. Fuga dolore distinctio adipisci provident laboriosam quidem facilis at!
+    </div>
+    <div class="example3">
+        aspect-ratio: 4/3
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.aspectratio" alt="">
+    </div>
+</body>
+
+</html>

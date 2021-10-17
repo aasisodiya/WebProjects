@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Bungee", sans-serif;
+    /* font-family: monospace; */
+    /* CSS Code to handle unwanted element highlights / div selection in Android */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Template Code End */
+
+body {
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.curvedtext {
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+}
+
+.curvedtext span {
+    min-width: 0.5em;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    transform-origin: center bottom;
+}

@@ -6,27 +6,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Akash Sisodiya">
-    <meta name="description" content="target vs currentTarget">
-    <title>Document</title>
+    <meta name="description" content="Date and Time in JS">
+    <title>Date and Time in JS</title>
+    <link rel="icon" href="../../../../shared/img/favicon.png" type="image/x-icon">
     <!-- jQuery library -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0;
+            color: black;
+            font-weight: bold;
+            background: chartreuse;
+            display: flex;
+            align-items: center;
+            align-content: center;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            position: relative;
+        }
+
+        /* Template Code End */
+        * {
+            font-family: 'Space Mono', monospace;
+            margin: 0.2rem;
+            font-size: 1rem;
+        }
+
+        body {
+            color: white;
+            background-color: black;
+            padding-bottom: 3rem;
+        }
+
+        .function {
+            font-weight: bold;
+            color: white;
+        }
+
+        p {
+            color: chartreuse;
+        }
+
+        .note {
+            color: orange;
+        }
     </style>
 </head>
 
 <body>
-    <div>Please open console to see logs (Neglect if already opened)
+    <div class="note">Please open console also to see logs (Neglect if already opened)
+    </div>
+    <div id="output">
+
     </div>
     <script>
-        console.log("Date():",Date());
+        console.log("Date():", Date());
         // Output: Date(): Sat Feb 27 2021 19:41:07 GMT+0530 (India Standard Time)
-        console.log("new Date():",new Date());
+        console.log("new Date():", new Date());
         // Output: new Date(): Sat Feb 27 2021 19:41:07 GMT+0530 (India Standard Time)
-        console.log("Date.now() Returns the numeric value corresponding to the current time—the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC, with leap seconds ignored. Date.now():",Date.now());
+        console.log("Date.now() Returns the numeric value corresponding to the current time—the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC, with leap seconds ignored. Date.now():", Date.now());
         // Output: Date.now() Returns the numeric value corresponding to the current time—the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC, with leap seconds ignored. Date.now(): 1614435067319
-        console.log("Date.parse('Sat Feb 27 2021 19:41:07 GMT+0530 (India Standard Time)'):",Date.parse("Sat Feb 27 2021 19:41:07 GMT+0530 (India Standard Time)"));
+        console.log("Date.parse('Sat Feb 27 2021 19:41:07 GMT+0530 (India Standard Time)'):", Date.parse("Sat Feb 27 2021 19:41:07 GMT+0530 (India Standard Time)"));
         // Output: Date.parse(): NaN
-        console.log("Date.UTC(year[, month[, day[, hour[, minute[, second[, millisecond]]]]]]) : Date.UTC(2021, 01, 01):",Date.UTC(2021, 01, 01));
+        console.log("Date.UTC(year[, month[, day[, hour[, minute[, second[, millisecond]]]]]]) : Date.UTC(2021, 01, 01):", Date.UTC(2021, 01, 01));
         // Output: Date.UTC(year[, month[, day[, hour[, minute[, second[, millisecond]]]]]]) : Date.UTC(2021, 01, 01): 1612137600000
         let date = new Date();
         console.log("date.getDate():", date.getDate());
@@ -69,30 +126,47 @@
         // Output: date.getYear(): 121
         console.log("%c Date in String", 'color: red; font-size:1rem');
         // Output:  Date in String
-        console.log("date.toDateString():",date.toDateString());
+        console.log("date.toDateString():", date.toDateString());
         // Output: date.toDateString(): Sat Feb 27 2021
-        console.log("date.toISOString():",date.toISOString());
+        console.log("date.toISOString():", date.toISOString());
         // Output: date.toISOString(): 2021-02-27T14:11:07.320Z
-        console.log("date.toJSON():",date.toJSON());
+        console.log("date.toJSON():", date.toJSON());
         // Output: date.toJSON(): 2021-02-27T14:11:07.320Z
-        console.log("date.toGMTString():",date.toGMTString());
+        console.log("date.toGMTString():", date.toGMTString());
         // Output: date.toGMTString(): Sat, 27 Feb 2021 14:11:07 GMT
-        console.log("date.toLocaleDateString():",date.toLocaleDateString());
+        console.log("date.toLocaleDateString():", date.toLocaleDateString());
         // Output: date.toLocaleDateString(): 2/27/2021
         // console.log("date.toLocaleFormat():",date.toLocaleFormat("en-US"));
-        console.log("date.toLocaleString():",date.toLocaleString("en-GB"));
+        console.log("date.toLocaleString():", date.toLocaleString("en-GB"));
         // Output: date.toLocaleString(): 27/02/2021, 19:41:07
-        console.log("date.toLocaleTimeString():",date.toLocaleTimeString());
+        console.log("date.toLocaleTimeString():", date.toLocaleTimeString());
         // Output: date.toLocaleTimeString(): 7:41:07 PM
-        console.log("date.toString():",date.toString());
+        console.log("date.toString():", date.toString());
         // Output: date.toString(): Sat Feb 27 2021 19:41:07 GMT+0530 (India Standard Time)
-        console.log("date.toTimeString():",date.toTimeString());
+        console.log("date.toTimeString():", date.toTimeString());
         // Output: date.toTimeString(): 19:41:07 GMT+0530 (India Standard Time)
-        console.log("date.toUTCString():",date.toUTCString());
+        console.log("date.toUTCString():", date.toUTCString());
         // Output: date.toUTCString(): Sat, 27 Feb 2021 14:11:07 GMT
-        console.log("The number of milliseconds between 1 January 1970 00:00:00 UTC and the given date. date.valueOf():",date.valueOf());
+        console.log("The number of milliseconds between 1 January 1970 00:00:00 UTC and the given date. date.valueOf():", date.valueOf());
         // Output: The number of milliseconds between 1 January 1970 00:00:00 UTC and the given date. date.valueOf(): 1614435067320
+
+
+        // let date = new Date();
+        let aboveData = [["Date():", Date()], ["new Date():", new Date()], ["Date.now() Returns the numeric value corresponding to the current time—the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC, with leap seconds ignored. Date.now():", Date.now()], ["Date.parse('Sat Feb 27 2021 19:41:07 GMT+0530 (India Standard Time)'):", Date.parse("Sat Feb 27 2021 19:41:07 GMT+0530 (India Standard Time)")], ["Date.UTC(year[, month[, day[, hour[, minute[, second[, millisecond]]]]]]) : Date.UTC(2021, 01, 01):", Date.UTC(2021, 01, 01)], ["date.getDate():", date.getDate()], ["date.getDay():", date.getDay()], ["date.getFullYear():", date.getFullYear()], ["date.getHours():", date.getHours()], ["date.getMilliseconds():", date.getMilliseconds()], ["date.getMinutes():", date.getMinutes()], ["date.getMonth():", date.getMonth()], ["date.getSeconds():", date.getSeconds()], ["date.getTime():", date.getTime()], ["date.getTimezoneOffset():", date.getTimezoneOffset()], ["date.getUTCDate():", date.getUTCDate()], ["date.getUTCDay():", date.getUTCDay()], ["date.getUTCFullYear():", date.getUTCFullYear()], ["date.getUTCHours():", date.getUTCHours()], ["date.getUTCMilliseconds():", date.getUTCMilliseconds()], ["date.getUTCMinutes():", date.getUTCMinutes()], ["date.getUTCMonth():", date.getUTCMonth()], ["date.getUTCSeconds():", date.getUTCSeconds()], ["date.getYear():", date.getYear()], ["date.toDateString():", date.toDateString()], ["date.toISOString():", date.toISOString()], ["date.toJSON():", date.toJSON()], ["date.toGMTString():", date.toGMTString()], ["date.toLocaleDateString():", date.toLocaleDateString()], ["date.toLocaleString():", date.toLocaleString("en-GB")], ["date.toLocaleTimeString():", date.toLocaleTimeString()], ["date.toString():", date.toString()], ["date.toTimeString():", date.toTimeString()], ["date.toUTCString():", date.toUTCString()], ["The number of milliseconds between 1 January 1970 00:00:00 UTC and the given date. date.valueOf():", date.valueOf()], ["Convert Seconds To hh:mm:ss Format using let hhmmss = new Date(SECONDS * 1000).toISOString().substr(11, 8); where SECONDS = 3500:", new Date(3500 * 1000).toISOString().substr(11, 8)]];
+
+        let generatedOutput = "";
+        aboveData.forEach(element => {
+            console.log(generatedOutput);
+            console.log(element.length, element.join(" "));
+            generatedOutput += "<p><span class='function'>" + element[0] + "</span> " + element[1] + "</p>";
+        });
+        $('#output').html(generatedOutput);
     </script>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.note-js-dates" alt="">
+    </div>
 </body>
 
 </html>

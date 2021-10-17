@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Lilita+One&family=Press+Start+2P&display=swap");
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-size: small;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+/* Template Code End */
+
+* {
+    /* font-family: 'Exo 2', sans-serif; */
+    font-family: "Bungee Shade", cursive;
+    /* font-family: 'Lilita One', sans-serif; */
+    margin: 0;
+    user-select: none;
+}
+
+body {
+    background-color: white !important;
+}
+
+#message {
+    text-align: center;
+    font-family: "Press Start 2P", cursive;
+    padding: 0 2rem;
+}
+
+.header {
+    text-align: center;
+}
+
+.playground {
+    display: flex;
+    min-height: 60vh;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+.holder {
+    position: relative;
+    overflow: hidden;
+    border: 5px solid black;
+}
+
+.door, .object, .holder, .selected {
+    min-height: 60vh;
+    width: 25vw;
+}
+
+.door, .object, .selected {
+    position: absolute;
+}
+
+.door {
+    z-index: 1;
+    background: -webkit-linear-gradient(brown 50%, #111 50%);
+    background: -o-linear-gradient(brown 50%, #111 50%);
+    background: linear-gradient(brown 50%, #111 50%);
+    background-size: 100% 20px;
+    background-repeat: repeat-y;
+}
+
+.dooropen {
+    animation: opendoor 1s forwards;
+}
+
+@keyframes opendoor {
+    from {
+        top: 0px;
+    }
+    to {
+        top: -60vh;
+    }
+}
+
+.object, .selected {
+    /* background-color: yellow; */
+    text-align: center;
+}
+
+.donkey, .car {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.donkey {
+    background-image: url(../img/donkey.svg);
+}
+
+.car {
+    background-image: url(../img/car.svg);
+}
+
+#action1, #action2, #action3, #action4 {
+    text-align: center;
+    font-family: "Press Start 2P", cursive;
+    padding: 1rem;
+    display: none;
+}
+
+#help {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem 1rem;
+    font-size: 2rem;
+    line-height: 3rem;
+    background-color: brown;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    border: 0.3rem solid black;
+    cursor: pointer;
+}
+
+.action {
+    min-height: 1rem;
+}
+
+.buffer {
+    height: 2rem;
+}
+
+.selected {
+    z-index: 2;
+    pointer-events: none;
+    display: none;
+    position: relative;
+    bottom: 0;
+}
+
+.fa-hand-o-up {
+    color: DeepSkyBlue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}

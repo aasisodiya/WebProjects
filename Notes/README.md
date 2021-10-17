@@ -1,17 +1,31 @@
 # Notes
 
-- [CSS Layouts](./note-css-layout/README.md)
-  - [Vertically Divided Element](./note-css-layout/note-vertically-divided-element/README.md)
+## [Colors](https://aasisodiya.github.io/WebProjects/Notes/note-colors/)
 
 ---
 
-- [JS/jQuery Notes](./note-js-jquery/README.md)
-  - [jQuery Method - .on(), .off(), .one() and .click()](./note-js-jquery/note-method-on-off-one-click/README.md)
-  - [Date in JavaScript](./note-js-jquery/note-js-dates/README.md)
-  - [target vs currentTarget property](./note-js-jquery/note-target-vs-currenttarget/README.md)
-  - [Create Copy Of An Object In JavaScript](./note-js-jquery/note-creating-copy-of-object/README.md)
-  - [Detect If User Has Seen / Visited an Element of Website](./note-js-jquery/note-target-vs-currenttarget/README.md)
+## CSS
+
+- [CSS Notes](https://aasisodiya.github.io/WebProjects/Notes/note-css/)
+- [Note CSS Layouts](https://aasisodiya.github.io/WebProjects/Notes/note-css-layout/)
+  - [Vertically Divided Element](https://aasisodiya.github.io/WebProjects/Notes/note-css-layout/note-vertically-divided-element/)
+  - [Vertically & Horizontally Center Element](https://aasisodiya.github.io/WebProjects/Notes/note-css-layout/note-vertically-center-element/)
 
 ---
 
-[Common/Frequent Error](./note-js-jquery/note-error-and-solution/README.md)
+## [JS/jQuery Notes](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/)
+
+- [jQuery Method - .on(), .off(), .one() and .click()](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-method-on-off-one-click/)
+- [Date in JavaScript](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-js-dates/)
+- [target vs currentTarget property](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-target-vs-currenttarget/)
+- [Create Copy Of An Object In JavaScript](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-creating-copy-of-object/)
+- [Detect If User Has Seen / Visited an Element of Website](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-detect-if-user-has-visited-or-seen-specific-element/)
+- [Sort Object By Keys](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#sort-object-by-keys)
+- [Swap Key-Value in JSON](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#swap-key-value-in-json)
+- [Copy Content To Clipboard](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#copy-content-to-clipboard)
+
+---
+
+[Common/Frequent Error](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-error-and-solution/)
+
+---

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Block</title>
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="Play Game of Matching Blocks">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="primary">
+            <button class="startGame">Start Game</button>
+            <h2>Instructions</h2>
+            <p>Just remember the images you reveal and then open two same images one after the other to make them
+                disappear. Game completes when all the matching images disappear. For best score try finishing fast</p>
+        </div>
+        <div class="secondary">
+            <h4>Last Game Score: <span id="lastscore">NA</span></h4>
+            <h3>Best Score</h3>
+            <div class="scoreboard">
+                <div class="scorehead">
+                    <span>Size (Number of Blocks)</span>
+                    <span>Time To Complete (hh:mm:ss.sss)</span>
+                </div>
+                <div id="scorelist">
+                    No Data Available
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="clock"></div>
+    <div id="playground">
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.matchblock" alt="">
+    </div>
+</body>
+
+</html>
