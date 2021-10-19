@@ -23,12 +23,23 @@
     - [Possible Fixes / Workarounds That Worked For Me](#possible-fixes--workarounds-that-worked-for-me)
     - [Other Solutions](#other-solutions)
   - [How to import Jquery directly into your `script.js` file?](#how-to-import-jquery-directly-into-your-scriptjs-file)
+  - [Copy To Clipboard](#copy-to-clipboard)
+  - [Random Number Within a Range](#random-number-within-a-range)
+  - [Covert RGB To Hex](#covert-rgb-to-hex)
+  - [Scroll To Top](#scroll-to-top)
+  - [Check User Device is Apple](#check-user-device-is-apple)
+  - [Strip HTML From Text](#strip-html-from-text)
+  - [Detect Dark Mode](#detect-dark-mode)
+  - [Check if the current user has touch events supported](#check-if-the-current-user-has-touch-events-supported)
+  - [Clear All browser Cookies](#clear-all-browser-cookies)
 
 ## Sort Object By Keys
 
 ```javascript
 function sortObjectByKeys(o) {
-    return Object.keys(o).sort().reduce((r, k) => (r[k] = o[k], r), {});
+  return Object.keys(o)
+    .sort()
+    .reduce((r, k) => ((r[k] = o[k]), r), {});
 }
 ```
 
@@ -36,17 +47,19 @@ function sortObjectByKeys(o) {
 
 ```javascript
 function sortObjectByKeys(o) {
-    return Object.keys(o).sort().reduce((r, k) => (r[k] = o[k], r), {});
+  return Object.keys(o)
+    .sort()
+    .reduce((r, k) => ((r[k] = o[k]), r), {});
 }
 let test = {
-    "ok":"ok",
-    "ak":"ak",
-    "zk":"zk",
-    "bk":"bk",
-    "0":"0",
-    "10":"10",
-    "2":"2"
-}
+  ok: "ok",
+  ak: "ak",
+  zk: "zk",
+  bk: "bk",
+  0: "0",
+  10: "10",
+  2: "2",
+};
 let sorted = sortObjectByKeys(test);
 console.log(sorted);
 // Output : {0: "0", 2: "2", 10: "10", ak: "ak", bk: "bk", ok: "ok", zk: "zk"}
@@ -57,27 +70,30 @@ console.log(sorted);
 ## Sort By Numeric Property
 
 ```javascript
-let sortedArray = unsortedArray.sort(function(a,b){
-    return a.property - b.property;
+let sortedArray = unsortedArray.sort(function (a, b) {
+  return a.property - b.property;
 });
 ```
 
 ### Example Code For Sort By Numeric Property
 
 ```javascript
-let colorDataArray = [{
-    "color": "#002aff",
-    "stop": 0
-}, {
-    "color": "#ff0034",
-    "stop": 100
-}, {
-    "color": "#ffa500",
-    "stop": 40
-}
+let colorDataArray = [
+  {
+    color: "#002aff",
+    stop: 0,
+  },
+  {
+    color: "#ff0034",
+    stop: 100,
+  },
+  {
+    color: "#ffa500",
+    stop: 40,
+  },
 ];
 colorDataArray = colorDataArray.sort(function (a, b) {
-    return a.stop - b.stop;
+  return a.stop - b.stop;
 });
 // "[{"color":"#002aff","stop":0},{"color":"#ffa500","stop":40},{"color":"#ff0034","stop":100}]"
 ```
@@ -87,17 +103,23 @@ colorDataArray = colorDataArray.sort(function (a, b) {
 ## Swap Key-Value in JSON
 
 ```javascript
-let swappedKeyValue = Object.assign({}, ...Object.entries(keyValue).map(([key, value]) => ({ [value]: key })))
+let swappedKeyValue = Object.assign(
+  {},
+  ...Object.entries(keyValue).map(([key, value]) => ({ [value]: key }))
+);
 ```
 
 ### Example Code For Swapping Key-Value in JSON
 
 ```javascript
 let keyValue = {
-    "key1":"value1",
-    "key2":"value2"
-}
-let swappedKeyValue = Object.assign({}, ...Object.entries(keyValue).map(([key, value]) => ({ [value]: key })))
+  key1: "value1",
+  key2: "value2",
+};
+let swappedKeyValue = Object.assign(
+  {},
+  ...Object.entries(keyValue).map(([key, value]) => ({ [value]: key }))
+);
 console.log(swappedKeyValue);
 // Output: {value1: "key1", value2: "key2"}
 ```
@@ -109,11 +131,11 @@ console.log(swappedKeyValue);
 ```javascript
 // Function to Copy to ClipBoard
 function copyToClipboard(contentToCopy) {
-    var input = $("<input>");
-    $("body").append(input);
-    input.val(contentToCopy).select();
-    document.execCommand("copy");
-    input.remove();
+  var input = $("<input>");
+  $("body").append(input);
+  input.val(contentToCopy).select();
+  document.execCommand("copy");
+  input.remove();
 }
 ```
 
@@ -123,30 +145,34 @@ function copyToClipboard(contentToCopy) {
 
 |`change` Event|`input` event|
 |-|-|
-|The change event is fired for `<input>`, `<select>`, and `<textarea>` elements when an alteration to the element's value is committed by the user. Unlike the input event, the change event is not necessarily fired for each alteration to an element's value.|The input event fires when the value of an `<input>`, `<select>`, or `<textarea>` element has been changed. This is unlike the change event, which only fires when the value is committed, such as by pressing the enter key, selecting a value from a list of options, and the like.|
+| The change event is fired for `<input>`, `<select>`, and `<textarea>` elements when an alteration to the element's value is committed by the user. Unlike the input event, the change event is not necessarily fired for each alteration to an element's value. | The input event fires when the value of an `<input>`, `<select>`, or `<textarea>` element has been changed. This is unlike the change event, which only fires when the value is committed, such as by pressing the enter key, selecting a value from a list of options, and the like. |
 
 ## FullScreen Function
 
 ```javascript
 // Function to open fullscreen
-var elem = document.getElementsByTagName('body')[0];
+var elem = document.getElementsByTagName("body")[0];
 function openFullscreen() {
-    if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) { /* Safari */
-        elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { /* IE11 */
-        elem.msRequestFullscreen();
-    }
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) {
+    /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) {
+    /* IE11 */
+    elem.msRequestFullscreen();
+  }
 }
 function closeFullscreen() {
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) { /* Safari */
-        document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) { /* IE11 */
-        document.msExitFullscreen();
-    }
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) {
+    /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) {
+    /* IE11 */
+    document.msExitFullscreen();
+  }
 }
 ```
 
@@ -157,68 +183,71 @@ function closeFullscreen() {
 Use below code when you want to display a popup message just above an element. For Example, when you click on a copy button to copy some content, then below code can help you display a copied message
 
 ```css
-.testclick, .testhover {
-    position: relative;
-    /*Needed*/
-    width: fit-content;
-    /*Needed*/
+.testclick,
+.testhover {
+  position: relative;
+  /*Needed*/
+  width: fit-content;
+  /*Needed*/
 }
 
 .testhover:hover > .popupmessage {
-    display: inline-block;
+  display: inline-block;
 }
-.testhover:hover >  {
-    display: inline-block;
+.testhover:hover > {
+  display: inline-block;
 }
 
 .popupmessage {
-    display: none;
-    width: 120px;
-    background-color: rgba(34, 34, 34, 0.7);
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 150%;
-    /*Might have to change this based on the parent element size*/
-    left: 50%;
-    margin-left: -60px;
+  display: none;
+  width: 120px;
+  background-color: rgba(34, 34, 34, 0.7);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  /*Might have to change this based on the parent element size*/
+  left: 50%;
+  margin-left: -60px;
 }
 
 .arrow-down {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid rgba(34, 34, 34, 0.7);
-    position: absolute;
-    bottom: -10px;
-    left: calc(50% - 10px);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(34, 34, 34, 0.7);
+  position: absolute;
+  bottom: -10px;
+  left: calc(50% - 10px);
 }
 ```
 
 ```html
 <span class="testclick">
-    <button id="clickbutton">Click Me To Show/Hide PopUp</button>
-    <span class="popupmessage">Clicked
-        <span class="arrow-down"></span>
-    </span>
+  <button id="clickbutton">Click Me To Show/Hide PopUp</button>
+  <span class="popupmessage"
+    >Clicked
+    <span class="arrow-down"></span>
+  </span>
 </span>
 <span class="testhover">
-    <button>Hover Me</button>
-    <span class="popupmessage">Hovering
-        <span class="arrow-down"></span>
-    </span>
+  <button>Hover Me</button>
+  <span class="popupmessage"
+    >Hovering
+    <span class="arrow-down"></span>
+  </span>
 </span>
 ```
 
 ```javascript
 // Function to show message as popup
-$('#clickbutton').on('click', function () {
-    // below code is specific to popup message for click span
-    $('.testclick > .popupmessage').toggle();
+$("#clickbutton").on("click", function () {
+  // below code is specific to popup message for click span
+  $(".testclick > .popupmessage").toggle();
 });
 ```
 
@@ -227,7 +256,7 @@ $('#clickbutton').on('click', function () {
 ## Formatted JSON
 
 ```javascript
-let formattedJson = JSON.stringify({ a: 'A', b: 'B' }, null, '\t');
+let formattedJson = JSON.stringify({ a: "A", b: "B" }, null, "\t");
 console.log(formattedJson);
 // "{
 //   "a": "A",
@@ -244,14 +273,20 @@ Below code uses regex to detect Hashtags and Mentions(@) in user specified `inpu
 **Regex Used**: `/(^|\s|>|;)([#@][a-z\d-]+)/ig` which identifies the match with 2 group. First group specified by `(^|\s|>|;)` which states that group 1 is `^` Beginning or `\s` has white-space, tabs or line breaks or `>` an ending character `>` for html tags or `;` semi-colon (for encoded values). Second group is specified by `([#@][a-z\d-]+)` as a set of characters starting with wither `#` or `@` then followed by combination of alphabets, numbers or hyphen `-`. Play with regex [here](https://regexr.com/)
 
 ```javascript
-    $('.tweet').html($('.tweet').html().replaceAll("<span class=\"tags\">", "").replaceAll("</span>", "").replace(/(^|\s|>|;)([#@][a-z\d-]+)/ig, "$1<span class='tags'>$2</span>"));
+$(".tweet").html(
+  $(".tweet")
+    .html()
+    .replaceAll('<span class="tags">', "")
+    .replaceAll("</span>", "")
+    .replace(/(^|\s|>|;)([#@][a-z\d-]+)/gi, "$1<span class='tags'>$2</span>")
+);
 ```
 
 Below `css` file highlights the Hashtags and Mentions with color after being enclosed by `span.tags` by above regex function
 
 ```css
 .tags {
-    color: rgb(27, 149, 224);
+  color: rgb(27, 149, 224);
 }
 ```
 
@@ -266,27 +301,27 @@ You can use `html2canvas` and `canvas2image` to export any element of you websit
 ```javascript
 // Code to export canvas as an image on click of a download button with id download
 $("#download").on("click", function (event) {
-    // If you face any issues with exported image try to hide all (if any) elements 
-    // above your exported element. Later make them visible at last.
-    // also scroll to the top left (in case you face any issues)
-    // window.scrollTo(0, 0);
+  // If you face any issues with exported image try to hide all (if any) elements
+  // above your exported element. Later make them visible at last.
+  // also scroll to the top left (in case you face any issues)
+  // window.scrollTo(0, 0);
 
-    // myCanvas below is the element that you want to export
-    // below here we are exporting a div with class name 'classtoexport'
-    var myCanvas = $(".classtoexport").get(0);
-    html2canvas(myCanvas).then(function (canvas) {
-        let fileType = "png";
-        let fileName = "ExportedFileName";
-        let width = canvas.width;
-        let height = canvas.height;
-        // console.log(canvas);
-        Canvas2Image.saveAsImage(canvas, width, height, fileType, fileName);
-        // -- OR --
-        // canvas.toBlob(function(blob) {
-        //     saveAs(blob, "test.png");
-        // });
-    });
-    // Now you can restore all element that were set to hidden in top of the code
+  // myCanvas below is the element that you want to export
+  // below here we are exporting a div with class name 'classtoexport'
+  var myCanvas = $(".classtoexport").get(0);
+  html2canvas(myCanvas).then(function (canvas) {
+    let fileType = "png";
+    let fileName = "ExportedFileName";
+    let width = canvas.width;
+    let height = canvas.height;
+    // console.log(canvas);
+    Canvas2Image.saveAsImage(canvas, width, height, fileType, fileName);
+    // -- OR --
+    // canvas.toBlob(function(blob) {
+    //     saveAs(blob, "test.png");
+    // });
+  });
+  // Now you can restore all element that were set to hidden in top of the code
 });
 ```
 
@@ -307,8 +342,8 @@ The script allows you to take "screenshots" of webpages or parts of it, directly
 Canvas2Image is A tool of saving or converting canvas to images. You can either save the canvas as an image or covert the canvas to an image and load it inside your website. [Reference](https://github.com/hongru/canvas2image)
 
 ```javascript
-Canvas2Image.saveAsImage(canvasObj, width, height, fileType, fileName)
-Canvas2Image.convertToImage(canvasObj, width, height, fileType, fileName)
+Canvas2Image.saveAsImage(canvasObj, width, height, fileType, fileName);
+Canvas2Image.convertToImage(canvasObj, width, height, fileType, fileName);
 ```
 
 ### Canvas Limitations
@@ -357,7 +392,7 @@ The window limitations vary by browser, operating system and system hardware.
 Step 1: In your `script.js` file add a single line of code given below
 
 ```js
-import 'https://code.jquery.com/jquery-3.6.0.min.js';
+import "https://code.jquery.com/jquery-3.6.0.min.js";
 ```
 
 Step 2: Update the script tag in your HTML, which may look like one given below
@@ -377,3 +412,97 @@ Voilà! and you are done!
 > [How to import jQuery using ES6 Syntax](https://stackoverflow.com/questions/34338411/how-to-import-jquery-using-es6-syntax)
 
 ---
+
+## Copy To Clipboard
+
+```js
+const copyToClipboard = (text) => navigator.clipboard.writeText(text);
+copyToClipboard("content to copy");
+```
+
+---
+
+## Random Number Within a Range
+
+```js
+const randomNumberInRange = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+randomNumberInRange(10, 20);
+```
+
+---
+
+## Covert RGB To Hex
+
+```js
+const rgbToHex = (r, g, b) =>
+  "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+```
+
+---
+
+## Scroll To Top
+
+```js
+const goToTop = () => window.scrollTo(0, 0);
+```
+
+---
+
+## Check User Device is Apple
+
+```js
+const isAppleDevice = /Mac|iPod|iPhone|iPad/.test(navigator.platform);
+```
+
+---
+
+## Strip HTML From Text
+
+```js
+const stripHtml = (html) =>
+  new DOMParser().parseFromString(html, "text/html").body.textContent || "";
+
+stripHtml("<h1>Hello <strong>World</strong>!!!</h1>");
+```
+
+---
+
+## Detect Dark Mode
+
+```js
+const isDarkMode =
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches;
+console.log(isDarkMode); // Result: True or False
+```
+
+---
+
+## Check if the current user has touch events supported
+
+```js
+const touchSupported = () => {
+  "ontouchstart" in window ||
+    (window.DocumentTouch && document instanceof window.DocumentTouch);
+};
+
+console.log(touchSupported());
+// Result: will return true if touch events are supported, false if not
+```
+
+---
+
+## Clear All browser Cookies
+
+```js
+const clearCookies = document.cookie
+  .split(";")
+  .forEach(
+    (cookie) =>
+      (document.cookie = cookie
+        .replace(/^ +/, "")
+        .replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`))
+  );
+```
