@@ -32,6 +32,7 @@
   - [Detect Dark Mode](#detect-dark-mode)
   - [Check if the current user has touch events supported](#check-if-the-current-user-has-touch-events-supported)
   - [Clear All browser Cookies](#clear-all-browser-cookies)
+  - [Fuzzing](#fuzzing)
 
 ## Sort Object By Keys
 
@@ -506,3 +507,13 @@ const clearCookies = document.cookie
         .replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`))
   );
 ```
+
+---
+
+## Fuzzing
+
+Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. The program is then monitored for exceptions such as crashes, failing built-in code assertions, or potential memory leaks. The URL Fuzzer can be used in finding hidden directories and files on a web server.
+
+[ffuf](https://github.com/ffuf/ffuf) - A fast web fuzzer written in Go.
+
+[feroxbuster](https://github.com/epi052/feroxbuster) - A simple, fast, recursive content discovery tool written in Rust. feroxbuster is a tool designed to perform Forced Browsing. Forced browsing is an attack where the aim is to enumerate and access resources that are not referenced by the web application, but are still accessible by an attacker.
