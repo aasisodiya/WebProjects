@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Diagonal Section using CSS" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Diagonal Section using CSS" />
+    <meta property="og:description" content="Diagonal Section using CSS" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>Diagonal Section using CSS</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <!-- Title and Icon of the Website -->
+    <!-- Google Font Import Start -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
+    <!-- Google Font Import End -->
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            font-weight: bold;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: "Exo 2", sans-serif;
+            /* CSS Code to handle unwanted element highlights / div selection in Android */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Demo Code Below */
+
+        body {
+            margin: 0;
+            display: flex;
+            place-content: center;
+            place-items: center;
+            height: 100vh;
+        }
+
+        .diagonalContainer {
+            --backgroundColor: orange;
+            background: var(--backgroundColor);
+            position: relative;
+            margin-bottom: 50px;
+            padding: 1rem;
+        }
+
+        .diagonalContainer::after,
+        .diagonalContainer::before {
+            content: '';
+            height: 50px;
+            width: 100%;
+            background: var(--backgroundColor);
+            position: absolute;
+            left: 0;
+        }
+
+        .diagonalContainer::after {
+            top: 100%;
+            /* top: calc(100% - 1px); */
+            z-index: 1;
+            clip-path: polygon(0% 100%, 100% 0%, 0% 0%);
+        }
+
+        .diagonalContainer::before {
+            bottom: 100%;
+            /* bottom: calc(100% - 1px); */
+            z-index: -1;
+            clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+        }
+    </style>
+</head>
+
+<body ontouchend>
+    <div class="container">
+        <!-- The diagonal area -->
+        <div class="diagonalContainer">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus dolores ipsa sint accusamus autem
+            dolore, quas voluptatem debitis eos quos optio voluptates maiores, officia, consectetur porro illo amet
+            fugiat aperiam!
+            Ex aliquid asperiores, accusantium enim magnam consectetur? Aperiam dolore quasi officiis ratione. Molestias
+            neque accusamus maxime libero nemo quibusdam animi nisi, soluta vitae. Beatae eligendi perspiciatis
+            assumenda est nulla facere?
+            Magnam natus voluptates illo iure? Eum et animi sed maiores illum dolorum doloribus, odit ipsum pariatur
+            asperiores dolore veniam debitis tempora voluptas corrupti alias quasi, sunt incidunt unde quos praesentium.
+            Dignissimos omnis voluptatibus dolorem perspiciatis eum impedit excepturi nulla natus amet laudantium,
+            expedita provident veritatis est. Aliquam suscipit eligendi impedit accusamus vel. Nesciunt, nemo ex saepe
+            ipsum impedit quod laborum?
+            Eum labore fugit vero nesciunt est quia explicabo minus similique harum maiores error eius unde tempore
+            suscipit, earum, optio sint facilis velit tenetur. Sed laborum saepe et. Deleniti, eius maxime!
+        </div>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.diagonalsectioncss" alt="">
+    </div>
+</body>
+
+</html>
