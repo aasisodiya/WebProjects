@@ -1,0 +1,170 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    /* CSS Code to handle unwanted element highlights / div selection in Android */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+}
+
+/* Template Code End */
+
+.viewer {
+    perspective: 800px;
+    perspective-origin: center;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    height: 100vh;
+}
+
+.cube {
+    --cube-size: 100px;
+    position: relative;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transition: 10s transform linear 1s;
+}
+
+.cube:hover {
+    transform: rotateY(360deg);
+    /* background: rgba(90, 90, 90, 0.4); */
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    z-index: 222;
+    background: rgba(255, 74, 231, 0.261);
+    display: grid;
+    place-content: center;
+    place-items: center;
+    border: 1px solid black;
+}
+
+.base {
+    transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2)) scale(2);
+    background: grey;
+}
+
+.front {
+    transform: translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube:hover .cover.front {
+    transform: translateZ(calc(var(--cube-size) / 2)) translateY(-100px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube:hover .cover.back {
+    transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2)) translateY(-100px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube:hover .cover.top {
+    transform: rotateX(90deg) translateZ(calc(1.5 * var(--cube-size)));
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube:hover .cover.left {
+    transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2)) translateY(-100px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube:hover .cover.right {
+    transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2)) translateY(-100px);
+}
+
+.gift {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    transition: none;
+}
+
+.cover {
+    transition: 1s transform;
+    background: linear-gradient( 90deg, orange 33%, rgb(255, 102, 0) 33% 66%, orange 66%);
+}
+
+.gift .face:not(.base) {
+    text-align: center;
+    /* background: linear-gradient(-45deg, #1b4eb7, #de3437) top, radial-gradient(center, black, transparent) bottom; */
+    background: radial-gradient(circle at 50% 100%, #121212 30%, transparent 31%), linear-gradient(-45deg, #1b4eb7, #de3437);
+    color: white;
+}
+
+/* Background 1 (Linear Gradient Animated) Start */
+
+.background1 {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(-45deg, black, Fuchsia, DeepSkyBlue, black);
+    background-size: 400% 400%;
+    animation: lineargradient 25s ease infinite;
+}
+
+@keyframes lineargradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Background 1 End */
