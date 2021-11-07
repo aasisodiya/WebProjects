@@ -241,3 +241,4 @@
 |`$.get()` Function|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-api-call/#get-function)|22-September-2021|Way to get data / website data using `$.get()`|
 |Fuzzing Testing|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#fuzzing)|23-October-2021|Fuzzing Testing|
 |Kevin Powell's Challenge|[Link](https://aasisodiya.github.io/WebProjects/55Challenge/02Kevin3DCSS/)|1-November-2021|Kevin Powell's Challenge - [Link](https://www.youtube.com/watch?v=z_UaTcy81P4)|
+|`writing-mode` CSS Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#writing-mode-css-property)|7-Nov-2021|`writing-mode` CSS Property|

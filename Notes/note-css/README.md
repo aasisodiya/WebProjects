@@ -41,6 +41,7 @@
   - [`quotes` CSS Property](#quotes-css-property)
   - [`content` CSS Property](#content-css-property)
   - [`aspect-ratio` CSS Property](#aspect-ratio-css-property)
+  - [`writing-mode` CSS Property](#writing-mode-css-property)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -829,6 +830,16 @@ aspect-ratio: 16 / 9;
 `1 / 1` represents a Ratio. The box’s preferred aspect ratio is the specified ratio of `width` / `height`. Size calculations involving preferred aspect ratio work with the dimensions of the box specified by box-sizing.
 
 > An observation: aspect-ration will be over-ridden if content is bigger [Example Link](./aspect-ratio/)
+
+---
+
+## `writing-mode` CSS Property
+
+The writing-mode CSS property sets whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress. When set for an entire document, it should be set on the root element (html element for HTML documents). [Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)
+
+```css
+writing-mode: vertical-rl;
+```
 
 ---
 
