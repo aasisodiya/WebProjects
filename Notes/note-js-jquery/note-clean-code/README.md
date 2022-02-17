@@ -9,6 +9,8 @@
     - [Split A String Into An Array](#split-a-string-into-an-array)
     - [Remove Duplicate Values From An Array](#remove-duplicate-values-from-an-array)
   - [Single Line If-Else Condition Check](#single-line-if-else-condition-check)
+  - [Check If Object Is Empty using `jQuery.isEmptyObject()`](#check-if-object-is-empty-using-jqueryisemptyobject)
+  - [Shuffle an Array / Randomize an Array](#shuffle-an-array--randomize-an-array)
 
 ## Swapping Values In Two Variables
 
@@ -176,4 +178,29 @@ Short Code Example For Above Example
 let age = 25
 age > 18 ? console.log("Can Play Cyberpunk") : console.log("Not Suitable To Play Cyberpunk");
 // Output: Can Play Cyberpunk
+```
+
+## Check If Object Is Empty using `jQuery.isEmptyObject()`
+
+You can use `jQuery.isEmptyObject()` to Check to see if an object is empty (contains no enumerable properties).
+
+```javascript
+jQuery.isEmptyObject({}); // true
+jQuery.isEmptyObject({ foo: "bar" }); // false
+jQuery.isEmptyObject(""); // true
+jQuery.isEmptyObject("Akash"); // false
+```
+
+## Shuffle an Array / Randomize an Array
+
+Below `shuffle()` function can help you randomize/shuffle the array.
+
+```javascript
+// shuffle function to shuffle the input array
+function shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
+let sample = [1,2,3,4,5];
+console.log(shuffle(sample));
+// Output: [3, 2, 1, 4, 5]
 ```

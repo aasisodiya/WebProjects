@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Columns Layout Using CSS" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Columns Layout Using CSS" />
+    <meta property="og:description" content="Columns Layout Using CSS" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>Columns Layout Using CSS</title>
+    <link rel="icon" href="../../../shared/img/favicon.png" type="image/x-icon" />
+    <!-- Title and Icon of the Website -->
+    <!-- Google Font Import Start -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
+    <!-- Google Font Import End -->
+    <!-- Jquery Import Start -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Jquery Import End -->
+    <!-- Style -->
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            font-weight: bold;
+            color: white;
+            background: tomato;
+            width: 100%;
+            padding: 5px;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: "Exo 2", sans-serif;
+            /* CSS Code to handle unwanted element highlights / div selection in Android */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Template Code End */
+        body {
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, black, rgb(12, 12, 12));
+        }
+
+        .columns {
+            color: white;
+            padding: 2rem 1rem;
+            columns: 250px auto;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body ontouchend>
+    <div class="columns">
+        <h4>On Screen Rotation, Column Count will Increase</h4>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras semper aliquet rhoncus. Nullam auctor egestas
+        molestie. Vivamus aliquam orci nec lacus accumsan auctor non nec nulla. Quisque id dui non urna lobortis dictum
+        ac non dolor. Aenean efficitur rhoncus rutrum. Proin a finibus nisi. Proin molestie tortor tortor, ac maximus
+        libero elementum in. Cras nec sapien interdum, rutrum arcu sed, lacinia nunc. Nulla fermentum, felis in
+        fringilla dictum, purus lectus vestibulum ante, eget porttitor lacus quam vel arcu. Fusce nec nulla ornare,
+        bibendum eros eu, accumsan ante. Nulla sollicitudin euismod massa, sit amet convallis est tincidunt a.
+
+        Fusce sed dapibus odio. Sed quis ligula viverra, efficitur leo sed, egestas magna. Mauris varius dapibus lectus,
+        vel euismod elit commodo sit amet. Proin sed quam ex. Maecenas enim dolor, tincidunt et aliquet vel, ullamcorper
+        at leo. Aliquam erat volutpat. Nulla massa magna, blandit id pharetra euismod, mollis vel nisi. Suspendisse
+        augue erat, viverra at blandit quis, fermentum eleifend erat. Vivamus ultricies, ipsum vitae interdum commodo,
+        purus mauris faucibus lacus, efficitur auctor purus nisi at nunc. Nunc lobortis libero eu diam aliquet molestie.
+        Proin quis nisl vitae purus cursus cursus ultricies eu lacus. Mauris interdum sed justo non mollis.
+
+        Nulla dignissim, leo vel tincidunt cursus, tortor nisl iaculis mi, sit amet pellentesque mi massa non odio.
+        Etiam nibh lectus, fringilla et magna et, maximus dictum mi. Nunc in neque rhoncus, tincidunt metus ut,
+        pellentesque orci. Duis sem sapien, malesuada id porta non, lobortis id neque. Phasellus sollicitudin in arcu in
+        commodo. Suspendisse potenti. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed rutrum volutpat
+        elit, ut aliquet metus elementum at.
+
+        In sodales euismod ipsum at hendrerit. Fusce nisi ante, ultrices at sapien quis, vulputate pharetra justo. Sed
+        sed suscipit leo. Aliquam mattis id quam eget vestibulum. Integer ullamcorper, urna non tempus tincidunt, nulla
+        nibh pellentesque ex, et consequat risus massa non lorem. Donec ullamcorper auctor pellentesque. Donec a metus
+        vestibulum, cursus sem ac, cursus risus. In eu ex pretium, lobortis urna ac, tempor dolor. Sed id blandit nunc,
+        eget rutrum felis. Aliquam vitae molestie ante, eu ultricies metus.
+
+        Nunc in semper nulla. Aenean accumsan iaculis aliquet. Cras bibendum dignissim sapien, in egestas dolor pulvinar
+        sit amet. Phasellus ultricies ligula id dapibus placerat. Pellentesque tempor ut nisi id placerat. Praesent eu
+        fringilla tellus. Vivamus non lacus et ex gravida imperdiet.
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.columns" alt="" />
+    </div>
+    <script></script>
+</body>
+
+</html>

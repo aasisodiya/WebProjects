@@ -1,0 +1,80 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+}
+
+/* Template Code End */
+
+body {
+    text-align: justify;
+}
+
+.target {
+    background: coral;
+    color: black;
+    font-weight: bold;
+    /* padding: 1rem; */
+    width: 80vw;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.magnify {
+    position: relative;
+    /* Issue with margin that's why added float
+    Reference: https://stackoverflow.com/questions/9519841/why-does-this-css-margin-top-style-not-work */
+    float: left;
+}
+
+.magnified {
+    /* Issue with margin that's why added float
+    Reference: https://stackoverflow.com/questions/9519841/why-does-this-css-margin-top-style-not-work */
+    float: left;
+    position: absolute;
+    top: calc(var(--zoom-level) * 50px);
+    left: calc(var(--zoom-level) * 50px);
+    /* transform: scale(var(--zoom-level)); */
+}
+
+.magnifier {
+    --zoom-level: 1.1;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    /* border-radius: 50px; */
+    overflow: hidden;
+    border: 2px solid black;
+    pointer-events: none;
+    display: none;
+    transform: translate(-50px, -50px) scale(var(--zoom-level));
+    z-index: 1;
+}
+
+.magnify:hover .magnifier {
+    display: block;
+}
+
+.target2 {
+    width: 50vw;
+    background: lightblue;
+    /* width and background are necessary for magnify to work */
+    padding: 1rem;
+}

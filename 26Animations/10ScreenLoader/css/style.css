@@ -1,0 +1,111 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+}
+
+/* Template Code End */
+
+body {
+    background: black;
+    margin: 0;
+}
+
+:root {
+    --loader-holder-bg: black;
+    --loader-bar-bg: orange;
+    --loader-bar-height: 10vh;
+    --loader-bar-width: 10px;
+    --animation-period: 1s;
+    --loader-bar-count: 4;
+}
+
+.loader-holder {
+    background: var(--loader-holder-bg);
+    height: 100vh;
+    /* Margin of Body Needs to be 0 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    display: flex;
+    background: #2f4f4f80;
+    height: 40vmin;
+    min-width: fit-content;
+    width: 40vmin;
+    min-height: fit-content;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.534) inset;
+}
+
+.loader-bar {
+    width: var(--loader-bar-width);
+    height: var(--loader-bar-height);
+    background: var(--loader-bar-bg);
+    border-radius: var(--loader-bar-width);
+    animation: glow var(--animation-period) infinite;
+    filter: saturate(0.1);
+}
+
+.loader-bar:not(:first-child) {
+    margin-left: var(--loader-bar-width);
+}
+
+.loader-bar:nth-child(1) {
+    animation-delay: calc(0 * var(--animation-period) / var(--loader-bar-count));
+}
+
+.loader-bar:nth-child(2) {
+    animation-delay: calc(1 * var(--animation-period) / var(--loader-bar-count));
+}
+
+.loader-bar:nth-child(3) {
+    animation-delay: calc(2 * var(--animation-period) / var(--loader-bar-count));
+}
+
+.loader-bar:nth-child(4) {
+    animation-delay: calc(3 * var(--animation-period) / var(--loader-bar-count));
+}
+
+@keyframes glow {
+    0% {
+        filter: saturate(1);
+        box-shadow: 0 0 5px 1px orange;
+    }
+    24% {
+        filter: saturate(1);
+        box-shadow: 0 0 5px 1px orange;
+    }
+    25% {
+        filter: saturate(0.1);
+        box-shadow: none;
+    }
+    50% {
+        filter: saturate(0.1);
+    }
+    75% {
+        filter: saturate(0.1);
+    }
+}

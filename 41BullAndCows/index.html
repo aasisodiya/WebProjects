@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Bulls And Cows</title>
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description"
+        content="Bulls and Cows (also known as Cows and Bulls or Pigs and Bulls) is an old code-breaking mind or paper and pencil game for two or more players" />
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/script.js" defer></script>
+    <!-- Google Analytics Tag Start -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KDE74NNXK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-4KDE74NNXK');
+    </script>
+    <!-- Google Analytics Tag End -->
+</head>
+
+<body ontouchend>
+    <div class="helpbutton">
+        <i class="fa fa-question"></i>
+    </div>
+    <div class="help-holder">
+        <div class="help">
+            <h1>Bulls & Cows</h1>
+            <h3>Your Goal Is To Find The Secret Number</h3>
+            <p>
+                Tap/Click On The Number To Change It To Any Desired Value, Then Click On Submit Button To Check The
+                Result.
+            </p>
+            <p>
+                Number Of Bulls Are Equal To Count Of Correct Number With Correct Position
+            </p>
+            <p>
+                Number Of Cows Are Equal To Count Of Correct Number, But With Wrong Position
+            </p>
+            <p>No Duplicates Allowed In The Number</p>
+            <div class="buttonholder">
+                <button id="closehelp">Close</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="holder">
+            <div class="numbersholder">
+                <div class="number">0</div>
+                <div class="number">1</div>
+                <div class="number">2</div>
+                <div class="number">3</div>
+            </div>
+            <div class="buttonholder">
+                <button id="check">Check</button>
+            </div>
+            <div class="resultsholder">
+                <div class="bulls">Bulls: <span id="bullscount">0</span></div>
+                <div class="cows">Cows: <span id="cowscount">0</span></div>
+                <div class="steps">Steps Taken: <span id="steps">0</span></div>
+            </div>
+            <div class="buttonholder">
+                <button id="restart">Restart</button>
+                <button id="giveup">Give Up</button>
+            </div>
+            <hr>
+            <div class="logs"></div>
+        </div>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.bullsandcows" alt="">
+    </div>
+</body>
+
+</html>

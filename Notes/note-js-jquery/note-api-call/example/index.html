@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Pokemon" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pokemon" />
+    <meta property="og:description" content="Pokemon" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>Pokemon</title>
+    <link rel="icon" href="../../../../shared/img/favicon.png" type="image/x-icon" />
+    <!-- Title and Icon of the Website -->
+    <!-- Google Font Import Start -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap" rel="stylesheet" />
+    <!-- Google Font Import End -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Style -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap");
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: fit-content;
+            font-weight: bold;
+            color: white;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: rgb(254 202 27);
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: "Exo 2", sans-serif;
+            /* CSS Code to handle unwanted element highlights / div selection in Android */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Template Code End */
+        body {
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, black, rgb(12, 12, 12));
+            color: white;
+            justify-items: center;
+        }
+
+        /* Example */
+
+        h1 {
+            color: rgb(254, 202, 27);
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(54, 95, 164);
+        }
+
+        p {
+            margin: 0;
+            color: rgb(254, 202, 27);
+        }
+
+        span {
+            color: rgb(54, 95, 164);
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+
+        #pokemonId {
+            width: 300px;
+        }
+
+        hr {
+            width: 300px;
+        }
+
+        #pokemonImg {
+            filter: drop-shadow(2px 4px 6px white);
+        }
+    </style>
+</head>
+
+<body ontouchend>
+    <h1>Pokemon</h1>
+    <hr />
+    <p>Below data is getting fetched using PokeAPI</p>
+    <p>Pokemon Id: <span id="pokemonId">25</span></p>
+    <p>Pokemon Type: <span id="pokemonType">Electric</span></p>
+    <p>Pokemon Name: <span id="pokemonName">Pikachu</span></p>
+    <img id="pokemonImg"
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
+        alt="pokemon-image" />
+    <script>
+        // There are total of 1118 registered pokemon as of 4th-September-2021
+        // So considering the value as maximum limit, we will get a random number under that value.
+        let pokeNumber = Math.floor(Math.random() * 1118 + 1);
+        console.log(`Generated pokeNumber is ${pokeNumber}`);
+        // So now fetching data for generated pokeNumber
+        let pokeData;
+        // pokeData will store the data fetched from the API
+
+        const getPokemonDataById = async () => {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeNumber}`);
+            pokeData = await response.json(); //extract JSON from the http response
+            return pokeData;
+        };
+        // userAction();
+        let response = getPokemonDataById();
+        response.then((pokeData) => {
+            console.log(pokeData);
+            // Process and manipulate data in pokeData
+            // Set Poke Order
+            $("#pokemonId").text(pokeData.id);
+            // Set Poke Type
+            $("#pokemonType").text(pokeData.types[0].type.name);
+            // Set Poke Name
+            $("#pokemonName").text(pokeData.name);
+            // Set Poke Image
+            if (pokeData.sprites.other.dream_world.front_default != null) {
+                $("#pokemonImg").attr(
+                    "src",
+                    pokeData.sprites.other.dream_world.front_default
+                );
+            } else {
+                $("#pokemonImg").attr(
+                    "src",
+                    pokeData.sprites.other["official-artwork"].front_default
+                );
+            }
+            console.log(pokeData.sprites.other.dream_world.front_default);
+            console.log(pokeData.sprites.other["official-artwork"].front_default);
+        });
+    </script>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.pokeapi" alt="" />
+    </div>
+    <script></script>
+</body>
+
+</html>
