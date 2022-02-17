@@ -1,7 +1,7 @@
 "use strict"
 
 // just tracking the version for data model used for bookmarksData
-let version = 3;
+let version = 3.1;
 
 // Edit Mode is set to true by default
 let editMode = true;
@@ -29,16 +29,6 @@ let categoryHolderHTML = '\
                     </div>\
                 </div>\
             </div >\
-        ';
-
-// linkHolder is template for housing the link
-let linkHolder = '\
-            <div class="p-1 m-1 rounded shadow-sm link-holder bclass">\
-                <div class="row">\
-                    <div class="col"><a class="aclass hexlink" href="Link" target="_blank" rel="noopener noreferrer">Name</a></div>\
-                    <div class="deletelink"><i class="fa fa-trash text-danger" onclick="openDeleteLink()" id="link-id"></i></div>\
-                </div>\
-            </div>\
         ';
 
 // Reading Bookmarks data from LocalStorage
@@ -127,13 +117,14 @@ function processBookmarks() {
         let bookmarkLinkClass = "b" + index;
         let bookmarkClass = "d" + index;
         bookmarks.bookmarks.forEach((bookmark, bid) => {
-            let linkId = "l" + bid
-            bookmarkHolder += linkHolder
-                .replace('aclass', bookmarkLinkClass)
-                .replace('bclass', bookmarkClass)
-                .replace('"Link"', bookmark.url)
-                .replace('Name', bookmark.name)
-                .replace('link-id', linkId)
+            let linkId = "l" + bid;
+            bookmarkHolder += `
+            <div class="p-1 m-1 rounded shadow-sm link-holder ${bookmarkClass}">
+                <div class="row">
+                    <div class="col"><a class="${bookmarkLinkClass} hexlink" href="${bookmark.url}" target="_blank" rel="noopener noreferrer">${bookmark.name}</a></div>
+                    <div class="deletelink"><i class="fa fa-trash text-danger" onclick="openDeleteLink()" id="${linkId}"></i></div>
+                </div>
+            </div>`;
         });
         $('.card-columns')[0].innerHTML += categoryHolderHTML.replace("card-id",
             categoryId).replace("Category", bookmarks.category).replace('"Bookmarks"', bookmarkHolder);
@@ -666,7 +657,7 @@ function download() {
 };
 
 // Below function counts clicks on links
-$('a').on('click', function () {
+$('body').on('click','a', function () {
     bookmarksData.clicks += 1;
     localStorage.setItem("bookmarks", JSON.stringify(bookmarksData));
 });
