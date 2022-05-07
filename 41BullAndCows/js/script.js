@@ -217,6 +217,7 @@ $("#giveup").on("click", function () {
 $("#closehelp").on("click", function () {
     $(".help-holder").hide();
     $(".helpbutton, .container").show();
+    $("#closehelp")[0].innerHTML = 'Resume';
 });
 
 // Show help window

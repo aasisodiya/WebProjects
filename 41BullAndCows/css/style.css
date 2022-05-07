@@ -57,8 +57,9 @@ body {
 
 /* Css For Button */
 
-.buttonholder {
+.buttonholder > button {
     cursor: pointer;
+    border: 2px solid rgb(49, 49, 49);
 }
 
 button {
