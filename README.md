@@ -1,5 +1,8 @@
 # WebProjects
 
+[![Editor](https://img.shields.io/badge/VSCode-Click%20Here%20To%20Edit%20This%20Repo-blue?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://vscode.dev/github/aasisodiya/WebProjects)
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.WebProjects&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.WebProjects)
+
 ## Project URLs
 
 |Website|Link|Created Date|Description|
