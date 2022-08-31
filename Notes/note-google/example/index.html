@@ -15,8 +15,7 @@
     <meta property="og:title" content="Google API Integration Example" />
     <meta property="og:description" content="Basic Demonstration of Google API Integration" />
     <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
-    <meta name="google-signin-client_id"
-        content="702012928155-jv9nl7b2snu5tprbc40om89r53dn3rta.apps.googleusercontent.com">
+    <!-- <meta name="google-signin-client_id" content="702012928155-jv9nl7b2snu5tprbc40om89r53dn3rta.apps.googleusercontent.com"> -->
     <!-- The Open Graph Protocol Tags End -->
     <!-- Title and Icon of the Website -->
     <title>Google API Integration Example</title>
@@ -63,35 +62,23 @@
 </head>
 
 <body ontouchend>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <a href="#" onclick="signOut();">Sign out</a>
-    <script>
-        function signOut() {
-            console.log("signOut");
-            var auth2 = gapi.auth2.getAuthInstance();
-            console.log(auth2);
-            auth2.signOut().then(function () {
-                console.log('User signed out.');
-            });
-        }
-    </script>
-    <script>
-        var prof;
 
-        function onSignIn(googleUser) {
-            console.log("googleUser onSignIn");
-            console.log(googleUser);
-            var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-            console.log('Name: ' + profile.getName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-            console.log(profile);
-            prof = profile;
-        }
-        console.log(prof);
-    </script>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div id="g_id_onload" data-client_id="702012928155-jv9nl7b2snu5tprbc40om89r53dn3rta.apps.googleusercontent.com" data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+
+
+
+    <div id="g_id_onload" data-client_id="702012928155-jv9nl7b2snu5tprbc40om89r53dn3rta.apps.googleusercontent.com"
+        data-context="signin" data-ux_mode="popup"
+        data-login_uri="https://aasisodiya.github.io/WebProjects/Notes/note-google/example" data-auto_prompt="false">
+    </div>
+
+    <div class="g_id_signin" data-type="icon" data-shape="circle" data-theme="outline" data-text="signin_with"
+        data-size="large">
+    </div>
     <!-- Below code is for footer -->
     <div class="footer">
         &lt;/&gt; by
