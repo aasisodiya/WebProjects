@@ -42,6 +42,7 @@
   - [`content` CSS Property](#content-css-property)
   - [`aspect-ratio` CSS Property](#aspect-ratio-css-property)
   - [`writing-mode` CSS Property](#writing-mode-css-property)
+  - [Styling List Using CSS](#styling-list-using-css)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -842,6 +843,50 @@ writing-mode: vertical-rl;
 ```
 
 ---
+
+## Styling List Using CSS
+
+You can use below code to style your List Elements
+
+```css
+.myCustomOList {
+  list-style: none;
+  counter-reset: myCounter;
+}
+
+.myCustomOList li {
+  counter-increment: myCounter;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.myCustomOList li::before {
+  content: counter(myCounter);
+  position: absolute;
+  left: -2.5rem;
+  /* top: 0.15rem; */
+  background-color: red;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myOList li::marker {
+  background: yellowgreen;
+  padding: 10rem;
+  color: red;
+}
+
+.myUList li::marker {
+  color: orange;
+  content: "👌";
+}
+```
+
+> For Example [Click Here](./list-elements/)
 
 ## Reference
 
