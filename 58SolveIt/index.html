@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description"
+        content="SolveIt is a crappy game where you try to solve basic arithmetic problems as quick as possible" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SolveIt!" />
+    <meta property="og:description"
+        content="SolveIt is a crappy game where you try to solve basic arithmetic problems as quick as possible" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>Solve It!</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <!-- Title and Icon of the Website -->
+    <!-- Custom Style Sheet Import Start-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Custom Style Sheet Import End-->
+    <!-- Google Font Import Start -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
+    <!-- Google Font Import End -->
+    <!-- Font Awesome Import Start -->
+    <!-- Stop using font awesome, instead use google icons -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+    <!-- Font Awesome Import End -->
+    <!-- Google Icons Import Start -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+        rel="stylesheet">
+    <!-- List of Icons: https://fonts.google.com/icons -->
+    <!-- Google Icons Import End -->
+    <!-- Jquery Import Start -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <!-- Jquery Import End -->
+    <!-- Custom JS Import Start -->
+    <script src="js/script.js" defer></script>
+    <!-- Custom JS Import End -->
+    <!-- Google Analytics Tag Start -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KDE74NNXK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-4KDE74NNXK');
+    </script>
+    <!-- Google Analytics Tag End -->
+</head>
+
+<body ontouchend>
+    <div class="centerdiv">
+        <span id="val1">16</span>
+        <br>
+        <span id="operation">÷</span>
+        <br>
+        <span id="val2">4</span>
+        <br>
+        <div style="padding-top: 20px;">
+            <input type="number" id="answer" autofocus value="4">
+        </div>
+    </div>
+    <div id="scorecardholder">
+        Score : <span id="scorecard">0</span>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://api.visitorbadge.io/api/visitors?path=aasisodiya.WebProjects.solveit&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper&style=flat-square" alt="">
+    </div>
+</body>
+
+</html>

@@ -248,8 +248,16 @@
 |Generators In JS|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-generators)|18-Aug-2022|Generators In JS, solution for counter problem|
 |RegExp In JS|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-regexp)|19-Aug-2022|RegExp In JS|
 
+---
+
 |Date|Topic|
 |-|-|
 |2022-08-28|[A-Frame Notes](https://aasisodiya.github.io/WebProjects/Notes/note-aframe)|
 |2022-09-03|[Google API Integration Testing](https://aasisodiya.github.io/WebProjects/Notes/note-google/example)|
 |2022-09-17|[List Styling Using CSS](https://aasisodiya.github.io/WebProjects/Notes/note-css#styling-list-using-css)|
+
+---
+
+|Date|Project|
+|-|-|
+|2022-09-18|[Game - SolveIt!](./58SolveIt/)|
