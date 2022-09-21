@@ -1,0 +1,143 @@
+/* Template Code Start */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+.footer {
+    color: white;
+    --size: 1rem;
+    bottom: 0;
+    left: 0;
+    padding: 5px 10px 5px 10px;
+    font-weight: bold;
+    backdrop-filter: blur(20px) grayscale(50%);
+    clip-path: polygon(0 0, calc(100% - calc(0.5 * var(--size))) 0, 100% calc(0.5 * var(--size)), 100% 100%, 0 100%);
+    /* box-shadow: 0 0 1px 1px black; */
+    background: black;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    /* CSS Code to handle unwanted element highlights / div selection in Android */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Template Code End */
+
+body {
+    margin: 0;
+    cursor: url(../img/cursor.svg), auto;
+}
+
+/* Viewport will contain everything, and hence need to set it's overflow as hidden */
+.viewport {
+    background: url(https://wallpaper.dog/large/5447432.jpg);
+    min-height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.menu {
+    position: fixed;
+    right: 0px;
+    width: 200px;
+    height: 100vh;
+    z-index: 2;
+    backdrop-filter: blur(5px) grayscale(50%);
+    box-shadow: 0px 0px 2px black;
+}
+
+.bottom-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    /* background-color: orange; */
+}
+
+.holder-shadow {
+    filter: drop-shadow(0 0 2px black);
+}
+
+.logo {
+    font-family: 'Bungee';
+    line-height: 1.5rem;
+    color: white;
+    text-align: center;
+}
+
+/* .logoholder {
+    border-bottom: 1px solid white;
+} */
+
+:root {
+    --card-size: 190px;
+}
+
+.card {
+    height: 100px;
+    width: var(--card-size);
+    backdrop-filter: blur(15px) grayscale(50%);
+    box-shadow: 0px 0px 2px black;
+    cursor: url(../img/hover.svg), auto;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background: rgb(245 222 179 / 0%);
+    border-radius: 5px;
+}
+
+.showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-size), var(--card-size)));
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.websiteholder {
+    width: 90%;
+    height: 90%;
+}
+
+.flexcenter {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.websitedata>img {
+    max-width: 95%;
+    max-height: 90%;
+}
+
+.welcomebanner {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px) grayscale(50%);
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#scientist {
+    font-size: 5rem;
+}
