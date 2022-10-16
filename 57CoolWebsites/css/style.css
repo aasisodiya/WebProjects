@@ -127,6 +127,11 @@ body {
     max-height: 90%;
 }
 
+.websitedata {
+    height: 100%;
+    width: 100%;
+}
+
 .welcomebanner {
     position: fixed;
     height: 100vh;

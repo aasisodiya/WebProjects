@@ -260,4 +260,5 @@
 
 |Date|Project|
 |-|-|
-|2022-09-18|[Game - SolveIt!](./58SolveIt/)|
+|2022-09-18|[Game - SolveIt!](https://aasisodiya.github.io/WebProjects/58SolveIt/)|
+|2022-10-08|[Game - ClickIt!](https://aasisodiya.github.io/WebProjects/59ClickIt/)|
