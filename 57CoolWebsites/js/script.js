@@ -29,7 +29,7 @@ let websites = [
   {
     id: 1,
     url: "https://github.com/aasisodiya",
-    logo: "img/logos/github.png",
+    logo: "img/logos/githubcolor.png",
     type: "",
     createdDate: "",
   },
@@ -348,6 +348,34 @@ let websites = [
     type: "",
     createdDate: "",
   },
+  {
+    id: 42,
+    url: "https://gmail.com/",
+    logo: "img/logos/gmail.png",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 43,
+    url: "https://outlook.live.com/owa/",
+    logo: "img/logos/outlook.png",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 44,
+    url: "https://facebook.com/aasisodiya",
+    logo: "img/logos/facebook.png",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 45,
+    url: "https://twitter.com/aassiodiya",
+    logo: "img/logos/twitter.png",
+    type: "",
+    createdDate: "",
+  },
 ];
 
 let imgurl, url;
@@ -358,7 +386,7 @@ function processWebsites(category) {
     imgurl = website.logo;
     url = website.url;
     let template = `
-    <a class="card" href="${url}">
+    <a class="card" href="${url}" target="_blank" rel="noopener noreferrer">
         <div class="cardbg"></div>
         <div class="websiteholder flexcenter">
             <div class="websitedata flexcenter">
