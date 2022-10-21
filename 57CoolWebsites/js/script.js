@@ -740,6 +740,90 @@ let websites = [
     type: "",
     createdDate: "",
   },
+  {
+    id: 98,
+    url: "https://www.valmiki.iitk.ac.in/",
+    logo: "img/logos/valmiki.png",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 99,
+    url: "https://mixkit.co/",
+    logo: "img/logos/mixkit.png",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 100,
+    url: "https://www.goodbooks.io/",
+    logo: "img/logos/goodbooks.svg",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 101,
+    url: "https://www.diffchecker.com/",
+    logo: "img/logos/diffchecker.png",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 102,
+    url: "https://copypastecharacter.com/",
+    logo: "img/logos/copypastecharacter.png",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 103,
+    url: "https://www.copy.ai/",
+    logo: "img/logos/copyai.svg",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 104,
+    url: "https://witeboard.com/",
+    logo: "img/logos/witeboard.png",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 105,
+    url: "https://blush.design/",
+    logo: "img/logos/blush.svg",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 106,
+    url: "https://www.whatruns.com/",
+    logo: "img/logos/whatruns.svg",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 107,
+    url: "https://coverr.co/",
+    logo: "img/logos/coverr.svg",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 108,
+    url: "https://untools.co/",
+    logo: "img/logos/untools.png",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 109,
+    url: "https://lumen5.com/",
+    logo: "img/logos/lumen5.svg",
+    type: "",
+    createdDate: "",
+  },
   // {
   //   id: 9,
   //   url: "",
@@ -770,3 +854,7 @@ function processWebsites(category) {
   $(".showcase")[0].innerHTML = htmlCode;
 }
 processWebsites();
+
+$("#showprogress").on("click", function () {
+  $("#under-development-banner").hide();
+});

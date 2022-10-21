@@ -196,3 +196,13 @@ body {
 .creator {
     z-index: 1001;
 }
+
+#showprogress {
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 15px;
+    cursor: pointer ;
+    background: orange;
+    font-weight: bold;
+}
