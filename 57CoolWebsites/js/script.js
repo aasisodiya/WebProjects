@@ -733,6 +733,13 @@ let websites = [
     type: "",
     createdDate: "",
   },
+  {
+    id: 97,
+    url: "https://www.amazon.in/",
+    logo: "img/logos/amazon.png",
+    type: "",
+    createdDate: "",
+  },
   // {
   //   id: 9,
   //   url: "",
