@@ -262,3 +262,4 @@
 |-|-|
 |2022-09-18|[Game - SolveIt!](https://aasisodiya.github.io/WebProjects/58SolveIt/)|
 |2022-10-08|[Game - ClickIt!](https://aasisodiya.github.io/WebProjects/59ClickIt/)|
+|2022-11-04|[Cool Websites](https://aasisodiya.github.io/WebProjects/57CoolWebsites/)|
