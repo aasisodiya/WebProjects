@@ -824,6 +824,27 @@ let websites = [
     type: "",
     createdDate: "",
   },
+  {
+    id: 110,
+    url: "https://fakeyou.com/",
+    logo: "img/logos/fakeyou.png",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 111,
+    url: "https://www.cutout.pro/",
+    logo: "img/logos/cutoutpro.png",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 112,
+    url: "https://cleanup.pictures/",
+    logo: "img/logos/cleanuppictures.svg",
+    type: "",
+    createdDate: "",
+  },
   // {
   //   id: 9,
   //   url: "",
