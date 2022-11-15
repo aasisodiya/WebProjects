@@ -255,6 +255,7 @@
 |2022-08-28|[A-Frame Notes](https://aasisodiya.github.io/WebProjects/Notes/note-aframe)|
 |2022-09-03|[Google API Integration Testing](https://aasisodiya.github.io/WebProjects/Notes/note-google/example)|
 |2022-09-17|[List Styling Using CSS](https://aasisodiya.github.io/WebProjects/Notes/note-css#styling-list-using-css)|
+|2022-11-15|[Content Editable Style Tag](https://aasisodiya.github.io/WebProjects/Notes/note-css#content-editable-style-tag)|
 
 ---
 
