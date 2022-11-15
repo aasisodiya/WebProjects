@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Sample Web Page to help you experiment with Content Editable Style Tag" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Content Editable Style Tag" />
+    <meta property="og:description" content="Sample Web Page to help you experiment with Content Editable Style Tag" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>Content Editable Style Tag</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <!-- Title and Icon of the Website -->
+    <!-- Google Font Import Start -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
+    <!-- Google Font Import End -->
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            font-weight: bold;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: "Exo 2", sans-serif;
+            /* CSS Code to handle unwanted element highlights / div selection in Android */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Template Code End */
+    </style>
+</head>
+
+<body ontouchend>
+    <!-- Sample of Content Editable Style Tag -->
+    <style contenteditable="" style="display: block; min-height: 10vh; white-space: pre;">
+        * {
+            transition: 1s forward;
+        }
+
+        body {
+            background: orangered; /*<===Try Changing Color*/
+        }
+    </style>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <!-- <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.template" alt=""> -->
+        <img src="https://api.visitorbadge.io/api/visitors?path=aasisodiya.WebProjects.contentEditableStyleTag&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper&style=flat-square"
+            alt="">
+    </div>
+</body>
+
+</html>
