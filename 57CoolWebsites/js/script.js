@@ -845,6 +845,20 @@ let websites = [
     type: "",
     createdDate: "",
   },
+  {
+    id: 113,
+    url: "https://freeforstudents.org/",
+    logo: "img/logos/freeforstudent.svg",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 114,
+    url: "https://shortcutworld.com/",
+    logo: "img/logos/shortcutworld.png",
+    type: "",
+    createdDate: "",
+  },
   // {
   //   id: 9,
   //   url: "",
