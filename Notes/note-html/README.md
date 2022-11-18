@@ -23,6 +23,7 @@
   - [`<progress>`: The Progress Indicator element](#progress-the-progress-indicator-element)
   - [`<meter>`: The HTML Meter element](#meter-the-html-meter-element)
   - [`<template>`: The Content Template element](#template-the-content-template-element)
+  - [Decide Favicons Based on Browser Theme](#decide-favicons-based-on-browser-theme)
   - [Reference](#reference)
 
 ## `<meta>` tag: The metadata element
@@ -358,6 +359,15 @@ Think of a template as a content fragment that is being stored for subsequent us
 ```
 
 > Reference: [Link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template)
+
+## Decide Favicons Based on Browser Theme
+
+Use code `media="(prefers-color-scheme: dark)"` or `media="(prefers-color-scheme: light)"` to set the favicon image based on browser theme. Sample code which sets favicon for dark and light theme is given below. Where `img/dark-theme-favicon.svg` and `img/light-theme-favicon.svg` are the files you will have to set as per your requirements.
+
+```html
+<link rel="icon" href="img/dark-theme-favicon.svg" type="image/x-icon" media="(prefers-color-scheme: dark)" />
+<link rel="icon" href="img/light-theme-favicon.svg" type="image/x-icon" media="(prefers-color-scheme: light)" />
+```
 
 ## Reference
 
