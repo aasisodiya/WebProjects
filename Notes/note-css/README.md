@@ -44,6 +44,7 @@
   - [`writing-mode` CSS Property](#writing-mode-css-property)
   - [Styling List Using CSS](#styling-list-using-css)
   - [Content Editable Style Tag](#content-editable-style-tag)
+  - [`currentColor` Property](#currentcolor-property)
   - [Reference](#reference)
 
 ## Background Backdrop Filter
@@ -894,6 +895,10 @@ You can use below code to style your List Elements
 You can also display a style tag by setting its `display` style property to `block`. And can also make it fun to view live output on the webpage by setting it as `contenteditable`.
 
 > For Example [Click here](./contenteditable-style-tag/)
+
+## `currentColor` Property
+
+The `currentcolor` is the value of the `color` property of an element in which you specify/use it.
 
 ## Reference
 
