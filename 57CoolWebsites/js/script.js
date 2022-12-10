@@ -859,6 +859,13 @@ let websites = [
     type: "",
     createdDate: "",
   },
+  {
+    id: 115,
+    url: "https://icons8.com/upscaler",
+    logo: "img/logos/smart-upscaler.png",
+    type: "",
+    createdDate: "",
+  },
   // {
   //   id: 9,
   //   url: "",
