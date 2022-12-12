@@ -887,7 +887,7 @@ function processWebsites(category) {
         <div class="cardbg"></div>
         <div class="websiteholder flexcenter">
             <div class="websitedata flexcenter">
-                <img src="${imgurl}" alt="">
+                <img loading="lazy" src="${imgurl}" alt="">
             </div>
         </div>
     </a>`;
