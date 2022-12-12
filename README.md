@@ -257,6 +257,7 @@
 |2022-09-17|[List Styling Using CSS](https://aasisodiya.github.io/WebProjects/Notes/note-css#styling-list-using-css)|
 |2022-11-15|[Content Editable Style Tag](https://aasisodiya.github.io/WebProjects/Notes/note-css#content-editable-style-tag)|
 |2022-11-18|[Decide Favicons Based on Browser Theme](https://aasisodiya.github.io/WebProjects/Notes/note-html#decide-favicons-based-on-browser-theme)|
+|2022-12-12|[Lazy Loading using `loading` attribute](https://aasisodiya.github.io/WebProjects/Notes/note-html#lazy-loading)|
 
 ---
 
