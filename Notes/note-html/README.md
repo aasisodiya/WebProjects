@@ -1,6 +1,7 @@
 # HTML Notes
 
 - [HTML Notes](#html-notes)
+  - [HTML Tags](#html-tags)
   - [`<meta>` tag: The metadata element](#meta-tag-the-metadata-element)
     - [Standard metadata names](#standard-metadata-names)
     - [Uncommon MetaData Names](#uncommon-metadata-names)
@@ -26,6 +27,10 @@
   - [Decide Favicons Based on Browser Theme](#decide-favicons-based-on-browser-theme)
   - [Lazy Loading](#lazy-loading)
   - [Reference](#reference)
+
+## HTML Tags
+
+[Click here](./tags.html) to view list of different HTML tags. [Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/tags.html)
 
 ## `<meta>` tag: The metadata element
 
