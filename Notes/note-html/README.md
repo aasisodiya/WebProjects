@@ -24,6 +24,7 @@
   - [`<meter>`: The HTML Meter element](#meter-the-html-meter-element)
   - [`<template>`: The Content Template element](#template-the-content-template-element)
   - [Decide Favicons Based on Browser Theme](#decide-favicons-based-on-browser-theme)
+  - [Lazy Loading](#lazy-loading)
   - [Reference](#reference)
 
 ## `<meta>` tag: The metadata element
@@ -368,6 +369,16 @@ Use code `media="(prefers-color-scheme: dark)"` or `media="(prefers-color-scheme
 <link rel="icon" href="img/dark-theme-favicon.svg" type="image/x-icon" media="(prefers-color-scheme: dark)" />
 <link rel="icon" href="img/light-theme-favicon.svg" type="image/x-icon" media="(prefers-color-scheme: light)" />
 ```
+
+## Lazy Loading
+
+You can implement lazy loading easily by simply using `loading` attribute as shown in below sample code block.
+
+```html
+<img loading="lazy" src="img.png">
+```
+
+The `loading` attribute works on an `<img>` element or an `<iframe>` element. And it is used to instruct the browser to defer loading of images/iframes that are off-screen until the user scrolls near them. [Reference](https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading)
 
 ## Reference
 
