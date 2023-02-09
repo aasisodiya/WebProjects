@@ -915,6 +915,27 @@ let websites = [
     type: "",
     createdDate: "",
   },
+  {
+    id: 117,
+    url: "https://picular.co/",
+    logo: "img/logos/picular.svg",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 118,
+    url: "https://you.com/",
+    logo: "img/logos/you.svg",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 119,
+    url: "https://animista.net/",
+    logo: "img/logos/animista.png",
+    type: "",
+    createdDate: "",
+  },
   // {
   //   id: 9,
   //   url: "",
