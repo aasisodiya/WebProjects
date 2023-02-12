@@ -936,6 +936,27 @@ let websites = [
     type: "",
     createdDate: "",
   },
+  {
+    id: 120,
+    url: "https://www.tvtime.com/en/user/13859003/profile",
+    logo: "img/logos/tvtime.svg",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 121,
+    url: "https://parsec.app/",
+    logo: "img/logos/parsec.svg",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 122,
+    url: "https://www.teamviewer.com/en-in/",
+    logo: "img/logos/teamviewer.svg",
+    type: "",
+    createdDate: "",
+  },
   // {
   //   id: 9,
   //   url: "",
