@@ -964,6 +964,20 @@ let websites = [
     type: "",
     createdDate: "",
   },
+  {
+    id: 130,
+    url: "https://stablediffusionweb.com/#demo",
+    logo: "img/logos/stable-diffusion.png",
+    type: "",
+    createdDate: "",
+  },
+  {
+    id: 131,
+    url: "https://getsharex.com/",
+    logo: "img/logos/sharex.png",
+    type: "",
+    createdDate: "",
+  },
   // {
   //   id: 9,
   //   url: "",
