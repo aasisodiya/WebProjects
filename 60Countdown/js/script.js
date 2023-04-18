@@ -104,6 +104,7 @@ targetDateTime = getTargetDateTime();
 startClock(targetDateTime);
 
 $("#targetDate").val(getTimeFormatForInput(targetDateTime));
+$("#targetDate")[0].min = getTimeFormatForInput(new Date());
 $(".settings-panel").hide();
 $("#settings").on("click", function () {
   $(".settings-panel").show();
