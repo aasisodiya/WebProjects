@@ -978,6 +978,13 @@ let websites = [
     type: "",
     createdDate: "",
   },
+  {
+    id: 132,
+    url: "https://exiftool.org/",
+    logo: "https://github.com/exiftool/exiftool",
+    type: "",
+    createdDate: "",
+  },
   // {
   //   id: 9,
   //   url: "",
