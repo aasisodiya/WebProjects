@@ -268,3 +268,4 @@
 |2022-10-08|[Game - ClickIt!](https://aasisodiya.github.io/WebProjects/59ClickIt/)|
 |2022-11-04|[Cool Websites](https://aasisodiya.github.io/WebProjects/57CoolWebsites/)|
 |2023-04-19|[Countdown App From Countdown (2019) Movie](https://aasisodiya.github.io/WebProjects/60Countdown/)|
+|2025-12-17|[Finance Data Explorer](https://aasisodiya.github.io/WebProjects/61Finance/)|
