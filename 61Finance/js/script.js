@@ -43,7 +43,7 @@ console.log(
 			.row{display:flex;gap:8px}
 			.tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:600;font-size:12px}
 			.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:600;font-size:12px;margin-left:6px}
-			.sortable{cursor:pointer;user-select:none}
+			.sortable{cursor:pointer;user-select:none;background:orange;}
 			.sort-indicator{font-size:11px;color:var(--muted);margin-left:6px}
 			.scheme-row{display:flex;flex-direction:column}
 			.scheme-name{font-weight:700}
@@ -53,7 +53,7 @@ console.log(
 			.ret-negative{color:#ef4444}
 			.bench{font-size:11px;color:#9ca3af;margin-top:4px}
 			.small-icon{width:14px;height:14px;display:inline-block;margin-right:6px;vertical-align:text-bottom}
-			.action-icon{width:16px;height:16px;display:inline-block;margin-left:8px;vertical-align:text-bottom}
+			.action-icon{width:16px;height:16px;display:inline-block;margin-left:0px;vertical-align:text-bottom}
 			.rank-icon{width:18px;height:18px;display:inline-block;vertical-align:middle;margin-left:6px}
 			.rank-badge{display:inline-block;padding:4px 8px;border-radius:8px;background:#f3f4f6;color:#111827;font-weight:700;font-size:12px}
 			table{width:100%;border-collapse:collapse}
@@ -489,19 +489,23 @@ console.log(
                 td.appendChild(valDiv);
                 if (bench != null) {
                     const b = document.createElement('div'); b.className = 'bench';
-                    // benchmark text
-                    b.textContent = 'Benchmark: ' + formatReturn(bench);
-                    // add icon next to benchmark if both val and bench numeric
+                    // If we have a numeric value, show the icon before the benchmark text
                     if (val != null) {
                         if (val > bench) {
                             const ic = document.createElement('span'); ic.className = 'action-icon'; ic.title = `Above benchmark (${label})`;
-                            ic.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" fill="#f59e0b" xmlns="http://www.w3.org/2000/svg"><path d="M12 .587l3.668 7.431L23.2 9.75l-5.6 5.46L18.336 24 12 19.897 5.664 24l.736-8.79L.8 9.75l7.532-1.732L12 .587z"/></svg>`;
+                            ic.innerHTML = `📈`;
                             b.appendChild(ic);
                         } else if (val < bench) {
                             const ic = document.createElement('span'); ic.className = 'action-icon'; ic.title = `Below benchmark (${label})`;
-                            ic.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" fill="#ef4444" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6zm2 3h14l-1.2 11.2c-.1.9-.9 1.8-1.9 1.8H8.1c-1 0-1.8-.9-1.9-1.8L5 9zm5 2v7h2v-7H10zm4 0v7h2v-7h-2zM9 4V2h6v2h5v2H4V4h5z"/></svg>`;
+                            ic.innerHTML = `📉`;
                             b.appendChild(ic);
                         }
+                        const textSpan = document.createElement('span');
+                        textSpan.textContent = 'Benchmark: ' + formatReturn(bench);
+                        b.appendChild(textSpan);
+                    } else {
+                        // No value to compare — just show benchmark text
+                        b.textContent = 'Benchmark: ' + formatReturn(bench);
                     }
                     td.appendChild(b);
                 }
