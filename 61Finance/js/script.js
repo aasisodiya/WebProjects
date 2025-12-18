@@ -154,6 +154,7 @@ console.log(
 							<tbody></tbody>
 						</table>
 					</div>
+                    <div id="noResults" class="no-results" style="display:none">No matching records</div>
                     <br/>
                     <div class="panel-footer" style="display:flex;justify-content:space-between;align-items:center">
 						<div class="controls">
@@ -171,8 +172,6 @@ console.log(
 							<button id="next" class="btn">Next</button>
 						</div>
 					</div>
-
-					<div id="noResults" class="no-results" style="display:none">No matching records</div>
 				</div>
 			</div>
 		</div>
@@ -316,7 +315,7 @@ console.log(
             const wrapper = document.createElement('label');
             wrapper.style.display = 'inline-flex'; wrapper.style.alignItems = 'center'; wrapper.style.gap = '6px';
             wrapper.style.fontSize = '13px';
-            const cb = document.createElement('input'); cb.type = 'checkbox'; cb.value = r; cb.id = id;
+            const cb = document.createElement('input'); cb.type = 'checkbox'; cb.value = r; cb.id = id; cb.checked = true;
             const span = document.createElement('span'); span.textContent = r; span.style.fontSize = '13px';
             wrapper.appendChild(cb); wrapper.appendChild(span); categorynameWrap.appendChild(wrapper);
         });
@@ -361,7 +360,7 @@ console.log(
         $fundHouse().value = '__any';
         $category().value = '__any';
         document.getElementById('planName').value = '__any';
-        $categorynameList().querySelectorAll('input[type=checkbox]').forEach(cb => cb.checked = false);
+        $categorynameList().querySelectorAll('input[type=checkbox]').forEach(cb => cb.checked = true);
         ['ret1Min', 'ret1Max', 'ret3Min', 'ret3Max'].forEach(id => document.getElementById(id).value = '');
     }
 
@@ -386,17 +385,14 @@ console.log(
             if (house && house !== '__any' && d._fundHouse !== house) return false;
             if (cat && cat !== '__any' && d._category !== cat) return false;
             if (plan && plan !== '__any' && d._plan !== plan) return false;
-            if (checkedCategoryNames.length && !checkedCategoryNames.includes(d._categoryname)) return false;
+            if (checkedCategoryNames.length >= 0 && !checkedCategoryNames.includes(d._categoryname)) return false;
 
             if (r1min != null && (d._r1 == null || d._r1 < r1min)) return false;
             if (r1max != null && (d._r1 == null || d._r1 > r1max)) return false;
             if (r3min != null && (d._r3 == null || d._r3 < r3min)) return false;
             if (r3max != null && (d._r3 == null || d._r3 > r3max)) return false;
-
-
             return true;
         });
-
         state.filtered = filtered;
         state.page = 1;
         renderTable();
