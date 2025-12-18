@@ -43,8 +43,9 @@ console.log(
 			.row{display:flex;gap:8px}
 			.tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:600;font-size:12px}
 			.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:600;font-size:12px;margin-left:6px}
-			.sortable{cursor:pointer;user-select:none;background:orange;}
-			.sort-indicator{font-size:11px;color:var(--muted);margin-left:6px}
+            .sortable{cursor:pointer;user-select:none;background:orange;}
+            .sort-indicator{font-size:11px;color:var(--muted);margin-left:6px;display:inline-block;min-width:14px;text-align:center}
+            .sort-indicator:empty::before{content:'⇵';opacity:0.6;font-size:11px;color:var(--muted);margin-left:0}
 			.scheme-row{display:flex;flex-direction:column}
 			.scheme-name{font-weight:700}
 			.scheme-sub{font-size:12px;color:var(--muted)}
@@ -99,7 +100,7 @@ console.log(
 					</div>
 
 					<div class="field">
-						<label>Plan Name</label>
+						<label>Direct/Regular</label>
 						<select id="planName" class="select"><option value="__any">Any</option></select>
 					</div>
 
@@ -156,7 +157,7 @@ console.log(
 								<th data-key="scheme" class="sortable">Scheme <span class="sort-indicator"></span></th>
 								<th data-key="fundHouse" class="sortable">Fund House <span class="sort-indicator"></span></th>
 								<th data-key="category" class="sortable">Category <span class="sort-indicator"></span></th>
-								<th data-key="plan" class="sortable">Plan Name <span class="sort-indicator"></span></th>
+								<th data-key="plan" class="sortable">D/R <span class="sort-indicator"></span></th>
 								<th data-key="r1" class="sortable">1Y <span class="sort-indicator"></span></th>
 								<th data-key="r3" class="sortable">3Y <span class="sort-indicator"></span></th>
 								<th data-key="r3m" class="sortable">3M <span class="sort-indicator"></span></th>
