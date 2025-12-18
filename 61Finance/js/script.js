@@ -44,7 +44,7 @@ console.log(
 			.tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:600;font-size:12px}
 			.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#f3f4f6;color:#111827;font-weight:600;font-size:12px;margin-left:6px}
             .sortable{cursor:pointer;user-select:none;background:orange;}
-            .sort-indicator{font-size:11px;color:var(--muted);margin-left:6px;display:inline-block;min-width:14px;text-align:center}
+            .sort-indicator{font-size:11px;color:var(--muted);margin-left:0px;display:inline-block;min-width:14px;text-align:center}
             .sort-indicator:empty::before{content:'⇵';opacity:0.6;font-size:11px;color:var(--muted);margin-left:0}
 			.scheme-row{display:flex;flex-direction:column}
 			.scheme-name{font-weight:700}
@@ -347,6 +347,10 @@ console.log(
                 state.page = 1; renderTable();
             });
         });
+            const crisilTh = document.querySelector('th[data-key="crisil"]');
+            if (crisilTh) {
+                crisilTh.style.minWidth = '85px';
+            }
     }
 
     function resetFilters() {
