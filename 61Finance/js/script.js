@@ -68,7 +68,7 @@ console.log(
 			.pager{display:flex;gap:6px;align-items:center}
 			.page-input{width:56px;padding:6px;border-radius:6px;border:1px solid #e6e7ea}
 			.small{font-size:12px;color:var(--muted)}
-            .no-results{padding:28px;text-align:center;color:var(--muted)}
+            .no-results{padding:28px;text-align:center;color:var(--muted);display:flex;align-items:center;justify-content:center}
             #tableWrap{flex:1;overflow:auto}
             .panel-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
             @media (max-width:880px){.grid{grid-template-columns:1fr}.filters{order:2}}
@@ -136,7 +136,7 @@ console.log(
 
 				<div class="panel">
 
-					<div id="tableWrap" style="max-height:88vh;overflow:auto;border-radius:8px">
+                    <div id="tableWrap" style="max-height:88vh;overflow:auto;border-radius:8px;position:relative">
 						<table id="results">
 							<thead>
 								<tr>
@@ -153,9 +153,8 @@ console.log(
 							</thead>
 							<tbody></tbody>
 						</table>
-					</div>
-                    <div id="noResults" class="no-results" style="display:none">No matching records</div>
-                    <br/>
+                        <div id="noResults" class="no-results" style="display:none;position:absolute;inset:0;padding:0">No matching records</div>
+                    </div>
                     <div class="panel-footer" style="display:flex;justify-content:space-between;align-items:center">
 						<div class="controls">
 							<div class="small">Page size</div>
@@ -445,7 +444,7 @@ console.log(
         $curPage().value = state.page;
 
         if (!total) {
-            $noResults().style.display = 'block';
+            $noResults().style.display = 'flex';
             return;
         } else { $noResults().style.display = 'none'; }
 
