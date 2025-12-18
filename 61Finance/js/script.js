@@ -321,6 +321,12 @@ console.log(
     function attachEvents() {
         $apply().addEventListener('click', () => { state.page = 1; applyFilters(); });
         $reset().addEventListener('click', () => { resetFilters(); state.page = 1; applyFilters(); });
+        // Auto-apply when user changes dropdowns or checkboxes
+        $fundHouse().addEventListener('change', () => { state.page = 1; applyFilters(); });
+        $category().addEventListener('change', () => { state.page = 1; applyFilters(); });
+        document.getElementById('planName').addEventListener('change', () => { state.page = 1; applyFilters(); });
+        // Delegate checkbox changes from the category name list
+        $categorynameList().addEventListener('change', e => { if (e.target && e.target.matches('input[type=checkbox]')) { state.page = 1; applyFilters(); } });
         $pageSize().addEventListener('change', e => { state.pageSize = parseInt(e.target.value) || 10; state.page = 1; renderTable(); });
         $prev().addEventListener('click', () => { if (state.page > 1) { state.page--; renderTable(); $curPage().value = state.page; } });
         $next().addEventListener('click', () => { const tp = Math.max(1, Math.ceil(state.filtered.length / state.pageSize)); if (state.page < tp) { state.page++; renderTable(); $curPage().value = state.page; } });
