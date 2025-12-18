@@ -34,8 +34,8 @@ console.log(
 			.logo{width:56px;height:56px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
 			.title{font-size:20px;font-weight:700}
 			.subtitle{color:var(--muted);font-size:13px}
-			.grid{display:grid;grid-template-columns:320px 1fr;gap:16px}
-			.panel{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 1px 2px rgba(16,24,40,0.04)}
+            .grid{display:grid;grid-template-columns:320px 1fr;gap:16px}
+            .panel{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 1px 2px rgba(16,24,40,0.04);display:flex;flex-direction:column;min-height:60vh}
 			.filters h3{margin:0 0 8px 0}
 			.field{margin-bottom:10px}
 			.field label{display:block;font-weight:600;margin-bottom:6px;font-size:13px}
@@ -68,8 +68,10 @@ console.log(
 			.pager{display:flex;gap:6px;align-items:center}
 			.page-input{width:56px;padding:6px;border-radius:6px;border:1px solid #e6e7ea}
 			.small{font-size:12px;color:var(--muted)}
-			.no-results{padding:28px;text-align:center;color:var(--muted)}
-			@media (max-width:880px){.grid{grid-template-columns:1fr}.filters{order:2}}
+            .no-results{padding:28px;text-align:center;color:var(--muted);display:flex;align-items:center;justify-content:center}
+            #tableWrap{flex:1;overflow:auto}
+            .panel-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+            @media (max-width:880px){.grid{grid-template-columns:1fr}.filters{order:2}}
 		</style>
 
 		<div class="container">
@@ -133,24 +135,8 @@ console.log(
 				</div>
 
 				<div class="panel">
-					<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-						<div class="controls">
-							<div class="small">Page size</div>
-							<select id="pageSize" class="select" style="width:90px;margin-left:6px">
-								<option>10</option>
-								<option>25</option>
-								<option>50</option>
-								<option>100</option>
-							</select>
-						</div>
-						<div class="controls pager">
-							<button id="prev" class="btn secondary">Prev</button>
-							<div class="small">Page <input id="curPage" class="page-input" value="1"/> of <span id="totalPages">1</span></div>
-							<button id="next" class="btn">Next</button>
-						</div>
-					</div>
 
-					<div id="tableWrap" style="max-height:100vh;overflow:auto;border-radius:8px">
+                    <div id="tableWrap" style="max-height:88vh;overflow:auto;border-radius:8px;position:relative">
 						<table id="results">
 							<thead>
 								<tr>
@@ -167,9 +153,24 @@ console.log(
 							</thead>
 							<tbody></tbody>
 						</table>
+                        <div id="noResults" class="no-results" style="display:none;position:absolute;inset:0;padding:0">No matching records</div>
+                    </div>
+                    <div class="panel-footer" style="display:flex;justify-content:space-between;align-items:center">
+						<div class="controls">
+							<div class="small">Page size</div>
+							<select id="pageSize" class="select" style="width:90px;margin-left:6px">
+								<option>10</option>
+								<option>25</option>
+								<option>50</option>
+								<option>100</option>
+							</select>
+						</div>
+						<div class="controls pager">
+							<button id="prev" class="btn secondary">Prev</button>
+							<div class="small">Page <input id="curPage" class="page-input" value="1"/> of <span id="totalPages">1</span></div>
+							<button id="next" class="btn">Next</button>
+						</div>
 					</div>
-
-					<div id="noResults" class="no-results" style="display:none">No matching records</div>
 				</div>
 			</div>
 		</div>
@@ -313,7 +314,7 @@ console.log(
             const wrapper = document.createElement('label');
             wrapper.style.display = 'inline-flex'; wrapper.style.alignItems = 'center'; wrapper.style.gap = '6px';
             wrapper.style.fontSize = '13px';
-            const cb = document.createElement('input'); cb.type = 'checkbox'; cb.value = r; cb.id = id;
+            const cb = document.createElement('input'); cb.type = 'checkbox'; cb.value = r; cb.id = id; cb.checked = true;
             const span = document.createElement('span'); span.textContent = r; span.style.fontSize = '13px';
             wrapper.appendChild(cb); wrapper.appendChild(span); categorynameWrap.appendChild(wrapper);
         });
@@ -347,10 +348,10 @@ console.log(
                 state.page = 1; renderTable();
             });
         });
-            const crisilTh = document.querySelector('th[data-key="crisil"]');
-            if (crisilTh) {
-                crisilTh.style.minWidth = '85px';
-            }
+        const crisilTh = document.querySelector('th[data-key="crisil"]');
+        if (crisilTh) {
+            crisilTh.style.minWidth = '85px';
+        }
     }
 
     function resetFilters() {
@@ -358,7 +359,7 @@ console.log(
         $fundHouse().value = '__any';
         $category().value = '__any';
         document.getElementById('planName').value = '__any';
-        $categorynameList().querySelectorAll('input[type=checkbox]').forEach(cb => cb.checked = false);
+        $categorynameList().querySelectorAll('input[type=checkbox]').forEach(cb => cb.checked = true);
         ['ret1Min', 'ret1Max', 'ret3Min', 'ret3Max'].forEach(id => document.getElementById(id).value = '');
     }
 
@@ -383,17 +384,14 @@ console.log(
             if (house && house !== '__any' && d._fundHouse !== house) return false;
             if (cat && cat !== '__any' && d._category !== cat) return false;
             if (plan && plan !== '__any' && d._plan !== plan) return false;
-            if (checkedCategoryNames.length && !checkedCategoryNames.includes(d._categoryname)) return false;
+            if (checkedCategoryNames.length >= 0 && !checkedCategoryNames.includes(d._categoryname)) return false;
 
             if (r1min != null && (d._r1 == null || d._r1 < r1min)) return false;
             if (r1max != null && (d._r1 == null || d._r1 > r1max)) return false;
             if (r3min != null && (d._r3 == null || d._r3 < r3min)) return false;
             if (r3max != null && (d._r3 == null || d._r3 > r3max)) return false;
-
-
             return true;
         });
-
         state.filtered = filtered;
         state.page = 1;
         renderTable();
@@ -446,7 +444,7 @@ console.log(
         $curPage().value = state.page;
 
         if (!total) {
-            $noResults().style.display = 'block';
+            $noResults().style.display = 'flex';
             return;
         } else { $noResults().style.display = 'none'; }
 
