@@ -39,14 +39,9 @@
         rel="stylesheet">
     <!-- List of Icons: https://fonts.google.com/icons -->
     <!-- Google Icons Import End -->
-    <!-- Jquery Import Start -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <!-- Jquery Import End -->
     <!-- Custom JS Import Start -->
-    <script src="js/script.js" defer></script>
+    <script src="js/script.js" type="module"></script>
     <!-- Custom JS Import End -->
     <!-- Google Analytics Tag Start -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -63,11 +58,123 @@
 </head>
 
 <body ontouchend>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo"><img src="img/orange-outline-a.svg" alt="Finance Data Explorer Logo" /></div>
+            <div>
+                <div class="title">Finance Data Explorer</div>
+                <div class="subtitle">Interactive filters, table view, and pagination — powered by static data</div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="panel filters">
+                <h3>Filters</h3>
+                <div class="field">
+                    <label>Search</label>
+                    <input id="search" class="input" placeholder="Search scheme name or fund house" />
+                </div>
+
+                <div class="field">
+                    <label>Fund House</label>
+                    <select id="fundHouse" class="select">
+                        <option value="__any">Any</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Category</label>
+                    <select id="category" class="select">
+                        <option value="__any">Any</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Direct/Regular</label>
+                    <select id="planName" class="select">
+                        <option value="__any">Any</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Category (check)</label>
+                    <div id="categorynameList" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+                </div>
+
+                <div class="field">
+                    <label>Returns filters (use min / max)</label>
+                    <div style="display:flex;gap:8px">
+                        <input id="ret1Min" class="input" placeholder="1Y min" />
+                        <input id="ret1Max" class="input" placeholder="1Y max" />
+                    </div>
+                    <div style="display:flex;gap:8px;margin-top:8px">
+                        <input id="ret3Min" class="input" placeholder="3Y min" />
+                        <input id="ret3Max" class="input" placeholder="3Y max" />
+                    </div>
+
+                </div>
+
+                <div class="field" style="margin-top:12px">
+                    <div class="controls">
+                        <button id="apply" class="btn">Apply</button>
+                        <button id="reset" class="btn secondary">Reset</button>
+                        <div style="flex:1"></div>
+                        <div class="small">Results: <span id="resultCount">0</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+
+                <div id="tableWrap" style="max-height:88vh;overflow:auto;border-radius:8px;position:relative">
+                    <table id="results">
+                        <thead>
+                            <tr>
+                                <th data-key="scheme" class="sortable">Scheme <span class="sort-indicator"></span></th>
+                                <th data-key="fundHouse" class="sortable">Fund House <span
+                                        class="sort-indicator"></span></th>
+                                <th data-key="category" class="sortable">Category <span class="sort-indicator"></span>
+                                </th>
+                                <th data-key="plan" class="sortable">D/R <span class="sort-indicator"></span></th>
+                                <th data-key="r3m" class="sortable">3M <span class="sort-indicator"></span></th>
+                                <th data-key="r6m" class="sortable">6M <span class="sort-indicator"></span></th>
+                                <th data-key="r1" class="sortable">1Y <span class="sort-indicator"></span></th>
+                                <th data-key="r3" class="sortable">3Y <span class="sort-indicator"></span></th>
+                                <th data-key="crisil" class="sortable">CRISIL <span class="sort-indicator"></span></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <div id="noResults" class="no-results" style="display:none;position:absolute;inset:0;padding:0">No
+                        matching records</div>
+                </div>
+                <div class="panel-footer" style="display:flex;justify-content:space-between;align-items:center">
+                    <div class="controls">
+                        <div class="small">Page size</div>
+                        <select id="pageSize" class="select" style="width:90px;margin-left:6px">
+                            <option>10</option>
+                            <option>25</option>
+                            <option>50</option>
+                            <option>100</option>
+                        </select>
+                    </div>
+                    <div class="controls pager">
+                        <button id="prev" class="btn secondary">Prev</button>
+                        <div class="small">Page <input id="curPage" class="page-input" value="1" /> of <span
+                                id="totalPages">1</span></div>
+                        <button id="next" class="btn">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Below code is for footer -->
     <div class="footer">
         &lt;/&gt; by
         <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
-        <!-- <img src="https://api.visitorbadge.io/api/visitors?path=aasisodiya.WebProjects.finance&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper&style=flat-square" alt=""> -->
+        <img src="https://api.visitorbadge.io/api/visitors?path=aasisodiya.WebProjects.finance&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper&style=flat-square"
+            alt="">
     </div>
 </body>
 
