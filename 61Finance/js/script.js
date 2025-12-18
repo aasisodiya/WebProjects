@@ -34,8 +34,8 @@ console.log(
 			.logo{width:56px;height:56px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
 			.title{font-size:20px;font-weight:700}
 			.subtitle{color:var(--muted);font-size:13px}
-			.grid{display:grid;grid-template-columns:320px 1fr;gap:16px}
-			.panel{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 1px 2px rgba(16,24,40,0.04)}
+            .grid{display:grid;grid-template-columns:320px 1fr;gap:16px}
+            .panel{background:var(--card);padding:14px;border-radius:10px;box-shadow:0 1px 2px rgba(16,24,40,0.04);display:flex;flex-direction:column;min-height:60vh}
 			.filters h3{margin:0 0 8px 0}
 			.field{margin-bottom:10px}
 			.field label{display:block;font-weight:600;margin-bottom:6px;font-size:13px}
@@ -68,8 +68,10 @@ console.log(
 			.pager{display:flex;gap:6px;align-items:center}
 			.page-input{width:56px;padding:6px;border-radius:6px;border:1px solid #e6e7ea}
 			.small{font-size:12px;color:var(--muted)}
-			.no-results{padding:28px;text-align:center;color:var(--muted)}
-			@media (max-width:880px){.grid{grid-template-columns:1fr}.filters{order:2}}
+            .no-results{padding:28px;text-align:center;color:var(--muted)}
+            #tableWrap{flex:1;overflow:auto}
+            .panel-footer{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+            @media (max-width:880px){.grid{grid-template-columns:1fr}.filters{order:2}}
 		</style>
 
 		<div class="container">
@@ -133,24 +135,8 @@ console.log(
 				</div>
 
 				<div class="panel">
-					<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-						<div class="controls">
-							<div class="small">Page size</div>
-							<select id="pageSize" class="select" style="width:90px;margin-left:6px">
-								<option>10</option>
-								<option>25</option>
-								<option>50</option>
-								<option>100</option>
-							</select>
-						</div>
-						<div class="controls pager">
-							<button id="prev" class="btn secondary">Prev</button>
-							<div class="small">Page <input id="curPage" class="page-input" value="1"/> of <span id="totalPages">1</span></div>
-							<button id="next" class="btn">Next</button>
-						</div>
-					</div>
 
-					<div id="tableWrap" style="max-height:100vh;overflow:auto;border-radius:8px">
+					<div id="tableWrap" style="max-height:88vh;overflow:auto;border-radius:8px">
 						<table id="results">
 							<thead>
 								<tr>
@@ -167,6 +153,23 @@ console.log(
 							</thead>
 							<tbody></tbody>
 						</table>
+					</div>
+                    <br/>
+                    <div class="panel-footer" style="display:flex;justify-content:space-between;align-items:center">
+						<div class="controls">
+							<div class="small">Page size</div>
+							<select id="pageSize" class="select" style="width:90px;margin-left:6px">
+								<option>10</option>
+								<option>25</option>
+								<option>50</option>
+								<option>100</option>
+							</select>
+						</div>
+						<div class="controls pager">
+							<button id="prev" class="btn secondary">Prev</button>
+							<div class="small">Page <input id="curPage" class="page-input" value="1"/> of <span id="totalPages">1</span></div>
+							<button id="next" class="btn">Next</button>
+						</div>
 					</div>
 
 					<div id="noResults" class="no-results" style="display:none">No matching records</div>
@@ -347,10 +350,10 @@ console.log(
                 state.page = 1; renderTable();
             });
         });
-            const crisilTh = document.querySelector('th[data-key="crisil"]');
-            if (crisilTh) {
-                crisilTh.style.minWidth = '85px';
-            }
+        const crisilTh = document.querySelector('th[data-key="crisil"]');
+        if (crisilTh) {
+            crisilTh.style.minWidth = '85px';
+        }
     }
 
     function resetFilters() {
