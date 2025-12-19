@@ -1,6 +1,7 @@
 import {
     $fundHouse,
     $category,
+    $invtype,
     $categorynameList,
     $resultsBody,
     $resultCount,
@@ -47,6 +48,17 @@ export function populateFilters() {
         o.textContent = p;
         planEl.appendChild(o);
     });
+
+    // invtype
+    const invtypes = Array.from(new Set(state.all.map(d => d._invtype).filter(Boolean))).sort();
+    const invtypeEl = $invtype();
+    invtypes.forEach(p => {
+        const o = document.createElement('option');
+        o.value = p;
+        o.textContent = p;
+        invtypeEl.appendChild(o);
+    });
+    console.log('Populated invtypes:', invtypes);
 
     // categoryname checkboxes
     const categorynames = Array.from(new Set(state.all.map(d => d._categoryname).filter(Boolean))).sort();
@@ -253,6 +265,7 @@ export function resetFilters() {
     $search().value = '';
     $fundHouse().value = '__any';
     $category().value = '__any';
+    $invtype().value = '__any';
     document.getElementById('planName').value = '__any';
     $categorynameList().querySelectorAll('input[type=checkbox]').forEach(cb => cb.checked = true);
     ['ret1Min', 'ret1Max', 'ret3Min', 'ret3Max'].forEach(id => document.getElementById(id).value = '');

@@ -2,6 +2,7 @@ import {
     $search,
     $fundHouse,
     $category,
+    $invtype,
     $categorynameList
 } from './dom.js';
 import {
@@ -22,6 +23,7 @@ export function applyFilters() {
     const q = ($search().value || '').toLowerCase().trim();
     const house = $fundHouse().value;
     const cat = $category().value;
+    const invtype = $invtype().value;
     const plan = (document.getElementById('planName').value || '__any');
     const checkedCategoryNames = Array.from($categorynameList().querySelectorAll('input[type=checkbox]:checked')).map(i => i.value);
 
@@ -38,6 +40,7 @@ export function applyFilters() {
         }
         if (house && house !== '__any' && d._fundHouse !== house) return false;
         if (cat && cat !== '__any' && d._category !== cat) return false;
+        if (invtype && invtype !== '__any' && d._invtype !== invtype) return false;
         if (plan && plan !== '__any' && d._plan !== plan) return false;
         if (checkedCategoryNames.length >= 0 && !checkedCategoryNames.includes(d._categoryname)) return false;
 
