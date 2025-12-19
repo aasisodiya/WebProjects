@@ -106,18 +106,20 @@
 
                 <div class="field">
                     <label>Category (check)</label>
-                    <div id="categorynameList" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+                    <div id="categorynameList"
+                        style="display:flex;flex-direction:column;height:200px;overflow:scroll;overflow-x:hidden !important;">
+                    </div>
                 </div>
 
                 <div class="field">
                     <label>Returns filters (use min / max)</label>
                     <div style="display:flex;gap:8px">
-                        <input id="ret1Min" class="input" placeholder="1Y min" />
-                        <input id="ret1Max" class="input" placeholder="1Y max" />
+                        <input id="ret1Min" type="number" class="input" placeholder="1Y min" />
+                        <input id="ret1Max" type="number" class="input" placeholder="1Y max" />
                     </div>
                     <div style="display:flex;gap:8px;margin-top:8px">
-                        <input id="ret3Min" class="input" placeholder="3Y min" />
-                        <input id="ret3Max" class="input" placeholder="3Y max" />
+                        <input id="ret3Min" type="number" class="input" placeholder="3Y min" />
+                        <input id="ret3Max" type="number" class="input" placeholder="3Y max" />
                     </div>
 
                 </div>
