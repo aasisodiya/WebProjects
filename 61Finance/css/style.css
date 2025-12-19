@@ -50,7 +50,7 @@ body {
 :root {
     --bg: #f6f8fb;
     --card: #ffffff;
-    --accent: #2563eb;
+    --accent: #ffa500;
     --muted: #6b7280;
     --ok: #10b981;
 }
@@ -276,7 +276,7 @@ th {
 }
 
 tr:hover td {
-    background: #fbfdff
+    background: #ffecc8;
 }
 
 .muted {
@@ -296,6 +296,10 @@ tr:hover td {
     border-radius: 8px;
     border: none;
     cursor: pointer
+}
+
+.btn:hover {
+    opacity: 0.9
 }
 
 .btn.secondary {
