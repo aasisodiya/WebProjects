@@ -3,6 +3,7 @@ import {
     $reset,
     $fundHouse,
     $category,
+    $invtype,
     $categorynameList,
     $pageSize,
     $prev,
@@ -35,6 +36,10 @@ export function attachEvents() {
         applyFilters();
     });
     $category().addEventListener('change', () => {
+        state.page = 1;
+        applyFilters();
+    });
+    $invtype().addEventListener('change', () => {
         state.page = 1;
         applyFilters();
     });
