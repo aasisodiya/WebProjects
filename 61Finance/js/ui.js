@@ -182,7 +182,7 @@ export function renderTable() {
         schemeTd.appendChild(schemeWrap);
         tr.appendChild(schemeTd);
 
-        tr.appendChild(tdPlain(d._fundHouse));
+        // tr.appendChild(tdPlain(d._fundHouse));
         tr.appendChild(tdPlain(d._category));
         tr.appendChild(tdPlain(d._plan || '—'));
 
