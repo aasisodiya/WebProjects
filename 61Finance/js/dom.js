@@ -3,6 +3,7 @@ export const $fundHouse = () => document.getElementById('fundHouse');
 export const $category = () => document.getElementById('category');
 export const $invtype = () => document.getElementById('invtype');
 export const $categorynameList = () => document.getElementById('categorynameList');
+export const $crisilrank = () => document.getElementById('crisilrank');
 export const $apply = () => document.getElementById('apply');
 export const $reset = () => document.getElementById('reset');
 export const $resultsBody = () => document.querySelector('#results tbody');
