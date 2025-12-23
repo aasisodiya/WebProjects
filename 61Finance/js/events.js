@@ -5,6 +5,7 @@ import {
     $category,
     $invtype,
     $categorynameList,
+    $crisilrank,
     $pageSize,
     $prev,
     $next,
@@ -53,6 +54,10 @@ export function attachEvents() {
             state.page = 1;
             applyFilters();
         }
+    });
+    $crisilrank().addEventListener('change', () => {
+        state.page = 1;
+        applyFilters();
     });
     $pageSize().addEventListener('change', e => {
         state.pageSize = parseInt(e.target.value) || 10;

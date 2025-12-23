@@ -3,7 +3,8 @@ import {
     $fundHouse,
     $category,
     $invtype,
-    $categorynameList
+    $categorynameList,
+    $crisilrank
 } from './dom.js';
 import {
     parseNum
@@ -26,11 +27,12 @@ export function applyFilters() {
     const invtype = $invtype().value;
     const plan = (document.getElementById('planName').value || '__any');
     const checkedCategoryNames = Array.from($categorynameList().querySelectorAll('input[type=checkbox]:checked')).map(i => i.value);
-
+    const crisilrank = $crisilrank().value;
     const r1min = parseNum(document.getElementById('ret1Min').value);
     const r1max = parseNum(document.getElementById('ret1Max').value);
     const r3min = parseNum(document.getElementById('ret3Min').value);
     const r3max = parseNum(document.getElementById('ret3Max').value);
+    // const crisilRank = crisilrank !== '__any' ? parseInt(crisilrank.replace(/[^0-9]/g, ''), 10) : null;
 
 
     const filtered = state.all.filter(d => {
@@ -42,6 +44,7 @@ export function applyFilters() {
         if (cat && cat !== '__any' && d._category !== cat) return false;
         if (invtype && invtype !== '__any' && d._invtype !== invtype) return false;
         if (plan && plan !== '__any' && d._plan !== plan) return false;
+        if (crisilrank && crisilrank !== '__any' && d._crisil > crisilrank) return false;
         if (checkedCategoryNames.length >= 0 && !checkedCategoryNames.includes(d._categoryname)) return false;
 
         if (r1min != null && (d._r1 == null || d._r1 < r1min)) return false;

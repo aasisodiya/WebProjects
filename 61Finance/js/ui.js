@@ -3,6 +3,7 @@ import {
     $category,
     $invtype,
     $categorynameList,
+    $crisilrank,
     $resultsBody,
     $resultCount,
     $pageSize,
@@ -83,6 +84,26 @@ export function populateFilters() {
         wrapper.appendChild(span);
         categorynameWrap.appendChild(wrapper);
     });
+
+    // Crisil rank dropdown
+    const crisilRanks = Array.from(new Set(state.all.map(d => d._crisil).filter(Boolean))).sort();
+    const crisilrankEl = $crisilrank();
+    crisilRanks.forEach(r => {
+        const o = document.createElement('option');
+        o.value = r;
+        o.textContent = r;
+        crisilrankEl.appendChild(o);
+    });
+
+    // // plan names
+    // const plans = Array.from(new Set(state.all.map(d => d._plan).filter(Boolean))).sort();
+    // const planEl = document.getElementById('planName');
+    // plans.forEach(p => {
+    //     const o = document.createElement('option');
+    //     o.value = p;
+    //     o.textContent = p;
+    //     planEl.appendChild(o);
+    // });
 }
 
 export function renderTable() {
@@ -266,6 +287,7 @@ export function resetFilters() {
     $fundHouse().value = '__any';
     $category().value = '__any';
     $invtype().value = '__any';
+    $crisilrank().value = '__any';
     document.getElementById('planName').value = '__any';
     $categorynameList().querySelectorAll('input[type=checkbox]').forEach(cb => cb.checked = true);
     ['ret1Min', 'ret1Max', 'ret3Min', 'ret3Max'].forEach(id => document.getElementById(id).value = '');
