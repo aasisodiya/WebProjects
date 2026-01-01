@@ -41,20 +41,20 @@ if (bookmarksData == null || bookmarksData.bookmarks == null) {
         "bookmarks": [{
             "category": "Regulars",
             "bookmarks": [{
-                    "name": "Createxion",
-                    "url": "https://www.createxion.com/",
-                    "created": ""
-                },
-                {
-                    "name": "Youtube",
-                    "url": "https://www.youtube.com/channel/UCJVZT03z5fLJF5eO4PEbEUA",
-                    "created": ""
-                },
-                {
-                    "name": "Github",
-                    "url": "http://github.com/aasisodiya",
-                    "created": ""
-                }
+                "name": "Createxion",
+                "url": "https://www.createxion.com/",
+                "created": ""
+            },
+            {
+                "name": "Youtube",
+                "url": "https://www.youtube.com/channel/UCJVZT03z5fLJF5eO4PEbEUA",
+                "created": ""
+            },
+            {
+                "name": "Github",
+                "url": "http://github.com/aasisodiya",
+                "created": ""
+            }
             ],
             "created": "",
             "updated": "",
@@ -657,7 +657,7 @@ function download() {
 };
 
 // Below function counts clicks on links
-$('body').on('click','a', function () {
+$('body').on('click', 'a', function () {
     bookmarksData.clicks += 1;
     localStorage.setItem("bookmarks", JSON.stringify(bookmarksData));
 });
