@@ -258,6 +258,7 @@
 |2022-11-15|[Content Editable Style Tag](https://aasisodiya.github.io/WebProjects/Notes/note-css#content-editable-style-tag)|
 |2022-11-18|[Decide Favicons Based on Browser Theme](https://aasisodiya.github.io/WebProjects/Notes/note-html#decide-favicons-based-on-browser-theme)|
 |2022-12-12|[Lazy Loading using `loading` attribute](https://aasisodiya.github.io/WebProjects/Notes/note-html#lazy-loading)|
+|2023-01-31|[HTML Tags](https://aasisodiya.github.io/WebProjects/Notes/note-html#html-tags)|
 
 ---
 
@@ -266,3 +267,5 @@
 |2022-09-18|[Game - SolveIt!](https://aasisodiya.github.io/WebProjects/58SolveIt/)|
 |2022-10-08|[Game - ClickIt!](https://aasisodiya.github.io/WebProjects/59ClickIt/)|
 |2022-11-04|[Cool Websites](https://aasisodiya.github.io/WebProjects/57CoolWebsites/)|
+|2023-04-19|[Countdown App From Countdown (2019) Movie](https://aasisodiya.github.io/WebProjects/60Countdown/)|
+|2025-12-17|[Finance Data Explorer](https://aasisodiya.github.io/WebProjects/61Finance/)|
