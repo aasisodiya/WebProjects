@@ -57,8 +57,9 @@ body {
 
 /* Css For Button */
 
-.buttonholder {
+.buttonholder>button {
     cursor: pointer;
+    border: 2px solid rgb(49, 49, 49);
 }
 
 button {
@@ -137,9 +138,15 @@ hr {
     max-height: 50vh;
     overflow: auto;
     font-size: 0.8rem;
+    text-align: center;
 }
 
 p:first-child {
-    color: orangered;
+    color: orange;
     font-weight: bold;
+    font-size: 1rem;
+}
+
+div.logs::-webkit-scrollbar {
+    display: none;
 }

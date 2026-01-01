@@ -1,0 +1,208 @@
+/* Template Code Start */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+.footer {
+    color: white;
+    --size: 1rem;
+    bottom: 0;
+    left: 0;
+    padding: 2px 10px 5px 10px;
+    font-weight: bold;
+    backdrop-filter: blur(20px) grayscale(50%);
+    clip-path: polygon(0 0, calc(100% - calc(0.5 * var(--size))) 0, 100% calc(0.5 * var(--size)), 100% 100%, 0 100%);
+    /* box-shadow: 0 0 1px 1px black; */
+    background: black;
+    z-index: 2;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    /* CSS Code to handle unwanted element highlights / div selection in Android */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: 0.5s;
+}
+
+/* Template Code End */
+
+body {
+    margin: 0;
+    cursor: url(../img/cursor.svg), auto;
+}
+
+/* Viewport will contain everything, and hence need to set it's overflow as hidden */
+.viewport {
+    /* background: url(https://wallpaper.dog/large/5447432.jpg); */
+    background: #e0e0e0;
+    min-height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.menu {
+    position: fixed;
+    right: 0px;
+    width: 200px;
+    height: 100vh;
+    z-index: 2;
+    backdrop-filter: blur(5px) grayscale(50%);
+    box-shadow: 0px 0px 2px black;
+}
+
+.bottom-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    /* background-color: orange; */
+}
+
+.holder-shadow {
+    filter: drop-shadow(0 0 2px black);
+}
+
+.logo {
+    font-family: 'Bungee';
+    line-height: 1.5rem;
+    color: white;
+    text-align: center;
+}
+
+/* .logoholder {
+    border-bottom: 1px solid white;
+} */
+
+:root {
+    --card-size: 190px;
+}
+
+:root {
+    --spread: 15px;
+    --shadowsize: 5px;
+    --card-radius: 10px;
+}
+
+.card {
+    height: 100px;
+    width: var(--card-size);
+    /* backdrop-filter: blur(15px) grayscale(50%); */
+    box-shadow: 0px 0px 2px black;
+    cursor: url(../img/hover.svg), auto;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    /* background: rgb(245 222 179 / 0%); */
+    border-radius: var(--card-radius);
+    background: #e0e0e0;
+    box-shadow: var(--shadowsize) calc(-1*var(--shadowsize)) var(--spread) #bebebe,
+        calc(-1*var(--shadowsize)) var(--shadowsize) var(--spread) #ffffff;
+}
+
+.card:hover {
+    border-radius: var(--card-radius);
+    background: linear-gradient(45deg, #f0f0f0, #cacaca);
+    box-shadow: var(--shadowsize) calc(-1*var(--shadowsize)) var(--spread) #bebebe,
+        calc(-1*var(--shadowsize)) var(--shadowsize) var(--spread) #ffffff;
+}
+
+.card:active {
+    border-radius: var(--card-radius);
+    background: linear-gradient(45deg, #cacaca, #f0f0f0);
+    box-shadow: var(--shadowsize) calc(-1*var(--shadowsize)) var(--spread) #bebebe,
+        calc(-1*var(--shadowsize)) var(--shadowsize) var(--spread) #ffffff;
+}
+
+.showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-size), var(--card-size)));
+    grid-gap: 45px;
+    padding: 50px 10px;
+    justify-content: center;
+}
+
+.websiteholder {
+    width: 90%;
+    height: 90%;
+}
+
+.flexcenter {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.websitedata>img {
+    max-width: 95%;
+    max-height: 90%;
+    filter: grayscale(1);
+}
+
+.websitedata:hover>img {
+    filter: grayscale(0);
+}
+
+.websitedata {
+    height: 100%;
+    width: 100%;
+}
+
+.welcomebanner {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px) grayscale(50%);
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#scientist {
+    font-size: 5rem;
+}
+
+/* Below code handles view for mobile */
+@media only screen and (max-width: 600px) {
+    :root {
+        /* --card-size: 150px; */
+    }
+
+    .showcase {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(var(--card-size), var(--card-size)));
+        grid-gap: 15px;
+        justify-content: space-evenly;
+    }
+}
+
+.creator {
+    z-index: 1001;
+}
+
+#showprogress {
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 15px;
+    cursor: pointer ;
+    background: orange;
+    font-weight: bold;
+}

@@ -1,5 +1,8 @@
 # WebProjects
 
+[![Editor](https://img.shields.io/badge/VSCode-Click%20Here%20To%20Edit%20This%20Repo-blue?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://vscode.dev/github/aasisodiya/WebProjects)
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.WebProjects&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.WebProjects)
+
 ## Project URLs
 
 |Website|Link|Created Date|Description|
@@ -242,3 +245,27 @@
 |Fuzzing Testing|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-practical/#fuzzing)|23-October-2021|Fuzzing Testing|
 |Kevin Powell's Challenge|[Link](https://aasisodiya.github.io/WebProjects/55Challenge/02Kevin3DCSS/)|1-November-2021|Kevin Powell's Challenge - [Link](https://www.youtube.com/watch?v=z_UaTcy81P4)|
 |`writing-mode` CSS Property|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-css#writing-mode-css-property)|7-Nov-2021|`writing-mode` CSS Property|
+|Generators In JS|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-generators)|18-Aug-2022|Generators In JS, solution for counter problem|
+|RegExp In JS|[Link](https://aasisodiya.github.io/WebProjects/Notes/note-js-jquery/note-regexp)|19-Aug-2022|RegExp In JS|
+
+---
+
+|Date|Topic|
+|-|-|
+|2022-08-28|[A-Frame Notes](https://aasisodiya.github.io/WebProjects/Notes/note-aframe)|
+|2022-09-03|[Google API Integration Testing](https://aasisodiya.github.io/WebProjects/Notes/note-google/example)|
+|2022-09-17|[List Styling Using CSS](https://aasisodiya.github.io/WebProjects/Notes/note-css#styling-list-using-css)|
+|2022-11-15|[Content Editable Style Tag](https://aasisodiya.github.io/WebProjects/Notes/note-css#content-editable-style-tag)|
+|2022-11-18|[Decide Favicons Based on Browser Theme](https://aasisodiya.github.io/WebProjects/Notes/note-html#decide-favicons-based-on-browser-theme)|
+|2022-12-12|[Lazy Loading using `loading` attribute](https://aasisodiya.github.io/WebProjects/Notes/note-html#lazy-loading)|
+|2023-01-31|[HTML Tags](https://aasisodiya.github.io/WebProjects/Notes/note-html#html-tags)|
+
+---
+
+|Date|Project|
+|-|-|
+|2022-09-18|[Game - SolveIt!](https://aasisodiya.github.io/WebProjects/58SolveIt/)|
+|2022-10-08|[Game - ClickIt!](https://aasisodiya.github.io/WebProjects/59ClickIt/)|
+|2022-11-04|[Cool Websites](https://aasisodiya.github.io/WebProjects/57CoolWebsites/)|
+|2023-04-19|[Countdown App From Countdown (2019) Movie](https://aasisodiya.github.io/WebProjects/60Countdown/)|
+|2025-12-17|[Finance Data Explorer](https://aasisodiya.github.io/WebProjects/61Finance/)|

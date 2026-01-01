@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="313.5" height="100" viewBox="0 0 314 100">
+	<path fill="#000"
+		d="m93 62-4 8h-7l17-38h7l17 38h-7l-4-8H93zm9-23-7 17h15l-8-17zm52-4-3 6-11-3c-4 0-7 1-7 4 0 8 21 4 21 17 0 7-6 11-15 11-6 0-11-2-15-6l3-5c4 3 8 5 13 5 4 0 7-1 7-4 0-9-21-4-21-18 0-6 6-11 14-11 5 0 10 2 14 4zm23-3c10 0 15 5 15 13 0 9-5 14-15 14h-9v11h-6V32h15zm-9 21h9c6 0 9-3 9-8s-3-7-9-7h-9v15zm68-2c0 11-9 20-20 20-12 0-21-9-21-20s9-19 21-19c11 0 20 8 20 19zm-34 0a14 14 0 0 0 28 0c0-8-7-14-14-14-8 0-14 6-14 14zm67-16-2 6-12-3c-3 0-6 1-6 4 0 8 21 4 21 17 0 7-6 11-15 11-6 0-12-2-15-6l2-5c4 3 9 5 13 5 5 0 8-1 8-4 0-9-21-4-21-18 0-6 5-11 14-11 5 0 10 2 13 4zm15 3v10h19v6h-19v10h22v6h-29V32h28v6h-21z" />
+	<radialGradient id="a" cx="561.6" cy="179.7" r="26.3" gradientTransform="matrix(0 1 1 0 -137 -506)"
+		gradientUnits="userSpaceOnUse">
+		<stop offset=".1" stop-color="#d5effc" />
+		<stop offset=".8" stop-color="#3c8ec6" />
+		<stop offset="1" stop-color="#39c" />
+	</radialGradient>
+	<path fill="url(#a)" d="M68 58c0-2 1-21-15-29-8-4-18-4-23 1-10 11-2 21 1 22-5-20 30-24 36 6h1z" />
+	<radialGradient id="b" cx="475.3" cy="-726.4" r="19.1" gradientTransform="matrix(1 0 0 -1 -432 -666)"
+		gradientUnits="userSpaceOnUse">
+		<stop offset=".1" stop-color="#fee588" />
+		<stop offset=".6" stop-color="#f79b30" />
+		<stop offset=".7" stop-color="#f58b2d" />
+		<stop offset=".9" stop-color="#f3752a" />
+		<stop offset="1" stop-color="#f36c29" />
+	</radialGradient>
+	<path fill="url(#b)" d="M28 82c1 0 20 1 29-15 4-8 4-18-2-23-10-10-21-2-22 1h1c19-5 23 30-6 36v1z" />
+	<radialGradient id="c" cx="-415.6" cy="-620.7" r="26.3" gradientTransform="matrix(0 -1 -1 0 -592 -371)"
+		gradientUnits="userSpaceOnUse">
+		<stop offset="0" stop-color="#fcb116" />
+		<stop offset=".2" stop-color="#fbb318" />
+		<stop offset=".3" stop-color="#f9b91c" />
+		<stop offset=".5" stop-color="#f6c323" />
+		<stop offset=".6" stop-color="#f4d12d" />
+		<stop offset=".7" stop-color="#f0e03a" />
+		<stop offset=".7" stop-color="#e5d534" />
+		<stop offset=".9" stop-color="#cfbd24" />
+		<stop offset="1" stop-color="#b19e11" />
+	</radialGradient>
+	<path fill="url(#c)" d="M4 42c-1 1-2 20 14 29 8 4 18 4 24-2 10-10 1-20-2-22v1c5 20-30 23-36-6 0-1 0-1 0 0z" />
+	<radialGradient id="d" cx="473.2" cy="-709.1" r="26.3" gradientTransform="matrix(1 0 0 -1 -432 -666)"
+		gradientUnits="userSpaceOnUse">
+		<stop offset="0" stop-color="#a1c43a" />
+		<stop offset=".5" stop-color="#a0cc3a" />
+		<stop offset="1" stop-color="#3c943a" />
+	</radialGradient>
+	<path fill="url(#d)" d="M44 18c-2 0-21-2-29 15-4 7-4 17 1 23 10 10 21 2 22-2-20 5-24-29 6-36 1 0 1 0 0 0z" />
+	<g opacity=".6">
+		<radialGradient id="e" cx="434.8" cy="-357.3" r="30.4" gradientTransform="matrix(1.0987 0 0 -1.6216 -442 -504)"
+			gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#f9e788" />
+			<stop offset="1" stop-color="#fff" />
+		</radialGradient>
+		<path fill="url(#e)" d="m36 31-8 1c-7 10 0 19 3 20-3-12 9-18 20-14-4-5-9-7-15-7z" opacity=".4" />
+		<radialGradient id="f" cx="434.8" cy="-357.3" r="30.4" gradientTransform="matrix(1.0987 0 0 -1.6216 -442 -504)"
+			gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#f9e788" />
+			<stop offset="1" stop-color="#fff" />
+		</radialGradient>
+		<path fill="url(#f)" d="M33 45h1c12-3 18 9 14 20a19 19 0 0 0 7-22c-10-9-21-1-22 2z" opacity=".4" />
+		<radialGradient id="g" cx="434.9" cy="-357.3" r="30.4" gradientTransform="matrix(1.0987 0 0 -1.6216 -442 -504)"
+			gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#f9e788" />
+			<stop offset="1" stop-color="#fff" />
+		</radialGradient>
+		<path fill="url(#g)" d="M40 47v1c3 12-9 18-20 14 4 4 10 7 16 7l8-2c7-9-1-19-4-20z" opacity=".4" />
+		<radialGradient id="h" cx="434.8" cy="-357.3" r="30.4" gradientTransform="matrix(1.0987 0 0 -1.6216 -442 -504)"
+			gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#f9e788" />
+			<stop offset="1" stop-color="#fff" />
+		</radialGradient>
+		<path fill="url(#h)" d="M38 54c-12 3-18-8-15-19a19 19 0 0 0-6 21c10 10 20 1 21-2z" opacity=".4" />
+	</g>
+	<script xmlns="" />
+</svg>

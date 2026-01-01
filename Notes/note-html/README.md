@@ -1,6 +1,7 @@
 # HTML Notes
 
 - [HTML Notes](#html-notes)
+  - [HTML Tags](#html-tags)
   - [`<meta>` tag: The metadata element](#meta-tag-the-metadata-element)
     - [Standard metadata names](#standard-metadata-names)
     - [Uncommon MetaData Names](#uncommon-metadata-names)
@@ -23,7 +24,13 @@
   - [`<progress>`: The Progress Indicator element](#progress-the-progress-indicator-element)
   - [`<meter>`: The HTML Meter element](#meter-the-html-meter-element)
   - [`<template>`: The Content Template element](#template-the-content-template-element)
+  - [Decide Favicons Based on Browser Theme](#decide-favicons-based-on-browser-theme)
+  - [Lazy Loading](#lazy-loading)
   - [Reference](#reference)
+
+## HTML Tags
+
+[Click here](./tags.html) to view list of different HTML tags. [Link](https://aasisodiya.github.io/WebProjects/Notes/note-html/tags.html)
 
 ## `<meta>` tag: The metadata element
 
@@ -358,6 +365,25 @@ Think of a template as a content fragment that is being stored for subsequent us
 ```
 
 > Reference: [Link](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template)
+
+## Decide Favicons Based on Browser Theme
+
+Use code `media="(prefers-color-scheme: dark)"` or `media="(prefers-color-scheme: light)"` to set the favicon image based on browser theme. Sample code which sets favicon for dark and light theme is given below. Where `img/dark-theme-favicon.svg` and `img/light-theme-favicon.svg` are the files you will have to set as per your requirements.
+
+```html
+<link rel="icon" href="img/dark-theme-favicon.svg" type="image/x-icon" media="(prefers-color-scheme: dark)" />
+<link rel="icon" href="img/light-theme-favicon.svg" type="image/x-icon" media="(prefers-color-scheme: light)" />
+```
+
+## Lazy Loading
+
+You can implement lazy loading easily by simply using `loading` attribute as shown in below sample code block.
+
+```html
+<img loading="lazy" src="img.png">
+```
+
+The `loading` attribute works on an `<img>` element or an `<iframe>` element. And it is used to instruct the browser to defer loading of images/iframes that are off-screen until the user scrolls near them. [Reference](https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading)
 
 ## Reference
 
