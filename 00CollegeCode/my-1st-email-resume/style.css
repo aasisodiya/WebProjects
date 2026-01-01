@@ -1,0 +1,104 @@
+body{
+	margin: 0;
+}
+html{
+	font-family: 'Raleway', sans-serif;
+}
+.email-background{
+	background: #eee;
+	padding: 10px;
+	border-radius: 4px;
+}
+.email-container{
+	max-width: 700px;
+	min-width: 500px;
+	background: white;
+	font-family: 'raleway', sans-serif;
+	margin: 0 auto;
+	overflow: hidden;
+	border-radius: 5px;
+	text-align: center;
+}
+.skills{
+	text-align: left;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.skills p{
+	text-align: justify;
+}
+.skills b{
+	color: gray;
+}
+.skills hr{
+	margin-left: 5%;
+}
+h1,h2,h3,h4,h5,h6{
+	color: grey;
+}
+h3{
+	text-align: center;
+}
+h4{
+	padding-bottom: 1px;
+	padding-top: 5px;
+}
+img{
+	max-width: 75%;
+	border-radius: 50%;
+	border: 10px solid orange;
+}
+p{
+	margin: 20px;
+	font-size: 18;
+	font-weight: 300;
+	color: black;
+	line-height: 1.5;
+}
+.links{
+	margin: 20px;
+}
+.links a{
+	color: white;
+	text-decoration: none;
+	display: inline-block;
+	background: green;
+	padding: 10px;
+	border-radius: 5px;
+}
+.footer{
+	@extend .email-container;
+	background: none;
+	padding: 20px;
+	font-size: 15px;
+	margin: 0 auto;
+	text-align: center;
+}
+a{
+	color: #ffa500;
+	text-decoration: none;
+}
+.email-container hr{
+	display: block;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+hr{
+	border:0;
+	border-bottom: 2px solid #ffa500;
+}
+table{
+	width: 100%;
+	font-family: 'Raleway', sans-serif;
+}
+
+th {
+    background-color: orange;
+    color: white;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+tr:nth-child(even) {background-color: #f2f2f2}
+tr:hover {background-color: rgba(255, 165, 0, 0.41)}

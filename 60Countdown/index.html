@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta
+      name="description"
+      content="Countdown App inspired from Countdown (2019) Movie"
+    />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Countdown" />
+    <meta
+      property="og:description"
+      content="Countdown App inspired from Countdown (2019) Movie"
+    />
+    <meta
+      property="og:image"
+      content="https://aasisodiya.github.io/WebProjects/shared/img/github.png"
+    />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>Countdown</title>
+    <link
+      rel="icon"
+      href="img/outline-orange-a.svg"
+      type="image/x-icon"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      href="img/orange-outline-a.svg"
+      type="image/x-icon"
+      media="(prefers-color-scheme: light)"
+    />
+    <!-- Title and Icon of the Website -->
+    <!-- Custom Style Sheet Import Start-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Custom Style Sheet Import End-->
+    <!-- Google Font Import Start -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css?family=Exo+2|Raleway"
+      rel="stylesheet"
+    /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Font Import End -->
+    <!-- Font Awesome Import Start -->
+    <!-- Stop using font awesome, instead use google icons -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+    <!-- Font Awesome Import End -->
+    <!-- Google Icons Import Start -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- List of Icons: https://fonts.google.com/icons -->
+    <!-- Google Icons Import End -->
+    <!-- Jquery Import Start -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script> -->
+    <!-- Jquery Import End -->
+    <!-- Custom JS Import Start -->
+    <script src="js/script.js" defer></script>
+    <!-- Custom JS Import End -->
+    <!-- Google Analytics Tag Start -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4KDE74NNXK"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-4KDE74NNXK");
+    </script>
+    <!-- Google Analytics Tag End -->
+  </head>
+
+  <body ontouchend>
+    <div id="settings"><span class="material-icons">settings</span></div>
+    <div class="container">
+      <div class="holder">
+        <div class="timeslot">
+          <div class="unit" id="years">00</div>
+          <div class="unitname">YRS</div>
+        </div>
+        <div class="timeslot">
+          <div class="unit" id="months">00</div>
+          <div class="unitname">MTH</div>
+        </div>
+        <div class="timeslot">
+          <div class="unit" id="days">00</div>
+          <div class="unitname">DAY</div>
+        </div>
+        <div class="timeslot">
+          <div class="unit" id="hours">00</div>
+          <div class="unitname">HRS</div>
+        </div>
+        <div class="timeslot">
+          <div class="unit" id="minutes">00</div>
+          <div class="unitname">MIN</div>
+        </div>
+        <div class="timeslot">
+          <div class="unit" id="seconds">00</div>
+          <div class="unitname">SEC</div>
+        </div>
+      </div>
+    </div>
+    <!-- Panel for settings -->
+    <div class="settings-panel">
+      <div id="close-settings-panel">
+        <span class="material-icons">close</span>
+      </div>
+      <h1>Choose a Target Date</h1>
+      <input
+        type="datetime-local"
+        name="targetDate"
+        id="targetDate"
+        value="2012-01-01T10:10"
+      />
+      <button id="update">OK</button>
+    </div>
+
+    <!-- Below code is for footer -->
+    <div class="footer">
+      &lt;/&gt; by
+      <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+      <!-- <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.countdown" alt=""> -->
+      <img
+        src="https://api.visitorbadge.io/api/visitors?path=aasisodiya.WebProjects.countdown&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper&style=flat-square"
+        alt=""
+      />
+    </div>
+  </body>
+</html>

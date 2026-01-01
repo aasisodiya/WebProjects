@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Interactive filters, table view, and pagination — powered by static data" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Finance Data Explorer" />
+    <meta property="og:description"
+        content="Interactive filters, table view, and pagination — powered by static data" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>Finance Data Explorer</title>
+    <link rel="icon" href="img/outline-orange-a.svg" type="image/x-icon" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="img/orange-outline-a.svg" type="image/x-icon" media="(prefers-color-scheme: light)" />
+    <!-- Title and Icon of the Website -->
+    <!-- Custom Style Sheet Import Start-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Custom Style Sheet Import End-->
+    <!-- Google Font Import Start -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
+    <!-- Google Font Import End -->
+    <!-- Font Awesome Import Start -->
+    <!-- Stop using font awesome, instead use google icons -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+    <!-- Font Awesome Import End -->
+    <!-- Google Icons Import Start -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+        rel="stylesheet">
+    <!-- List of Icons: https://fonts.google.com/icons -->
+    <!-- Google Icons Import End -->
+    <!-- Jquery Import End -->
+    <!-- Custom JS Import Start -->
+    <script src="js/script.js" type="module"></script>
+    <!-- Custom JS Import End -->
+    <!-- Google Analytics Tag Start -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KDE74NNXK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-4KDE74NNXK');
+    </script>
+    <!-- Google Analytics Tag End -->
+</head>
+
+<body ontouchend>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo"><img src="img/orange-outline-a.svg" alt="Finance Data Explorer Logo" /></div>
+            <div>
+                <div class="title">Finance Data Explorer</div>
+                <div class="subtitle">Interactive filters, table view, and pagination — powered by static data</div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="panel filters">
+                <h3>Filters</h3>
+                <div class="field">
+                    <label>Search</label>
+                    <input id="search" class="input" placeholder="Search scheme name or fund house" />
+                </div>
+
+                <div class="field">
+                    <label>Fund House</label>
+                    <select id="fundHouse" class="select">
+                        <option value="__any">Any</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Category</label>
+                    <select id="category" class="select">
+                        <option value="__any">Any</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Direct/Regular</label>
+                    <select id="planName" class="select">
+                        <option value="__any">Any</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Investment Type</label>
+                    <select id="invtype" class="select">
+                        <option value="__any">Any</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Category (check)</label>
+                    <div id="categorynameList"
+                        style="display:flex;flex-direction:column;height:200px;overflow:scroll;overflow-x:hidden !important;">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Max Crisil Rank</label>
+                    <select id="crisilrank" class="select">
+                        <option value="__any">Any</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Returns filters (use min / max)</label>
+                    <div style="display:flex;gap:8px">
+                        <input id="ret1Min" type="number" class="input" placeholder="1Y min" />
+                        <input id="ret1Max" type="number" class="input" placeholder="1Y max" />
+                    </div>
+                    <div style="display:flex;gap:8px;margin-top:8px">
+                        <input id="ret3Min" type="number" class="input" placeholder="3Y min" />
+                        <input id="ret3Max" type="number" class="input" placeholder="3Y max" />
+                    </div>
+
+                </div>
+
+                <div class="field" style="margin-top:12px">
+                    <div class="controls">
+                        <button id="apply" class="btn">Apply</button>
+                        <button id="reset" class="btn secondary">Reset</button>
+                        <div style="flex:1"></div>
+                        <div class="small">Results: <span id="resultCount">0</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+
+                <div id="tableWrap" style="max-height:88vh;overflow:auto;border-radius:8px;position:relative">
+                    <table id="results">
+                        <thead>
+                            <tr>
+                                <th data-key="scheme" class="sortable">Scheme <span class="sort-indicator"></span></th>
+                                <!-- <th data-key="fundHouse" class="sortable">Fund House <span
+                                        class="sort-indicator"></span></th> -->
+                                <th data-key="category" class="sortable">Category <span class="sort-indicator"></span>
+                                </th>
+                                <th data-key="plan" class="sortable">D/R <span class="sort-indicator"></span></th>
+                                <th data-key="r3m" class="sortable">3M <span class="sort-indicator"></span></th>
+                                <th data-key="r6m" class="sortable">6M <span class="sort-indicator"></span></th>
+                                <th data-key="r1" class="sortable">1Y <span class="sort-indicator"></span></th>
+                                <th data-key="r3" class="sortable">3Y <span class="sort-indicator"></span></th>
+                                <th data-key="crisil" class="sortable">CRISIL <span class="sort-indicator"></span></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <div id="noResults" class="no-results" style="display:none;position:absolute;inset:0;padding:0">No
+                        matching records</div>
+                </div>
+                <div class="panel-footer" style="display:flex;justify-content:space-between;align-items:center">
+                    <div class="controls">
+                        <div class="small">Page size</div>
+                        <select id="pageSize" class="select" style="width:90px;margin-left:6px">
+                            <option>10</option>
+                            <option>25</option>
+                            <option>50</option>
+                            <option>100</option>
+                        </select>
+                    </div>
+                    <div class="controls pager">
+                        <button id="prev" class="btn secondary">Prev</button>
+                        <div class="small">Page <input id="curPage" class="page-input" value="1" /> of <span
+                                id="totalPages">1</span></div>
+                        <button id="next" class="btn">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://api.visitorbadge.io/api/visitors?path=aasisodiya.WebProjects.finance&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper&style=flat-square"
+            alt="">
+    </div>
+</body>
+
+</html>
