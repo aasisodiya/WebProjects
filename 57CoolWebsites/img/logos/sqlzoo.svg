@@ -1,0 +1,214 @@
+<svg version="1.1" width="400" height="400" viewBox="-1.1 -1.1 2.2 2.2" xmlns="http://www.w3.org/2000/svg">
+
+<mask id="q0" x="-2" y="-2" width="4" height="4"><rect x="0" y="-1.1" width="1.1" height="1.1" fill="white"></rect></mask>
+<g mask="url(#q0)">
+    <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575L-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642L0,-1 L-0.38786796564403575,-0.6121320343559642 A0.3 0.3 90 0 0 -0.38786796564403575,-0.1878679656440358 L0.1878679656440358,0.38786796564403575 A 0.3 0.3 90 0 0 0.6121320343559642,0.38786796564403575L1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642z" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575L-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642L0,-1 L-0.38786796564403575,-0.6121320343559642 A0.3 0.3 90 0 0 -0.38786796564403575,-0.1878679656440358 L0.1878679656440358,0.38786796564403575 A 0.3 0.3 90 0 0 0.6121320343559642,0.38786796564403575L1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642z" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    <path d="M1 -1 L1 -1L1 -0.4L-0.4 1L-1 1L-1 0.4L0.4 -1z" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M1 -1 L1 -1L1 -0.4L-0.4 1L-1 1L-1 0.4L0.4 -1z" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path></g>
+    
+    <mask id="m1" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.6" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml1" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.6" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#m1)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#ml1)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m2" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.45" cy="-0.45" r="0.2" fill="white" stroke="none"></circle></mask>
+    <mask id="ml2" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.45" cy="-0.45" r="0.2" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#m2)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#ml2)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m3" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.8" cy="-0.2" r="0.2" fill="white" stroke="none"></circle></mask>
+    <mask id="ml3" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.8" cy="-0.2" r="0.2" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642" mask="url(#m3)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642" mask="url(#ml3)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m4" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.4" cy="-0.2" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml4" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.4" cy="-0.2" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#m4)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#ml4)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m5" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.2" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml5" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.2" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575" mask="url(#m5)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575" mask="url(#ml5)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m6" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.2" cy="0" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml6" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.2" cy="0" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#m6)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#ml6)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+
+    
+<g transform="rotate(90)">
+<mask id="q0" x="-2" y="-2" width="4" height="4"><rect x="0" y="-1.1" width="1.1" height="1.1" fill="white"></rect></mask>
+<g mask="url(#q0)">
+    <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575L-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642L0,-1 L-0.38786796564403575,-0.6121320343559642 A0.3 0.3 90 0 0 -0.38786796564403575,-0.1878679656440358 L0.1878679656440358,0.38786796564403575 A 0.3 0.3 90 0 0 0.6121320343559642,0.38786796564403575L1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642z" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575L-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642L0,-1 L-0.38786796564403575,-0.6121320343559642 A0.3 0.3 90 0 0 -0.38786796564403575,-0.1878679656440358 L0.1878679656440358,0.38786796564403575 A 0.3 0.3 90 0 0 0.6121320343559642,0.38786796564403575L1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642z" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    <path d="M1 -1 L1 -1L1 -0.4L-0.4 1L-1 1L-1 0.4L0.4 -1z" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M1 -1 L1 -1L1 -0.4L-0.4 1L-1 1L-1 0.4L0.4 -1z" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path></g>
+    
+    <mask id="m1" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.6" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml1" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.6" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#m1)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#ml1)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m2" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.45" cy="-0.45" r="0.2" fill="white" stroke="none"></circle></mask>
+    <mask id="ml2" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.45" cy="-0.45" r="0.2" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#m2)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#ml2)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m3" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.8" cy="-0.2" r="0.2" fill="white" stroke="none"></circle></mask>
+    <mask id="ml3" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.8" cy="-0.2" r="0.2" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642" mask="url(#m3)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642" mask="url(#ml3)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m4" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.4" cy="-0.2" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml4" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.4" cy="-0.2" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#m4)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#ml4)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m5" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.2" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml5" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.2" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575" mask="url(#m5)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575" mask="url(#ml5)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m6" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.2" cy="0" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml6" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.2" cy="0" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#m6)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#ml6)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+</g>
+    
+<g transform="rotate(-90)">
+<mask id="q0" x="-2" y="-2" width="4" height="4"><rect x="0" y="-1.1" width="1.1" height="1.1" fill="white"></rect></mask>
+<g mask="url(#q0)">
+    <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575L-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642L0,-1 L-0.38786796564403575,-0.6121320343559642 A0.3 0.3 90 0 0 -0.38786796564403575,-0.1878679656440358 L0.1878679656440358,0.38786796564403575 A 0.3 0.3 90 0 0 0.6121320343559642,0.38786796564403575L1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642z" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575L-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642L0,-1 L-0.38786796564403575,-0.6121320343559642 A0.3 0.3 90 0 0 -0.38786796564403575,-0.1878679656440358 L0.1878679656440358,0.38786796564403575 A 0.3 0.3 90 0 0 0.6121320343559642,0.38786796564403575L1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642z" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    <path d="M1 -1 L1 -1L1 -0.4L-0.4 1L-1 1L-1 0.4L0.4 -1z" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M1 -1 L1 -1L1 -0.4L-0.4 1L-1 1L-1 0.4L0.4 -1z" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path></g>
+    
+    <mask id="m1" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.6" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml1" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.6" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#m1)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#ml1)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m2" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.45" cy="-0.45" r="0.2" fill="white" stroke="none"></circle></mask>
+    <mask id="ml2" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.45" cy="-0.45" r="0.2" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#m2)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#ml2)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m3" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.8" cy="-0.2" r="0.2" fill="white" stroke="none"></circle></mask>
+    <mask id="ml3" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.8" cy="-0.2" r="0.2" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642" mask="url(#m3)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642" mask="url(#ml3)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m4" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.4" cy="-0.2" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml4" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.4" cy="-0.2" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#m4)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#ml4)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m5" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.2" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml5" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.2" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575" mask="url(#m5)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575" mask="url(#ml5)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m6" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.2" cy="0" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml6" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.2" cy="0" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#m6)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#ml6)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+</g>
+    
+<g transform="rotate(180)">
+<mask id="q0" x="-2" y="-2" width="4" height="4"><rect x="0" y="-1.1" width="1.1" height="1.1" fill="white"></rect></mask>
+<g mask="url(#q0)">
+    <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575L-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642L0,-1 L-0.38786796564403575,-0.6121320343559642 A0.3 0.3 90 0 0 -0.38786796564403575,-0.1878679656440358 L0.1878679656440358,0.38786796564403575 A 0.3 0.3 90 0 0 0.6121320343559642,0.38786796564403575L1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642z" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575L-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642L0,-1 L-0.38786796564403575,-0.6121320343559642 A0.3 0.3 90 0 0 -0.38786796564403575,-0.1878679656440358 L0.1878679656440358,0.38786796564403575 A 0.3 0.3 90 0 0 0.6121320343559642,0.38786796564403575L1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642z" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    <path d="M1 -1 L1 -1L1 -0.4L-0.4 1L-1 1L-1 0.4L0.4 -1z" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M1 -1 L1 -1L1 -0.4L-0.4 1L-1 1L-1 0.4L0.4 -1z" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path></g>
+    
+    <mask id="m1" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.6" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml1" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.6" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#m1)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#ml1)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m2" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.45" cy="-0.45" r="0.2" fill="white" stroke="none"></circle></mask>
+    <mask id="ml2" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.45" cy="-0.45" r="0.2" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#m2)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#ml2)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m3" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.8" cy="-0.2" r="0.2" fill="white" stroke="none"></circle></mask>
+    <mask id="ml3" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.8" cy="-0.2" r="0.2" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642" mask="url(#m3)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M1,0 L0.6121320343559642,-0.38786796564403575 A0.3 0.3 90 0 0 0.1878679656440358,-0.38786796564403575 L-0.38786796564403575,0.1878679656440358 A 0.3 0.3 90 0 0 -0.38786796564403575,0.6121320343559642" mask="url(#ml3)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m4" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.4" cy="-0.2" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml4" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.4" cy="-0.2" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#m4)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1 -1 L-1 -1L-0.4 -1L1 0.4L1 1L0.4 1L-1 -0.4z" mask="url(#ml4)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m5" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.2" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml5" x="-1" y="-1" width="4" height="4">
+    <circle cx="0" cy="-0.2" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575" mask="url(#m5)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M0,1 L0.38786796564403575,0.6121320343559642 A0.3 0.3 90 0 0 0.38786796564403575,0.1878679656440358 L-0.1878679656440358,-0.38786796564403575 A 0.3 0.3 90 0 0 -0.6121320343559642,-0.38786796564403575" mask="url(#ml5)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+    
+    <mask id="m6" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.2" cy="0" r="0.15" fill="white" stroke="none"></circle></mask>
+    <mask id="ml6" x="-1" y="-1" width="4" height="4">
+    <circle cx="0.2" cy="0" r="0.15" fill="white" stroke-width="0.01" stroke="white"></circle></mask>
+    <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#m6)" stroke="black" stroke-width="0.2" fill="none" stroke-linejoin="round"></path>
+            <path d="M-1,0 L-0.6121320343559642,0.38786796564403575 A0.3 0.3 90 0 0 -0.1878679656440358,0.38786796564403575 L0.38786796564403575,-0.1878679656440358 A 0.3 0.3 90 0 0 0.38786796564403575,-0.6121320343559642" mask="url(#ml6)" stroke="white" stroke-width="0.1" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>
+</g>
+    
+</svg>
