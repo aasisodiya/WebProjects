@@ -1062,6 +1062,13 @@ let websites = [
     type: "",
     createdDate: "",
   },
+  {
+    id: 144,
+    url: "https://sqlzoo.net/",
+    logo: "img/logos/sqlzoo.svg",
+    type: "",
+    createdDate: "",
+  },
   // {
   //   id: 9,
   //   url: "",
