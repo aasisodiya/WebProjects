@@ -1069,6 +1069,13 @@ let websites = [
     type: "",
     createdDate: "",
   },
+  {
+    id: 145,
+    url: "https://www.tinkercad.com/users/eIVmbTMYHdy-akashsingh-sisodiya",
+    logo: "img/logos/tinkercad.svg",
+    type: "",
+    createdDate: "",
+  },
   // {
   //   id: 9,
   //   url: "",
