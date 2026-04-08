@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Reveal</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .column {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .reel {
+            position: relative;
+            transition: transform var(--animation-time) ease-in-out;
+            top: 0;
+        }
+
+        .letter {
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8vh;
+            font-weight: bold;
+            opacity: 0.1;
+            transition: opacity 1s ease, transform 1s ease, font-size 2s ease;
+        }
+
+        .letter.final-visible {
+            font-size: 12vh;
+            transform: scale(1.4);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="column" id="col1">
+            <div class="reel">
+                <div class="letter">?</div>
+                <div class="letter">Y</div>
+                <div class="letter">X</div>
+                <div class="letter">W</div>
+                <div class="letter">V</div>
+                <div class="letter">U</div>
+                <div class="letter">T</div>
+                <div class="letter">S</div>
+                <div class="letter">R</div>
+                <div class="letter">Q</div>
+                <div class="letter">P</div>
+                <div class="letter">O</div>
+                <div class="letter">N</div>
+                <div class="letter">M</div>
+                <div class="letter">L</div>
+                <div class="letter">K</div>
+                <div class="letter">J</div>
+                <div class="letter">I</div>
+                <div class="letter">H</div>
+                <div class="letter">G</div>
+                <div class="letter">F</div>
+                <div class="letter">E</div>
+                <div class="letter">D</div>
+                <div class="letter">C</div>
+                <div class="letter">B</div>
+                <div class="letter">A</div>
+                <div class="letter">&nbsp;</div>
+                <div class="letter">A</div>
+                <div class="letter">B</div>
+                <div class="letter">C</div>
+                <div class="letter">D</div>
+                <div class="letter">E</div>
+                <div class="letter">F</div>
+                <div class="letter">G</div>
+                <div class="letter">H</div>
+                <div class="letter">I</div>
+                <div class="letter">J</div>
+                <div class="letter">K</div>
+                <div class="letter">L</div>
+                <div class="letter">M</div>
+                <div class="letter">N</div>
+                <div class="letter">O</div>
+                <div class="letter">P</div>
+                <div class="letter">Q</div>
+                <div class="letter">R</div>
+                <div class="letter">S</div>
+                <div class="letter">T</div>
+                <div class="letter">U</div>
+                <div class="letter">V</div>
+                <div class="letter">W</div>
+                <div class="letter">X</div>
+                <div class="letter">Y</div>
+                <div class="letter">?</div>
+                <div class="letter">A</div>
+                <div class="letter">B</div>
+                <div class="letter">C</div>
+                <div class="letter">D</div>
+                <div class="letter">E</div>
+                <div class="letter">F</div>
+                <div class="letter">G</div>
+                <div class="letter">H</div>
+                <div class="letter">I</div>
+                <div class="letter">J</div>
+                <div class="letter">K</div>
+                <div class="letter">L</div>
+                <div class="letter">M</div>
+                <div class="letter">N</div>
+                <div class="letter">O</div>
+                <div class="letter">P</div>
+                <div class="letter">Q</div>
+                <div class="letter">R</div>
+                <div class="letter">S</div>
+                <div class="letter">T</div>
+                <div class="letter">U</div>
+                <div class="letter">V</div>
+                <div class="letter">W</div>
+                <div class="letter">X</div>
+                <div class="letter">Y</div>
+                <div class="letter">?</div>
+            </div>
+        </div>
+        <div class="column" id="col2">
+            <div class="reel">
+                <div class="letter">?</div>
+                <div class="letter">Y</div>
+                <div class="letter">X</div>
+                <div class="letter">W</div>
+                <div class="letter">V</div>
+                <div class="letter">U</div>
+                <div class="letter">T</div>
+                <div class="letter">S</div>
+                <div class="letter">R</div>
+                <div class="letter">Q</div>
+                <div class="letter">P</div>
+                <div class="letter">O</div>
+                <div class="letter">N</div>
+                <div class="letter">M</div>
+                <div class="letter">L</div>
+                <div class="letter">K</div>
+                <div class="letter">J</div>
+                <div class="letter">I</div>
+                <div class="letter">H</div>
+                <div class="letter">G</div>
+                <div class="letter">F</div>
+                <div class="letter">E</div>
+                <div class="letter">D</div>
+                <div class="letter">C</div>
+                <div class="letter">B</div>
+                <div class="letter">A</div>
+                <div class="letter">&nbsp;</div>
+                <div class="letter">A</div>
+                <div class="letter">B</div>
+                <div class="letter">C</div>
+                <div class="letter">D</div>
+                <div class="letter">E</div>
+                <div class="letter">F</div>
+                <div class="letter">G</div>
+                <div class="letter">H</div>
+                <div class="letter">I</div>
+                <div class="letter">J</div>
+                <div class="letter">K</div>
+                <div class="letter">L</div>
+                <div class="letter">M</div>
+                <div class="letter">N</div>
+                <div class="letter">O</div>
+                <div class="letter">P</div>
+                <div class="letter">Q</div>
+                <div class="letter">R</div>
+                <div class="letter">S</div>
+                <div class="letter">T</div>
+                <div class="letter">U</div>
+                <div class="letter">V</div>
+                <div class="letter">W</div>
+                <div class="letter">X</div>
+                <div class="letter">Y</div>
+                <div class="letter">?</div>
+                <div class="letter">A</div>
+                <div class="letter">B</div>
+                <div class="letter">C</div>
+                <div class="letter">D</div>
+                <div class="letter">E</div>
+                <div class="letter">F</div>
+                <div class="letter">G</div>
+                <div class="letter">H</div>
+                <div class="letter">I</div>
+                <div class="letter">J</div>
+                <div class="letter">K</div>
+                <div class="letter">L</div>
+                <div class="letter">M</div>
+                <div class="letter">N</div>
+                <div class="letter">O</div>
+                <div class="letter">P</div>
+                <div class="letter">Q</div>
+                <div class="letter">R</div>
+                <div class="letter">S</div>
+                <div class="letter">T</div>
+                <div class="letter">U</div>
+                <div class="letter">V</div>
+                <div class="letter">W</div>
+                <div class="letter">X</div>
+                <div class="letter">Y</div>
+                <div class="letter">?</div>
+            </div>
+        </div>
+        <div class="column" id="col3">
+            <div class="reel">
+                <div class="letter">?</div>
+                <div class="letter">Y</div>
+                <div class="letter">X</div>
+                <div class="letter">W</div>
+                <div class="letter">V</div>
+                <div class="letter">U</div>
+                <div class="letter">T</div>
+                <div class="letter">S</div>
+                <div class="letter">R</div>
+                <div class="letter">Q</div>
+                <div class="letter">P</div>
+                <div class="letter">O</div>
+                <div class="letter">N</div>
+                <div class="letter">M</div>
+                <div class="letter">L</div>
+                <div class="letter">K</div>
+                <div class="letter">J</div>
+                <div class="letter">I</div>
+                <div class="letter">H</div>
+                <div class="letter">G</div>
+                <div class="letter">F</div>
+                <div class="letter">E</div>
+                <div class="letter">D</div>
+                <div class="letter">C</div>
+                <div class="letter">B</div>
+                <div class="letter">A</div>
+                <div class="letter">&nbsp;</div>
+                <div class="letter">A</div>
+                <div class="letter">B</div>
+                <div class="letter">C</div>
+                <div class="letter">D</div>
+                <div class="letter">E</div>
+                <div class="letter">F</div>
+                <div class="letter">G</div>
+                <div class="letter">H</div>
+                <div class="letter">I</div>
+                <div class="letter">J</div>
+                <div class="letter">K</div>
+                <div class="letter">L</div>
+                <div class="letter">M</div>
+                <div class="letter">N</div>
+                <div class="letter">O</div>
+                <div class="letter">P</div>
+                <div class="letter">Q</div>
+                <div class="letter">R</div>
+                <div class="letter">S</div>
+                <div class="letter">T</div>
+                <div class="letter">U</div>
+                <div class="letter">V</div>
+                <div class="letter">W</div>
+                <div class="letter">X</div>
+                <div class="letter">Y</div>
+                <div class="letter">?</div>
+                <div class="letter">A</div>
+                <div class="letter">B</div>
+                <div class="letter">C</div>
+                <div class="letter">D</div>
+                <div class="letter">E</div>
+                <div class="letter">F</div>
+                <div class="letter">G</div>
+                <div class="letter">H</div>
+                <div class="letter">I</div>
+                <div class="letter">J</div>
+                <div class="letter">K</div>
+                <div class="letter">L</div>
+                <div class="letter">M</div>
+                <div class="letter">N</div>
+                <div class="letter">O</div>
+                <div class="letter">P</div>
+                <div class="letter">Q</div>
+                <div class="letter">R</div>
+                <div class="letter">S</div>
+                <div class="letter">T</div>
+                <div class="letter">U</div>
+                <div class="letter">V</div>
+                <div class="letter">W</div>
+                <div class="letter">X</div>
+                <div class="letter">Y</div>
+                <div class="letter">?</div>
+            </div>
+        </div>
+        <div class="column" id="col4">
+            <div class="reel">
+                <div class="letter">?</div>
+                <div class="letter">Y</div>
+                <div class="letter">X</div>
+                <div class="letter">W</div>
+                <div class="letter">V</div>
+                <div class="letter">U</div>
+                <div class="letter">T</div>
+                <div class="letter">S</div>
+                <div class="letter">R</div>
+                <div class="letter">Q</div>
+                <div class="letter">P</div>
+                <div class="letter">O</div>
+                <div class="letter">N</div>
+                <div class="letter">M</div>
+                <div class="letter">L</div>
+                <div class="letter">K</div>
+                <div class="letter">J</div>
+                <div class="letter">I</div>
+                <div class="letter">H</div>
+                <div class="letter">G</div>
+                <div class="letter">F</div>
+                <div class="letter">E</div>
+                <div class="letter">D</div>
+                <div class="letter">C</div>
+                <div class="letter">B</div>
+                <div class="letter">A</div>
+                <div class="letter">&nbsp;</div>
+                <div class="letter">A</div>
+                <div class="letter">B</div>
+                <div class="letter">C</div>
+                <div class="letter">D</div>
+                <div class="letter">E</div>
+                <div class="letter">F</div>
+                <div class="letter">G</div>
+                <div class="letter">H</div>
+                <div class="letter">I</div>
+                <div class="letter">J</div>
+                <div class="letter">K</div>
+                <div class="letter">L</div>
+                <div class="letter">M</div>
+                <div class="letter">N</div>
+                <div class="letter">O</div>
+                <div class="letter">P</div>
+                <div class="letter">Q</div>
+                <div class="letter">R</div>
+                <div class="letter">S</div>
+                <div class="letter">T</div>
+                <div class="letter">U</div>
+                <div class="letter">V</div>
+                <div class="letter">W</div>
+                <div class="letter">X</div>
+                <div class="letter">Y</div>
+                <div class="letter">?</div>
+                <div class="letter">A</div>
+                <div class="letter">B</div>
+                <div class="letter">C</div>
+                <div class="letter">D</div>
+                <div class="letter">E</div>
+                <div class="letter">F</div>
+                <div class="letter">G</div>
+                <div class="letter">H</div>
+                <div class="letter">I</div>
+                <div class="letter">J</div>
+                <div class="letter">K</div>
+                <div class="letter">L</div>
+                <div class="letter">M</div>
+                <div class="letter">N</div>
+                <div class="letter">O</div>
+                <div class="letter">P</div>
+                <div class="letter">Q</div>
+                <div class="letter">R</div>
+                <div class="letter">S</div>
+                <div class="letter">T</div>
+                <div class="letter">U</div>
+                <div class="letter">V</div>
+                <div class="letter">W</div>
+                <div class="letter">X</div>
+                <div class="letter">Y</div>
+                <div class="letter">?</div>
+            </div>
+        </div>
+        <div class="column" id="col5">
+            <div class="reel">
+                <div class="letter">?</div>
+                <div class="letter">Y</div>
+                <div class="letter">X</div>
+                <div class="letter">W</div>
+                <div class="letter">V</div>
+                <div class="letter">U</div>
+                <div class="letter">T</div>
+                <div class="letter">S</div>
+                <div class="letter">R</div>
+                <div class="letter">Q</div>
+                <div class="letter">P</div>
+                <div class="letter">O</div>
+                <div class="letter">N</div>
+                <div class="letter">M</div>
+                <div class="letter">L</div>
+                <div class="letter">K</div>
+                <div class="letter">J</div>
+                <div class="letter">I</div>
+                <div class="letter">H</div>
+                <div class="letter">G</div>
+                <div class="letter">F</div>
+                <div class="letter">E</div>
+                <div class="letter">D</div>
+                <div class="letter">C</div>
+                <div class="letter">B</div>
+                <div class="letter">A</div>
+                <div class="letter">&nbsp;</div>
+                <div class="letter">A</div>
+                <div class="letter">B</div>
+                <div class="letter">C</div>
+                <div class="letter">D</div>
+                <div class="letter">E</div>
+                <div class="letter">F</div>
+                <div class="letter">G</div>
+                <div class="letter">H</div>
+                <div class="letter">I</div>
+                <div class="letter">J</div>
+                <div class="letter">K</div>
+                <div class="letter">L</div>
+                <div class="letter">M</div>
+                <div class="letter">N</div>
+                <div class="letter">O</div>
+                <div class="letter">P</div>
+                <div class="letter">Q</div>
+                <div class="letter">R</div>
+                <div class="letter">S</div>
+                <div class="letter">T</div>
+                <div class="letter">U</div>
+                <div class="letter">V</div>
+                <div class="letter">W</div>
+                <div class="letter">X</div>
+                <div class="letter">Y</div>
+                <div class="letter">?</div>
+                <div class="letter">A</div>
+                <div class="letter">B</div>
+                <div class="letter">C</div>
+                <div class="letter">D</div>
+                <div class="letter">E</div>
+                <div class="letter">F</div>
+                <div class="letter">G</div>
+                <div class="letter">H</div>
+                <div class="letter">I</div>
+                <div class="letter">J</div>
+                <div class="letter">K</div>
+                <div class="letter">L</div>
+                <div class="letter">M</div>
+                <div class="letter">N</div>
+                <div class="letter">O</div>
+                <div class="letter">P</div>
+                <div class="letter">Q</div>
+                <div class="letter">R</div>
+                <div class="letter">S</div>
+                <div class="letter">T</div>
+                <div class="letter">U</div>
+                <div class="letter">V</div>
+                <div class="letter">W</div>
+                <div class="letter">X</div>
+                <div class="letter">Y</div>
+                <div class="letter">?</div>
+            </div>
+        </div>
+        <div class="column" id="col6">
+            <div class="reel">
+                <div class="letter">?</div>
+                <div class="letter">Y</div>
+                <div class="letter">X</div>
+                <div class="letter">W</div>
+                <div class="letter">V</div>
+                <div class="letter">U</div>
+                <div class="letter">T</div>
+                <div class="letter">S</div>
+                <div class="letter">R</div>
+                <div class="letter">Q</div>
+                <div class="letter">P</div>
+                <div class="letter">O</div>
+                <div class="letter">N</div>
+                <div class="letter">M</div>
+                <div class="letter">L</div>
+                <div class="letter">K</div>
+                <div class="letter">J</div>
+                <div class="letter">I</div>
+                <div class="letter">H</div>
+                <div class="letter">G</div>
+                <div class="letter">F</div>
+                <div class="letter">E</div>
+                <div class="letter">D</div>
+                <div class="letter">C</div>
+                <div class="letter">B</div>
+                <div class="letter">A</div>
+                <div class="letter">&nbsp;</div>
+                <div class="letter">A</div>
+                <div class="letter">B</div>
+                <div class="letter">C</div>
+                <div class="letter">D</div>
+                <div class="letter">E</div>
+                <div class="letter">F</div>
+                <div class="letter">G</div>
+                <div class="letter">H</div>
+                <div class="letter">I</div>
+                <div class="letter">J</div>
+                <div class="letter">K</div>
+                <div class="letter">L</div>
+                <div class="letter">M</div>
+                <div class="letter">N</div>
+                <div class="letter">O</div>
+                <div class="letter">P</div>
+                <div class="letter">Q</div>
+                <div class="letter">R</div>
+                <div class="letter">S</div>
+                <div class="letter">T</div>
+                <div class="letter">U</div>
+                <div class="letter">V</div>
+                <div class="letter">W</div>
+                <div class="letter">X</div>
+                <div class="letter">Y</div>
+                <div class="letter">?</div>
+                <div class="letter">A</div>
+                <div class="letter">B</div>
+                <div class="letter">C</div>
+                <div class="letter">D</div>
+                <div class="letter">E</div>
+                <div class="letter">F</div>
+                <div class="letter">G</div>
+                <div class="letter">H</div>
+                <div class="letter">I</div>
+                <div class="letter">J</div>
+                <div class="letter">K</div>
+                <div class="letter">L</div>
+                <div class="letter">M</div>
+                <div class="letter">N</div>
+                <div class="letter">O</div>
+                <div class="letter">P</div>
+                <div class="letter">Q</div>
+                <div class="letter">R</div>
+                <div class="letter">S</div>
+                <div class="letter">T</div>
+                <div class="letter">U</div>
+                <div class="letter">V</div>
+                <div class="letter">W</div>
+                <div class="letter">X</div>
+                <div class="letter">Y</div>
+                <div class="letter">?</div>
+            </div>
+        </div>
+        <div class="column" id="col7">
+            <div class="reel">
+                <div class="letter">?</div>
+                <div class="letter">Y</div>
+                <div class="letter">X</div>
+                <div class="letter">W</div>
+                <div class="letter">V</div>
+                <div class="letter">U</div>
+                <div class="letter">T</div>
+                <div class="letter">S</div>
+                <div class="letter">R</div>
+                <div class="letter">Q</div>
+                <div class="letter">P</div>
+                <div class="letter">O</div>
+                <div class="letter">N</div>
+                <div class="letter">M</div>
+                <div class="letter">L</div>
+                <div class="letter">K</div>
+                <div class="letter">J</div>
+                <div class="letter">I</div>
+                <div class="letter">H</div>
+                <div class="letter">G</div>
+                <div class="letter">F</div>
+                <div class="letter">E</div>
+                <div class="letter">D</div>
+                <div class="letter">C</div>
+                <div class="letter">B</div>
+                <div class="letter">A</div>
+                <div class="letter">&nbsp;</div>
+                <div class="letter">A</div>
+                <div class="letter">B</div>
+                <div class="letter">C</div>
+                <div class="letter">D</div>
+                <div class="letter">E</div>
+                <div class="letter">F</div>
+                <div class="letter">G</div>
+                <div class="letter">H</div>
+                <div class="letter">I</div>
+                <div class="letter">J</div>
+                <div class="letter">K</div>
+                <div class="letter">L</div>
+                <div class="letter">M</div>
+                <div class="letter">N</div>
+                <div class="letter">O</div>
+                <div class="letter">P</div>
+                <div class="letter">Q</div>
+                <div class="letter">R</div>
+                <div class="letter">S</div>
+                <div class="letter">T</div>
+                <div class="letter">U</div>
+                <div class="letter">V</div>
+                <div class="letter">W</div>
+                <div class="letter">X</div>
+                <div class="letter">Y</div>
+                <div class="letter">?</div>
+                <div class="letter">A</div>
+                <div class="letter">B</div>
+                <div class="letter">C</div>
+                <div class="letter">D</div>
+                <div class="letter">E</div>
+                <div class="letter">F</div>
+                <div class="letter">G</div>
+                <div class="letter">H</div>
+                <div class="letter">I</div>
+                <div class="letter">J</div>
+                <div class="letter">K</div>
+                <div class="letter">L</div>
+                <div class="letter">M</div>
+                <div class="letter">N</div>
+                <div class="letter">O</div>
+                <div class="letter">P</div>
+                <div class="letter">Q</div>
+                <div class="letter">R</div>
+                <div class="letter">S</div>
+                <div class="letter">T</div>
+                <div class="letter">U</div>
+                <div class="letter">V</div>
+                <div class="letter">W</div>
+                <div class="letter">X</div>
+                <div class="letter">Y</div>
+                <div class="letter">?</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const names = ["ANYA",
+            "ANVI",
+            "AVANI",
+            "ANANYA",
+            "AKSHARA",
+            "AARAVI",
+            "AARNA",
+            "ADIRA",
+            "AHANA",
+            "AADHYA",
+            "ASHA",
+            "ARNAVI",
+            "ALIA",
+            "AISHA",
+            "ADVIKA",
+            "ARADHYA",
+            "ANIKA",
+            "Z",
+            "ZZ",
+            "ZZZ4",
+            "AKASH",
+            "AND",
+            "ANUSHKA",
+            "KI",
+            "BETI",
+            "KA",
+            "NAAM",
+            "HAI",
+            "ARYA"];
+        let currentIndex = 0;
+        const animationTime = 1000; // milliseconds
+        const displayTime = 500; // milliseconds
+
+        // Set the animation time in CSS
+        document.documentElement.style.setProperty('--animation-time', animationTime + 'ms');
+
+        function animateToName(name) {
+            const startCol = Math.floor((7 - name.length) / 2);
+            const offset = 45; // vh to center the letter
+            for (let i = 0; i < 7; i++) {
+                const colIndex = i - startCol;
+                const letter = colIndex >= 0 && colIndex < name.length ? name[colIndex].toUpperCase() : ' ';
+                const position = letter === ' ' ? 26 : letter === 'A' ? 25 : letter.charCodeAt(0) - 'A'.charCodeAt(0) + 27;
+                const reel = document.getElementById(`col${i + 1}`).querySelector('.reel');
+                reel.style.transform = `translateY(${-(position * 10 - offset)}vh)`;
+
+                // Set opacity for letters
+                const letters = reel.children;
+                for (let j = 0; j < letters.length; j++) {
+                    letters[j].style.opacity = (j === position) ? '1' : '0.1';
+                }
+            }
+        }
+
+        function finalizeLastWord(name) {
+            const startCol = Math.floor((7 - name.length) / 2);
+            const offset = 45;
+            let emojiCol = -1;
+
+            for (let i = startCol + name.length; i < 7; i++) {
+                emojiCol = i;
+                break;
+            }
+            if (emojiCol === -1) {
+                for (let i = startCol - 1; i >= 0; i--) {
+                    emojiCol = i;
+                    break;
+                }
+            }
+            if (emojiCol === -1) {
+                emojiCol = 6;
+            }
+
+            const emojiPosition = 26; // blank line index for the emoji column
+
+            for (let i = 0; i < 7; i++) {
+                const colIndex = i - startCol;
+                const letter = colIndex >= 0 && colIndex < name.length ? name[colIndex].toUpperCase() : ' ';
+                const position = letter === ' ' ? 26 : letter === 'A' ? 25 : letter.charCodeAt(0) - 'A'.charCodeAt(0) + 27;
+                const reel = document.getElementById(`col${i + 1}`).querySelector('.reel');
+                const letters = reel.children;
+
+                if (i === emojiCol) {
+                    reel.style.transform = `translateY(${-(emojiPosition * 10 - offset)}vh)`;
+                    for (let j = 0; j < letters.length; j++) {
+                        letters[j].classList.toggle('final-visible', j === emojiPosition);
+                        letters[j].style.opacity = j === emojiPosition ? '1' : '0';
+                        if (j === emojiPosition) {
+                            letters[j].textContent = '🥰';
+                        }
+                    }
+                } else {
+                    reel.style.transform = `translateY(${-(position * 10 - offset)}vh)`;
+                    for (let j = 0; j < letters.length; j++) {
+                        const isFinalVisible = j === position;
+                        letters[j].classList.toggle('final-visible', isFinalVisible);
+                        letters[j].style.opacity = isFinalVisible ? '1' : '0';
+                    }
+                }
+            }
+        }
+
+        function cycle() {
+            animateToName(names[currentIndex]);
+            currentIndex++;
+
+            if (currentIndex < names.length) {
+                setTimeout(cycle, displayTime + animationTime);
+            } else {
+                const lastName = names[currentIndex - 1];
+                setTimeout(() => finalizeLastWord(lastName), 2000);
+            }
+        }
+
+        // Start the cycle
+        cycle();
+    </script>
+</body>
+
+</html>
