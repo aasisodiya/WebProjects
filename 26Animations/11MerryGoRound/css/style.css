@@ -1,0 +1,110 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+}
+
+/* Template Code End */
+
+body {
+    background: black;
+    margin: 0;
+}
+
+:root {
+    --mgr-radius: 50vmin;
+    --mgr-car-radius: 20vmin;
+    --rotation-time: 30s;
+}
+
+.mgrholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.mgr {
+    width: var(--mgr-radius);
+    height: var(--mgr-radius);
+    border-radius: 50%;
+    position: relative;
+    max-width: 100vmin;
+    max-height: 100vmin;
+    animation: rotate var(--rotation-time) linear infinite;
+    border: 2px orangered dashed;
+}
+
+.carholder {
+    width: var(--mgr-radius);
+    height: var(--mgr-radius);
+    border-radius: 50%;
+    position: absolute;
+    max-width: 100vmin;
+    max-height: 100vmin;
+}
+
+.car {
+    height: var(--mgr-car-radius);
+    width: var(--mgr-car-radius);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(calc(-1 * var(--mgr-car-radius) / 2)) rotateZ(var(--rotate, 0));
+}
+
+.content {
+    --url: url(../img/batman.png);
+    height: var(--mgr-car-radius);
+    width: var(--mgr-car-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate var(--rotation-time) linear infinite reverse;
+    /* Below BG can be changed */
+    background: var(--url) no-repeat center;
+    background-size: contain;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+/* Below code is for static CSS Solution */
+
+/* .carholder:nth-child(1) {
+    transform: rotateZ(90deg);
+}
+
+.carholder:nth-child(1) .car {
+    --rotate: -90deg;
+} */

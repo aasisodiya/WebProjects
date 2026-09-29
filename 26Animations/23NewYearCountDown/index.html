@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="New Year Countdown" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="New Year Countdown" />
+    <meta property="og:description" content="New Year Countdown" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>New Year Countdown</title>
+    <link rel="icon" href="../../shared/img/favicon.png" type="image/x-icon" />
+    <!-- Title and Icon of the Website -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Google Font Import Start -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap" rel="stylesheet" />
+    <!-- Google Font Import End -->
+    <!-- Style -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap");
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: fit-content;
+            font-weight: bold;
+            color: white;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: chartreuse;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: "Exo 2", sans-serif;
+            /* CSS Code to handle unwanted element highlights / div selection in Android */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Template Code End */
+        body {
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, black, rgb(12, 12, 12));
+        }
+
+        h1 {
+            color: chartreuse;
+            padding: 0;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .holder {
+            padding: 2rem 0;
+            display: grid;
+            gap: 1rem;
+            width: fit-content;
+            margin: auto;
+        }
+
+        .holder>div {
+            height: 100px;
+            width: 100px;
+            background: rgb(29, 29, 29);
+            display: grid;
+            place-content: center;
+            border-radius: 1rem;
+            box-shadow: 0 0 0.2rem 0 inset black;
+            color: chartreuse;
+            font-size: 2rem;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .holder>div>span {
+            transform: translateY(-5px);
+        }
+
+        .holder>div>div {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            width: fit-content;
+            margin: auto;
+            font-size: 0.75rem;
+            filter: opacity(0.5);
+        }
+    </style>
+    <!-- Google Analytics Tag Start -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KDE74NNXK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-4KDE74NNXK');
+    </script>
+    <!-- Google Analytics Tag End -->
+</head>
+
+<body ontouchend>
+    <h1>Countdown To New Year</h1>
+    <div class="holder">
+        <div>
+            <span id="days">365</span>
+            <div>Days</div>
+        </div>
+        <div>
+            <span id="hours">15</span>
+            <div>Hours</div>
+        </div>
+        <div>
+            <span id="minutes">45</span>
+            <div>Minutes</div>
+        </div>
+        <div>
+            <span id="seconds">25</span>
+            <div>Seconds</div>
+        </div>
+    </div>
+    <script>
+        // Function to get difference between 2 time stamp
+        function dateDiff(date1, date2) {
+            var diff = date2 - date1;
+            return {
+                diff: diff,
+                s: Math.floor(diff / 1000 % 60),
+                m: Math.floor(diff / 60000 % 60),
+                h: Math.floor(diff / 3600000 % 24),
+                d: Math.floor(diff / 86400000)
+            };
+        }
+        let currentDate = new Date();
+        let targetDate = new Date("1-Jan-2010");
+        // update target date with new year
+        targetDate.setYear(currentDate.getFullYear() + 1);
+
+        // Initial setting
+        // get updated difference
+        let difference = dateDiff(currentDate, targetDate);
+        // console.log(difference);
+        $("#days").text(difference.d);
+        $("#hours").text(difference.h);
+        $("#minutes").text(difference.m);
+        $("#seconds").text(difference.s);
+
+        let cnt = setInterval(() => {
+            let currentTime = new Date();
+            // get updated difference
+            let difference = dateDiff(currentTime, targetDate);
+            $("#days").text(difference.d);
+            $("#hours").text(difference.h);
+            $("#minutes").text(difference.m);
+            $("#seconds").text(difference.s);
+            if (difference.diff == 0) {
+                clearInterval(cnt);
+            }
+        }, 1000);
+    </script>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.newyearcountdown" alt="" />
+    </div>
+    <script></script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    /* CSS Code to handle unwanted element highlights / div selection in Android */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Template Code End */
+
+body {
+    margin: 0;
+}
+
+.fullscreen {
+    background: black;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#camicon {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    font-size: 200px;
+    z-index: 10;
+    cursor: pointer;
+    color: tomato;
+    transition: transform 1s;
+}
+
+#camicon:active {
+    color: orange;
+    transform: rotate(180deg);
+    transition: transform 0.1s;
+}
+
+#video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}

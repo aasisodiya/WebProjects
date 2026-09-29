@@ -1,0 +1,58 @@
+/* Template Code Start */
+
+@import url("https://fonts.googleapis.com/css2?family=Exo+2&display=swap");
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    /* CSS Code to handle unwanted element highlights / div selection in Android */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Template Code End */
+
+body {
+    margin: 0;
+}
+
+.model3d {
+    width: 100%;
+    height: 100vh;
+}
+
+#default-ar-button {
+    display: block;
+    background: red;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.405);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    /* z-index: 1; */
+}

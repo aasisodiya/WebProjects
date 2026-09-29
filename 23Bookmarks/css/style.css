@@ -71,7 +71,8 @@ i:hover {
     cursor: pointer;
 }
 
-.deletelink, .options {
+.deletelink,
+.options {
     position: absolute;
     right: 16px;
     display: inline;
@@ -81,7 +82,8 @@ i:hover {
     text-align: center;
 }
 
-.deletelink>i, .options>i {
+.deletelink>i,
+.options>i {
     cursor: pointer;
 }
 
@@ -157,12 +159,14 @@ i:hover {
 
 .link-holder:hover {
     background: #23272b !important;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .link-holder:hover>.row>.col>a {
     color: #f8f9fa !important;
-    white-space: normal;
+    /* white-space: normal; */
+    /* transition: margin 1s; */
+    /* margin-left: -100%; */
 }
 
 .link-holder:hover>.row>.col>a:hover {
@@ -199,7 +203,15 @@ i:hover {
     height: 180px;
 }
 
-#category-edit, #category, #exportjson, #help, #importjson, #link-delete, #link, #menu, #background {
+#category-edit,
+#category,
+#exportjson,
+#help,
+#importjson,
+#link-delete,
+#link,
+#menu,
+#background {
     display: none;
     position: fixed;
     max-width: 500px;
@@ -232,7 +244,10 @@ i:hover {
     height: 360px;
 }
 
-#jsonOp, #jsonIn, #exportjson, #importjson {
+#jsonOp,
+#jsonIn,
+#exportjson,
+#importjson {
     height: 60vh;
 }
 
@@ -276,7 +291,13 @@ i:hover {
     .mobilehide {
         display: none !important;
     }
+
     .card-columns {
         column-count: 1 !important;
     }
+}
+
+* {
+    transition-property: background, color;
+    transition-duration: 1s;
 }

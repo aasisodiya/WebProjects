@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scroll</title>
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="Smooth Scroll">
+    <link rel="icon" href="../../../shared/img/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            font-weight: bold;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        /* Template Code End */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #FBAB7E;
+            background-image: linear-gradient(0deg, #ff5e00 0%, #F7CE68 100%);
+        }
+
+        .filler {
+            height: 800vh;
+            position: relative;
+        }
+
+        .gototop,
+        .gotobottom {
+            position: absolute;
+        }
+
+        .gotobottom {
+            top: 0;
+            right: 0;
+            margin: 10px;
+            background: purple;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 5px #12121298;
+            cursor: pointer;
+        }
+
+        .gototop {
+            bottom: 0;
+            right: 0;
+            margin: 10px;
+            background: purple;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 5px #121212a4;
+            cursor: pointer;
+        }
+
+        .title {
+            position: fixed;
+            height: fit-content;
+            width: fit-content;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="toptarget"></div>
+    <div class="title">
+        <h1>Smooth Scroll Example</h1>
+    </div>
+    <div class="filler">
+        <a href="#toptarget">
+            <div class="gototop">Go To Top</div>
+        </a>
+        <a href="#bottomtarget">
+            <div class="gotobottom">Go To Bottom</div>
+        </a>
+    </div>
+    <div id="bottomtarget"></div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.smooth-scroll" alt="">
+    </div>
+</body>
+
+</html>

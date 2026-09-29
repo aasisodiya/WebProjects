@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Examples</title>
+    <meta name="author" content="Akash Sisodiya">
+    <meta name="description" content="CSS Examples">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            font-weight: bold;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        /* Template Code End */
+        body {
+            margin: 0;
+        }
+
+        /* First Letter Styled Code */
+        .container {
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+        }
+
+        .holder {
+            margin: 2rem;
+        }
+
+        .article {
+            text-align: justify;
+        }
+
+        .article::first-letter {
+            color: orange;
+            font-size: 2rem;
+            font-weight: bold;
+            float: left;
+            margin-right: 0.5rem;
+        }
+
+        .article::first-line {
+            color: orange;
+        }
+
+        /* ::marker css example */
+        .custom-marker li::marker {
+            color: orange;
+            content: '-';
+        }
+
+        .custom-marker li {
+            padding-left: 0.2em;
+        }
+
+        /* SVG Bullets */
+        ul.svg-marker {
+            list-style: none;
+        }
+
+        .svg-marker > li {
+            position: relative;
+            padding-left: 0.2em;
+        }
+
+        .svg-marker li::before {
+            --size: 1rem;
+            content: '';
+            display: inline-block;
+            height: var(--size);
+            width: var(--size);
+            position: absolute;
+            left: calc(-1 * var(--size));
+            /* Adjusting top, might be not required for some other fonts */
+            top: 0.2rem;
+            background-image: url(img/alogo.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="holder">
+            <p class="article">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a ante eget nisl eleifend congue. Etiam
+                iaculis fermentum justo. Pellentesque arcu nisi, tincidunt vitae sem a, rutrum tempor libero. Praesent
+                faucibus velit nec libero commodo fermentum. Vivamus sed scelerisque ex. Fusce eget bibendum leo, et
+                auctor orci. Pellentesque ullamcorper nisi non augue vestibulum, rutrum tristique metus suscipit.
+            </p>
+            <hr>
+            <ul class="custom-marker">
+                <li>Mango</li>
+                <li>Orange</li>
+                <li>Grapes</li>
+            </ul>
+            <ul class="svg-marker">
+                <li>Mango</li>
+                <li>Orange</li>
+                <li>Grapes</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.cssselectors" alt="">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+}
+
+/* Template Code End */
+
+:root {
+    --mobile-bg: #00000000;
+    --mobile-border-bg: #454545;
+    --mobile-body-bg: #121212;
+    --mobile-screen-color: black;
+    --mobile-border-radius: 1.5em;
+    --mobile-size: 15px;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(45deg, darkslategrey, black);
+}
+
+.holder {
+    /* Font Size Below Controls the Size of The Phone */
+    font-size: var(--mobile-size);
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.mobile {
+    background: var(--mobile-bg);
+    width: fit-content;
+    padding: 1em;
+}
+
+.mobileborder {
+    background: var(--mobile-border-bg);
+    padding: 0.5em;
+    border-radius: var(--mobile-border-radius);
+    position: relative;
+}
+
+.volume {
+    position: absolute;
+    height: 5em;
+    width: 0.5em;
+    background: var(--mobile-border-bg);
+    /* Right is half of width */
+    right: -0.25em;
+    top: 5em;
+}
+
+.power {
+    position: absolute;
+    height: 2em;
+    width: 0.5em;
+    background: var(--mobile-border-bg);
+    /* Right is half of width */
+    right: -0.25em;
+    top: 11em;
+}
+
+.mobilebody {
+    background: var(--mobile-body-bg);
+    /* padding: 0.5em; */
+    /* border-radius: calc(var(--mobile-border-radius) / 2); */
+    border-radius: calc(var(--mobile-border-radius) / 1.5);
+    display: grid;
+    place-items: center;
+}
+
+.mobilescreen {
+    background: var(--mobile-screen-color);
+    min-height: 20em;
+    min-width: 10em;
+    padding: 1em;
+    margin: 0 0.5em;
+    /* Inside Content */
+    color: White;
+    display: grid;
+    place-items: center;
+}
+
+.mobiletop {
+    height: 3em;
+    /* background: #787800; */
+    display: flex;
+    place-items: center;
+}
+
+.camera {
+    height: 1em;
+    width: 1em;
+    /* box-shadow: 0 0 0 0.15em black inset; */
+    border-radius: 50%;
+    background: grey radial-gradient(black 30%, transparent 30%);
+}
+
+.speaker {
+    height: 0.75em;
+    width: 4em;
+    background: white;
+    border-radius: 1em;
+    margin: 0 2em;
+    box-shadow: 0 0 0 0.15em silver inset;
+    background: linear-gradient( 90deg, transparent 25%, grey 25% 75%, transparent 75%), linear-gradient(0deg, transparent 25%, grey 25% 75%, transparent 75%);
+    background-size: 0.2em 0.2em;
+}
+
+.flash {
+    height: 1em;
+    width: 1em;
+    background: white;
+    border-radius: 50%;
+    background: white linear-gradient(white 25%, yellow 25% 75%, white 75%);
+    background-size: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center;
+    backdrop-filter: blur(1px);
+}
+
+.mobilebottom {
+    height: 3em;
+    /* background: #787800; */
+    display: flex;
+    place-items: center;
+}
+
+.touchnavborder {
+    background: #0a0a0a;
+    width: 4em;
+    height: 2em;
+    border-radius: 1em;
+    box-shadow: 0 0 0 0.2em grey inset;
+}

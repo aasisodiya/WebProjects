@@ -1,0 +1,62 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+}
+
+/* Template Code End */
+
+* {
+    margin: 0;
+}
+
+.parallax {
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    align-items: center;
+    font-size: x-large;
+}
+
+.bg1 {
+    background: url(../img/bg.png) fixed center;
+}
+
+.bg2 {
+    background: url(../img/bg2.png) fixed center;
+}
+
+.bg3 {
+    background: url(../img/bg3.png) fixed center;
+}
+
+.bg4 {
+    background: linear-gradient(30deg, white 10%, wheat 50%);
+}
+
+.regular {
+    color: black;
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    align-items: center;
+    font-size: x-large;
+}

@@ -1,0 +1,57 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    /* CSS Code to handle unwanted element highlights / div selection in Android */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Template Code End */
+
+body {
+    margin: 0;
+    background: #7474BF;
+    background: -webkit-linear-gradient(to right, #348AC7, #7474BF);
+    background: linear-gradient(to right, #348AC7, #7474BF);
+}
+
+.heroku {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#heroku {
+    width: 50vw;
+    animation: breath 0.75s ease-out alternate infinite;
+}
+
+@keyframes breath {
+    to {
+        width: 52vw;
+    }
+}

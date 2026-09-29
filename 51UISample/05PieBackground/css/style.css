@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Righteous", serif;
+    /* font-family: monospace; */
+    /* CSS Code to handle unwanted element highlights / div selection in Android */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Template Code End */
+
+body {
+    margin: 0;
+}
+
+.container {
+    background: radial-gradient( circle closest-side, transparent 100%, black 0), conic-gradient( #4e79a7 0, #4e79a7 4.3%, #f28e2c 0, #f28e2c 95.5%, #e15759 0, #e15759 97.3%, #76b7b2 0, #76b7b2 98.4%, #59a14f 0, #59a14f 99.1%, #edc949 0, #edc949 99.9%);
+    height: 100vh;
+    display: flex;
+    place-items: center;
+    place-content: center;
+    font-size: 2rem;
+    overflow: hidden;
+}

@@ -1,0 +1,169 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    user-select: none;
+}
+
+/* Template Code End */
+
+label.userperspective {
+    position: fixed;
+    text-align: center;
+    padding: 1em;
+    border: 1px solid white;
+    border-radius: 1rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 1rem;
+    z-index: 10;
+    color: white;
+    backdrop-filter: blur(20px);
+    font-weight: bold;
+    font-size: 1rem;
+    transform: all 2s;
+}
+
+#userperspective {
+    display: none;
+}
+
+#userperspective:checked~.container {
+    perspective: 300px;
+    -webkit-perspective: 300px;
+    perspective-origin: center;
+}
+
+#userperspective:checked~label.userperspective {
+    background-color: rgba(126, 252, 0, 0.75);
+    color: darkgreen;
+    font-weight: bold;
+    border: 1px solid darkgreen;
+}
+
+/* Custom Styling */
+
+:root {
+    --anim-time: 2s;
+}
+
+body {
+    background: linear-gradient(45deg, black, darkslategrey);
+}
+
+.container {
+    display: grid;
+    place-items: center;
+}
+
+.box {
+    background-color: gold;
+    width: 10ch;
+    height: 10ch;
+    display: grid;
+    place-items: center;
+    margin: 1rem;
+    box-shadow: 0 0 10px 0 inset rgba(0, 0, 0, 0.5);
+}
+
+.translatex {
+    animation: translatex var(--anim-time) infinite alternate linear;
+}
+
+@keyframes translatex {
+    from {
+        transform: translateX(-20vw);
+    }
+    to {
+        transform: translateX(20vw);
+    }
+}
+
+.translatey {
+    animation: translatey var(--anim-time) infinite alternate linear;
+}
+
+@keyframes translatey {
+    from {
+        transform: translateY(-20vh);
+    }
+    to {
+        transform: translateY(20vh);
+    }
+}
+
+.translatez {
+    animation: translatez var(--anim-time) infinite alternate linear;
+}
+
+@keyframes translatez {
+    from {
+        transform: translateZ(-20vmax);
+    }
+    to {
+        transform: translateZ(20vmax);
+    }
+}
+
+.rotatex {
+    animation: rotatex var(--anim-time) infinite linear;
+}
+
+@keyframes rotatex {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(360deg);
+    }
+}
+
+.rotatey {
+    animation: rotatey var(--anim-time) infinite linear;
+}
+
+@keyframes rotatey {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.rotatez {
+    animation: rotatez var(--anim-time) infinite linear;
+}
+
+@keyframes rotatez {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.gutter {
+    height: 50vh;
+}

@@ -1,0 +1,94 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    user-select: none;
+}
+
+/* Template Code End */
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+canvas {}
+
+#options {
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+}
+
+.myButton {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
+    backdrop-filter: blur(1px);
+    cursor: pointer;
+}
+
+.myButton:active {
+    background: orange;
+}
+
+.saveasholder {
+    display: none;
+    position: fixed;
+    top: 0;
+}
+
+.saveas {
+    display: grid;
+    place-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+}
+
+.saveas * {
+    margin-bottom: 1rem;
+}
+
+.saveas div {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    padding: 1rem;
+    backdrop-filter: blur(1px);
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+
+.saveas p {
+    text-align: center;
+    color: orange;
+    cursor: pointer;
+}
+
+.saveas p:hover {
+    color: red;
+}

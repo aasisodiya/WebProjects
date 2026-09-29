@@ -1,0 +1,93 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: 'Exo 2', sans-serif;
+}
+
+/* Template Code End */
+
+* {
+    margin: 0;
+}
+
+:root {
+    --this-height-should-be-same-for-all: 25vh;
+}
+
+body {
+    background: linear-gradient(180deg, orange, Fuchsia, DeepSkyBlue, cyan);
+}
+
+.container {
+    position: relative;
+    background: rgba(255, 166, 0, 0.3);
+    height: var(--this-height-should-be-same-for-all);
+    /* overflow is hidden in order to hide the curtains  */
+    overflow: hidden;
+    /* Below code helps vertically and horizontally center align the text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container>h1 {
+    font-size: 2rem;
+}
+
+.leftcurtain, .rightcurtain {
+    box-shadow: 0 0 2px black;
+}
+
+.leftcurtain {
+    position: absolute;
+    left: 0;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 50%) 50%, rgba(255, 0, 0, 0) 70.71%), linear-gradient(135deg, rgba(0, 0, 0, 50%) 50%, rgba(0, 255, 0, 0) 70.71%), #ffa500;
+    height: var(--this-height-should-be-same-for-all);
+    width: 50vw;
+    transition-property: left;
+    transition-duration: 1s;
+}
+
+.rightcurtain {
+    position: absolute;
+    right: 0;
+    background: linear-gradient(225deg, rgba(0, 0, 0, 50%) 50%, rgba(255, 0, 0, 0) 70.71%), linear-gradient(315deg, rgba(0, 0, 0, 50%) 50%, rgba(0, 255, 0, 0) 70.71%), #ffa500;
+    height: var(--this-height-should-be-same-for-all);
+    width: 50vw;
+    transition-property: right;
+    transition-duration: 1s;
+}
+
+#message {
+    display: block;
+    position: fixed;
+    color: black;
+    z-index: 5;
+}
+
+/* Below code is for on hover */
+
+/* .container:hover>.leftcurtain {
+    left: -50vw;
+}
+
+.container:hover>.rightcurtain {
+    right: -50vw;
+} */

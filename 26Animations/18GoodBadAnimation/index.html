@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Good And Bad Side" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Good And Bad Side" />
+    <meta property="og:description" content="Good And Bad Side" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>Good And Bad Side</title>
+    <link rel="icon" href="../../shared/img/favicon.png" type="image/x-icon" />
+    <!-- Title and Icon of the Website -->
+    <!-- Google Font Import Start -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
+    <!-- Google Font Import End -->
+    <!-- Jquery Import Start -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Jquery Import End -->
+    <!-- Style -->
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: "Exo 2", sans-serif;
+            /* CSS Code to handle unwanted element highlights / div selection in Android */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Template Code End */
+        body {
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, black, rgb(12, 12, 12));
+        }
+
+        /* Good/Bad Side CSS Code Start */
+        #side {
+            min-height: 300px;
+            min-width: 300px;
+            height: 100vh;
+        }
+
+        .goodbad {
+            background: url(./img/bad.svg) no-repeat center,
+                url(./img/good.svg) no-repeat center;
+        }
+
+        .good {
+            background: url(./img/good.svg) no-repeat center;
+        }
+
+        .bad {
+            background: url(./img/bad.svg) no-repeat center;
+        }
+
+        .menu {
+            position: fixed;
+            color: white;
+            width: fit-content;
+            margin: auto;
+            left: 0;
+            right: 0;
+            text-transform: uppercase;
+        }
+
+        .controls {
+            display: flex;
+        }
+
+        label {
+            --size: 55px;
+            display: grid;
+            width: var(--size);
+            height: var(--size);
+            border-radius: var(--size);
+            place-items: center;
+            position: relative;
+            filter: saturate(0);
+            cursor: pointer;
+        }
+
+        label:hover,
+        label:active {
+            filter: saturate(1);
+        }
+
+        .controls>div:not(:first-child)>label {
+            margin-left: 1rem;
+        }
+
+        label[for="gside"] {
+            background: blue;
+        }
+
+        label[for="bside"] {
+            background: red;
+        }
+
+        label[for="gbside"] {
+            background: magenta;
+        }
+
+        input {
+            display: none;
+        }
+
+        input[type="radio"]:checked+label {
+            filter: saturate(1);
+        }
+
+        /* Good/Bad Side CSS Code End */
+    </style>
+    <!-- Google Analytics Tag Start -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KDE74NNXK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-4KDE74NNXK');
+    </script>
+    <!-- Google Analytics Tag End -->
+</head>
+
+<body ontouchend>
+    <div class="container goodbad" id="side"></div>
+    <div class="menu">
+        <p>Choose your personality</p>
+        <div class="controls">
+            <div id="good">
+                <input type="radio" name="side" id="gside" /><label for="gside">Good</label>
+            </div>
+            <div id="goodbad">
+                <input type="radio" name="side" id="gbside" /><label for="gbside">Both</label>
+            </div>
+            <div id="bad">
+                <input type="radio" name="side" id="bside" /><label for="bside">Bad</label>
+            </div>
+        </div>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.goodandbad" alt="" />
+    </div>
+    <script>
+        $("input[name=side]").on("change", function (event) {
+            $("#side").removeClass();
+            switch (event.target.id) {
+                case "gside":
+                    $("#side").addClass("good");
+                    break;
+                case "bside":
+                    $("#side").addClass("bad");
+                    break;
+                case "gbside":
+                    $("#side").addClass("goodbad");
+                    break;
+                default:
+                    break;
+            }
+        });
+    </script>
+</body>
+
+</html>

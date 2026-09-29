@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Skull Animation" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Skull Animation" />
+    <meta property="og:description" content="Skull Animation" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>Skull Animation</title>
+    <link rel="icon" href="../../shared/img/favicon.png" type="image/x-icon" />
+    <!-- Title and Icon of the Website -->
+    <!-- Google Font Import Start -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap" rel="stylesheet" />
+    <!-- Google Font Import End -->
+    <!-- Style -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap");
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: fit-content;
+            font-weight: bold;
+            color: white;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orangered;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: "Exo 2", sans-serif;
+            /* CSS Code to handle unwanted element highlights / div selection in Android */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Template Code End */
+        body {
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, black, rgb(12, 12, 12));
+        }
+
+        :root {
+            --skull-size: 200px;
+            --skull-color: white;
+            --skull-eyes-color: black;
+            --skull-eyes-color-2: orangered;
+        }
+
+        .skullholder {
+            height: var(--skull-size);
+            width: var(--skull-size);
+            /* filter: drop-shadow(-1px 6px 3px rgba(255, 255, 255, 0.5)); */
+        }
+
+        .skullhead {
+            height: calc(var(--skull-size)*3/4);
+            width: var(--skull-size);
+            background: var(--skull-color);
+            /* clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 25% 100%, 25% 75%, 0% 75%); */
+            /* position: relative; */
+            display: grid;
+            place-content: center;
+        }
+
+        .skulleyes {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: calc(var(--skull-size)/4);
+        }
+
+        .skulleye {
+            /* position: absolute; */
+            width: calc(var(--skull-size)/4);
+            aspect-ratio: 2/3;
+            background: var(--skull-eyes-color);
+            transition: background 0.5s;
+        }
+
+        .skulltopteeth,
+        .skullbottomteeth {
+            height: 12.5%;
+            width: 50%;
+            background: var(--skull-color);
+            margin: auto;
+        }
+
+        .skullbottomteeth {
+            height: 15%;
+            transition: margin-top 0.5s;
+            margin-top: 0;
+        }
+
+        .skullholder:hover>.skullbottomteeth {
+            margin-top: 1rem;
+        }
+
+        .skullholder:hover .skulleye {
+            background: var(--skull-eyes-color-2);
+        }
+    </style>
+    <!-- Google Analytics Tag Start -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KDE74NNXK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-4KDE74NNXK');
+    </script>
+    <!-- Google Analytics Tag End -->
+</head>
+
+<body ontouchend>
+    <div class="skullholder">
+        <div class="skullhead">
+            <div class="skulleyes">
+                <div class="skulleye"></div>
+                <div class="skulleye"></div>
+            </div>
+        </div>
+        <div class="skulltopteeth"></div>
+        <div class="skullbottomteeth"></div>
+    </div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.skullanimation" alt="" />
+    </div>
+    <script></script>
+</body>
+
+</html>

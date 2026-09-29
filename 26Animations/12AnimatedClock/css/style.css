@@ -1,0 +1,95 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+}
+
+/* Template Code End */
+
+body {
+    background: linear-gradient(135deg, darkslategray, darkgrey);
+    margin: 0;
+    height: 100vh;
+    /* overflow: hidden; */
+}
+
+:root {
+    --bar-bg: hsla(0, 0%, 0%, 0.4);
+}
+
+.clockholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bar {
+    background: var(--bar-bg);
+    backdrop-filter: blur(5px);
+    width: fit-content;
+    box-shadow: 1px 1px 5px 0px white, -1px -1px 5px 0px black;
+    border-radius: 0.5em;
+    margin-left: 1em;
+    transition: transform 0.5s;
+}
+
+.bar:nth-child(1) {
+    margin-left: 0rem;
+}
+
+.bar:nth-child(3) {
+    margin-left: 2rem;
+}
+
+.bar:nth-child(5) {
+    margin-left: 2rem;
+}
+
+.unit {
+    color: white;
+    padding: 1em;
+    text-align: center;
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.unitactive>div:nth-child(1) {
+    font-weight: bold;
+    transform: scale(1.2);
+    transition: all 1s;
+}
+
+.unitactive>div:nth-child(2) {
+    background: #0000003f;
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    z-index: -1;
+    box-shadow: 1px 1px 5px 0px white, -1px -1px 5px 0px black;
+    transition: all 1s ease, border-radius;
+}

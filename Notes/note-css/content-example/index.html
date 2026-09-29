@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Meta Tags Start -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="description" content="Content CSS Property" />
+    <!-- Basic Meta Tags End -->
+    <!-- The Open Graph Protocol Tags Start -->
+    <meta property="og:url" content="https://github.com/aasisodiya" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Content CSS Property" />
+    <meta property="og:description" content="Content CSS Property" />
+    <meta property="og:image" content="https://aasisodiya.github.io/WebProjects/shared/img/github.png" />
+    <!-- The Open Graph Protocol Tags End -->
+    <!-- Title and Icon of the Website -->
+    <title>Content CSS Property</title>
+    <link rel="icon" href="https://aasisodiya.github.io/WebProjects/shared/img/favicon.png" type="image/x-icon" />
+    <!-- Title and Icon of the Website -->
+    <!-- Google Font Import Start -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Raleway" rel="stylesheet" />
+    <!-- Google Font Import End -->
+    <!-- Font Awesome Import Start -->
+    <!-- Stop using font awesome, instead use google icons -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+    <!-- Font Awesome Import End -->
+    <!-- Google Icons Import Start -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" /> -->
+    <!-- List of Icons: https://fonts.google.com/icons -->
+    <!-- Google Icons Import End -->
+    <!-- Jquery Import Start -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <!-- Jquery Import End -->
+    <style>
+        /* Template Code Start */
+
+        .footer {
+            position: fixed;
+            bottom: 5px;
+            left: 5px;
+            font-weight: bold;
+        }
+
+        .footer>a {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .footer>img {
+            top: 0.25rem;
+            position: relative;
+        }
+
+        * {
+            font-family: "Exo 2", sans-serif;
+            /* CSS Code to handle unwanted element highlights / div selection in Android */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Template Code End */
+
+        .content-url::before {
+            content: url("https://picsum.photos/10/10");
+            height: 10px;
+            width: 10px;
+        }
+
+        .content-linear-gradient::before {
+            content: linear-gradient(#e66465, #9198e5);
+            height: 10px;
+            width: 10px;
+            position: absolute;
+        }
+
+        .content-image-set::before {
+            content: -webkit-image-set(url("https://picsum.photos/10/10") 1x,
+                    url("https://picsum.photos/10/10") 2x);
+        }
+
+        .content-string::before {
+            content: "prefix>";
+        }
+
+        .counter {
+            counter-reset: testCounter;
+        }
+
+        .content-counter::before {
+            content: counter(testCounter);
+            counter-increment: testCounter;
+        }
+
+        .content-counters::before {
+            content: counters(testCounter, ".");
+            counter-increment: testCounter;
+        }
+
+        .content-attr::before {
+            content: attr(data-test);
+        }
+
+        .content-quote-close::before {
+            content: open-quote;
+        }
+
+        .content-quote-open::before {
+            content: close-quote;
+        }
+    </style>
+</head>
+
+<body ontouchend>
+    <div class="content-url">content-url</div>
+    <div class="content-linear-gradient">content-linear-gradient</div>
+    <div class="content-image-set">content-image-set</div>
+    <div class="content-string">content-string</div>
+    <div class="counter">
+        <div class="content-counter">content-counter</div>
+        <div class="content-counter">content-counter</div>
+        <div class="content-counter">content-counter</div>
+        <div class="content-counters">content-counters</div>
+        <div class="content-counters">content-counters</div>
+        <div class="content-counters">content-counters</div>
+    </div>
+    <div class="content-attr" data-test="attr-data>">content-attr</div>
+    <div class="content-quote-close">content-quote</div>
+    <div class="content-quote-open">content-quote</div>
+    <!-- Below code is for footer -->
+    <div class="footer">
+        &lt;/&gt; by
+        <a href="https://github.com/aasisodiya" class="github">aasisodiya</a> |
+        <img src="https://visitor-badge.glitch.me/badge?page_id=aasisodiya.webprojects.contentcss" alt="">
+    </div>
+</body>
+
+</html>

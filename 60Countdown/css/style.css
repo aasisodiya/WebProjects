@@ -1,0 +1,115 @@
+/* Template Code Start */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: dark light;
+}
+
+body {
+  min-height: 100vh;
+  background: black;
+}
+
+.footer {
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  font-weight: bold;
+}
+
+.footer > a {
+  text-decoration: none;
+  color: orange;
+}
+
+.footer > img {
+  top: 0.25rem;
+  position: relative;
+}
+
+* {
+  font-family: "Bebas Neue", sans-serif;
+  /* CSS Code to handle unwanted element highlights / div selection in Android */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Template Code End */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.holder {
+  font-weight: bold;
+}
+.timeslot {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+.unit {
+  --font-size: 6rem;
+  font-size: var(--font-size);
+  line-height: var(--font-size);
+  min-width: 2ch;
+  text-align: right;
+}
+.unitname {
+  --font-size: 1rem;
+  font-size: var(--font-size);
+  line-height: calc(3 * var(--font-size));
+  padding-left: 1px;
+}
+
+#settings,
+#close-settings-panel {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.settings-panel {
+  position: fixed;
+  top: 0;
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: black;
+}
+
+#targetDate {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#update {
+  padding: 0.2rem 1.5rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}

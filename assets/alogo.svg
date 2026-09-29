@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	y="0px" viewBox="-234 0 490 560" style="enable-background:new -234 0 490 560;" xml:space="preserve">
+	<style type="text/css">
+		.st0 {
+			fill: #ffa500;
+			stroke: #ffa500;
+			stroke-width: 5;
+			stroke-miterlimit: 5;
+		}
+
+		.st0 {
+			stroke-dasharray: 3200;
+			stroke-dashoffset: 0;
+			-webkit-animation: dash 2s linear forwards;
+			-o-animation: dash 2s linear forwards;
+			-moz-animation: dash 2s linear forwards;
+			animation: dash 2s linear forwards;
+		}
+
+		#logo:hover .st0 {
+			fill: #ffa500;
+			transition: .8s;
+		}
+
+		#logo.clickit .st0 {
+			fill: #eee;
+		}
+
+		@-webkit-keyframes dash {
+			from {
+				stroke-dashoffset: 3200;
+			}
+
+			to {
+				stroke-dashoffset: 0;
+			}
+		}
+
+		.st1 {
+			fill: #ff0000;
+			stroke: #ffa500;
+			stroke-width: 5;
+			stroke-miterlimit: 5;
+		}
+
+		.st1 {
+			stroke-dasharray: 3200;
+			stroke-dashoffset: 0;
+			-webkit-animation: dash 10s linear forwards;
+			-o-animation: dash 10s linear forwards;
+			-moz-animation: dash 10s linear forwards;
+			animation: dash 10s linear forwards;
+		}
+
+		#logo:hover .st1 {
+			fill: #ffa500;
+			transition: .8s;
+		}
+
+		#logo.clickit .st1 {
+			fill: #eee;
+		}
+	</style>
+	<script type="text/javascript">
+		var clicker = document.querySelector('#logo');
+	clicker.addEventListener('click', function(){
+	this.classList.toggle('clickit');
+	})
+	</script>
+	<g id="A">
+		<polygon class="st1" points="11,497.9 -34,471.9 -72.6,510.5 11,558.8 94.6,510.5 56,471.9 	" />
+		<path class="st0"
+			d="M252.4,237.4v-96.8L11,1.2l-241.4,139.4v96.8l0,52.7v129.3l110.5,63.8l38.6-38.6l-96.4-55.7
+		v-98.8h377.4V389l-96.4,55.7l38.6,38.6l110.5-63.8V290.1L252.4,237.4z M199.7,237.4h-377.4V171L11,62.1l188.7,109V237.4z" />
+	</g>
+</svg>

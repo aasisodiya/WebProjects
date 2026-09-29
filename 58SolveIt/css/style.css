@@ -1,0 +1,134 @@
+/* Template Code Start */
+
+.footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.footer>a {
+    text-decoration: none;
+    color: orange;
+}
+
+.footer>img {
+    top: 0.25rem;
+    position: relative;
+}
+
+* {
+    font-family: "Exo 2", sans-serif;
+    /* CSS Code to handle unwanted element highlights / div selection in Android */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Template Code End */
+
+:root {
+    --main-height: 200px;
+    --main-width: 200px;
+    --main-padding: 10px;
+}
+
+body {
+    margin: 0;
+    background: #eee;
+    font-family: Helvetica, sans-serif;
+}
+
+input {
+    border: none;
+    width: 180px;
+    border-radius: 10px;
+    height: 60px;
+    font-size: 30px;
+    text-align: center;
+}
+
+input:focus {
+    border: none;
+    outline: none;
+}
+
+#scorecardholder {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #eee;
+    font-size: 30px;
+    padding: 5px;
+}
+
+.centerdiv {
+    /* position: absolute;
+    top: calc(50vh - (var(--main-height) + 2*var(--main-padding))/2);
+    left: calc(50vw - (var(--main-width) + 2*var(--main-padding))/2); */
+    background: rgb(245, 255, 49);
+    height: var(--main-height);
+    width: var(--main-width);
+    text-align: center;
+    font-size: 30px;
+    padding: var(--main-padding);
+    border-radius: 5px;
+    /* below line is used for center align */
+    margin: calc(50vh - (var(--main-height) + 2*var(--main-padding))/2) auto;
+}
+
+.centerdiv {
+    animation: breathing 7s ease-out infinite normal;
+}
+
+@-webkit-keyframes breathing {
+    0% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    25% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    60% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    100% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+}
+
+@keyframes breathing {
+    0% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    25% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+
+    60% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    100% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+}
