@@ -60,7 +60,7 @@ function startEvent() {
         eventIsOngoing = true;
     } else {
         // record time
-        let ctime = new Date();
+        const ctime = Date.now();
         let userResponseTime = (ctime - rtime)
         let userResponseTimeSec = userResponseTime / 1000
         $('#timer').text(userResponseTimeSec);
