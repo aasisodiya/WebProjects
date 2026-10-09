@@ -89,7 +89,7 @@ function populatePlayground(rows, columns) {
                 <img class="playimage" src="./img/${imgid}.png" alt="">
             </div>
             <div class="blockcover">
-                <img class="coverimage" src="./img/favicon.png" alt="">
+                <img class="coverimage" src="../shared/img/favicon.png" alt="">
             </div>
         </div></div>`;
         $("#playground").append(template);
