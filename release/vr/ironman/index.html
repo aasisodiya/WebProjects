@@ -6,22 +6,20 @@
     <meta name="description" content="SVR is Virtual Reality Education System">
     <meta name="author" content="Akash Sisodiya">
     <link rel="icon" href="../../../shared/img/favicon.png" type="image" sizes="16x16">
-    <script src="../js/aframe-master.js"></script>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
     <script src="../js/skyGradient.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
   </head>
   <body>
-    <a-scene>
+    <a-scene gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/versioned/decoders/1.5.7/;">
       <!-- Import all the assets files needed -->
         <a-assets>
-          <a-asset-item id="ironman-obj" src="IronMan.obj"></a-asset-item>
-          <a-asset-item id="ironman-mtl" src="IronMan.mtl"></a-asset-item>
+          <a-asset-item id="ironman-glb" src="IronMan.glb"></a-asset-item>
           <img id="shadow" src="../img/shadow.png">
         </a-assets>
       <!-- /Import all the assets files needed -->
       <!-- 3d Engine -->
-        <a-entity obj-model="obj: #ironman-obj; mtl: #ironman-mtl" position="0 2 -5" scale="0.1 0.1 0.1">
-        	<a-animation attribute="rotation" from="0 360 0" to="0 0 0" dur="10000" easing="linear" repeat="indefenite"></a-animation>
+        <a-entity gltf-model="#ironman-glb" position="0 2 -5" scale="0.1 0.1 0.1" animation="property: rotation; from: 0 360 0; to: 0 0 0; dur: 10000; easing: linear; loop: true">
         </a-entity>
       <!-- /3d Engine -->
     <!-- Sky, Floor, Camera and Crosshair Code -->

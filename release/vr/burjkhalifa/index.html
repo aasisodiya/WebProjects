@@ -6,21 +6,20 @@
     <meta name="description" content="SVR is Virtual Reality Education System">
     <meta name="author" content="Akash Sisodiya">
     <link rel="icon" href="../../../shared/img/favicon.png" type="image" sizes="16x16">
-    <script src="../js/aframe-master.js"></script>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
     <script src="../js/skyGradient.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
   </head>
   <body>
-    <a-scene>
+    <a-scene gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/versioned/decoders/1.5.7/;">
       <!-- Import all the assets files needed -->
         <a-assets>
-          <a-asset-item id="burjkhalifa-obj" src="model.obj"></a-asset-item>
-          <a-asset-item id="burjkhalifa-mtl" src="https://cdn.aframe.io/wikipedia/model.mtl"></a-asset-item>
-          <a-asset-item id="floor" src="../img/green.png"></a-asset-item>
+          <a-asset-item id="burjkhalifa-glb" src="model.glb"></a-asset-item>
+          <img id="floor" src="../img/green.png">
         </a-assets>
       <!-- /Import all the assets files needed -->
       <!-- 3d Burj Khalifa -->
-        <a-entity obj-model="obj: #burjkhalifa-obj; mtl: #burjkhalifa-mtl" position="5 0.86" scale="0.005 0.005 0.005"></a-entity>
+        <a-entity gltf-model="#burjkhalifa-glb" position="5 0.86" scale="0.005 0.005 0.005"></a-entity>
         <!-- <a-plane color="green" height="500" width="500" rotation="-90 0 0" roughness="1"></a-plane> -->
         <a-entity geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0" material="src: #floor; repeat: 10000 10000; transparent: true;metalness:0; roughness: 1;side:double;"></a-entity>
       <!-- /3d Burj Khalifa -->

@@ -6,24 +6,22 @@
     <meta name="description" content="SVR is Virtual Reality Education System">
     <meta name="author" content="Akash Sisodiya">
     <link rel="icon" href="../../../shared/img/favicon.png" type="image" sizes="16x16">
-    <script src="../js/aframe-master.js"></script>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
     <script src="../js/skyGradient.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
   </head>
   <body>
-    <a-scene>
+    <a-scene gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/versioned/decoders/1.5.7/;">
       <!-- Import all the assets files needed -->
         <a-assets>
-          <a-asset-item id="reconflyer-obj" src="Recon_Flyer.obj"></a-asset-item>
-          <a-asset-item id="reconflyer-mtl" src="Recon_Flyer.mtl"></a-asset-item>
+          <a-asset-item id="reconflyer-glb" src="Recon_Flyer.glb"></a-asset-item>
           <img id="shadow" src="../img/shadow.png">
         </a-assets>
       <!-- /Import all the assets files needed -->
       <!-- 3d Recon Flyer Created by Herminio Nieves @2013 -->
-        <a-entity obj-model="obj: #reconflyer-obj; mtl: #reconflyer-mtl" position="0 0 -5" scale="0.03 0.03 0.03" rotation="24 -26 -18">
-          <a-animation attribute="position" from="0 100 -200" to="0 0 -5" dur="15000" easing="ease-out"></a-animation>
-          <a-animation attribute="rotation" from="90 0 0" to="0 0 0" dur="15000" easing="ease-out"></a-animation>
-        </a-entity>
+        <a-entity gltf-model="#reconflyer-glb" position="0 0 -5" scale="0.03 0.03 0.03" rotation="24 -26 -18"
+          animation__fly="property: position; from: 0 100 -200; to: 0 0 -5; dur: 15000; easing: easeOutCubic"
+          animation__level="property: rotation; from: 90 0 0; to: 0 0 0; dur: 15000; easing: easeOutCubic"></a-entity>
       <!-- /3d Recon Flyer Created by Herminio Nieves @2013 -->
     <!-- Sky, Floor, Camera and Crosshair Code -->
     <a-image position="0 -3 1" src="#shadow" rotation="-90 0 0" scale="6 6 6"></a-image>
