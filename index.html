@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebProjects · Akash Sisodiya</title>
+    <meta name="description" content="A playground of small web projects, games, animations, 3D experiments and study notes on CSS, JavaScript, HTML, Three.js, A-Frame and WebXR." />
+    <meta name="author" content="Akash Sisodiya" />
+    <meta name="theme-color" content="#0c0d10" />
+    <meta property="og:title" content="WebProjects · Akash Sisodiya" />
+    <meta property="og:description" content="Small web projects, games, animations, 3D experiments and study notes." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aasisodiya.github.io/WebProjects/" />
+    <link rel="icon" type="image/svg+xml" href="assets/alogo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="showcase/style.css" />
+    <script>
+        // Apply the saved theme before first paint to avoid a flash.
+        try {
+            const theme = localStorage.getItem("showcase-theme");
+            if (theme) document.documentElement.dataset.theme = theme;
+        } catch (e) {}
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KDE74NNXK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-4KDE74NNXK');
+    </script>
+</head>
+
+<body>
+    <a class="skip-link" href="#projects">Skip to projects</a>
+
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a class="brand" href="./" aria-label="WebProjects home">
+                <img src="assets/alogo.svg" alt="" width="28" height="28" />
+                <span>WebProjects</span>
+            </a>
+            <nav class="nav" aria-label="Sections">
+                <a href="#projects">Projects</a>
+                <a href="#notes">Notes</a>
+                <a href="https://github.com/aasisodiya/WebProjects" target="_blank" rel="noopener">GitHub</a>
+            </nav>
+            <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle colour theme">
+                <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.5" /><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" /></svg>
+                <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z" /></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Akash Sisodiya · since 2016</p>
+                    <h1>A playground of <span class="hl">small web things</span> I've built while learning.</h1>
+                    <p class="lede">Games, tools, CSS animations, 3D &amp; VR experiments and a stack of study notes — all handmade with HTML, CSS and JavaScript. Click any card for a live preview.</p>
+                    <div class="hero-cta">
+                        <a class="btn btn-primary" href="#projects">Browse projects</a>
+                        <a class="btn" href="#notes">Read the notes</a>
+                    </div>
+                    <dl class="stats" id="stats"></dl>
+                </div>
+                <div class="hero-wall" id="hero-wall" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <section class="section" id="projects" aria-labelledby="projects-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2 id="projects-title">Projects</h2>
+                    <p class="muted" id="result-count" aria-live="polite"></p>
+                </div>
+
+                <div class="toolbar">
+                    <label class="search">
+                        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+                        <input id="project-search" type="search" placeholder="Search projects…  ( / )" autocomplete="off" aria-label="Search projects" />
+                    </label>
+                    <label class="select">
+                        <span class="sr-only">Year</span>
+                        <select id="year-filter" aria-label="Filter by year"></select>
+                    </label>
+                    <label class="select">
+                        <span class="sr-only">Sort</span>
+                        <select id="sort" aria-label="Sort projects">
+                            <option value="new">Newest first</option>
+                            <option value="old">Oldest first</option>
+                            <option value="az">A → Z</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="tabs" id="category-tabs" role="tablist" aria-label="Categories"></div>
+                <div class="chips" id="tag-chips" aria-label="Filter by technology"></div>
+
+                <div class="grid" id="project-grid"></div>
+                <div class="empty" id="project-empty" hidden>
+                    <p>No projects match those filters.</p>
+                    <button class="btn" type="button" data-reset>Clear filters</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-notes" id="notes" aria-labelledby="notes-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2 id="notes-title">Study notes</h2>
+                    <p class="muted" id="notes-count" aria-live="polite"></p>
+                </div>
+                <p class="section-lede">Things I looked up once and wrote down so I'd never have to look them up again. Search runs across every topic heading inside the notes.</p>
+
+                <div class="toolbar">
+                    <label class="search">
+                        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+                        <input id="notes-search" type="search" placeholder="Search notes and topics…  e.g. flex, fetch, meta" autocomplete="off" aria-label="Search notes" />
+                    </label>
+                </div>
+                <div class="tabs" id="notes-tabs" role="tablist" aria-label="Note categories"></div>
+
+                <div class="notes-grid" id="notes-grid"></div>
+                <div class="empty" id="notes-empty" hidden>
+                    <p>No notes match that search.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap footer-inner">
+            <p>Built by <a href="https://github.com/aasisodiya" target="_blank" rel="noopener">aasisodiya</a>. Every project lives in its own folder in <a href="https://github.com/aasisodiya/WebProjects" target="_blank" rel="noopener">the repo</a>.</p>
+            <a href="#top" class="muted" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <dialog class="preview" id="preview" aria-labelledby="preview-title">
+        <div class="preview-bar">
+            <div class="preview-title">
+                <span class="badge" id="preview-cat"></span>
+                <h3 id="preview-title"></h3>
+            </div>
+            <div class="seg" role="group" aria-label="Preview width">
+                <button type="button" data-width="100%" aria-pressed="true" title="Desktop">
+                    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="1.5" /><path d="M8 21h8M12 17v4" /></svg>
+                </button>
+                <button type="button" data-width="820px" aria-pressed="false" title="Tablet">
+                    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="4.5" y="2.5" width="15" height="19" rx="2" /><path d="M11 18.5h2" /></svg>
+                </button>
+                <button type="button" data-width="390px" aria-pressed="false" title="Mobile">
+                    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2" /><path d="M11 18.5h2" /></svg>
+                </button>
+            </div>
+            <div class="preview-actions">
+                <button class="icon-btn" type="button" id="preview-prev" aria-label="Previous project" title="Previous (←)">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+                </button>
+                <button class="icon-btn" type="button" id="preview-next" aria-label="Next project" title="Next (→)">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+                </button>
+                <a class="btn btn-sm" id="preview-source" target="_blank" rel="noopener">Source</a>
+                <a class="btn btn-sm btn-primary" id="preview-open" target="_blank" rel="noopener">Open ↗</a>
+                <button class="icon-btn" type="button" id="preview-close" aria-label="Close preview" title="Close (Esc)">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" /></svg>
+                </button>
+            </div>
+        </div>
+        <div class="preview-stage">
+            <div class="preview-frame" id="preview-frame">
+                <iframe id="preview-iframe" title="Live project preview" allow="camera; microphone; fullscreen; xr-spatial-tracking; accelerometer; gyroscope" loading="lazy"></iframe>
+            </div>
+        </div>
+        <p class="preview-desc" id="preview-desc"></p>
+    </dialog>
+
+    <script src="showcase/projects.js"></script>
+    <script src="showcase/notes.js"></script>
+    <script src="showcase/app.js"></script>
+</body>
+
+</html>

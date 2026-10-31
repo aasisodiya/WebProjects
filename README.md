@@ -3,6 +3,16 @@
 [![Editor](https://img.shields.io/badge/VSCode-Click%20Here%20To%20Edit%20This%20Repo-blue?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://vscode.dev/github/aasisodiya/WebProjects)
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=aasisodiya.WebProjects&labelColor=%23ffa500&countColor=%23263759&labelStyle=upper)](https://visitorbadge.io/status?path=aasisodiya.WebProjects)
 
+## Showcase
+
+Browse everything at **[aasisodiya.github.io/WebProjects](https://aasisodiya.github.io/WebProjects/)** — projects with categories, filters and live previews, plus searchable study notes.
+
+To add a project to the showcase:
+
+1. Add an entry to [`showcase/projects.js`](showcase/projects.js)
+2. Generate its thumbnail: `node showcase/tools/screenshot.mjs --missing` (uses local Chrome/Edge)
+3. After adding or editing notes, rebuild the notes index: `node showcase/tools/build-notes.mjs`
+
 ## Project URLs
 
 |Website|Link|Created Date|Description|
