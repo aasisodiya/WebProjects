@@ -97,6 +97,12 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  scrollbar-gutter: stable;
+}
+
+/* Lock page scroll behind the open preview so iframe scrolls don't chain to it */
+html:has(.preview[open]) {
+  overflow: hidden;
 }
 
 body {
