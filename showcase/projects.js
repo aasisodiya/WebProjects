@@ -124,5 +124,4 @@ window.SHOWCASE_PROJECTS = [
   { t: "Email Footer", p: "02EmailFooter/", d: "2018-12-16", c: "sites", tags: ["HTML", "CSS"], desc: "Email signature footer template." },
   { t: "Portfolio v3", p: "release/v3/", d: "2019-01-01", c: "sites", tags: ["HTML", "CSS"], desc: "Third iteration of my portfolio." },
   { t: "Cool Websites", p: "57CoolWebsites/", d: "2022-11-04", c: "sites", tags: ["jQuery"], desc: "A collection of the coolest websites in the universe." },
-  { t: "Name Reveal", p: "name/", d: "2026-04-08", c: "sites", tags: ["CSS"], desc: "Slot-machine style name reveal." },
 ];
